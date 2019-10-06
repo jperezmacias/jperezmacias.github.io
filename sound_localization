@@ -82,63 +82,7 @@
 
 				<section class="container-fluid">
 					<div class="row">
-						<div class="col-md-4">
-							<h2>Bio</h2>
-
-							<p>In 2002 I received my Music Examinations Degree in Piano, in the  <a href="http://conservatoriovalladolid.centros.educa.jcyl.es/sitio/">Conservatory of Valladolid</a> (Spain).
-								I started Telecommunications Engineering at the <a href="http://www.tel.uva.es">University of Valladolid</a>; in 2009 I received an M.Sc. in Telecommunications Eng. (<a href="http://universidadeuropea.es/en/?_ga=2.102290433.1857418707.1503662835-1350283446.1449236758">UEM</a>, Madrid). Between 2007-2009 I lived in Sweden, and received an M.Sc. in Biomedical Engineering in 2009 (<a href="http://www.chalmers.se/en/Pages/default.aspx">Chalmers University of Technology</a>, Goteborg), respectively. In 2009 I spent six months as an intern in the <a href="https://www.philips.com/a-w/research/locations/aachen.html"> Medical Signal Processing Group at Phillips–Aachen.</a> where I worked with thoracic BiomImpedance  in the <a href="http://cordis.europa.eu/project/rcn/71193_en.html">FP7 MyHeart project</a>.</p>
-
-								<p>I started my first job in a multinational called Mach Connectivity GmbH (acquired by <a href="https://www.syniverse.com/products-services/types/messaging">Syniverse</a>) as an implementation Engineer and Service Manager. I switched quickly to Biomedical again, and started a developer in eHealth, at the Zentrum für Telematik e.V. (Germany) for the design of a home dialysis infrastructure for Fresenius Medical Care.</p>
-
-								<p>In 2011-2012 I was a fellow at the University of Valladolid, in the <a href="http://www.gib.tel.uva.es/index_en.html">Group of Biomedical Engineering</a> in Magnetoencephalography (MEG). I held a position as a researcher in the Personal Health Informatics group in <a href="http://www.gib.tel.uva.es/index_en.html">Tampere University of Technology</a> (Finland). During this time, I collaborated at <a href="http://www.newfactory.fi">PROTOMO</a> (Start-up incubator in Tampere), shorty at <a href="http://werk1.com"> WERK1</a> (Start-up incubator in Munich), and some additional collaborations.</p>
-
-								<p>Currently, I am Ph.D. candidate position as a fellow at Tampere University of Technology, Finland.</p>
-
-							</div>
-
-							<div class="col-md-4">
-								<h2>Research</h2>
-								The topic of my doctoral thesis is centered on sleep, unobtrusive sensors and mattress sensors (such as Beddit, Emfit (eletromechanical film transducer) mattres , Fitbit, Firstbeat, raw accelerometers, etc.). The thesis proposes several state-of-the-art methods for detecting snoring, breathing efforts, breathing patterns, and heart rate detection algorithms.
-
-							</div>
-
-
-							<div class="col-md-4">
-								<h2>Resources</h2>
-
-
-								<div class="list-group">
-									<a href="https://scholar.google.fi/citations?user=2eM13MsAAAAJ&hl=en" target="_blank" class="list-group-item">
-										Publications
-									</a>
-
-									<a href="https://tutcris.tut.fi/portal/en/persons/jari-viik(d8727490-aa17-45a7-8c38-93f50cf1bec0).html" target="_blank" class="list-group-item">
-										Research group
-									</a>
-								</div>
-
-								<div class="list-group">
-									<a href="#" target="_blank" class="list-group-item">
-										<span class="badge">June 2017</span>
-										Resumé
-									</a>
-									<a href="https://swimmingfinnish.blogspot.fi" target="_blank" class="list-group-item">
-										<span class="badge">2015</span>
-										Finnish language Blog
-									</a>
-									<a href="https://randn-thoughts.blogspot.fi" target="_blank" class="list-group-item">
-										<span class="badge">2007</span>
-										Randon Thoughts Blog
-									</a>
-									<a href="https://telviews.blogspot.com" target="_blank" class="list-group-item">
-										<span class="badge">2007</span>
-										TechViews Blog
-									</a>
-								</div>
-
-
-
-							</div> <!--! class="col-md-4">-->
+						
 						</div> <!-- row -->
 
 						<div class="row">
@@ -229,7 +173,7 @@
 									<h4>Animals</h4>
 									<div class="thumbnail">
 										<div class="caption">
-										<p>This is a game for kids. Develop in Meteor. It can be used on the phone, or iPad, as long it is not a very old iPad (iPad 1) because it becomes very slow  (soon to be uploaded on a server).</p>
+										<p>This is a game for kids. Develop in Meteor. It can be used on the phone, or iPad, as long it is not a very old iPad (iPad 1) because it becomes very slow  (soon to be uploaded).</p>
 										</div>
 									</div>
 								</div>
@@ -240,7 +184,7 @@
 									<h4>Wireless sensor monitor</h4>
 									<div class="thumbnail">
 										<div class="caption">
-										<p>Me and a colleage developed a wireless sensor monitor that is deployed in TUT, pretty cool honestly (soon to be uploaded, well maybe not so soon).</p>
+										<p>This develops a wireless sensor monitor that is deployed in TUT (soon to be uploaded).</p>
 										</div>
 									</div>
 								</div>
@@ -251,15 +195,9 @@
 								<div class="thumbnail">
 									<div class="caption">
 									<p>Project from Advanced Audio Processing</p>
-									<a href="https://github.com/jperezmacias/project_advanced_audio">GitHub</a>
-									</div>
-									<div class="videoWrapper">
-									<iframe width="300" height="315" src="https://youtu.be/v4dTvRdv_sY" frameborder="0" allowfullscreen></iframe>
 									</div>
 								</div>
 							</div>
-
-
 
 
 
