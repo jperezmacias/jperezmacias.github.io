@@ -1,0 +1,63 @@
+BODY {
+	MARGIN: 0px
+}
+FORM {
+	MARGIN: 1px
+}
+INPUT.text_ {
+	BORDER-RIGHT: #153040 1px solid; BORDER-TOP: #153040 1px solid; FONT-SIZE: 8pt; BACKGROUND: #99cccc; BORDER-LEFT: #153040 1px solid; COLOR: #153040; BORDER-BOTTOM: #153040 1px solid; HEIGHT: 18px
+}
+INPUT.button_ {
+	FONT-SIZE: 8pt; BACKGROUND: #357070; COLOR: #99cccc; HEIGHT: 18px
+}
+A {
+	COLOR: #c80000; TEXT-DECORATION: none
+}
+A:hover {
+	BACKGROUND: #d80000; COLOR: #ffffff
+}
+P {
+	FONT-FAMILY: verdana, helvetica, arial
+}
+.sup {
+	FONT-SIZE: 10pt; MARGIN: 2px
+}
+.mini {
+	FONT-SIZE: 10pt; MARGIN: 6px
+}
+.pie {
+	FONT-SIZE: 7pt; MARGIN: 8px
+}
+.lin {
+	FONT-SIZE: 8pt; MARGIN: 1px 3px
+}
+.lst {
+	FONT-SIZE: 8pt; MARGIN: 4px 3px 4px 16px; LINE-HEIGHT: 13pt
+}
+.wide {
+	BORDER-RIGHT: #000000 1px dotted; BORDER-TOP: #000000 0px dotted; BORDER-LEFT: #000000 1px dotted; BORDER-BOTTOM: #000000 0px dotted
+}
+.dow {
+	BORDER-RIGHT: #000000 0px dotted; BORDER-TOP: #000000 0px dotted; BORDER-LEFT: #000000 0px dotted; BORDER-BOTTOM: #000000 1px dotted
+}
+.diz {
+	BORDER-RIGHT: #000000 1px dotted; BORDER-TOP: #000000 0px dotted; BORDER-LEFT: #000000 0px dotted; BORDER-BOTTOM: #000000 1px dotted
+}
+.dde {
+	BORDER-RIGHT: #000000 0px dotted; BORDER-TOP: #000000 0px dotted; BORDER-LEFT: #000000 1px dotted; BORDER-BOTTOM: #000000 1px dotted
+}
+.rin {
+	FONT-SIZE: 8pt; MARGIN: 1px 3px
+}
+.rst {
+	FONT-SIZE: 8pt; MARGIN: 4px 3px; LINE-HEIGHT: 12pt
+}
+.med {
+	MARGIN-TOP: 16px; FONT-SIZE: 14pt; MARGIN-BOTTOM: 4px; MARGIN-LEFT: 16px
+}
+.reg {
+	FONT-SIZE: 8pt; MARGIN: 8px 20px 6px; LINE-HEIGHT: 16pt; TEXT-ALIGN: justify
+}
+.fin {
+	BORDER-RIGHT: #000000 0px dotted; BORDER-TOP: #000000 1px dotted; BORDER-LEFT: #000000 0px dotted; BORDER-BOTTOM: #000000 0px dotted
+}

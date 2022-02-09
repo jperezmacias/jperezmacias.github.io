@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="Templates/Plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<LINK rel=stylesheet href="style.css" type="text/css" title="Radioclub">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<style type="text/css">
+<!--
+.style1 {
+	color: #000000;
+	font-weight: bold;
+}
+-->
+</style>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<BASEFONT face=tahoma,verdana,helvetica,arial>
+<TABLE cellSpacing=0 cellPadding=0 width=640 align=center bgColor=#ffffff>
+  <TBODY>
+    <TR>
+      <TD class=wide>
+        <TABLE cellSpacing=0 cellPadding=0 width=760 bgColor=#ffffff border=0>
+          <TBODY>
+            <TR>
+              <TD class=dow><img 
+            src="Imagenes/logo1.jpg" alt=RadioClub border=0 
+           align="middle">
+              <TD class=dow><img 
+            src="Imagenes/logo2.jpg" alt=RadioClub width="400" height="60" border=0 
+            align=left> 
+            </TR>
+          </TBODY>
+        </TABLE>
+    <TR>
+      <TD class=wide>
+        <TABLE cellSpacing=0 cellPadding=0 width=760 border=0><!--DWLayoutTable-->
+          <TBODY>
+            <TR>
+              <TD vAlign=top align=left width=130>
+                <TABLE cellSpacing=0 cellPadding=0 width=130>
+                  <TBODY>
+				  <TR>
+                      <TD height="63" bgColor=#FFFFFF class=diz>
+                        <P class=lin>&nbsp;</P>
+                    <TR>
+                    <TR>
+                      <TD class=diz bgColor=#FF0000>
+                        <P class=lin><span class="style1">Apartados </span></P>
+                    <TR>
+                      <TD class=diz bgColor=#FFCCCC>                        <P class=lst><a href="index.htm">0. Inicio</a> <br>
+                        <A 
+                  href="Introduccion.htm?enlace=secciones/contenido_index.php">1. Introducci&oacute;n</A><BR>
+                          <a href="csound.htm">2. Csound</a></p>
+                        <P class=lst> <a href="funciones.htm">2.1 Funciones</a></p>
+                        <P class=lst><a href="ejemplo0.htm">2.2. Ejemplos</a><BR>
+                          <a href="eco.htm">3. Ecos y Rev.</a><br>
+                          <a href="sonido3d.htm">4. Sonido 3D</a><br>
+                          <a href="Ejemplos.htm">5.Ejemplos Csound</a><br> 
+                          <a href="Bibliografia.htm">6.Bibliograf&iacute;a</a></p>
+                        <P class=lst>&nbsp;</p>
+                    <TR>
+                      <TD class=diz bgColor=#FF0000>
+                        <P class=lin><B><FONT color=#d80000>:</FONT>Contacta!!!!!</B></P>
+                    <TR>
+                      <TD class=diz bgColor=#FFCCCC>
+                        <P class=lst> <a href="mailto:jpermar@ribera.tel.uva.es">jpermar@ribera.tel.uva.es </a> </P>
+                        <P class=lst> <a href="mailto:acuedie@ribera.tel.uva.es">acuedie@ribera.tel.uva.es </a> <A href="http://www.augcyl.org/" target=_blank></A><br>
+                        </P>
+                    <TR>
+                      <TD class=diz bgColor=#ffffff>
+                        <P class=lst><BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                        </P>
+                    </TR>
+                  </TBODY>
+                </TABLE>
+              <TD align=left valign="top" bgColor=#ffffff>
+                <h2 align="left"><!-- InstanceBeginEditable name="EditRegion3" -->Funciones 3D Sound (Csound) <!-- InstanceEndEditable --> </h2>
+                <!-- InstanceBeginEditable name="EditRegion4" -->
+                <p>Estas funciones se han extra&iacute;do de los manuales de referencia del Csound, los a&ntilde;adimos aqu&iacute;, como peque&ntilde;a gu&iacute;a. No obstante siempre conviente tener el manual a mano. </p>
+                <p>&nbsp;</p>
+                <p><strong>hrtfer </strong></p>
+                <p><strong></strong></p>
+                <p>aLeft, aRight <strong> hrtfer </strong>asig, kAz, kElev, “HRTFcompact” </p>
+                <p><strong>DESCRIPCI&Oacute;N </strong></p>
+                <p>La salida es audio tridimensional est&eacute;reo. </p>
+                <p><strong>INICIALIZACI&Oacute;N </strong></p>
+                <p><em>kAz </em>- valor azimutal en grados. Los valores positivos representan las posiciones a la derecha, los negativos a la izquierda. </p>
+                <p><em>kElev </em>- valor de elevaci&oacute;n en grados. Los valores positivos representan posiciones por encima de la horizontal, los negativos por debajo. </p>
+                <p>En el presente, el &uacute;nico fichero que puede ser usado con <strong> hrtfer </strong>es HRTFcompact. Debe ser pasado al opcode como &uacute;ltimo argumento entre comillas como se muestra arriba. </p>
+                <p>HRTFcompact puede ser obtenido en: </p>
+                <p><a href="ftp://ftp.maths.bath.ac.uk/pub/dream/utilities/Analysis/HRTFcompact">ftp://ftp.maths.bath.ac.uk/pub/dream/utilities/Analysis/HRTFcompact </a></p>
+                <p><strong></strong></p>
+                <p><strong>EJECUCI&Oacute;N </strong></p>
+                <p>Estos opcodes colocan una se&ntilde;al mono en un espacio virtual tridimensional alrededor del oyente, realizando un proceso de convoluci&oacute;n de la entrada con los datos HRTF apropiados, especificados por los valores de azimut y de elevaci&oacute;n del opcode. <strong>hrtfer </strong>permite que estos valores sean de tipo -k, lo que permite una espacializaci&oacute;n din&aacute;mica variable a frecuencia de control. <strong>hrtfer </strong>s&oacute;lo puede colocar su entrada en una posici&oacute;n requerida, porque el HRTF se carga en la inicializaci&oacute;n (recuerda que actualmente </p>
+                <p>Csound tiene un l&iacute;mite de 20 ficheros en memoria, de otra manera causa un error de segmentaci&oacute;n). La salida necesitar&aacute; ser escalada bien con <strong>balance, </strong>bien multiplic&aacute;ndola por alguna constante. </p>
+                <p><strong>Nota </strong> - la frecuencia de muestreo de la orquesta debe ser 44.1 hHz. Esto es as&iacute; porque los HRTFs fueron medidos a dicha frecuencia de muestreo. Para ser usados a una frecuencia diferente, los HRTFs deben ser resampleados a la frecuencia deseada. </p>
+                <p><strong>locsig, locsend </strong></p>
+                <p>a1, a2 <strong>locsig </strong>asig, kdegree, kdistance, kreverbsend </p>
+                <p>a1, a2, a3, a4 <strong> locsig </strong>asig, kdegree, kdistance, kreverbsend </p>
+                <p>a1, a2 <strong>locsend </strong></p>
+                <p>a1, a2, a3, a4 <strong>locsend </strong></p>
+                <p><strong>DESCRIPCI&Oacute;N </strong></p>
+                <p><strong>locsig : </strong>toma una se&ntilde;al de entrada y la distribuye entre 2 o 4 canales, usando valores en grados para calcular el balance entre canales adyacentes. Tambi&eacute;n toma un par&aacute;metro para la distancia (usado para atenuar se&ntilde;ales que deber&iacute;an sonar como si estuvieran m&aacute;s lejos que el altavoz mismo), y otro para la cantidad de se&ntilde;al que se enviar&aacute; a los reverberadores. Esta unidad esta basada en el ejemplo del libro Computer Music,p&aacute;gina 320, de Charles Dodge/Thomas Jerse. <strong>locsend </strong>depende de la existencia de una unidad <strong>locsig </strong>previamente definida. El n&uacute;mero de se&ntilde;ales de salida debe coincidir con el n&uacute;mero de la unidad <strong>locsig </strong>anterior. Las se&ntilde;ales de salida de <strong>locsend </strong> se derivan de los valores dados para la distancia y la reverberaci&oacute;n en <strong> locsig </strong>y est&aacute;n listos para ser enviados alas unidades de reverberaci&oacute;n locales o globales (ver el ejemplo m&aacute;s abajo). La cantidad de reverberaci&oacute;n y balance entre los 2 o 4 canales se calcula de la misma manera que se describe en el libro mencionado (un libro esencial!). </p>
+                <p><strong>EJECUCI&Oacute;N </strong></p>
+                <p><em>kdegree </em>- valor entre 0 y 360 para la localizaci&oacute;n de la se&ntilde;al en un espacio de 2 o 4 canales configurados como: a1=0, a2=90, a3=180, a4=270 (por ejemplo <em>kdegree </em>= 45 balancear&iacute;a la se&ntilde;al equitativamente entrea1 y a2). <strong>locsig </strong>pasa <em>kdegree </em>a funciones seno y coseno para calcular el balance de la se&ntilde;al (por ejemplo: </p>
+                <p>asig=1, kdegree=45, a1=a2=.707). </p>
+                <p><em>kdistance </em>- valor (mayor o igual que 1) usado para atenuar la se&ntilde;al y calcular el nivel de reverberaci&oacute;n con el fin de simular las indicaciones de distancia. Al hacer <em>kdistance </em>mayor, el sonido se har&aacute; m&aacute;s suave y de alguna manera m&aacute;s reverberante (asumiendo que se use <strong>locsend </strong>en este caso). </p>
+                <p><em>kreverbsend </em>- porcentaje de la se&ntilde;al directa que ser&aacute; procesada junto con los valores de distancia y localizaci&oacute;n para obtener la cantidad de se&ntilde;al que ser&aacute; enviada a la unidad de reverberaci&oacute;n, por ejemplo <strong>reverb </strong>o <strong>reverb2 </strong>. </p>
+                <p><strong>space, spsend, spdist </strong></p>
+                <p>a1, a2, a3, a4 <strong> space </strong>asig, ifn, ktime, kreverbsend [,kx, ky] </p>
+                <p>a1, a2, a3, a4 <strong> spsend </strong></p>
+                <p>k1 <strong>spdist </strong>ifn, ktime, [,kx, ky] </p>
+                <p><strong></strong></p>
+                <p><strong>DESCRIPCI&Oacute;N </strong></p>
+                <p><strong>space </strong>toma una se&ntilde;al de entrada y la distribuye entre 4 canales usando coordenadas cartesianas xy para calcular el balance de las salidas. Las coordenadas xy pueden ser definidas en un fichero de texto separado y accedidas a trav&eacute;s de una funci&oacute;n de la partitura usando <strong>GEN28 </strong>, o pueden ser especificadas usando los argumentos opcionales <em>kx </em>y <em>ky </em>. Hay algunas ventajas en usar el primer m&eacute;todo: </p>
+                <p>1. se puede usar una interfaz gr&aacute;fica para dibujar y editar trayectorias en el plano cartesiano; </p>
+                <p>2. el formato del fichero est&aacute; en la forma "tiempo1 X1 Y1 tiempo2 X2 Y2 tiempo3 X3 Y3", </p>
+                <p>permitiendo al usuario definir una trayectoria propia en el tiempo. </p>
+                <p><strong>space </strong>permite al usuario especificar un puntero temporal (como los usados en <strong>pvoc, lpread </strong>y otras unidades) para conseguir un control preciso sobre la velocidad final del movimiento. </p>
+                <p><strong>spsend </strong>depende de la existencia de una unidad <strong>space </strong>previamente definida. Las se&ntilde;ales de salida de <strong>spsend </strong>se derivan de los valores dados a XY y a reverb en la unidad <strong>space </strong>y est&aacute;n listas para ser enviadas a una unidad local o global de reverberaci&oacute;n (ver el ejemplo de abajo). </p>
+                <p><strong>spdist </strong>usa los mismos datos xy que <strong>space </strong>, tambi&eacute;n desde un fichero de texto usando <strong>GEN28 </strong> o directamente desde los argumentos <em>kx </em>y <em>ky </em>de la unidad. El prop&oacute;sito de esta unidad es hacer disponible los valores de distancia que se calculan a partir de las coordenadas xy. En el caso de <strong>space, </strong>los valores xy se usan para determinar una distancia que es usada para at e nuar la se&ntilde;al y prepararla para su uso con <strong>spsend </strong>. Pero es tambi&eacute;n &uacute;til para tener esos valores de distancia disponibles para escalar la frecuencia de la se&ntilde;al antes de enviarla a la unidad <strong>space </strong>. </p>
+                <p><strong></strong></p>
+                <p><strong>EJECUCI&Oacute;N </strong></p>
+                <p>La configuraci&oacute;n de las coordenadas xy en <strong>space </strong>coloca la se&ntilde;al en los altavoces (a <em>n </em>) de la siguiente manera: a1 es (-1,1); a2 es (1, 1); a3 es (-1, -1); a4 es (1, -1). Esto asume que un altavoz configurado como a1 est&aacute; delante a la izquierda, a2 est&aacute; delante en la derecha, a3 atr&aacute;s a la izquierda y a4est&aacute; atr&aacute;s a la derecha. Los valores mayores que 1 dar&aacute;n lugar a sonidos atenuados como si estuvieran a distancia. <strong>space </strong>considera que los altavoces est&aacute;n a una distancia 1. Pueden usarse valores m&aacute;s peque&ntilde;os que 1 para coordenadas xy, pero <strong>space </strong>no amplificar&aacute; la se&ntilde;al en ese caso. Sin embargo, balancear&aacute; la se&ntilde;al para que pueda sonar como si estuviera entre el espacio de los cuatro altavoces. x=0, y=1, colocar&aacute;n la se&ntilde;al igualmente balanceada entre los canales delanteros izquierdo y derecho; x=y=0 colocar&aacute;n la se&ntilde;al en medio de los cuatro altavoces, etc. Aunque debe haber 4 se&ntilde;ales de salida en <strong>space </strong>, &eacute;ste puede ser </p>
+                <p>usado en una orquesta con s&oacute;lo 2 canales. Si las coordenadas se mantienen para que y sea siempre mayor o igual que 1, se puede mover o fijar sonidos en un campo est&eacute;reo sin problemas. </p>
+                <p><em>ifn </em>- n&uacute;mero de la funci&oacute;n almacenada creada con <strong>GEN28 </strong>. Este generador de funci&oacute;n lee un fichero de texto que contiene las series de tres valores que representan las coordenadas xy y una etiqueta de tiempo que indica el instante en el que ser&aacute; colocada la se&ntilde;al en esa posici&oacute;n en el espacio. El fichero debe ser de esta forma: </p>
+                <p>0 -1 1 </p>
+                <p>1 1 1 </p>
+                <p>2 4 4 </p>
+                <p>2.1 -4 -4 </p>
+                <p>3 10 -10 </p>
+                <p>5 -40 0 </p>
+                <p>si este fi ch ero se llamara "move" entonces la llamada de <strong> Gen28 </strong>en la partitura ser&iacute;a; </p>
+                <p>f1 0 0 "move" </p>
+                <p><strong>GEN28 </strong>toma un valor de 0 como tama&ntilde;o y asigna autom&aacute;ticamente la memoria necesaria, creando valores de hasta 10 milisegundos de resoluci&oacute;n. As&iacute; que en este caso habr&aacute; 500 valores, creados por interpolaci&oacute;n, de x1 a x2, de x2 a x3 etc. (lo mismo con las ordenadas), a partir de los valores que proporciona la tabla de funci&oacute;n. En el ejemplo de arriba, el sonido empezar&aacute; en la parte delantera izquierda, durante un segundo se mover&aacute; la parte delantera derecha, durante otro segundo se alejar&aacute; pero todav&iacute;a en la parte delantera izquierda y luego, en s&oacute;lo una d&eacute;cima de segundo, se mover&aacute; a la parte trasera izquierda, sonando un poco a distancia. Finalmente durante los &uacute;ltimos .9 segundos el sonido se mover&aacute; a la parte trasera derecha, a media distancia, viniendo por fin a descansar entre los canales izquierdos, bastante alejado. Debido a que los valores de la tabla son accedidos a trav&eacute;s del uso del puntero temporal de la unidad <strong>space </strong>, el tiempo real puede ser obtenido siguiendo los tiempos que indica exactamente el fichero. Tambi&eacute;n puede ser modificado si hacemos que el puntero se mueva m&aacute;s lento o m&aacute;s r&aacute;pido a lo largo de la misma trayectoria (es decir, cambiando la velocidad del movimiento pero no la trayectoria). Si tienes acceso a una interfaz gr&aacute;fica que te permita dibujar y editar los ficheros, no hay necesidad de teclear manualmente los valores en un fichero de texto. Pero no importa como se realice el fichero, servir&aacute; siempre que se ajuste al formato especificado arriba. </p>
+                <p>IMPORTANTE: si <em>ifn </em>es 0, <strong>space </strong>tomar&aacute; los valores de las coordenadas xy de los par&aacute;metros <em>kx </em>y <em>ky </em>. </p>
+                <p><em>ktime </em>- &iacute;ndice de la tabla que contiene las coordenadas xy. Si se usa como: </p>
+                <p>ktime <strong>line </strong>0, 5, 5 </p>
+                <p>a1, a2, a3, a4 <strong> space </strong>asig, 1, ktime, ... </p>
+                <p>con el fichero "move" descrito arriba, la velocidad del movimiento de la se&ntilde;al ser&aacute; exactamente la especificada en el fichero. Sin embargo, en: </p>
+                <p>ktime <strong>line </strong>0, 10, 5 </p>
+                <p>la se&ntilde;al se mover&aacute; a la mitad de la velocidad especificada. O, en el caso de: </p>
+                <p>ktime <strong>line </strong>5, 15, 0 </p>
+                <p>la se&ntilde;al se mover&aacute; en direcci&oacute;n contraria a la especificada y tres veces m&aacute;s lento. Finalmente: </p>
+                <p>ktime <strong>line </strong>2, 10, 3 </p>
+                <p>har&aacute; que la se&ntilde;al se mueva s&oacute;lo desde el lugar especificado en la l&iacute;nea 3 del fichero de texto hasta el lugar especificado en la l&iacute;nea 5, y el proceso llevar&aacute; 10 segundos. </p>
+                <p><em>kreverbsend </em>- es el porcentaje de la se&ntilde;al directa que ser&aacute; procesado junto con los valores de distancia y de coordenada para calcular la cantidad de se&ntilde;al que ser&aacute; enviada a las unidades de reverberaci&oacute;n como </p>
+                <p><strong>reverb </strong>, o <strong> reverb2 </strong></p>
+                <p><em>kx, ky </em>- cuando <em>ifn </em>es 0, <strong> space </strong>y <strong>spdist </strong>usar&aacute;n estos valores como coordenadas xy para posicionar la se&ntilde;al. </p>
+                <p>Son opcionales y son ambos 0 por defecto. </p>
+                <p><strong>EJEMPLO </strong></p>
+                <p>;asig es alguna se&ntilde;al de audio </p>
+                <p>ktime <strong>line </strong>0, p3, p10 </p>
+                <p>a1, a2, a3, a4 <strong> space </strong>asig,1, ktime, .1 </p>
+                <p>ar1, ar2, ar3, ar4 <strong> spsend </strong></p>
+                <p>ga1 = ga1+ar1 </p>
+                <p>ga2 = ga2+ar2 </p>
+                <p>ga3 = ga3+ar3 </p>
+                <p>ga4 = ga4+ar4 </p>
+                <p><strong>outq </strong>a1, a2, a3, a4 </p>
+                <p><strong>endin </strong></p>
+                <p><strong>instr </strong>99 ; instrumento reverb </p>
+                <p>a1 <strong>reverb2 </strong>ga1, 2.5, .5 </p>
+                <p>a2 <strong>reverb2 </strong>ga2, 2.5, .5 </p>
+                <p>a3 <strong>reverb2 </strong>ga3, 2.5, .5 </p>
+                <p>a4 <strong>reverb2 </strong>ga4, 2.5, .5 </p>
+                <p><strong>outq </strong>a1, a2, a3, a4 </p>
+                <p>ga1 = 0 </p>
+                <p>ga2 = 0 </p>
+                <p>ga3 = 0 </p>
+                <p>ga4 = 0 </p>
+                <p>En el ejemplo de arriba, la se&ntilde;al <em>asig </em>es desplazada seg&uacute;n los datos de la funci&oacute;n 1 indexada por </p>
+                <p><em>ktime </em>. <strong>space </strong>env&iacute;a la cantidad apropiada de se&ntilde;al a <strong>spsend </strong>directamente. Las salidas de <strong> spsend </strong>se suman a los acumuladores globales de Csound y las se&ntilde;ales globales se usan como entrada a las unidades de reverberaci&oacute;n en un instrumento separado. </p>
+                <p><strong>space </strong>puede ser &uacute;til para la panoramizaci&oacute;n est&eacute;reo o cuadraf&oacute;nica, as&iacute; como para fijar sonidos en cualquier lugar entre los altavoces. Abajo hay un ejemplo de la localizaci&oacute;n fija de sonidos en un campo est&eacute;reo, usando los valores xy de la partitura en lugar de una tabla de funci&oacute;n. </p>
+                <p><strong> instr </strong>1 </p>
+                <p>... </p>
+                <p>a1, a2, a3, a4 <strong> space </strong>asig, 0, 0, .1, p4, p5 </p>
+                <p>ar1, ar2, ar3, ar4 <strong> spsend </strong></p>
+                <p>ga1 = ga1+ar1 </p>
+                <p>ga2 = ga2+ar2 </p>
+                <p><strong> outs </strong>a1, a2 </p>
+                <p><strong> endin </strong></p>
+                <p><strong> instr </strong>99 ; reverb.... </p>
+                <p>.... </p>
+                <p><strong>endin </strong></p>
+                <!-- InstanceEndEditable --><BR>
+&nbsp;  <BR>
+                <P class=pie align=center>&nbsp;                </P>
+                <P class=pie align=center><BR>
+&copy; 2004 Ingenier&iacute;a de Ondas </P>              </TR>
+          </TBODY>
+        </TABLE>
+    </TR>
+  </TBODY>
+</TABLE>
+
+</body>
+<!-- InstanceEnd --></html>

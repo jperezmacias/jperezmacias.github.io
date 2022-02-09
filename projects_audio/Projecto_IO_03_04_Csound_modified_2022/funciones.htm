@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="Templates/Plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<LINK rel=stylesheet href="style.css" type="text/css" title="Radioclub">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+<!--
+.style2 {color: #006699}
+-->
+</style>
+<!-- InstanceEndEditable -->
+<style type="text/css">
+<!--
+.style1 {
+	color: #000000;
+	font-weight: bold;
+}
+-->
+</style>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<BASEFONT face=tahoma,verdana,helvetica,arial>
+<TABLE cellSpacing=0 cellPadding=0 width=640 align=center bgColor=#ffffff>
+  <TBODY>
+    <TR>
+      <TD class=wide>
+        <TABLE cellSpacing=0 cellPadding=0 width=760 bgColor=#ffffff border=0>
+          <TBODY>
+            <TR>
+              <TD class=dow><img 
+            src="Imagenes/logo1.jpg" alt=RadioClub border=0 
+           align="middle">
+              <TD class=dow><img 
+            src="Imagenes/logo2.jpg" alt=RadioClub width="400" height="60" border=0 
+            align=left> 
+            </TR>
+          </TBODY>
+        </TABLE>
+    <TR>
+      <TD class=wide>
+        <TABLE cellSpacing=0 cellPadding=0 width=760 border=0><!--DWLayoutTable-->
+          <TBODY>
+            <TR>
+              <TD vAlign=top align=left width=130>
+                <TABLE cellSpacing=0 cellPadding=0 width=130>
+                  <TBODY>
+				  <TR>
+                      <TD height="63" bgColor=#FFFFFF class=diz>
+                        <P class=lin>&nbsp;</P>
+                    <TR>
+                    <TR>
+                      <TD class=diz bgColor=#FF0000>
+                        <P class=lin><span class="style1">Apartados </span></P>
+                    <TR>
+                      <TD class=diz bgColor=#FFCCCC>                        <P class=lst><a href="index.htm">0. Inicio</a> <br>
+                        <A 
+                  href="Introduccion.htm?enlace=secciones/contenido_index.php">1. Introducci&oacute;n</A><BR>
+                          <a href="csound.htm">2. Csound</a></p>
+                        <P class=lst> <a href="funciones.htm">2.1 Funciones</a></p>
+                        <P class=lst><a href="ejemplo0.htm">2.2. Ejemplos</a><BR>
+                          <a href="eco.htm">3. Ecos y Rev.</a><br>
+                          <a href="sonido3d.htm">4. Sonido 3D</a><br>
+                          <a href="Ejemplos.htm">5.Ejemplos Csound</a><br> 
+                          <a href="Bibliografia.htm">6.Bibliograf&iacute;a</a></p>
+                        <P class=lst>&nbsp;</p>
+                    <TR>
+                      <TD class=diz bgColor=#FF0000>
+                        <P class=lin><B><FONT color=#d80000>:</FONT>Contacta!!!!!</B></P>
+                    <TR>
+                      <TD class=diz bgColor=#FFCCCC>
+                        <P class=lst> <a href="mailto:jpermar@ribera.tel.uva.es">jpermar@ribera.tel.uva.es </a> </P>
+                        <P class=lst> <a href="mailto:acuedie@ribera.tel.uva.es">acuedie@ribera.tel.uva.es </a> <A href="http://www.augcyl.org/" target=_blank></A><br>
+                        </P>
+                    <TR>
+                      <TD class=diz bgColor=#ffffff>
+                        <P class=lst><BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                        </P>
+                    </TR>
+                  </TBODY>
+                </TABLE>
+              <TD align=left valign="top" bgColor=#ffffff>
+                <h2 align="left"><!-- InstanceBeginEditable name="EditRegion3" --><span class="style2"><strong>2.1. FUNCIONES ELEMENTALES DEL CSOUND </strong></span><!-- InstanceEndEditable --> </h2>
+                <!-- InstanceBeginEditable name="EditRegion4" -->
+                <blockquote>
+                  <blockquote>
+                    <p align="center">&nbsp;</p>
+                    <p align="justify" class="style2"><strong>ALGUNAS SENTENCIAS QUE CONSIDERAMOS PRINCIPALES PARA EL ARCHIVO DE PARTITURA. </strong></p>
+                    <p align="justify" class="style2"><strong>SENTENCIA f </strong></p>
+                    <p align="justify">Esta sentencia hace que una subrutina GEN almacene valores en una tabla de funci&oacute;n, para usarla con los instrumentos de la orquesta. </p>
+                    <p align="justify"><strong>f </strong><em> p1&nbsp;&nbsp;&nbsp; p2&nbsp;&nbsp;&nbsp; p3&nbsp;&nbsp;&nbsp; p4... </em></p>
+                    <p align="justify"><em><strong>p1 </strong></em> :&nbsp; n&uacute;mero de la tabla con el que ser&aacute; conocida la funci&oacute;n almacenada, un n&uacute;mero negativo indica que la tabla debe ser destruida. </p>
+                    <p align="justify"><em><strong>p2 </strong></em> :&nbsp; instante de comienzo de la generaci&oacute;n (o destrucci&oacute;n) de la funci&oacute;n en pulsos. </p>
+                    <p align="justify"><em><strong>p3 </strong></em> :&nbsp; Tama&ntilde;o de la tabla de funci&oacute;n (n&uacute;mero de puntos). Debe ser una potencia de 2 o una potencia de 2 m&aacute;s 1 (el tama&ntilde;o m&aacute;ximo de la tabla es de 16777216, 2**24, puntos). </p>
+                    <p align="justify"><em><strong>p4 </strong></em> :&nbsp; n&uacute;mero de la rutina GEN a llamar. </p>
+                    <p align="justify">Los dem&aacute;s par&aacute;metros vendr&aacute;n determinados por la rutina GEN en particular. </p>
+                    <p align="justify">Una sentencia <strong>f0 </strong> ( <em>p1 </em> = 0, <em>p2 </em> = valor positivo) puede ser usada para crear una indicaci&oacute;n de comienzo sin ninguna acci&oacute;n real asociada. </p>
+                    <p align="justify" class="style2"><strong>SENTENCIA i </strong></p>
+                    <p align="justify">Esta sentencia llama a un instrumento para hacerlo activo en un instante espec&iacute;fico y durante un tiempo determinado. Los valores de los campos p se pasan a ese instrumento antes de su inicializaci&oacute;n, y permanecen v&aacute;lidos durante toda su ejecuci&oacute;n. </p>
+                    <p align="justify"><strong>i </strong><em> p1&nbsp;&nbsp;&nbsp; p2&nbsp;&nbsp;&nbsp; p3&nbsp;&nbsp;&nbsp; p4... </em></p>
+                    <p align="justify"><em><strong>p1 </strong></em> :&nbsp; n&uacute;mero del instrumento (de 1 a 200), normalmente un entero no negativo. Una parte fraccionaria puede proporcionar un indicador adicional para especificar ligaduras entre notas determinadas. Un valor negativo (incluido el indicador) puede usarse para desactivar una nota tenida determinada. </p>
+                    <p align="justify"><em><strong>p2 </strong></em>:&nbsp; instante de comienzo en unidades arbitrarias llamadas pulsos. </p>
+                    <p align="justify"><em><strong>p3 </strong></em> :&nbsp; duraci&oacute;n en pulsos (normalmente positiva). Valor negativo iniciar&aacute; una nota tenida. Valor 0 invocar&aacute; una pasada de inicializaci&oacute;n sin ejecuci&oacute;n. </p>
+                    <p align="justify">Los dem&aacute;s par&aacute;metros vendr&aacute;n determinados por la rutina GEN en particular. </p>
+                    <p align="justify">Los pulsos son evaluados como segundos, a menos que haya una sentencia <strong>t </strong> en esa secci&oacute;n de la partitura o un indicador t en la l&iacute;nea de comando de Csound que cambie el criterio. </p>
+                    <p align="justify">El instante de comienzo es relativo al principio de una secci&oacute;n (ver sentencia <strong>s </strong>) a la que se asigna un tiempo 0. </p>
+                    <p align="justify" class="style2"><strong>SENTENCIA t </strong></p>
+                    <p align="justify">Esta sentencia llama a un instrumento para hacerlo activo en un instante espec&iacute;fico y durante un tiempo determinado. Los valores de los campos p se pasan a ese instrumento antes de su inicializaci&oacute;n, y permanecen v&aacute;lidos durante toda su ejecuci&oacute;n. </p>
+                    <p align="justify"><strong>t </strong><em> p1&nbsp;&nbsp;&nbsp; p2&nbsp;&nbsp;&nbsp; p3&nbsp;&nbsp;&nbsp; p4... (ilimitado) </em></p>
+                    <p align="justify"><em><strong>p1 </strong></em> :&nbsp; debe ser 0. </p>
+                    <p align="justify"><em><strong>p2 </strong></em>:&nbsp; tiempo inicial en pulsos por minuto. </p>
+                    <p align="justify"><em><strong>p3, p5, p7, ... </strong></em> :&nbsp; instante en los que se produce el cambio de tiempo, en pulsos y en orden creciente. </p>
+                    <p align="justify"><em><strong>p4, p5, p8, ... </strong></em> :&nbsp; tiempos aplicados en los instantes anteriores. </p>
+                    <p align="justify">Una sentencia t se aplica s&oacute;lo en la secci&oacute;n en la que aparece. S&oacute;lo una sentencia <strong>t </strong> es significativa en una secci&oacute;n. Puede ser colocada en cualquier lugar dentro de esa secci&oacute;n. Si no contiene ninguna sentencia <strong>t </strong>, la secci&oacute;n interpretar&aacute; los pulsos como segundos, seria equivalente a tener: <strong>t <em>0 60 </em></strong>. </p>
+                    <p align="justify" class="style2"><strong>SENTENCIA s </strong></p>
+                    <p align="justify">Esta sentencia llama a un instrumento para hacerlo activo en un instante espec&iacute;fico y durante un tiempo determinado. Los valores de los campos p se pasan a ese instrumento antes de su inicializaci&oacute;n, y permanecen v&aacute;lidos durante toda su ejecuci&oacute;n. </p>
+                    <p align="justify"><strong>s </strong><em> cualquier cosa </em></p>
+                    <p align="justify"><em><strong>Campos p </strong></em> :&nbsp; son todos ingnorados. </p>
+                    <p align="justify">Una secci&oacute;n se considera completa cuando todos los instantes de activaci&oacute;n ( <em>p2s </em>) y duraciones finitas ( <em>p3s </em>) han sido ejecutadas (es decir, el fin de la longitud de una secci&oacute;n viene determinado por la &uacute;ltima acci&oacute;n o desactivaci&oacute;n que se produzca). Una sentencia puede ser prolongada por le uso de una sentencia <strong>f0 </strong>. </p>
+                    <p align="justify" class="style2"><strong>ALGUNAS SENTENCIAS QUE CONSIDERAMOS PRINCIPALES PARA EL ARCHIVO DE ORQUESTA. </strong></p>
+                    <p align="justify" class="style2"><strong>SINTAXIS DE ORQUESTA. </strong></p>
+                    <p align="justify"><strong>instr, endin </strong></p>
+                    <p align="justify">Estas sentencias delimitan el cuerpo de un instrumento. Siempre deben aparecer en parejas. </p>
+                    <p align="justify"><strong>instr </strong><em>i,&nbsp;&nbsp;&nbsp; j, ... </em></p>
+                    <p align="justify">&nbsp;&nbsp;&nbsp; &lt; <em>Cuerpo del instrumento </em>&gt; </p>
+                    <p align="justify"><strong>endin </strong></p>
+                    <p align="justify"><strong><em>instr </em></strong> :&nbsp; empieza el bloque de definici&oacute;n de los instrumentos i, j,... </p>
+                    <p align="justify"><em><strong>i, j, ... </strong></em> :&nbsp; deben ser n&uacute;meros enteros, nunca expresiones, es conveniente evitar n&uacute;meros muy altos. </p>
+                    <p align="justify"><em><strong>endin </strong></em>:&nbsp; termina el bloque de instrumento actual. </p>
+                    <p align="justify">Estas sentencias delimitan el cuerpo de un instrumento. Siempre deben aparecer en parejas. </p>
+                    <p align="justify">Puede haber cualquier n&uacute;mero de bloques de instrumento en una orquesta. </p>
+                    <p align="justify"><strong>follow </strong></p>
+                    <p align="justify">Este opcode es un "extractor" del envolvente de una se&ntilde;al de audio. </p>
+                    <p align="justify"><em>ar </em><strong>follow </strong><em>asig </em>,&nbsp;&nbsp;&nbsp; <em>idt </em></p>
+                    <p align="justify"><strong><em>asig </em></strong> :&nbsp; se&ntilde;al de la cual se extrae el envolvente. </p>
+                    <p align="justify"><strong><em>idt </em></strong> :&nbsp; periodo, en segundos, en el que se proporciona la amplitud media de la se&ntilde;al <em>asig </em>. Si la frecuencia de asig es baja, <em>idt </em>debe ser entonces un valor grande (m&aacute;s de la mitad del valor periodo de <em>asig </em>). </p>
+                    <p align="justify">Para evitar los ruiditos producidos por las discontinuidades del rastreo de envolventes complejos, se puede usar un Filtro Paso-Bajo que suavice el envolvente calculado. </p>
+                    <p align="justify" class="style2"><strong>OPERACIONES MATEM&Aacute;TICAS. </strong></p>
+                    <p align="justify" class="style2"><strong>Operaciones Aritm&eacute;ticas y L&oacute;gicas. </strong></p>
+                    <p align="justify">Los operadores aritm&eacute;ticos llevan a cabo operaciones de cambio de signo (negaci&oacute;n), preservaci&oacute;n de signo, "Y" y "O" l&oacute;gicos, suma, resta, multiplicaci&oacute;n y divisi&oacute;n. </p>
+                    <p align="justify"><strong>- </strong><em>a </em><em>;(sin restricci&oacute;n de frecuencia) </em></p>
+                    <p align="justify"><strong>&nbsp;+ </strong><em>a </em><em>;(sin restricci&oacute;n de frecuencia) </em></p>
+                    <p align="justify"><em>a </em><strong>&amp;&amp; </strong><em>b </em><em> ;(Y l&oacute;gico; no v&aacute;lido a frecuencia de audio) </em></p>
+                    <p align="justify"><em>a </em><strong>&nbsp;| | </strong><em>b </em><em>;(O l&oacute;gico; no v&aacute;lido a frecuencia de audio) </em></p>
+                    <p align="justify"><em>a </em><strong>+ </strong><em>b </em><em>&nbsp;;(sin restricci&oacute;n de frecuencia) </em></p>
+                    <p align="justify"><em>a </em><strong>- </strong><em>b </em><em>;(sin restricci&oacute;n de frecuencia) </em></p>
+                    <p align="justify"><em>a </em><strong>* </strong><em>b </em><em>;(sin restricci&oacute;n de frecuencia) </em></p>
+                    <p align="justify"><em>a </em><strong>&nbsp;/ </strong><em>b </em><em>;(sin restricci&oacute;n de frecuencia) </em></p>
+                    <p align="justify"><em>a </em><strong>^ </strong><em>b </em><em>;(b no puede ser de tipo audio) </em></p>
+                    <p align="justify">a&nbsp;&nbsp;&nbsp; <strong>&nbsp;%&nbsp; </strong><em>b </em><em>;(sin restricci&oacute;n de frecuencia) </em></p>
+                    <p align="justify"><strong><em></em></strong><em><strong>^ </strong></em>: <em></em>calcula <em>a </em> elevado a <em>b </em>, pero <em>b </em> no puede ser una se&ntilde;al de audio. </p>
+                    <p align="justify"><em><strong>% </strong></em>: <em></em>devuelve el valor absoluto de <em>b </em>, es lo mismo que el m&oacute;dulo de los n&uacute;meros enteros. </p>
+                    <p align="justify">Observa que un valor o una expresi&oacute;n puede estar en medio de dos de tales operadores, los cuales lo tomar&aacute;n como su argumento a la izquierda o a la derecha. </p>
+                    <p align="justify" class="style2"><strong>Funciones Matem&aacute;ticas. </strong></p>
+                    <p align="justify">Los funciones matem&aacute;ticas, donde los argumentos entre par&eacute;ntesis pueden ser expresiones. </p>
+                    <p align="justify"><strong>int </strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (x) </em><em>;( </em><em>solamente argumentos i- o k- </em><em>) </em>: <em></em>devuelve la parte entera de <em>x </em>. </p>
+                    <p align="justify"><strong>frac </strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (x) </em><em>;( </em><em>solamente argumentos i- o k- </em><em>) </em>: <em></em>devuelve la parte fraccionaria de <em>x </em>. </p>
+                    <p align="justify"><strong>i </strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (x) </em><em>;(solamente argumentos k-) </em>: <em></em>devuelve el equivalente en tipo <em>i- </em> de un valor <em>x </em>de tipo <em> k- </em>. </p>
+                    <p align="justify"><strong>abs </strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (x) </em><em>;(sin restricci&oacute;n de tipo) </em>: <em></em>devuelve el valor absoluto de <em>x </em>. </p>
+                    <p align="justify"><strong>exp </strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (x) </em><em>;(sin restricci&oacute;n de tipo) </em>: <em></em>devuelve el valor de <em>e </em> elevado a <em>x </em>. </p>
+                    <p align="justify"><strong>log </strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (x) </em><em>;(sin restricci&oacute;n de tipo) </em>: <em></em>devuelve el logaritmo natural de <em>x </em>(para x&gt;0). </p>
+                    <p align="justify"><strong>log10&nbsp;&nbsp;&nbsp; </strong><em>(x) </em><em>;(sin restricci&oacute;n de tipo) </em>: <em></em>devuelve el logaritmo en base 10 de <em>x </em>(para x positivo) . </p>
+                    <p align="justify"><strong>sqrt </strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (x) </em><em>;(sin restricci&oacute;n de tipo) </em>: <em></em>devuelve la ra&iacute;z cuadrada de <em>x </em>(para x&gt;0) . </p>
+                    <p align="justify">Los convertidores de valor realizan traducciones aritm&eacute;ticas de unidades de una clase a unidades de otra. El resultado puede ser a su vez un t&eacute;rmino de una expresi&oacute;n. </p>
+                    <p align="justify" class="style2"><strong>Funciones Trigonom&eacute;tricas. </strong></p>
+                    <p align="justify">Los funciones trigonom&eacute;tricas. </p>
+                    <p align="justify"><strong>sin </strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (x) </em><em>;( </em><em>sin restricci&oacute;n de tipo </em><em>) </em>: <em></em>devuelve el seno de <em>x </em> ( <em>x </em> en radianes). </p>
+                    <p align="justify"><strong>cos </strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (x) </em><em>;( </em><em>sin restricci&oacute;n de tipo </em><em>) </em>: <em></em>devuelve el coseno de <em>x </em> ( <em>x </em>en radianes). </p>
+                    <p align="justify"><strong>tan </strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (x) </em><em>&nbsp;;( </em><em>sin restricci&oacute;n de tipo </em><em>) </em>: <em></em>devuelve la tangente de <em> x </em>. </p>
+                    <p align="justify"><strong>sininv </strong><em>&nbsp;&nbsp;&nbsp;&nbsp; (x) </em><em> ;(sin restricci&oacute;n de tipo) </em>: <em></em>devuelve el arcoseno de <em>x </em>. </p>
+                    <p align="justify"><strong>cosinv </strong><em>&nbsp;&nbsp;&nbsp; (x) </em><em> ;(sin restricci&oacute;n de tipo) </em>: <em></em>devuelve el arcocoseno de <em>x </em>. </p>
+                    <p align="justify"><strong>taninv </strong><em>&nbsp;&nbsp;&nbsp; (x) </em><em> ;(sin restricci&oacute;n de tipo) </em>: <em></em>devuelve la arcotangente de <em>x </em>. </p>
+                    <p align="justify"><strong>sinh&nbsp;&nbsp;&nbsp; </strong><em>&nbsp;&nbsp; (x) </em><em>;(sin restricci&oacute;n de tipo) </em>: <em></em>devuelve el seno hiperb&oacute;lico de <em>x </em>. </p>
+                    <p align="justify"><strong>cosh </strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (x) </em><em>;(sin restricci&oacute;n de tipo) </em>: <em></em>devuelve el coseno hiperb&oacute;lico de <em>x </em>. </p>
+                    <p align="justify"><strong>tanh </strong><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (x) </em><em>;(sin restricci&oacute;n de tipo) </em>: <em></em>devuelve la tangente hiperb&oacute;lica de <em>x </em>. </p>
+                    <p align="justify">El resultado puede ser a su vez un t&eacute;rmino de una expresi&oacute;n. </p>
+                    <p align="justify" class="style2"><strong>OSCILADORES. </strong></p>
+                    <p align="justify" class="style2"><strong>Osciladores B&aacute;sicos. </strong></p>
+                    <p align="justify">Reproducen se&ntilde;ales peri&oacute;dicas de control ( <em>k- </em>) o de audio ( <em>a- </em>). </p>
+                    <p align="justify"><em>kr </em><strong>oscil </strong><em>&nbsp;&nbsp;&nbsp; kamp </em>,&nbsp;&nbsp;&nbsp; <em>kcps,&nbsp;&nbsp;&nbsp; ifn[, iphs] </em></p>
+                    <p align="justify"><em>kr </em><strong>oscili </strong><em>&nbsp;&nbsp; kamp </em>,&nbsp;&nbsp;&nbsp; <em>kcps,&nbsp;&nbsp;&nbsp; ifn[, iphs] </em></p>
+                    <p align="justify"><em>kr </em><strong>oscil3 </strong><em>&nbsp; kamp </em>,&nbsp;&nbsp;&nbsp; <em>kcps,&nbsp;&nbsp;&nbsp; ifn[, iphs] </em></p>
+                    <p align="justify"><em>ar </em><strong>oscil </strong><em>&nbsp;&nbsp;&nbsp; kamp </em>,&nbsp;&nbsp;&nbsp; <em>kcps,&nbsp;&nbsp;&nbsp; ifn[, iphs] </em></p>
+                    <p align="justify"><em>ar </em><strong>oscili </strong><em>&nbsp;&nbsp; kamp </em>,&nbsp;&nbsp;&nbsp; <em>kcps,&nbsp;&nbsp;&nbsp; ifn[, iphs] </em></p>
+                    <p align="justify"><em>ar </em><strong>oscil3 </strong><em>&nbsp; kamp </em>,&nbsp;&nbsp;&nbsp; <em> kcps,&nbsp;&nbsp;&nbsp; ifn[, iphs] </em></p>
+                    <p align="justify"><em>kr </em><strong>poscil </strong><em>&nbsp; kamp </em>,&nbsp;&nbsp;&nbsp; <em>kcps,&nbsp;&nbsp;&nbsp; ifn[, iphs] </em></p>
+                    <p align="justify"><em>kr </em><strong>poscil3 </strong><em>kamp </em>,&nbsp;&nbsp;&nbsp; <em>kcps,&nbsp;&nbsp;&nbsp; ifn[, iphs] </em></p>
+                    <p align="justify"><em>ar </em><strong>poscil </strong><em>kamp </em>,&nbsp;&nbsp;&nbsp; <em>kcps,&nbsp;&nbsp;&nbsp; ifn[, iphs] </em></p>
+                    <p align="justify"><em>ar </em><strong>poscil3 </strong><em> kamp </em>,&nbsp;&nbsp;&nbsp; <em>kcps,&nbsp;&nbsp;&nbsp; ifn[, iphs] </em></p>
+                    <p align="justify"><em><strong>ar </strong></em> :&nbsp; se&ntilde;al de salida. </p>
+                    <p align="justify"><em><strong>kamp </strong></em> :&nbsp; amplitud. </p>
+                    <p align="justify"><strong><em>kcps </em></strong> :&nbsp; frecuencia. </p>
+                    <p align="justify"><strong><em>ifn </em></strong>:&nbsp; n&uacute;mero de la tabla de funci&oacute;n. </p>
+                    <p align="justify"><strong><em>iphs </em></strong>:&nbsp; es opcional, es la fase inicial (expresada en muestras). </p>
+                    <p align="justify">La tabla <em> ifn </em> es muestreada incremental y c&iacute;clicamente en toda su longitud y los valores obtenidos son multiplicados por el factor <em>amp </em>. Los osciladores de alta precisi&oacute;n <strong>poscil3 </strong> ya que usan una interpolaci&oacute;n c&uacute;bica. </p>
+                    <p align="justify" class="style2"><strong>Osciladores de Espectro Din&aacute;mico. </strong></p>
+                    <p align="justify">Reproducen se&ntilde;ales peri&oacute;dicas de control ( <em>k- </em>) o de audio ( <em>a- </em>). </p>
+                    <p align="justify"><em>ar </em><strong>buzz </strong><em>&nbsp;&nbsp;&nbsp; xamp </em>,&nbsp;&nbsp;&nbsp; <em>x </em><em>cps,&nbsp;&nbsp;&nbsp; knh,&nbsp;&nbsp;&nbsp; ifn[, iphs] </em></p>
+                    <p align="justify"><em>ar </em><strong>gbuz </strong><strong>z </strong><em>&nbsp;&nbsp; x </em><em>amp </em>,&nbsp;&nbsp;&nbsp; <em>x </em><em>cps,&nbsp;&nbsp;&nbsp; knh,&nbsp;&nbsp;&nbsp; klh,&nbsp;&nbsp;&nbsp; kr,&nbsp;&nbsp;&nbsp; ifn[, iphs] </em></p>
+                    <p align="justify"><strong><em>knh </em></strong>:&nbsp; n&uacute;mero total de arm&oacute;nicos requeridos. </p>
+                    <p align="justify"><strong><em>klh </em></strong>:&nbsp; arm&oacute;nico m&aacute;s bajo presente. Puede ser positivo, 0 o negativo. </p>
+                    <p align="justify"><strong><em>kr </em></strong>:&nbsp; especifica el factor m&uacute;ltiplo en la serie de coeficientes de amplitud. </p>
+                    <p align="justify"><strong><em>ifn </em></strong>:&nbsp; n&uacute;mero de la tabla de funci&oacute;n que contiene una onda sinusoidal (para <strong>buzz </strong>) o una onda cosinusoidal (para <strong>gbuzz </strong>). </p>
+                    <p align="justify"><strong><em>iphs </em></strong>:&nbsp; es opcional, es la fase inicial de la frecuencia fundamental, expresada como fracci&oacute;n de un ciclo (de 0 a 1). Un valor negativo omitir&aacute; la inicializaci&oacute;n. El valor por defecto es 0. </p>
+                    <p align="justify">La salida es una serie de parciales coseno arm&oacute;nicamente relacionados. Los osciladores <strong>buzz </strong> y <strong>gbuzz </strong> son &uacute;tiles para obtener sonidos complejo que pueden usarse como fuente en s&iacute;ntesis substractiva. </p>
+                    <p align="justify" class="style2"><strong>GENERADORES DE SE&Ntilde;AL. </strong></p>
+                    <p align="justify" class="style2"><strong>S&iacute;ntesis FM. </strong></p>
+                    <p align="justify">Osciladores de frecuencia modulada b&aacute;sicos. </p>
+                    <p align="justify"><em>ar </em><strong>foscil </strong><em>&nbsp;&nbsp;&nbsp; xamp </em>,&nbsp;&nbsp;&nbsp; <em>x </em><em>cps,&nbsp;&nbsp;&nbsp; xcar,&nbsp;&nbsp;&nbsp; xmod,&nbsp;&nbsp;&nbsp; kndx,&nbsp;&nbsp;&nbsp; ifn[, iphs] </em></p>
+                    <p align="justify"><em>ar </em><strong>foscili </strong><strong></strong><em>&nbsp;&nbsp; x </em><em>amp </em>,&nbsp;&nbsp;&nbsp; <em>x </em><em>cps, </em><em>&nbsp;&nbsp;&nbsp; xcar,&nbsp;&nbsp;&nbsp; xmod,&nbsp;&nbsp;&nbsp; kndx, </em><em>&nbsp;&nbsp;&nbsp; ifn[, iphs] </em></p>
+                    <p align="justify"><strong><em>ifn </em></strong>:&nbsp; n&uacute;mero de la tabla de funci&oacute;n. Requiere el elemento l&iacute;mite a&ntilde;adido. </p>
+                    <p align="justify"><strong><em>iphs </em></strong>:&nbsp; es opcional, es la fase inicial del muestreo expresada como fracci&oacute;n de un ciclo (de 0 a 1). Un valor negativo omitir&aacute; la inicializaci&oacute;n. El valor por defecto es 0. </p>
+                    <p align="justify"><strong>foscil </strong> es una unidad compuesta que implementa eficientemente dos osciladores seg&uacute;n la conocida configuraci&oacute;n FM de Chowning, en la que la salida de audio de un generador se usa para que la de la onda moduladora es <em>kcps*xmod </em>. </p>
+                    <p align="justify" class="style2"><strong>Reproducci&oacute;n de Muestras. </strong></p>
+                    <p align="justify">Lee el sonido sampleado (mono o est&eacute;reo) almacenado en una tabla, con bucles opcionales en el sostenimiento y en la caida. </p>
+                    <p align="justify"><em>ar </em><strong>loscil </strong><em>&nbsp;&nbsp;&nbsp; xamp </em>,&nbsp;&nbsp;&nbsp; <em>k </em><em>cps,&nbsp;&nbsp;&nbsp; ifn[,&nbsp;&nbsp;&nbsp; ibas[,&nbsp;&nbsp;&nbsp; imod1,&nbsp;&nbsp;&nbsp; ibeg1,&nbsp;&nbsp;&nbsp; iend1&nbsp; \\ </em></p>
+                    <p align="justify"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,&nbsp;&nbsp;&nbsp; imod2,&nbsp;&nbsp;&nbsp; ibeg2,&nbsp;&nbsp;&nbsp; iend2 </em><em>]]] </em></p>
+                    <p align="justify"><em>ar </em><strong>loscil3 </strong><strong></strong><em>&nbsp;&nbsp; xamp </em>,&nbsp;&nbsp;&nbsp; <em>k </em><em>cps,&nbsp;&nbsp;&nbsp; ifn[,&nbsp;&nbsp;&nbsp; ibas[,&nbsp;&nbsp;&nbsp; imod1,&nbsp;&nbsp;&nbsp; ibeg1,&nbsp;&nbsp;&nbsp; iend1&nbsp; \\ </em></p>
+                    <p align="justify"><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [,&nbsp;&nbsp;&nbsp; imod2,&nbsp;&nbsp;&nbsp; ibeg2,&nbsp;&nbsp;&nbsp; iend2 </em><em>]]] </em></p>
+                    <p align="justify"><strong><em>ifn </em></strong>:&nbsp; n&uacute;mero de la tabla de funci&oacute;n, normalmente indicando un segmento del sonido sampleado en formato AIFF, con los puntos de bucle configurados. El fichero fuente puede ser mono o est&eacute;reo. </p>
+                    <p align="justify"><strong><em>ibas </em></strong>:&nbsp; es opcional, en Hz, del sonido grabado. Opcionalmente, este valor puede reemplazar a la frecuencia proporcionada por el fichero AIFF, pero es necesario siempre que el fichero fuente no especifique una. El valor por defecto es 0 (sin reemplazar). </p>
+                    <p align="justify"><strong><em>imod1, imod2 </em></strong><strong><em></em></strong>:&nbsp; es opcional, ejecuta de modos distintos los bucles de sostenimiento y ca&iacute;da. Un valor 1 indica un bucle normal; 2 indica un bucle de ida y vuelta (hacia delante y hacia atr&aacute;s); 0 indica que no se produzca bucle alguno. El valor por defecto (-1) indica que se tomar&aacute;n del fichero fuente los puntos de bucle&nbsp; y su modo de ejecuci&oacute;n. </p>
+                    <p align="justify"><strong><em>ibeg1, iend1, ibeg2, iend2 </em></strong>:&nbsp; es opcional y dependiente de <strong>mod1 </strong>, <strong>mod2 </strong>; puntos de comienzo&nbsp; y final de los bucles de sostenimiento y ca&iacute;da. Se miden en <em>sample frame </em> desde el principio del fichero, as&iacute; que ser&aacute;n los mismos sin importar que el segmento de sonido sea mono o est&eacute;reo. </p>
+                    <p align="justify" class="style2"><strong>ALGUNAS MANUALES DE REFERENCIA&nbsp; DE SCOUND. </strong></p>
+                    <p align="justify" class="style2"><strong> </strong></p>
+                    <ul>
+                      <li>
+                        <p align="justify">P&aacute;gina donde se podr&aacute; encontrar un ejecutable para programar en Csound, es el Csound_editor: <a href="http://web.tiscali.it/_flat/">http://web.tiscali.it/_flat/ </a></p>
+                      </li>
+                      <li>
+                        <p align="left">El manual de Rasmus Ekman : <strong></strong><a href="http://hem.passagen.se/rasmuse/Csound.htm"> http://hem.passagen.se/rasmuse/Csound.htm </a></p>
+                      </li>
+                      <li>
+                        <p align="left">Manual de referencia: <a href="http://www.sfu.ca/sca/Manuals/Csound/CsoundIndex.html#Hamel">http://www.sfu.ca/sca/Manuals/Csound/CsoundIndex.html#Hamel </a></p>
+                      </li>
+                      <li>
+                        <p align="justify"> P&aacute;ginas referentes a Csound: <a href="http://www.lakewoodsound.com/csound/">www.lakewoodsound.com/csound/ </a></p>
+                      </li>
+                      <li>
+                        <p align="justify"> P&aacute;ginas referentes a Csound: <a href="http://www.csounds.com/">www.csounds.com/ </a></p>
+                      </li>
+                      <li>
+                        <p align="justify"> P&aacute;ginas referentes a Csound: <a href="http://www.firstpr.com.au/csound/">http://www.firstpr.com.au/csound/ </a></p>
+                      </li>
+                    </ul>
+                    <p>&nbsp;</p>
+                  </blockquote>
+                </blockquote>
+                <!-- InstanceEndEditable --><BR>
+&nbsp;  <BR>
+                <P class=pie align=center>&nbsp;                </P>
+                <P class=pie align=center><BR>
+&copy; 2004 Ingenier&iacute;a de Ondas </P>              </TR>
+          </TBODY>
+        </TABLE>
+    </TR>
+  </TBODY>
+</TABLE>
+
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/Plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<LINK rel=stylesheet href="style.css" type="text/css" title="Ingenieria de Ondas">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+<!--
+.style2 {color: #006699}
+-->
+</style>
+<style type="text/css">
+<!--
+.style3 {font-size: large}
+-->
+</style>
+<!-- InstanceEndEditable -->
+<style type="text/css">
+<!--
+.style1 {
+	color: #000000;
+	font-weight: bold;
+}
+-->
+</style>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<BASEFONT face=tahoma,verdana,helvetica,arial>
+<TABLE cellSpacing=0 cellPadding=0 width=640 align=center bgColor=#ffffff>
+  <TBODY>
+    <TR>
+      <TD class=wide>
+        <TABLE cellSpacing=0 cellPadding=0 width=760 bgColor=#ffffff border=0>
+          <TBODY>
+            <TR>
+              <TD class=dow><img 
+            src="Imagenes/logo1.jpg" alt=RadioClub border=0 
+           align="middle">
+              <TD class=dow><img 
+            src="Imagenes/logo2.jpg" alt=RadioClub width="400" height="60" border=0 
+            align=left> 
+            </TR>
+          </TBODY>
+        </TABLE>
+    <TR>
+      <TD class=wide>
+        <TABLE cellSpacing=0 cellPadding=0 width=760 border=0><!--DWLayoutTable-->
+          <TBODY>
+            <TR>
+              <TD vAlign=top align=left width=130>
+                <TABLE cellSpacing=0 cellPadding=0 width=130>
+                  <TBODY>
+				  <TR>
+                      <TD height="63" bgColor=#FFFFFF class=diz>
+                        <P class=lin>&nbsp;</P>
+                    <TR>
+                    <TR>
+                      <TD class=diz bgColor=#FF0000>
+                        <P class=lin><span class="style1">Apartados </span></P>
+                    <TR>
+                      <TD class=diz bgColor=#FFCCCC>                        <P class=lst><a href="index.htm">0. Inicio</a> <br>
+                        <A 
+                  href="Introduccion.htm?enlace=secciones/contenido_index.php">1. Introducci&oacute;n</A><BR>
+                          <a href="csound.htm">2. Csound</a></p>
+                        <P class=lst> <a href="funciones.htm">2.1 Funciones</a></p>
+                        <P class=lst><a href="ejemplo0.htm">2.2. Ejemplos</a><BR>
+                          <a href="eco.htm">3. Ecos y Rev.</a><br>
+                          <a href="sonido3d.htm">4. Sonido 3D</a><br>
+                          <a href="Ejemplos.htm">5.Ejemplos Csound</a><br> 
+                          <a href="Bibliografia.htm">6.Bibliograf&iacute;a</a></p>
+                        <P class=lst>&nbsp;</p>
+                    <TR>
+                      <TD class=diz bgColor=#FF0000>
+                        <P class=lin><B><FONT color=#d80000>:</FONT>Contacta!!!!!</B></P>
+                    <TR>
+                      <TD class=diz bgColor=#FFCCCC>
+                        <P class=lst> <a href="mailto:jpermar@ribera.tel.uva.es">jpermar@ribera.tel.uva.es </a> </P>
+                        <P class=lst> <a href="mailto:acuedie@ribera.tel.uva.es">acuedie@ribera.tel.uva.es </a> <A href="http://www.augcyl.org/" target=_blank></A><br>
+                        </P>
+                    <TR>
+                      <TD class=diz bgColor=#ffffff>
+                        <P class=lst><BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                        </P>
+                    </TR>
+                  </TBODY>
+                </TABLE>
+              <TD align=left valign="top" bgColor=#ffffff>
+                <h2 align="left"><!-- InstanceBeginEditable name="EditRegion3" --><span class="style2">5. EJEMPLOS</span><!-- InstanceEndEditable --> </h2>
+                <!-- InstanceBeginEditable name="EditRegion4" -->
+                <p><span class="style2 style3">1. Reverberaciones</span><br>
+                </p>
+                <p>A continuaci&oacute;n pasamos a explicar el comportamiento de uno de los fichero s que se expone como ejemplo. </p>
+                <table>
+                  <tr>
+                    <td width="566" bgcolor="#FFCC00"><p>&nbsp;; Comenzamos con el archivo orquesta de 2312.orc . </p>
+                        <p>&nbsp;; Su cabecera de inicio </p>
+                        <p>sr = 44100 <br>
+        kr = 4410 <br>
+        ksmps = 10 <br>
+        nchnls = 2 </p>
+                        <p>&nbsp;; A continuaci&oacute;n se define las variables globales que se van utilizar a lo largo de todo el programa orquesta . </p>
+                        <p>gifeed = .5 <br>
+        gilp1 = 1/10 <br>
+        gilp2 = 1/23 <br>
+        gilp3 = 1/41 <br>
+        giroll = 3000 <br>
+        gadrysig <a href="http://emu.music.ufl.edu/csman/syntax/assign.htm"> in it </a> nit 0 </p>
+                        <p>&nbsp;; La definici&oacute;n de los instrumento. </p>
+                        <p>instr 2307 </p>
+                        idryamt = 1-p4 <br>
+      iwetamt = p4
+      <p> &nbsp;;Aqu&iacute; llamamos mediante la funci&oacute;n soundin a el archivo "speech1.aif" y la salida es una variable asndfile. </p>
+      asndfile <a href="http://emu.music.ufl.edu/csman/sigio/in.htm">soundin </a> "speech1.aif", 0
+      <p>&nbsp;; Realizamos una serie de transformaciones sobre el archivo audio extra&iacute;do en la sentencia anterior. </p>
+      gadrysig = gadrysig+asndfile*iwetamt
+      <p>; Sacamos el resultado a la salida mediante la funci&oacute;n outs. </p>
+      <a href="http://emu.music.ufl.edu/csman/sigio/out.htm">outs </a> asndfile*idryamt, asndfile*idryamt endin
+      <p>&nbsp;;Tenemos definido un segundo instrumento que realizar&aacute; implementara el fen&oacute;meno de reverberaci&oacute;n. </p>
+      <p>instr 2312 </p>
+      atmp <a href="http://emu.music.ufl.edu/csman/sigmod/comb.htm">alpass </a> gadrysig, 1.7, .1 <br>
+      aleft <a href="http://emu.music.ufl.edu/csman/sigmod/comb.htm">alpass </a> atmp, 1.01, .07 <br>
+      atmp <a href="http://emu.music.ufl.edu/csman/sigmod/comb.htm">alpass </a> gadrysig, 1.5,.2 <br>
+      aright <a href="http://emu.music.ufl.edu/csman/sigmod/comb.htm">alpass </a> atmp, 1.33, .05
+      <p>&nbsp;; raind va proporcionar una salida de n&uacute;meros aleatorios, que&nbsp; representar&aacute; el ruido. </p>
+      <p>kdel1 <a href="http://emu.music.ufl.edu/csman/siggen/rand.htm">randi </a> .01, 1, .666 <br>
+        kdel1 = kdel1+.1 </p>
+      <p>&nbsp;; deltayr va leer la se&ntilde;al, para retardarla unos 0.3segundos </p>
+      addl1 <a href="http://emu.music.ufl.edu/csman/sigmod/delayr.htm">delayr </a> .3
+      <p>; deltapi extrae el sonido, calculando el tiempo de retardo con m&aacute;s exactitud, a continuaci&oacute;n a la se&ntilde;al retardada le a&ntilde;adimos el ruido generado anteriormente. </p>
+      <p>afeed1 <a href="http://emu.music.ufl.edu/csman/sigmod/deltap.htm">deltapi </a> kdel1 <br>
+        afeed1 = afeed1+gifeed*aleft </p>
+      <p>&nbsp;; deltayw siempre emparejado con deltayw,&nbsp; escribe la se&ntilde;al aleft en la l&iacute;nea de retardo establecida anteriormente por deltayr, que en este caso el retardo es de 0.3segundos. </p>
+      <p><a href="http://emu.music.ufl.edu/csman/sigmod/delayr.htm">delayw </a> aleft <br>
+        kdel2 <a href="http://emu.music.ufl.edu/csman/siggen/rand.htm">randi </a>.01,. 95, .777 <br>
+        kdel2 = kdel2+.1 <br>
+        addl2 <a href="http://emu.music.ufl.edu/csman/sigmod/delayr.htm">delayr </a> .3 <br>
+        afeed2 <a href="http://emu.music.ufl.edu/csman/sigmod/deltap.htm">deltapi </a> kdel2 <br>
+        afeed2 = afeed2+gifeed*aright <br>
+        <a href="http://emu.music.ufl.edu/csman/sigmod/delayr.htm">delayw </a> aright </p>
+      <p>; Sacamos el resultado a la salida mediante la funci&oacute;n outs. </p>
+      <a href="http://emu.music.ufl.edu/csman/sigio/out.htm">outs </a> aleft, aright
+      <p>; Para que inicialmente sea cero la variable gloval gadrysig en el caso de ya haber sido ejecutado el instrumento al menos una vez. </p>
+      <p>gadrysig = 0 </p>
+      endin <br>
+      <p><br>
+    </p></td>
+                  </tr>
+                </table>
+                <table width="570">
+                  <!--DWLayoutTable-->
+                  <tr>
+                    <td width="558" height="0"></td>
+                    <td width="10"></td>
+                  </tr>
+                  <tr>
+                    <td height="165" valign="top" bgcolor="#FFCC00"><p align="justify">La sintaxis del archivo 2312.sco, el instrumento 2307 se ejecutara de 0 hasta 8 segundos, mientras que el instrumento 2312 se ejecutar&aacute; desde 0 hasta los 12segundo. </p>
+                        <p align="justify">;INST&nbsp;&nbsp; ST&nbsp;&nbsp; DUR&nbsp;&nbsp; REVERB_AMT <br>
+        i 2307 0 8 .4 <br>
+        <br>
+        ;INST&nbsp;&nbsp; ST&nbsp;&nbsp; DUR <br>
+        i 2312 0 12 </p></td>
+                  </tr>
+                </table>
+                <p class="style2 style3"><strong>2. 3D SOUND </strong></p>
+                <p>Se recomienda leer previamente el apartado de <a href="func_referencia.htm">funciones </a>, como referencia, as&iacute; como los manuales. Hay algunos muy simplificados. </p>
+                <p>Empecemos con un ejemplo sencillo, lo podemos encontrar en la referencia <a href="#_ftn5" name="_ftnref5">[2] </a>. A continuaci&oacute;n pasamos a explicar el comportamiento de este fichero y m&aacute;s adelante haremos unas modificaciones e implementaremos otros efectos. </p>
+                <table>
+                  <tr>
+                    <td width="699" bgcolor="#FFCC33"><p>&nbsp;; Comenzamos con el archivo orquesta. Tal y como hemos explicado en secciones anteriores, la cosa quedar&iacute;a as&iacute;. </p>
+                        <p>sr = 44100 <br>
+        kr = 4410 <br>
+        ksmps = 10 <br>
+        nchnls = 2 <br>
+                        </p>
+                        <p>instr 2501 ; HRTFER ejemplo de archivo orquesta. </p>
+                        <p><br>
+&nbsp; ;Esta asignaci&oacute;n de variables significa se debe a que en el archivo partitura "score" se usan normalmente las variables p1, p2, p3, ...y es en el archivo partitura donde le vamos a dar los valores. </p>
+                        <p>iazstart = p4 <br>
+        iazend = p5 <br>
+        ielstart = p6 <br>
+        ielend = p7 </p>
+                        <p>&nbsp;;Mueve el sounido horizontalmente desde IAZSTART hacia IAZEND <br>
+&nbsp; ;la estructura de las siguientes sentencias es la siguiente: nombre_salida funci&oacute;n par&aacute;mentro1, par&aacute;mentro2,... <br>
+&nbsp; ;Aqu&iacute; se llama k (puesto que es una frecuencia de tipo control) el "az" viene de azimnut y los par&aacute;metros funcionan similarmente. </p>
+                        <p>kaz <a href="http://emu.music.ufl.edu/csman/siggen/line.htm">line </a> iazstart, p3, iazend <br>
+                        </p>
+                        <p>;Mueve el sonido verticalmente desde IELSTART TO IELEND. </p>
+                        <p>kel <a href="http://emu.music.ufl.edu/csman/siggen/line.htm">line </a> ielstart, p3, ielend </p>
+                        <p>&nbsp;;Aqu&iacute; llamamos mediante la funci&oacute;n soundin a el archivo "speech1.aif" y la salida es una variable a_rsr (a_source). </p>
+                        <p>asrc <a href="http://emu.music.ufl.edu/csman/sigio/in.htm">soundin </a> "speech1.aif" </p>
+                        <p>&nbsp;;Aqu&iacute; es cuando utilizamos la funci&oacute;n hrtfer, es aconsejable mirar el manual aclara un poco. </p>
+                        <p>aleft, aright <a href="http://emu.music.ufl.edu/csman/sigio/hrtfer.htm">hrtfer </a> asrc, kaz, kel, "HRTFcompact" </p>
+                        <p>aleftscale = aleft*300 <br>
+        arightscale = aright*300 </p>
+                        <p>&nbsp;;Sacamos el resultado a la salida mediante la funci&oacute;n outs. </p>
+                        <p><a href="http://emu.music.ufl.edu/csman/sigio/out.htm">outs </a> aleftscale, arightscale </p>
+                        <p>endin <br>
+                      </p></td>
+                  </tr>
+                  <tr>
+                    <td width="699" bgcolor="#FFCC33"></td>
+                  </tr>
+                  <tr>
+                    <td width="699" bgcolor="#FFCC33"><p align="justify">La sintaxis del "score" &oacute; del archivo partitura es distinta y m&aacute;s complicada. En primer lugar, te habr&aacute;s dado cuenta que el prop&oacute;sito del score es decir a los instrumentos cuando deben de tocar. La sintaxis del score es&nbsp; ve en el apartado <a href="csound.htm">2 </a> y<a href="funciones.htm">  2.1</a><a href="file:///C:/Documents%20and%20Settings/chemita/Mis%20documentos/Webs/trabajo/funcionesI.htm"> </a>. </p>
+                        <p align="justify">&nbsp;; En el caso de nuestro estudio, el archivo partitura es: </p>
+                        <p align="justify">f 1 0 8192 10 1 <br>
+                            <br>
+        ; INS START DUR AZ START AZ END EL START EL END <br>
+        i 2501 0 7.57 0 360 -45 45 </p></td>
+                  </tr>
+                </table>
+                <p>A continuaci&oacute;n dejamos los archivos estudiados y el resultado archivo de audio. Estos son unos ejemplos del libro de Richar Boulanger."Csound Book". Te recomendamos guardar los archivos e intentar jugar con los par&aacute;metros, pues a partir de aqu&iacute; ya se puede crear todos los archivos que se quieran. </p>
+                <center><p class="MsoNormal" style="text-align: justify">&nbsp;</p>
+                  <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="596" id="AutoNumber1" bgcolor="#66CCFF" height="95">
+                    <tr>
+                      <td width="204" align="center" height="42"><b><font size="4">ARCHIVO ORQUESTA (.org)</font></b></td>
+                      <td width="216" align="center" height="42"><b><font size="4">ARCHIVO PARTITURA (.sco)</font></b></td>
+                      <td width="168" align="center" height="42"><font size="4"><b>RESULTADO</b></font></td>
+                    </tr>
+                    <tr>
+                      <td height="51" width="204">
+                        <p align="center"><span class="MsoNormal"> <a href="ejemplos/Csound/2501.orc">2501.orc</a></span></td>
+                      <td height="51" width="216">
+                        <p align="center"><span class="MsoNormal"> <a href="ejemplos/Csound/2501.sco">2501.sco</a></span></td>
+                      <td height="51" width="168">
+                        <p align="center">
+                        <p align="center">
+                          <!--<embed src="ejemplos/Csound/2501.aif" width="128" height="24" autoplay="false" controller="true" cache="true"></embed>-->
+                         <audio controls>
+                          <source src="ejemplos/Csound/2501.aif" type="audio/aiff">
+                          Your browser does not support the audio element.
+                        </audio>
+                          Si no estás utilizando Safari tienes que escuchar el audio bajándolo y escucharlo con un reproductor compatible con .aiff como VLC (vlc.org)
+                          <a href="ejemplos/Csound/2501.aif">Link a archivo</a>
+                      </td>
+                    </tr>
+                  </table>
+                  <p>&nbsp;</p>
+                  <p align="left"><font size="4">Ponemos ahora un esquema del sonido 2501, tal y como se hace en csound:</font></p>
+                  <center>
+                    <p><img src="Imagenes/2501.jpg" width="453" height="335"> </p>
+                    <p>&nbsp; </p>
+                    <p class="MsoNormal" style="text-align: left"> <i><b> <span class="MsoFootnoteReference"> <span style="font-family: Courier New"><font size="2"> </font></span></span></b></i></p>
+                    <p class="MsoNormal" style="text-align: left"><i><font size="2" face="Courier New"><a title href="#_ftnref5" name="_ftn5">[2]</a> Csound Book. Richard Boulanger.P&aacute;g.502 </font></i></p>
+                  </center>
+                </center>
+                <p>&nbsp;</p>
+                <!-- InstanceEndEditable --><BR>
+&nbsp;  <BR>
+                <P class=pie align=center>&nbsp;                </P>
+                <P class=pie align=center><BR>
+&copy; 2004 Ingenier&iacute;a de Ondas </P>              </TR>
+          </TBODY>
+        </TABLE>
+    </TR>
+  </TBODY>
+</TABLE>
+
+</body>
+<!-- InstanceEnd --></html>

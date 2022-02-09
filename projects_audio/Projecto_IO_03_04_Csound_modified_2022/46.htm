@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/Plantilla.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<LINK rel=stylesheet href="style.css" type="text/css" title="Radioclub">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+<!--
+.style2 {color: #006699}
+-->
+</style>
+<!-- InstanceEndEditable -->
+<style type="text/css">
+<!--
+.style1 {
+	color: #000000;
+	font-weight: bold;
+}
+-->
+</style>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<BASEFONT face=tahoma,verdana,helvetica,arial>
+<TABLE cellSpacing=0 cellPadding=0 width=640 align=center bgColor=#ffffff>
+  <TBODY>
+    <TR>
+      <TD class=wide>
+        <TABLE cellSpacing=0 cellPadding=0 width=760 bgColor=#ffffff border=0>
+          <TBODY>
+            <TR>
+              <TD class=dow><img 
+            src="Imagenes/logo1.jpg" alt=RadioClub border=0 
+           align="middle">
+              <TD class=dow><img 
+            src="Imagenes/logo2.jpg" alt=RadioClub width="400" height="60" border=0 
+            align=left> 
+            </TR>
+          </TBODY>
+        </TABLE>
+    <TR>
+      <TD class=wide>
+        <TABLE cellSpacing=0 cellPadding=0 width=760 border=0><!--DWLayoutTable-->
+          <TBODY>
+            <TR>
+              <TD vAlign=top align=left width=130>
+                <TABLE cellSpacing=0 cellPadding=0 width=130>
+                  <TBODY>
+				  <TR>
+                      <TD height="63" bgColor=#FFFFFF class=diz>
+                        <P class=lin>&nbsp;</P>
+                    <TR>
+                    <TR>
+                      <TD class=diz bgColor=#FF0000>
+                        <P class=lin><span class="style1">Apartados </span></P>
+                    <TR>
+                      <TD class=diz bgColor=#FFCCCC>                        <P class=lst><a href="index.htm">0. Inicio</a> <br>
+                        <A 
+                  href="Introduccion.htm?enlace=secciones/contenido_index.php">1. Introducci&oacute;n</A><BR>
+                          <a href="csound.htm">2. Csound</a></p>
+                        <P class=lst> <a href="funciones.htm">2.1 Funciones</a></p>
+                        <P class=lst><a href="ejemplo0.htm">2.2. Ejemplos</a><BR>
+                          <a href="eco.htm">3. Ecos y Rev.</a><br>
+                          <a href="sonido3d.htm">4. Sonido 3D</a><br>
+                          <a href="Ejemplos.htm">5.Ejemplos Csound</a><br> 
+                          <a href="Bibliografia.htm">6.Bibliograf&iacute;a</a></p>
+                        <P class=lst>&nbsp;</p>
+                    <TR>
+                      <TD class=diz bgColor=#FF0000>
+                        <P class=lin><B><FONT color=#d80000>:</FONT>Contacta!!!!!</B></P>
+                    <TR>
+                      <TD class=diz bgColor=#FFCCCC>
+                        <P class=lst> <a href="mailto:jpermar@ribera.tel.uva.es">jpermar@ribera.tel.uva.es </a> </P>
+                        <P class=lst> <a href="mailto:acuedie@ribera.tel.uva.es">acuedie@ribera.tel.uva.es </a> <A href="http://www.augcyl.org/" target=_blank></A><br>
+                        </P>
+                    <TR>
+                      <TD class=diz bgColor=#ffffff>
+                        <P class=lst><BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                            <BR>
+                        </P>
+                    </TR>
+                  </TBODY>
+                </TABLE>
+              <TD align=left valign="top" bgColor=#ffffff>
+                <h2 align="left"><!-- InstanceBeginEditable name="EditRegion3" --><span class="style2">4.6. IMPLEMENTACI&Oacute;N</span><!-- InstanceEndEditable --> </h2>
+                <!-- InstanceBeginEditable name="EditRegion4" -->
+                <p align="center" class="style2"><font face="Comic Sans MS"><span lang="EN-GB">SIMULACI</span>&Oacute;<span lang="EN-GB">N EN LOS ORDENADORES</span></font><span lang="EN-GB" style="font-size: 14pt">.</span><span class="MsoFootnoteReference"><b><a title href="#_ftn4" name="_ftnref4" style="text-decoration: underline; text-underline: single"><span lang="EN-GB" style="font-size: 14pt; font-family: Times New Roman">[</span><span style="font-size: 14pt; font-family: Times New Roman">1</span><span lang="EN-GB" style="font-size: 14pt; font-family: Times New Roman">]</span></a></b></span><span lang="EN-GB" style="font-size: 14pt"> </span></p>
+                <p align="justify">&nbsp;</p>
+                <p align="justify"> En primer lugar, es importante discernir entre en qu&eacute; ambiente se encuentra nuestra fuente ac&uacute;stica (como por ejemplo en una iglesia) y por otro, en qu&eacute; punto del espacio se encuentra nuestra fuente. La t&eacute;cnica m&aacute;s utilizada para hacer esto &uacute;ltimo, se hace creando fuentes de sonido falsas, simulando as&iacute; ecos, reflexiones… Las t&eacute;cnicas de procesado digital de se&ntilde;al que involucran estos procedimientos, toman en cuenta la energ&iacute;a, el tiempo y la informaci&oacute;n espectral. </p>
+                <ol>
+                  <li>
+                    <p align="justify"><strong>Energ&iacute;a </strong>. Es posible calcular la energ&iacute;a que recibida de un punto en concreto dado un punto en el espacio determinado para la fuente, para el que escucha, el n&uacute;mero de canales, la localizaci&oacute;n de los altavoces y las caracter&iacute;sticas direccionales de la fuente, para as&iacute; cambiar la ganancia y la fase de la se&ntilde;al a la salida. Este procedimiento se llama ‘intensity panning '. Aunque ha sido muy utilizado, tambi&eacute;n ha sido muy criticado, pues es efectivo para un peque&ntilde;o grupo de espectadores localizados en el centro de una habitaci&oacute;n. A parte de estos inconvenientes, se a&ntilde;aden otros, como la reutilizaci&oacute;n, es decir, una vez modificado las se&ntilde;ales para os distintos altavoces, si tenemos una distribuci&oacute;n diferente, no nos ser&aacute; posible (o al menos, no deber&iacute;a) reproducir el sonido en otra configuraci&oacute;n distinta. Adem&aacute;s existen problemas de informaci&oacute;n redundante, pues la misma informaci&oacute;n llega a ambos o&iacute;dos del espectador. Michael Gerzon y otros ingenieros de sonido, crearon una t&eacute;cnica llamada Ambisonic (registrada por Trademark of Nimbus Communications Internacional), que es muy usada en la actualidad. Esta t&eacute;cnica intenta reparar las limitaciones antes comentadas, codificando la se&ntilde;al de la misma manera que un micr&oacute;fono especial llamado Calrec Soundifield .&nbsp; &Eacute;ste registra informaci&oacute;n de la energ&iacute;a emitida por una fuente de sonido localizada en un campo de tres dimensiones usando cuatro se&ntilde;ales (hay otros formas de codificaci&oacute;n que utilizan m&aacute;s de cuatro se&ntilde;ales). Estas cuatro se&ntilde;ales son tres apuntando a los ejes cartesianos y una se&ntilde;al onmidireccional , de tal manera que se registrar&iacute;a como si pusi&eacute;ramos un micr&oacute;fono en cada uno de los 8 altavoces m&aacute;s uno onmidireccional que fu&eacute;ramos a utilizar. La ventaja de esto obviamente es que podemos decodificar para el equipo de altavoces que queramos., </p>
+                  <li>
+                    <p align="justify"><strong>Tiempo </strong>. L&iacute;neas de retardo. Para similar la informaci&oacute;n temporal, sabemos la manera de calcular el tiempo que tarda una se&ntilde;al en llegar a un punto especificado. Esto es, por ejemplo, calcular la diferencia de tiempo en que el sonido tarda en llegar a un o&iacute;do y otro. (simulaci&oacute;n del ITD), o calcular la diferencia tiempo entre los distintos altavoces. Para la simulaci&oacute;n de estas l&iacute;neas de retardo, se utilizan procesos de interpolaci&oacute;n para calcular valores aproximados medios. Cabe comentar, que si el espectador no est&aacute; situado justamente en el punto ideal, se obtienen resultados completamente distorsionados. </p>
+                  <li>
+                    <p align="justify"><strong>Informaci&oacute;n </strong><strong>espectral . </strong>Filtrado HTRF. Para similar esto, se registran una serio de respuestas al impulto utilizando un mu&ntilde;eco con micr&oacute;fonos binaurales . Estas grabaciones son utilizadas para filtrar la se&ntilde;al, bien por convoluci&oacute;n ( FIR filtres) o bien para dise&ntilde;a filtros IIR din&aacute;micos. Como la informaci&oacute;n registrada es discreta, se utilizan complejos m&eacute;todos para obtener valores medios aproximados del espacio real. Sin embargo, est&aacute; todav&iacute;a en discusi&oacute;n si esto da una precisi&oacute;n adecuada en la localizaci&oacute;n. Parece ser que depende mucho de la forma de la cabeza, cuerpo de cada uno, no todas las HTRF's incluso las universales, sirven para todos de igual manera De cualquier modo, el resultado no es demasiado fidedigno si utilizamos altavoces, llegando a unos resultados bastante aceptables utilizando auriculares. </p>
+                  </li>
+                </ol>
+                <p align="justify" class="style2"><strong>Simulaci&oacute;n de las caracter&iacute;sticas de una habitaci&oacute;n. </strong></p>
+                <p>Hay dos m&eacute;todos que se usan muy a menudo para simular las caracter&iacute;sticas de una habitaci&oacute;n: la convoluci&oacute;n r&aacute;pida y las redes de filtros IIR. </p>
+                <p>Es posible capturar la respuesta al impulso de una habitaci&oacute;n, grabando un sonido como una explosi&oacute;n de un globo, una pistola, dentro de la habitaci&oacute;n. Esto nos da informaci&oacute;n de la reverberaci&oacute;n de la habitaci&oacute;n sobre la localizaci&oacute;n de la fuente y del receptor. As&iacute; la respuesta obtenida se usa para convolucionarla con cualquier sonido de tal manera que simulamos la producci&oacute;n del sonido en la habitaci&oacute;n. Sin embargo esto requiere mucho c&aacute;lculo computacional. </p>
+                <p>Otra aproximaci&oacute;n es simular la reverberaci&oacute;n a trav&eacute;s de una red de filtros ( comb , lowpass y allpass ) conectados en paralelo y series. Este resultado sin embargo nos da un resultado artificial, pero es m&aacute;s controlable por ordenador, y requiere mucho menos costo computacional. </p>
+                <p class="style2"><strong>Vistazo general de un sistema de&nbsp; espacializaci&oacute;n e importantes advertencias. </strong></p>
+                <p>Como hemos visto, para producir una buena simulaci&oacute;n, no solo son necesarios unos procedimientos DSP apropiados, sino que tambi&eacute;n tenemos que tener en cuenta de la posici&oacute;n de los espectadores y el sistema de reproducci&oacute;n que se utilizar&aacute; posteriormente. </p>
+                <p>As&iacute; nuestro sistema deber&aacute; tener informaci&oacute;n sobre: </p>
+                <ol>
+                  <li>
+                    <p>Localizaci&oacute;n de la fuente y/o movimiento. </p>
+                  <li>
+                    <p>Caracter&iacute;sticas direccionales ( omnidirecional , cardioide , etc ). </p>
+                  <li>
+                    <p>Orientaci&oacute;n de la fuente (si la radiaci&oacute;n de la fuente no es omnidireccional ). </p>
+                  <li>
+                    <p>Propiedades de la sala: tama&ntilde;o, geometr&iacute;a, difusi&oacute;n, equilibrio espectral. </p>
+                  <li>
+                    <p>Localizaci&oacute;n del espectador. </p>
+                  </li>
+                </ol>
+                <p>Para obtener unos buenos resultados en la simulaci&oacute;n espacial, la se&ntilde;al a ser procesada deber&iacute;a seguir las siguientes condiciones: </p>
+                <ol>
+                  <li>
+                    <p>Deber&iacute;a ser grabado sin ning&uacute;n tipo de reverberaci&oacute;n, o distorsi&oacute;n. </p>
+                  <li>
+                    <p>Suficiente energ&iacute;a en la banda de frecuencias usada para la simulaci&oacute;n. Por ejemplo, un seno de 200 Hz no es una buena idea, a no ser que est&eacute;s usando un ITD. </p>
+                  <li>
+                    <p>Si se quiere simular la localizaci&oacute;n del sonido muy cerca del espectador, la se&ntilde;al de entrada tiene que tener energ&iacute;a suficiente. </p>
+                  <li>
+                    <p>Cuando se simulan fuentes que se mueven, debe tener suficiente energ&iacute;a media en toda su longitud. </p>
+                  <li>
+                    <p>Cuando se simulan fuentes que se mueven, deber&iacute;a tener algunos cambios espectrales durante su evoluci&oacute;n. </p>
+                  <li>
+                    <p>Evitar cualquier cambio abrupto de la se&ntilde;al. ( clicks ). La reverberaci&oacute;n no lo arreglar&aacute;, y se har&aacute; m&aacute;s evidente y claro. </p>
+                  </li>
+                </ol>
+                <p>Si tenemos en mente, movimientos de la fuente: </p>
+                <ol>
+                  <li>
+                    <p>Evitar movimientos muy r&aacute;pidos. </p>
+                  <li>
+                    <p>Parar el movimiento en un punto, y mantener en ese punto poco tiempo, para dar la oportunidad al sistema del auditorio para seguir su localizaci&oacute;n . </p>
+                  <li>
+                    <p>Evitar movimientos imposibles. Las fuentes naturales de sonido no alcanzan m&aacute;xima velocidad instant&aacute;neamente, y tampoco paran instant&aacute;neamente. </p>
+                  <li>
+                    <p>No colocar la fuente de sonido exactamente en el mismo lugar que otra fuente. El sistema auditorio creer&aacute; que s&oacute;lo es una fuente (la ley del ‘common fate '). </p>
+                  </li>
+                </ol>
+                <p>Con respecto al sistema de reproducci&oacute;n </p>
+                <ol>
+                  <li>
+                    <p>Los altavoces deben de tener una respuesta plana a lo largo de la banda frecuencial del sonido a reproducir, al menos m&aacute;s de un &aacute;ngulo de 60 grados. </p>
+                  <li>
+                    <p>Los altavoces deben de tener la respuesta de fase debidamente sincronizada. </p>
+                  <li>
+                    <p>Si la se&ntilde;al fue procesada, considerando una distancia y unos &aacute;ngulos determinados, la situaci&oacute;n de los altavoces debe situarse igual. En este sentido se pueden hacer ciertas modificaciones, pero a costa de la reducci&oacute;n del espacio audible. </p>
+                  </li>
+                </ol>
+                <blockquote>&nbsp;</blockquote>
+                <p class="MsoNormal" style="text-align: justify"> 
+                <i><b><span class="MsoFootnoteReference"><span style="font-family: Courier New"><font size="2"><a title href="#_ftnref4" name="_ftn4" style="color: blue; text-decoration: underline; text-underline: single">[1]</a></font></span></span><u><span lang="EN-GB"><font size="2" face="Courier New"> </font> </span> </u></b><font size="2" face="Courier New">Spatial listening and its computer simulation on electronic Music. http://musica.unq.edu.ar/personales/odiliscia/papers/spatial-listening.htm</font></i>                </p>
+                <center><center>
+                  <p class="MsoNormal" style="text-align: left"><i></i></p>
+                    </center>
+                </center>
+                <!-- InstanceEndEditable --><BR>
+&nbsp;  <BR>
+                <P class=pie align=center>&nbsp;                </P>
+                <P class=pie align=center><BR>
+&copy; 2004 Ingenier&iacute;a de Ondas </P>              </TR>
+          </TBODY>
+        </TABLE>
+    </TR>
+  </TBODY>
+</TABLE>
+
+</body>
+<!-- InstanceEnd --></html>
