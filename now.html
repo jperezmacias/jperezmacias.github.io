@@ -1,8 +1,22 @@
+<script>
+    window.onload = function() {
+        var host = window.location.hostname;
+        var link = document.getElementById('dynamic-link');
+        if(host.includes('github.io')) {
+            link.setAttribute('href', '/');
+        } else if(host.includes('tuni.fi')) {
+            link.setAttribute('href', '/jose.perez-macias/');
+        }
+    };
+</script>
+
+
 <section id="masthead"> 
-	<h1>
-		<a href="/" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a>
-	</h1><!--gitbub-->
+	<!--<h1><a href="/" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a></h1>--><!--gitbub-->
 	<!--<h1><a href="/jose.perez-macias/" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a></h1>-->
+<h1><a id="dynamic-link" href="#" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a></h1>
+
+
 </section>
 <div id="content">
 	<h1>
