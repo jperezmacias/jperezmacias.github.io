@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Converter - Convert and Analyze Your Text Online</title>
+    
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="A simple online tool to convert text into various cases such as lower case, upper case, title case, sentence case, and more. Analyze your text for word count, character count, and more.">
+    
+    <!-- Meta Keywords for SEO -->
+    <meta name="keywords" content="text converter, online text tools, text case converter, text analysis, word count, character count">
+    
+    <!-- Meta Author -->
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph Meta Tags for Social Media Sharing -->
+    <meta property="og:title" content="Text Converter - Convert and Analyze Your Text Online">
+    <meta property="og:description" content="A simple and effective online tool for converting text cases and analyzing text statistics.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/text-converter">
+    <meta property="og:image" content="https://yourwebsite.com/images/text-converter-thumbnail.png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Text Converter - Convert and Analyze Your Text Online">
+    <meta name="twitter:description" content="Use this tool to convert text cases and analyze your text for various statistics.">
+    <meta name="twitter:image" content="https://yourwebsite.com/images/text-converter-thumbnail.png">
+
+    
+    <title>Text Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .output-box {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Text Converter</h1>
+
+    <textarea id="inputText" placeholder="Enter your text here..."></textarea><br>
+
+    <button onclick="convertText('lower')">Lower Case</button>
+    <button onclick="convertText('upper')">Upper Case</button>
+    <button onclick="convertText('capitalized')">Capitalized Case</button>
+    <button onclick="convertText('title')">Title Case</button>
+    <button onclick="convertText('sentence')">Sentence Case</button>
+
+    <div class="output-box">
+        <h3>Converted Text:</h3>
+        <p id="outputText"></p>
+    </div>
+
+    <div class="output-box">
+        <h3>Text Statistics:</h3>
+        <p>Character Count: <span id="charCount">0</span></p>
+        <p>Word Count: <span id="wordCount">0</span></p>
+        <p>Sentence Count: <span id="sentenceCount">0</span></p>
+        <p>Line Count: <span id="lineCount">0</span></p>
+    </div>
+
+    <script>
+        function convertText(caseType) {
+            let text = document.getElementById('inputText').value;
+
+            let convertedText;
+            switch(caseType) {
+                case 'lower':
+                    convertedText = text.toLowerCase();
+                    break;
+                case 'upper':
+                    convertedText = text.toUpperCase();
+                    break;
+                case 'capitalized':
+                    convertedText = text.replace(/\b\w/g, char => char.toUpperCase());
+                    break;
+                case 'title':
+                    convertedText = text.toLowerCase().replace(/\b\w/g, char => char.toUpperCase());
+                    break;
+                case 'sentence':
+                    convertedText = text.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, char => char.toUpperCase());
+                    break;
+                default:
+                    convertedText = text;
+            }
+
+            document.getElementById('outputText').innerText = convertedText;
+            updateStatistics(convertedText);
+        }
+
+        function updateStatistics(text) {
+            document.getElementById('charCount').innerText = text.length;
+            document.getElementById('wordCount').innerText = text.trim().split(/\s+/).length;
+            document.getElementById('sentenceCount').innerText = (text.match(/[\.\!\?]+/g) || []).length;
+            document.getElementById('lineCount').innerText = text.split(/\r\n|\r|\n/).length;
+        }
+
+        document.getElementById('inputText').addEventListener('input', function() {
+            updateStatistics(this.value);
+        });
+    </script>
+
+</body>
+</html>

@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breathing Disorders - Breathing Efforts Project</title>
+    <title>Breathing Disorders - Breathing Efforts Project using Emfit Matress Sensor</title>
+    <script>
+        window.onload = function() {
+            var host = window.location.hostname;
+            var link = document.getElementById('dynamic-link');
+            if(host.includes('github.io')) {
+                link.setAttribute('href', '/');
+            } else if(host.includes('tuni.fi')) {
+                link.setAttribute('href', '/jose.perez-macias/');
+            }
+        };
+    </script>
 </head>
 <body>
+    <section id="masthead"> 
+        <h1>Go back to .. <a id="dynamic-link" href="#" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a></h1>
+        </section>
     <h1>Breathing Disorders - Breathing Efforts Project</h1>
     <p>This project is dedicated to studying and analyzing breathing disorders and the associated breathing efforts.</p>
    
