@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Descriptions">
+  <meta name="author" content="Name">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+  
+
+  <title>Introduccion · Acoustic phenomena through Csound</title>
+  <link rel="canonical" href="//localhost:1313/docs/introduccion1/">
+  <link rel="stylesheet" href="/assets/css/docs.min.55e8a7678e986f6333c09fb6a81696af67711e98d72db2cb245352b002d5c4c8.css" integrity="">
+
+  <link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon/favicon.ico">
+<link rel="icon" href="/favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" sizes="180x180">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+</script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="/" class="site-logo">Acoustic phenomena through Csound</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Overview</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/inicio/">
+                  
+                  Inicio
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/generalintroduccion/">
+                  
+                  GeneralIntroduccion
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Csound</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/csound/">
+                  
+                  Csound
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/funciones/">
+                  
+                  Funciones
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/ejemplos/">
+                  
+                  Ejemplos
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ecos y Reverberacion</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/ecos-y-rev./">
+                  
+                  Ecos y Rev.
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Sonido 3D</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/introduccion/">
+                  
+                  Introduccion
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/aud.-espacial/">
+                  
+                  Aud. Espacial
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/coordenadas/">
+                  
+                  Coordenadas
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/sistemas-de-audio/">
+                  
+                  Sistemas de Audio
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/hrtf/">
+                  
+                  HRTF
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/sistemas-hrtf/">
+                  
+                  Sistemas HRTF
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="/docs/implementaci%C3%B3n/">
+                  
+                  Implementación
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ejemplos Csound</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/ejemplos-csound/">
+                  
+                  Ejemplos Csound
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Bibliografía</summary>
+          <ul><li>
+              
+                
+                <a class="" href="/docs/bibliograf%C3%ADa/">
+                  
+                  Bibliografía
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header>
+      <a href="/" class="site-logo">Acoustic phenomena through Csound</a>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>Introduccion</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <h1 id="1-introducción">1. Introducción</h1>
+<p>CSOUND es un programa que ayuda a realizar música por ordenador mediante la sintetización de señales de audio digitales.</p>
+<p>Con Csound conseguimos una especificación detallada del sonido en cada instante y lo realiza de dos maneras:</p>
+<ul>
+<li>Mediante los instrumentos de orquesta, que realizan un programa capaz de generar sonido.</li>
+<li>Mediante los eventos de la partitura, fichero de datos con los que el programa del instrumento puede trabajar, ya que contiene información sobre la altura, duración y otros elementos de control, codificados numéricamente en un formato estándar de partitura.</li>
+</ul>
+<p><strong>Historia</strong></p>
+<p>A continuación, se realizará una breve introducción de la evolución de los programas para generar sonidos hasta llegar al CSOUND. Aunque bien sabemos, Csound está basado en los programas desarrollados a lo largo de la historia.</p>
+<ul>
+<li>
+<p><strong>Años 60</strong>:<br>
+Music 4, un programa escrito por Max Mathews a principios de los 60 en los laboratorios de la Bell Telephone. Este programa introdujo el concepto de almacenamiento en tablas, así como mucha de la terminología que desde entonces ha permitido a los investigadores en música por ordenador comunicarse entre ellos. Godfrey Winham, en Princeton, realizó valiosas aportaciones con su Music 4B; mi propio Music 360 (1968) le debe mucho a su trabajo.</p>
+</li>
+<li>
+<p><strong>En 1973</strong>:<br>
+Music 11 tomó otra dirección: después de un intenso trabajo en años precedentes en el diseño del hardware de sintetizadores surgió la idea de separar el procesado de las señales de audio del de las de control. Esta división aún perdura en Csound. Gracias a que está escrito íntegramente en C, Csound puede ser instalado fácilmente en cualquier máquina basada en Unix o en C. En el MIT, Csound se ejecuta en estaciones VAX/DEC bajo Ultrix 4.2, en SUNs bajo OS 4.1, en SGIs bajo 5.0, en IBM PCs bajo DOS 6.2 y Windows 3.1, y en Macintosh bajo ThinkC 5.0.</p>
+</li>
+</ul>
+<p>Tomando este único lenguaje para definir el procesado de la señal digital y formatos de audio portables, como AIFF y WAV, los usuarios pueden cambiar de una máquina a otra fácilmente.</p>
+<ul>
+<li>
+<p><strong>En 1991</strong>:<br>
+En una nueva versión, se añadió un codificador vocal de fase (fase Vocoder), FOF (del francés Fonction d&rsquo;onde formantique, Funciones de Ondas de Formantes) y los tipos de datos espectrales.</p>
+</li>
+<li>
+<p><strong>En 1992</strong>:<br>
+Se desarrollaron las unidades de conversión y de control MIDI, permitiendo a Csound recibir datos desde ficheros MIDI o desde un teclado externo.</p>
+</li>
+<li>
+<p><strong>En 1994</strong>:<br>
+Se integraron los programas de análisis de sonido (lpc, pvoc) en el módulo principal, permitiendo así que todo el procesado de Csound se hiciera desde un único fichero ejecutable. Además, Csound podía ahora pasar directamente partituras a la orquesta para realizar ejecuciones iterativas.</p>
+</li>
+<li>
+<p><strong>En 1995</strong>:<br>
+La nueva versión que salió al mercado expandió las opciones MIDI e introdujo el generador linseg orientado a MIDI, filtros Butterworth, síntesis granular y, además, mejoró el rastreador de altura basado en los tipos espectrales. De especial importancia fue la introducción de herramientas para la generación de eventos en tiempo de ejecución (Csore y MIDI), ya que permitían configurar mecanismos de percepción y respuesta en campos como los de la composición y la experimentación interactiva.</p>
+</li>
+</ul>
+<p>© 2004 Ingeniería de Ondas</p>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          <time datetime="0001-01-01"><i>🕒</i> Updated: 0001-01-01</time>
+          
+          <a href="/docs/bibliograf%C3%ADa/"><i>﹤</i> Previous</a>
+          
+
+          
+          <a class="hidden">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents"></nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://www.lpi.tel.uva.es/~nacho/docencia/ing_ond_1/trabajos_03_04/Csound/index.htm" target="_blank">Name</a><i>📅</i> 2004-2004<i>🚀</i> <a href="https://github.com/repo" target="_blank">GitHub</a></div>
+      <div>
+        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
+</body>
+</html>
