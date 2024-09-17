@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Breathing Evaluation Using Video and Other Signals Project</title>
+    <link href="../styles/style.css" rel="stylesheet">
+    <script>
+        window.onload = function() {
+            var host = window.location.hostname;
+            var link = document.getElementById('dynamic-link');
+            if(host.includes('github.io')) {
+                link.setAttribute('href', '/');
+            } else if(host.includes('tuni.fi')) {
+                link.setAttribute('href', '/jose.perez-macias/');
+            }
+        };
+    </script>
 </head>
 <body>
+
+    
+    <section id="masthead"> 
+    <h1><a id="dynamic-link" href="#" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a></h1>
+    </section>
+    
+
     <h1>Breathing Evaluation Using Video and Other Signals Project</h1>
+    <img src="img/breathing-video.webp" alt="snoring-project-image" width="300" class="center-block">
+
     <p>This project explores innovative ways to evaluate breathing patterns using video analysis and other signal processing techniques. </p>
     
 </body>

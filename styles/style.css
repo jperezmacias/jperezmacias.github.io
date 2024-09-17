@@ -167,3 +167,21 @@ ul.social-buttons li a:active {
     width: 100%    !important;
     height: auto   !important;
   }
+
+.center-block {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            /* width: 300px; Optional, adjust the width */
+}
+
+.float-left {
+    float: left;
+    margin-right: 40px; /* Optional, space between the image and text */
+
+}
+
+.float-right {
+    float: right;
+    margin-left: 40px; /* Optional, space between the image and text */
+}

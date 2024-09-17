@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EEG Trends Analysis in Intensive Care Patients Project</title>
+    <link href="../styles/style.css" rel="stylesheet">
+    <script>
+        window.onload = function() {
+            var host = window.location.hostname;
+            var link = document.getElementById('dynamic-link');
+            if(host.includes('github.io')) {
+                link.setAttribute('href', '/');
+            } else if(host.includes('tuni.fi')) {
+                link.setAttribute('href', '/jose.perez-macias/');
+            }
+        };
+    </script>
 </head>
 <body>
+
+    
+    <section id="masthead"> 
+    <h1><a id="dynamic-link" href="#" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a></h1>
+    </section>
+
     <h1>EEG Trends Analysis in Intensive Care Patients Project</h1>
+    <img src="img/icu-eeg.webp" alt="snoring-project-image" width="300" class="float-left">
+
     <p>This project involves creating software to analyze EEG trends in intensive care patients, assisting in better patient monitoring and care.</p>
    
 </body>
