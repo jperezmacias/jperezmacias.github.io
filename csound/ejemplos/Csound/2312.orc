@@ -30,7 +30,7 @@ addl1     delayr    .3
 afeed1    deltapi   kdel1
 afeed1    =         afeed1+gifeed*aleft
           delayw    aleft
-kdel2     randi     .01,. 95, .777
+kdel2     randi     .01,.95, .777
 kdel2     =         kdel2+.1
 addl2     delayr    .3
 afeed2    deltapi   kdel2
