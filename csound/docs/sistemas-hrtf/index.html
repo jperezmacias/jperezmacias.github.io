@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Description">
+  <meta name="author" content="Ariana Jose">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+  
+
+  <title>Sistemas basados en HRTF · Ingenieria de Ondas</title>
+  <link rel="canonical" href="https://jperezmacias.github.io/csound/docs/sistemas-hrtf/">
+  <link rel="stylesheet" href="../../csound/assets/css/docs.min.55e8a7678e986f6333c09fb6a81696af67711e98d72db2cb245352b002d5c4c8.css" integrity="">
+
+  <link rel="manifest" href="../../manifest.json">
+<link rel="icon" href="../../favicon/favicon.ico">
+<link rel="icon" href="../../favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../favicon/apple-touch-icon.png" sizes="180x180">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+</script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="../../" class="site-logo">Ingenieria de Ondas</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Overview</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/inicio/">
+                  
+                  Inicio
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/generalintroduccion/">
+                  
+                  GeneralIntroduccion
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Csound</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/csound/">
+                  
+                  Csound
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/funciones/">
+                  
+                  Funciones
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/ejemplos/">
+                  
+                  Ejemplos
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ecos y Reverberacion</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/ecos-y-rev/">
+                  
+                  Ecos y Rev
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Sonido 3D</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/sonido-3d-introduccion/">
+                  
+                  Sonido 3D Introduccion
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/audio-espacial/">
+                  
+                  Audio Espacial
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/coordenadas/">
+                  
+                  Coordenadas
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/sistemas-de-audio/">
+                  
+                  Sistemas de Audio
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/hrtf/">
+                  
+                  HRTF
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="active" href="../../docs/sistemas-hrtf/">
+                  
+                  Sistemas HRTF
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/implementacion/">
+                  
+                  Implementacion
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ejemplos Csound</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/ejemplos-csound/">
+                  
+                  Ejemplos Csound
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Bibliografia</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/bibliografia/">
+                  
+                  Bibliografia
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header>
+      <a href="../../" class="site-logo">Ingenieria de Ondas</a>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>Sistemas basados en HRTF</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <h1 id="45-sistemas-basados-en-hrtf">4.5. Sistemas basados en HRTF</h1>
+<p>Los sistemas basados en las funciones de transferencia HRTF son capaces de simular elevación, distancia y azimut. Esto significa que, al menos en principio, pueden crear la impresión de un sistema en 3D. En la práctica, es más sencillo controlar el azimut que la elevación y la distancia debido a las diferencias entre las personas y las limitaciones computacionales. Aún así, los sistemas basados en HRTF están convirtiéndose en un estándar para sistemas avanzados de 3D.</p>
+<p>Hacemos una pequeña descripción del &ldquo;Convolotron&rdquo;, un conocido sistema 3D desarrollado por la NASA. Describiremos algunas características y terminaremos con distintos modelos HRTF elaborados.</p>
+<ul>
+<li>El Convolvotron</li>
+<li>Auriculares versus Altavoces</li>
+<li>La necesidad de posicionar la cabeza</li>
+<li>Versiones modeladas y experimentales de HRTF&rsquo;s</li>
+<li>Modelos para HRTF&rsquo;s</li>
+</ul>
+<p><img alt="Measuring the HRTF of a KEMAR manikin" src="../../Imagenes/image020.jpg"></p>
+<h2 id="el-convolotrón">El Convolotrón</h2>
+<p><img alt="Convolotron" src="../../Imagenes/hrtf_clip_image001.gif"></p>
+<p>El Convolotron, manufacturado por Cristal River Engineering, es una forma sencilla de usar HRTF para el audio espacial. Consiste en dos convolucionadores, cada uno de los cuales convoluciona una misma señal de audio con una respuesta al impulso discreta de la cabeza (Head-related impulse response - HRIR) tomada de una tabla de valores previamente medidos. La salida va directamente a los auriculares del usuario.</p>
+<p>Si la HRIR es lo suficientemente parecida a la del usuario, obtendremos resultados aceptables. La idea básica de funcionamiento es:</p>
+<ul>
+<li>Podemos recrear muchas fuentes haciendo lo mismo para cada fuente.</li>
+<li>Podemos tener en cuenta el movimiento de la cabeza, monitorizando su posición y modificando las HRIR según la misma, dando así la sensación de que el usuario se mueve en un ambiente 3D.</li>
+<li>Las tablas pueden crearse considerando solo los parámetros de azimut y elevación, dejando la distancia de la fuente para utilizar efectos de rango/amplitud.</li>
+<li>El número de HRIR almacenados previamente puede reducirse analizando funciones HRIR críticas en el espacio y luego interpolando para hallar el resto.</li>
+<li>Los ecos y la reverberación de la habitación se pueden añadir con un modelo simulado de una habitación.</li>
+<li>El sistema puede personalizarse para un individuo particular usando sus funciones HRIR.</li>
+</ul>
+<p>No importa cómo implementemos el esquema, la idea principal es generar señales adecuadas para ambas orejas con una convolución en tiempo real de la señal original monoaural, utilizando tablas de respuesta al impulso (HRIR).</p>
+<h2 id="auriculares-vs-altavoces">Auriculares vs Altavoces</h2>
+<p>Los auriculares simplifican el problema de enviar distintas señales a cada oído, pero presentan inconvenientes, especialmente en realidad virtual:</p>
+<ul>
+<li>A muchas personas no les gustan los auriculares, son incómodos incluso si son inalámbricos. Los mejores (acústicamente) son incómodos para llevar durante largos períodos y aíslan socialmente al usuario.</li>
+<li>La respuesta en frecuencia de los auriculares puede tener picos y cortes que se asemejan a las respuestas del pabellón auditivo. Estos efectos, si no se compensan, pueden dar problemas en los parámetros de elevación.</li>
+<li>Los sonidos en los auriculares dan la impresión de estar demasiado cerca. Además, los efectos utilizados para dar localización del sonido son muy sensibles a la posición del auricular.</li>
+</ul>
+<p>Los altavoces resuelven muchos de estos problemas, pero no está claro cómo dar un sonido binaural. Una solución es una técnica llamada cross-talk-cancelled stereo (o transaural stereo).</p>
+<p><img alt="Cross-talk cancelled stereo" src="../../Imagenes/hrtf_clip_image002.gif"></p>
+<p>La idea básica se ve bien en el dominio de la frecuencia. En la figura de arriba se ven las señales S1 y S2 que salen de los altavoces. La señal Y1 que alcanza la oreja izquierda es una mezcla de S1 y el &ldquo;crosstalk&rdquo; de S2. Así, Y1 = H11 S1 + H12 S2, donde H11 es la HRTF entre el altavoz izquierdo y la oreja izquierda, y H12 es la HRTF entre el altavoz derecho y la oreja izquierda. Similarmente, Y2 = H21 S1 + H22 S2. Si pudiéramos usar auriculares, podríamos obtener Y1 y Y2, que son las señales recibidas en los dos oídos respectivamente. El problema es encontrar las señales apropiadas S1 y S2 que nos dan los resultados deseados. Esto matemáticamente es bastante sencillo: simplemente invertimos las ecuaciones:</p>
+<p><img alt="Matrix inversion illustration" src="../../Imagenes/hrtf_clip_image003.gif"></p>
+<h3 id="en-la-práctica-invertir-las-matrices-no-es-tan-sencillo">En la práctica, invertir las matrices no es tan sencillo:</h3>
+<ul>
+<li>A frecuencias bajas, todas las funciones de transferencia son prácticamente idénticas, y por lo tanto la matriz es singular (el determinante es cero). Afortunadamente, en recintos reverberantes, la información de baja frecuencia no es muy importante para la localización.</li>
+<li>Una solución exacta produce una respuesta al impulso muy larga. Este problema es notable cuanto más alejada esté la fuente respecto al punto medio entre los dos altavoces.</li>
+<li>El resultado depende de la posición relativa del usuario con respecto a los altavoces. Los resultados óptimos se obtienen en un punto llamado &ldquo;sweet spot&rdquo;, que es la posición asumida cuando se invierten las ecuaciones anteriores.</li>
+</ul>
+<p>Si se hace bien, la técnica &ldquo;crosstalk-cancelled stereo&rdquo; puede ser muy efectiva, consiguiendo variar tanto el azimut como la elevación. La fuente puede situarse fuera de la línea que une los dos altavoces.</p>
+<h2 id="registro-de-la-posición-de-la-cabeza">Registro de la posición de la cabeza</h2>
+<p>Cuando utilizamos auriculares, si el usuario se mueve o mueve la cabeza, las señales enviadas a los auriculares no varían, produciendo la sensación de que la fuente de sonido se mueve con el usuario. Esto no se puede dar en aplicaciones de realidad virtual. Además, algunos efectos espaciales son debilitados o anulados. Esto es un problema, especialmente para fuentes que se suponen directamente enfrente o detrás del usuario, ya que la velocidad de variación de las variables es mucho más rápida en esas direcciones. Un resultado típico es que las fuentes aparezcan demasiado cerca o incluso den la impresión de que se originan en la cabeza.</p>
+<p>Una solución posible es usar un dispositivo que registre la posición relativa de la cabeza con respecto a las fuentes (<em>head tracker</em>) y lo haga periódicamente, variando las HRIR según los datos obtenidos. En este sentido, al diseñar, además del coste, fiabilidad y precisión, deben considerarse otros dos aspectos:</p>
+<ul>
+<li><strong>Retardo permitido (Allowable latency)</strong>. El retardo es el tiempo entre el movimiento y cuando se utiliza la HRIR corregida. La experiencia indica que debería ser como máximo de 50 ms.</li>
+<li><strong>Transiciones inadecuadas (Unwanted transients)</strong>. Al cambiar las HRIR por otras más adecuadas, pueden escucharse &ldquo;clicks&rdquo;. Es deseable una transición suave en estos casos.</li>
+</ul>
+<h2 id="versiones-modeladas-y-experimentales-de-hrtfs">Versiones modeladas y experimentales de HRTF&rsquo;s</h2>
+<p>Debido a que las funciones HRTF son complejas, la mayoría de los sistemas desarrollados han dependido de funciones medidas experimentalmente con el KEMAR. Sin embargo, los efectos de elevación y de azimut son particularmente sensibles a las diferencias individuales. Han surgido cuatro aproximaciones diferentes para estas funciones:</p>
+<ol>
+<li><strong>Usar una HRTF estándar</strong>. Esto da resultados pobres en un porcentaje de la población, pero es el único sistema práctico para productos baratos. Actualmente, ni el IEEE, ni ACM o la AES han definido un estándar HRTF, pero parece que una compañía como Microsoft o Intel creará uno.</li>
+<li><strong>Usar un set de HRTF&rsquo;s estándar</strong>. Esto requiere medir HRTF&rsquo;s para un grupo pequeño de personas que representen distintos modelos de la población, facilitando así la selección del usuario más adecuado. Hasta la fecha, no existe.</li>
+<li><strong>Usar una HRTF individualizada</strong>. Esto requiere medir la HRTF del usuario, lo que conlleva un considerable tiempo de uso. Aunque es engorroso y probablemente no viable, es el que mejores resultados ofrece.</li>
+<li><strong>Usar un modelo HRTF que contenga parámetros adaptables</strong>. Para estos modelos se sugiere consultar la bibliografía, ya que es un tema extenso y se sale del propósito de este trabajo.</li>
+</ol>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+          
+
+          <time datetime="0001-01-01"><i>🕒</i> Updated: 0001-01-01</time>
+          
+          <a href="../../docs/hrtf/"><i>﹤</i> Previous</a>
+          
+
+          
+          <a href="../../docs/implementacion/">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#el-convolotrón">El Convolotrón</a></li>
+    <li><a href="#auriculares-vs-altavoces">Auriculares vs Altavoces</a>
+      <ul>
+        <li><a href="#en-la-práctica-invertir-las-matrices-no-es-tan-sencillo">En la práctica, invertir las matrices no es tan sencillo:</a></li>
+      </ul>
+    </li>
+    <li><a href="#registro-de-la-posición-de-la-cabeza">Registro de la posición de la cabeza</a></li>
+    <li><a href="#versiones-modeladas-y-experimentales-de-hrtfs">Versiones modeladas y experimentales de HRTF&rsquo;s</a></li>
+  </ul>
+</nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/repo" target="_blank">Ariana Jose</a><i>📅</i> 2004-2024<i>🚀</i> <a href="https://github.com/repo" target="_blank">GitHub</a></div>
+      <div>
+        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="../../csound/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
+</body>
+</html>

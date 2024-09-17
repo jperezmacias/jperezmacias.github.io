@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Description">
+  <meta name="author" content="Ariana Jose">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+  
+
+  <title>Funciones · Ingenieria de Ondas</title>
+  <link rel="canonical" href="https://jperezmacias.github.io/csound/docs/funciones/">
+  <link rel="stylesheet" href="../../csound/assets/css/docs.min.55e8a7678e986f6333c09fb6a81696af67711e98d72db2cb245352b002d5c4c8.css" integrity="">
+
+  <link rel="manifest" href="../../manifest.json">
+<link rel="icon" href="../../favicon/favicon.ico">
+<link rel="icon" href="../../favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../favicon/apple-touch-icon.png" sizes="180x180">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+</script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="../../" class="site-logo">Ingenieria de Ondas</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Overview</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/inicio/">
+                  
+                  Inicio
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/generalintroduccion/">
+                  
+                  GeneralIntroduccion
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Csound</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/csound/">
+                  
+                  Csound
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="active" href="../../docs/funciones/">
+                  
+                  Funciones
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/ejemplos/">
+                  
+                  Ejemplos
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ecos y Reverberacion</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/ecos-y-rev/">
+                  
+                  Ecos y Rev
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Sonido 3D</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/sonido-3d-introduccion/">
+                  
+                  Sonido 3D Introduccion
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/audio-espacial/">
+                  
+                  Audio Espacial
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/coordenadas/">
+                  
+                  Coordenadas
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/sistemas-de-audio/">
+                  
+                  Sistemas de Audio
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/hrtf/">
+                  
+                  HRTF
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/sistemas-hrtf/">
+                  
+                  Sistemas HRTF
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/implementacion/">
+                  
+                  Implementacion
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ejemplos Csound</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/ejemplos-csound/">
+                  
+                  Ejemplos Csound
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Bibliografia</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/bibliografia/">
+                  
+                  Bibliografia
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header>
+      <a href="../../" class="site-logo">Ingenieria de Ondas</a>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>Funciones</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <h1 id="21-funciones-elementales-del-csound">2.1. FUNCIONES ELEMENTALES DEL CSOUND</h1>
+<blockquote>
+<p><strong>ALGUNAS SENTENCIAS QUE CONSIDERAMOS PRINCIPALES PARA EL ARCHIVO DE PARTITURA.</strong></p>
+</blockquote>
+<h3 id="sentencia-f">SENTENCIA f</h3>
+<p>Esta sentencia hace que una subrutina GEN almacene valores en una tabla de función, para usarla con los instrumentos de la orquesta.</p>
+<p><strong>f</strong> <em>p1 p2 p3 p4&hellip;</em></p>
+<ul>
+<li><strong>p1</strong>: número de la tabla con el que será conocida la función almacenada, un número negativo indica que la tabla debe ser destruida.</li>
+<li><strong>p2</strong>: instante de comienzo de la generación (o destrucción) de la función en pulsos.</li>
+<li><strong>p3</strong>: Tamaño de la tabla de función (número de puntos). Debe ser una potencia de 2 o una potencia de 2 más 1 (el tamaño máximo de la tabla es de 16777216, 2<sup>24</sup>, puntos).</li>
+<li><strong>p4</strong>: número de la rutina GEN a llamar.</li>
+</ul>
+<p>Los demás parámetros vendrán determinados por la rutina GEN en particular.</p>
+<p>Una sentencia <strong>f0</strong> (<em>p1</em> = 0, <em>p2</em> = valor positivo) puede ser usada para crear una indicación de comienzo sin ninguna acción real asociada.</p>
+<h3 id="sentencia-i">SENTENCIA i</h3>
+<p>Esta sentencia llama a un instrumento para hacerlo activo en un instante específico y durante un tiempo determinado. Los valores de los campos <code>p</code> se pasan a ese instrumento antes de su inicialización, y permanecen válidos durante toda su ejecución.</p>
+<p><strong>i</strong> <em>p1 p2 p3 p4&hellip;</em></p>
+<ul>
+<li><strong>p1</strong>: número del instrumento (de 1 a 200), normalmente un entero no negativo. Una parte fraccionaria puede proporcionar un indicador adicional para especificar ligaduras entre notas determinadas. Un valor negativo (incluido el indicador) puede usarse para desactivar una nota tenida determinada.</li>
+<li><strong>p2</strong>: instante de comienzo en unidades arbitrarias llamadas pulsos.</li>
+<li><strong>p3</strong>: duración en pulsos (normalmente positiva). Valor negativo iniciará una nota tenida. Valor 0 invocará una pasada de inicialización sin ejecución.</li>
+</ul>
+<p>Los demás parámetros vendrán determinados por la rutina GEN en particular.</p>
+<p>Los pulsos son evaluados como segundos, a menos que haya una sentencia <strong>t</strong> en esa sección de la partitura o un indicador <code>t</code> en la línea de comando de Csound que cambie el criterio.</p>
+<h3 id="sentencia-t">SENTENCIA t</h3>
+<p>Esta sentencia modifica el tempo de una sección de partitura según la sentencia <em>t</em>. La operación de tempo convierte <em>p2</em> (y, para las sentencias <em>i</em>, <em>p3</em>) de su formato original a pulsos en segundos reales.</p>
+<p><strong>t</strong> <em>p1 p2 p3 p4&hellip; (ilimitado)</em></p>
+<ul>
+<li><strong>p1</strong>: debe ser 0.</li>
+<li><strong>p2</strong>: tiempo inicial en pulsos por minuto.</li>
+<li><strong>p3, p5, p7, &hellip;</strong>: instante en los que se produce el cambio de tiempo, en pulsos y en orden creciente.</li>
+<li><strong>p4, p6, p8, &hellip;</strong>: tiempos aplicados en los instantes anteriores.</li>
+</ul>
+<h3 id="sentencia-s">SENTENCIA s</h3>
+<p>Esta sentencia ignora todos los campos <code>p</code>.</p>
+<p><strong>s</strong> <em>cualquier cosa</em></p>
+<h3 id="algunas-sentencias-que-consideramos-principales-para-el-archivo-de-orquesta">ALGUNAS SENTENCIAS QUE CONSIDERAMOS PRINCIPALES PARA EL ARCHIVO DE ORQUESTA.</h3>
+<h4 id="sintaxis-de-orquesta">SINTAXIS DE ORQUESTA</h4>
+<p><strong>instr, endin</strong></p>
+<p>Estas sentencias delimitan el cuerpo de un instrumento. Siempre deben aparecer en parejas.</p>
+<p><strong>instr</strong> <em>i, j, &hellip;</em><br>
+&lt;<em>Cuerpo del instrumento</em>&gt;<br>
+<strong>endin</strong></p>
+<h4 id="follow">follow</h4>
+<p>Este opcode es un &ldquo;extractor&rdquo; del envolvente de una señal de audio.</p>
+<p><strong>ar follow asig, idt</strong></p>
+<ul>
+<li><strong>asig</strong>: señal de la cual se extrae el envolvente.</li>
+<li><strong>idt</strong>: periodo, en segundos, en el que se proporciona la amplitud media de la señal <em>asig</em>.</li>
+</ul>
+<h3 id="operaciones-matemáticas">OPERACIONES MATEMÁTICAS</h3>
+<h4 id="operaciones-aritméticas-y-lógicas">Operaciones Aritméticas y Lógicas</h4>
+<p>Los operadores aritméticos llevan a cabo operaciones de cambio de signo, preservación de signo, &ldquo;Y&rdquo; y &ldquo;O&rdquo; lógicos, suma, resta, multiplicación y división.</p>
+<ul>
+<li><code>- a</code> ;(sin restricción de frecuencia)</li>
+<li><code>+ a</code> ;(sin restricción de frecuencia)</li>
+<li><code>a &amp;&amp; b</code> ;(Y lógico; no válido a frecuencia de audio)</li>
+<li><code>a || b</code> ;(O lógico; no válido a frecuencia de audio)</li>
+<li><code>a + b</code> ;(sin restricción de frecuencia)</li>
+<li><code>a - b</code> ;(sin restricción de frecuencia)</li>
+<li><code>a * b</code> ;(sin restricción de frecuencia)</li>
+<li><code>a / b</code> ;(sin restricción de frecuencia)</li>
+<li><code>a ^ b</code> ;(b no puede ser de tipo audio)</li>
+<li><code>a % b</code> ;(sin restricción de frecuencia)</li>
+</ul>
+<h3 id="funciones-matemáticas">Funciones Matemáticas</h3>
+<p>Las funciones matemáticas, donde los argumentos entre paréntesis pueden ser expresiones.</p>
+<ul>
+<li><strong>int</strong>(x) ;(solamente argumentos i- o k-): devuelve la parte entera de <em>x</em>.</li>
+<li><strong>frac</strong>(x) ;(solamente argumentos i- o k-): devuelve la parte fraccionaria de <em>x</em>.</li>
+<li><strong>i</strong>(x) ;(solamente argumentos k-): devuelve el equivalente en tipo <em>i-</em> de un valor <em>k-</em>.</li>
+<li><strong>abs</strong>(x) ;(sin restricción de tipo): devuelve el valor absoluto de <em>x</em>.</li>
+<li><strong>exp</strong>(x) ;(sin restricción de tipo): devuelve el valor de <em>e</em> elevado a <em>x</em>.</li>
+<li><strong>log</strong>(x) ;(sin restricción de tipo): devuelve el logaritmo natural de <em>x</em>.</li>
+<li><strong>log10</strong>(x) ;(sin restricción de tipo): devuelve el logaritmo en base 10 de <em>x</em>.</li>
+<li><strong>sqrt</strong>(x) ;(sin restricción de tipo): devuelve la raíz cuadrada de <em>x</em>.</li>
+</ul>
+<h3 id="funciones-trigonométricas">Funciones Trigonométricas</h3>
+<ul>
+<li><strong>sin</strong>(x) ;(sin restricción de tipo): devuelve el seno de <em>x</em> (en radianes).</li>
+<li><strong>cos</strong>(x) ;(sin restricción de tipo): devuelve el coseno de <em>x</em> (en radianes).</li>
+<li><strong>tan</strong>(x) ;(sin restricción de tipo): devuelve la tangente de <em>x</em>.</li>
+<li><strong>sininv</strong>(x) ;(sin restricción de tipo): devuelve el arcoseno de <em>x</em>.</li>
+<li><strong>cosinv</strong>(x) ;(sin restricción de tipo): devuelve el arcocoseno de <em>x</em>.</li>
+<li><strong>taninv</strong>(x) ;(sin restricción de tipo): devuelve la arcotangente de <em>x</em>.</li>
+<li><strong>sinh</strong>(x) ;(sin restricción de tipo): devuelve el seno hiperbólico de <em>x</em>.</li>
+<li><strong>cosh</strong>(x) ;(sin restricción de tipo): devuelve el coseno hiperbólico de <em>x</em>.</li>
+<li><strong>tanh</strong>(x) ;(sin restricción de tipo): devuelve la tangente hiperbólica de <em>x</em>.</li>
+</ul>
+<h3 id="osciladores">OSCILADORES</h3>
+<h4 id="osciladores-básicos">Osciladores Básicos</h4>
+<p>Reproducen señales periódicas de control (<em>k-</em>) o de audio (<em>a-</em>).</p>
+<ul>
+<li><strong>kr oscil</strong> kamp, kcps, ifn[, iphs]</li>
+<li><strong>kr oscili</strong> kamp, kcps, ifn[, iphs]</li>
+<li><strong>ar oscil</strong> kamp, kcps, ifn[, iphs]</li>
+</ul>
+<h3 id="algunas-manuales-de-referencia-de-csound">ALGUNAS MANUALES DE REFERENCIA DE CSOUND</h3>
+<ul>
+<li><a href="http://web.tiscali.it/_flat/">Csound Editor</a></li>
+<li><a href="http://hem.passagen.se/rasmuse/Csound.htm">Manual de Rasmus Ekman</a></li>
+<li><a href="http://www.sfu.ca/sca/Manuals/Csound/CsoundIndex.html#Hamel">Manual de referencia de Csound</a></li>
+<li><a href="http://www.lakewoodsound.com/csound/">Lakewood Sound Csound page</a></li>
+<li><a href="http://www.csounds.com/">Csound Official Website</a></li>
+<li><a href="http://www.firstpr.com.au/csound/">First PR Csound page</a></li>
+</ul>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+          
+
+          <time datetime="0001-01-01"><i>🕒</i> Updated: 0001-01-01</time>
+          
+          <a href="../../docs/csound/"><i>﹤</i> Previous</a>
+          
+
+          
+          <a href="../../docs/ejemplos/">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#sentencia-f">SENTENCIA f</a></li>
+        <li><a href="#sentencia-i">SENTENCIA i</a></li>
+        <li><a href="#sentencia-t">SENTENCIA t</a></li>
+        <li><a href="#sentencia-s">SENTENCIA s</a></li>
+        <li><a href="#algunas-sentencias-que-consideramos-principales-para-el-archivo-de-orquesta">ALGUNAS SENTENCIAS QUE CONSIDERAMOS PRINCIPALES PARA EL ARCHIVO DE ORQUESTA.</a></li>
+        <li><a href="#operaciones-matemáticas">OPERACIONES MATEMÁTICAS</a></li>
+        <li><a href="#funciones-matemáticas">Funciones Matemáticas</a></li>
+        <li><a href="#funciones-trigonométricas">Funciones Trigonométricas</a></li>
+        <li><a href="#osciladores">OSCILADORES</a></li>
+        <li><a href="#algunas-manuales-de-referencia-de-csound">ALGUNAS MANUALES DE REFERENCIA DE CSOUND</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/repo" target="_blank">Ariana Jose</a><i>📅</i> 2004-2024<i>🚀</i> <a href="https://github.com/repo" target="_blank">GitHub</a></div>
+      <div>
+        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="../../csound/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
+</body>
+</html>

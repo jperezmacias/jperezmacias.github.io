@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Description">
+  <meta name="author" content="Ariana Jose">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+  
+
+  <title>Coordenadas · Ingenieria de Ondas</title>
+  <link rel="canonical" href="https://jperezmacias.github.io/csound/docs/coordenadas/">
+  <link rel="stylesheet" href="../../csound/assets/css/docs.min.55e8a7678e986f6333c09fb6a81696af67711e98d72db2cb245352b002d5c4c8.css" integrity="">
+
+  <link rel="manifest" href="../../manifest.json">
+<link rel="icon" href="../../favicon/favicon.ico">
+<link rel="icon" href="../../favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../favicon/apple-touch-icon.png" sizes="180x180">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+</script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="../../" class="site-logo">Ingenieria de Ondas</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Overview</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/inicio/">
+                  
+                  Inicio
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/generalintroduccion/">
+                  
+                  GeneralIntroduccion
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Csound</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/csound/">
+                  
+                  Csound
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/funciones/">
+                  
+                  Funciones
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/ejemplos/">
+                  
+                  Ejemplos
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ecos y Reverberacion</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/ecos-y-rev/">
+                  
+                  Ecos y Rev
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Sonido 3D</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/sonido-3d-introduccion/">
+                  
+                  Sonido 3D Introduccion
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/audio-espacial/">
+                  
+                  Audio Espacial
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="active" href="../../docs/coordenadas/">
+                  
+                  Coordenadas
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/sistemas-de-audio/">
+                  
+                  Sistemas de Audio
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/hrtf/">
+                  
+                  HRTF
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/sistemas-hrtf/">
+                  
+                  Sistemas HRTF
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/implementacion/">
+                  
+                  Implementacion
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ejemplos Csound</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/ejemplos-csound/">
+                  
+                  Ejemplos Csound
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Bibliografia</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/bibliografia/">
+                  
+                  Bibliografia
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header>
+      <a href="../../" class="site-logo">Ingenieria de Ondas</a>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>Coordenadas</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <h2 id="42-sistemas-de-coordenadas">4.2. SISTEMAS DE COORDENADAS</h2>
+<p>Para especificar la localización de un sonido, necesitamos un sistema de coordenadas. Una elección natural es un sistema centrado en la cabeza. Los tres ejes coordinados definen tres planos: <strong>x-y</strong> (plano horizontal), <strong>x-z</strong> (plano frontal) y <strong>y-z</strong> (plano mediano), definiendo arriba/abajo, delante/atrás y derecha/izquierda respectivamente. Debido a la forma esférica de la cabeza, se utilizan coordenadas esféricas, que incluyen azimut, elevación y radio. A continuación, definimos dos sistemas de coordenadas empleados:</p>
+<p><strong>&ldquo;Vertical-polar coordinate system&rdquo;</strong>: En este sistema, se mide el azimut como el ángulo desde el plano mediano al plano vertical que contiene la fuente y el plano z, y luego se mide la elevación desde el plano horizontal. Las superficies con azimut constante son planos que pasan a través del eje z, y las superficies con elevación constante son conos concéntricos alrededor del eje z.</p>
+<p><strong>&ldquo;Interaural-polar coordinate system&rdquo;</strong>: Primero se mide la elevación como el ángulo que va desde el plano horizontal hasta un plano que contiene el eje x y la fuente. Las superficies de elevación constante son planos alrededor del plano interaural (x), y las superficies con azimut constante son conos concéntricos con el eje interaural.</p>
+<p><strong>Usos</strong>:</p>
+<ol>
+<li>El &ldquo;vertical-polar system&rdquo; es conveniente para describir fuentes en el plano horizontal, cuando el azimut varía entre (-180º, +180º).</li>
+<li>En el &ldquo;interaural-polar system&rdquo;, el azimut está entre -90 y +90. La distinción entre adelante y atrás es 0 para superficies en el plano horizontal y 180 para superficies en la parte de atrás.</li>
+</ol>
+<p><img alt="Coordenadas Verticales" src="../../Imagenes/image006.gif"> <img alt="Coordenadas Interaurales" src="../../Imagenes/image007.gif"></p>
+<h3 id="a-azimut-ild-itd">A. AZIMUT (ILD, ITD)</h3>
+<p>Uno de los pioneros en investigar la audición espacial fue Lord Rayleigh, quien desarrolló la teoría dúplex (&ldquo;Dúplex Theory&rdquo;). Esta teoría define ITD y ILD.</p>
+<p><img alt="Azimut" src="../../Imagenes/image008.gif"></p>
+<p>El sonido se propaga a 343 m/s. Si una onda llega a una superficie esférica con un ángulo azimut de tita, el sonido llega primero a la oreja derecha que a la izquierda, ya que tiene que recorrer una distancia mayor. Si dividimos la distancia por la velocidad del sonido, obtenemos la fórmula:</p>
+<p><img alt="Fórmula ITD" src="../../Imagenes/image009.gif"></p>
+<p>ITD es cero cuando la fuente está directamente enfrente y tiene un máximo cuando la fuente está a un lado, representando una diferencia de 0.7 ms para un tamaño típico de cabeza. También se observó que una onda incidente se difracta en la cabeza, lo que introduce otra diferencia de nivel de señal en ambos oídos, conocida como <strong>ILD</strong>.</p>
+<p>La teoría dúplex sostiene que ILD y ITD son complementarios. A bajas frecuencias (1.5 kHz) hay poco ILD, pero el ITD es apreciable. A altas frecuencias, hay ambigüedad en el ITD, pero el ILD resuelve esta ambigüedad.</p>
+<h3 id="b-elevación-htrf">B. ELEVACIÓN (HTRF)</h3>
+<p>El pabellón auditivo actúa como una cavidad de resonancia, amplificando ciertas frecuencias y generando efectos de interferencia que atenúan otras. Su respuesta en frecuencia depende de la dirección de la fuente de sonido.</p>
+<p><img alt="Elevación" src="../../Imagenes/image011.gif"></p>
+<h3 id="c-radiodistancia">C. RADIODISTANCIA</h3>
+<p>En realidad, somos malos para determinar la distancia de un sonido. Existen ciertos parámetros a considerar:</p>
+<ul>
+<li><strong>Loudness</strong>: Intensidad de sonido.</li>
+<li><strong>Motion parallax</strong>: Movimientos de la cabeza que cambian los parámetros azimut.</li>
+<li><strong>Excess interaural level difference (ITLD)</strong>: Exceso de diferencia de los tiempos interaurales.</li>
+<li>Relación entre el sonido directo y el reverberado.</li>
+</ul>
+<p>Así mismo, para fuentes cercanas, el ILD aumentará. Este incremento es notable cuando la fuente está a una distancia de un metro. Un caso extremo es cuando un insecto nos ronda la cabeza, o cuando alguien nos susurra al oído. Normalmente, que oigamos un sonido sólo en un oído es muy desagradable. Esto hay que tenerlo en cuenta, pues si queremos simular que el sonido proviene de un lado, no hace falta que solo se oiga de ese lado, sino que se puede escuchar en el otro, siendo así más agradable y más real.</p>
+<p>Otra característica que nuestro oído utiliza para localizar los sonidos es la razón de reverberación con la fuente del sonido directo. Esto tiene que ver con las reflexiones del sonido en las paredes de una habitación. Normalmente, la intensidad del sonido cae con el cuadrado de la distancia, pero cuando existen reverberaciones, las cosas cambian. A distancias cortas, la reverberación es bastante grande, mientras que a distancias largas este ratio es más pequeño.</p>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+          
+
+          <time datetime="0001-01-01"><i>🕒</i> Updated: 0001-01-01</time>
+          
+          <a href="../../docs/audio-espacial/"><i>﹤</i> Previous</a>
+          
+
+          
+          <a href="../../docs/sistemas-de-audio/">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#42-sistemas-de-coordenadas">4.2. SISTEMAS DE COORDENADAS</a>
+      <ul>
+        <li><a href="#a-azimut-ild-itd">A. AZIMUT (ILD, ITD)</a></li>
+        <li><a href="#b-elevación-htrf">B. ELEVACIÓN (HTRF)</a></li>
+        <li><a href="#c-radiodistancia">C. RADIODISTANCIA</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/repo" target="_blank">Ariana Jose</a><i>📅</i> 2004-2024<i>🚀</i> <a href="https://github.com/repo" target="_blank">GitHub</a></div>
+      <div>
+        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="../../csound/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
+</body>
+</html>

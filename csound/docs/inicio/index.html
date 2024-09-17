@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Description">
+  <meta name="author" content="Ariana Jose">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+  
+
+  <title>Fenomenos acusticos a traves del Csound · Ingenieria de Ondas</title>
+  <link rel="canonical" href="https://jperezmacias.github.io/csound/docs/inicio/">
+  <link rel="stylesheet" href="../../csound/assets/css/docs.min.55e8a7678e986f6333c09fb6a81696af67711e98d72db2cb245352b002d5c4c8.css" integrity="">
+
+  <link rel="manifest" href="../../manifest.json">
+<link rel="icon" href="../../favicon/favicon.ico">
+<link rel="icon" href="../../favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../favicon/apple-touch-icon.png" sizes="180x180">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+</script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="../../" class="site-logo">Ingenieria de Ondas</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Overview</summary>
+          <ul><li>
+              
+                
+                <a class="active" href="../../docs/inicio/">
+                  
+                  Inicio
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/generalintroduccion/">
+                  
+                  GeneralIntroduccion
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Csound</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/csound/">
+                  
+                  Csound
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/funciones/">
+                  
+                  Funciones
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/ejemplos/">
+                  
+                  Ejemplos
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ecos y Reverberacion</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/ecos-y-rev/">
+                  
+                  Ecos y Rev
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Sonido 3D</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/sonido-3d-introduccion/">
+                  
+                  Sonido 3D Introduccion
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/audio-espacial/">
+                  
+                  Audio Espacial
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/coordenadas/">
+                  
+                  Coordenadas
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/sistemas-de-audio/">
+                  
+                  Sistemas de Audio
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/hrtf/">
+                  
+                  HRTF
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/sistemas-hrtf/">
+                  
+                  Sistemas HRTF
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/implementacion/">
+                  
+                  Implementacion
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ejemplos Csound</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/ejemplos-csound/">
+                  
+                  Ejemplos Csound
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Bibliografia</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/bibliografia/">
+                  
+                  Bibliografia
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header>
+      <a href="../../" class="site-logo">Ingenieria de Ondas</a>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>Fenomenos acusticos a traves del Csound</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <p>Ingeniería de Ondas. Primavera 2004</p>
+<p>Fenómenos acústicos a través del Csound</p>
+<p>E.T.S. INGENIEROS DE TELECOMUNICACIÓN</p>
+<p>Autores:</p>
+<p>José Maria Pérez-Macías : <a href="mailto:jpermar@ribera.tel.uva.es">jpermar@ribera.tel.uva.es</a></p>
+<p>Ariana de la Cuesta de Diego : <a href="mailto:acuedie@ribera.tel.uva.es">acuedie@ribera.tel.uva.es</a></p>
+<pre><code>This website was built in 2004. Twenty years later has been re-built with new technologies to be compatible with newer browsers.
+
+All the best. Jose Maria Perez-Macias</code></pre>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+          
+
+          <time datetime="0001-01-01"><i>🕒</i> Updated: 0001-01-01</time>
+          
+          <a class="hidden"><i>﹤</i> Previous</a>
+          
+
+          
+          <a href="../../docs/generalintroduccion/">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents"></nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/repo" target="_blank">Ariana Jose</a><i>📅</i> 2004-2024<i>🚀</i> <a href="https://github.com/repo" target="_blank">GitHub</a></div>
+      <div>
+        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="../../csound/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
+</body>
+</html>

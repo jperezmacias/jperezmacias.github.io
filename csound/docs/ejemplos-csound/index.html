@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Description">
+  <meta name="author" content="Ariana Jose">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101010" media="(prefers-color-scheme: dark)">
+  
+
+  <title>EJEMPLOS en Csound · Ingenieria de Ondas</title>
+  <link rel="canonical" href="https://jperezmacias.github.io/csound/docs/ejemplos-csound/">
+  <link rel="stylesheet" href="../../csound/assets/css/docs.min.55e8a7678e986f6333c09fb6a81696af67711e98d72db2cb245352b002d5c4c8.css" integrity="">
+
+  <link rel="manifest" href="../../manifest.json">
+<link rel="icon" href="../../favicon/favicon.ico">
+<link rel="icon" href="../../favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../favicon/apple-touch-icon.png" sizes="180x180">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+</script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="../../" class="site-logo">Ingenieria de Ondas</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Overview</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/inicio/">
+                  
+                  Inicio
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/generalintroduccion/">
+                  
+                  GeneralIntroduccion
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Csound</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/csound/">
+                  
+                  Csound
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/funciones/">
+                  
+                  Funciones
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/ejemplos/">
+                  
+                  Ejemplos
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ecos y Reverberacion</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/ecos-y-rev/">
+                  
+                  Ecos y Rev
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Sonido 3D</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/sonido-3d-introduccion/">
+                  
+                  Sonido 3D Introduccion
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/audio-espacial/">
+                  
+                  Audio Espacial
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/coordenadas/">
+                  
+                  Coordenadas
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/sistemas-de-audio/">
+                  
+                  Sistemas de Audio
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/hrtf/">
+                  
+                  HRTF
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/sistemas-hrtf/">
+                  
+                  Sistemas HRTF
+                  
+                </a>
+              
+            </li><li>
+              
+                
+                <a class="" href="../../docs/implementacion/">
+                  
+                  Implementacion
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ejemplos Csound</summary>
+          <ul><li>
+              
+                
+                <a class="active" href="../../docs/ejemplos-csound/">
+                  
+                  Ejemplos Csound
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Bibliografia</summary>
+          <ul><li>
+              
+                
+                <a class="" href="../../docs/bibliografia/">
+                  
+                  Bibliografia
+                  
+                </a>
+              
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header>
+      <a href="../../" class="site-logo">Ingenieria de Ondas</a>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>EJEMPLOS en Csound</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <h1 id="5-ejemplos-en-csound">5. EJEMPLOS en Csound</h1>
+<p><strong>1. Reverberaciones</strong></p>
+<p>A continuación, pasamos a explicar el comportamiento de uno de los ficheros que se expone como ejemplo.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Comenzamos con el archivo orquesta de 2312.orc.</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Su cabecera de inicio:</td>
+</tr>
+<tr>
+<td><code>sr = 44100</code><br><code>kr = 4410</code><br><code>ksmps = 10</code><br><code>nchnls = 2</code></td>
+</tr>
+<tr>
+<td>A continuación se definen las variables globales que se van a utilizar a lo largo del programa orquesta:</td>
+</tr>
+<tr>
+<td><code>gifeed = .5</code><br><code>gilp1 = 1/10</code><br><code>gilp2 = 1/23</code><br><code>gilp3 = 1/41</code><br><code>giroll = 3000</code><br><code>gadrysig = 0</code></td>
+</tr>
+<tr>
+<td>La definición del instrumento:</td>
+</tr>
+<tr>
+<td><code>instr 2307</code><br><code>idryamt = 1 - p4</code><br><code>iwetamt = p4</code></td>
+</tr>
+<tr>
+<td>Aquí llamamos mediante la función <a href="http://emu.music.ufl.edu/csman/sigio/in.htm">soundin</a> al archivo <code>&quot;speech1.aif&quot;</code> y la salida es una variable <code>asndfile</code>:</td>
+</tr>
+<tr>
+<td><code>asndfile = soundin &quot;speech1.aif&quot;, 0</code></td>
+</tr>
+<tr>
+<td>Realizamos una serie de transformaciones sobre el archivo de audio extraído en la sentencia anterior:</td>
+</tr>
+<tr>
+<td><code>gadrysig = gadrysig + asndfile * iwetamt</code></td>
+</tr>
+<tr>
+<td>Sacamos el resultado a la salida mediante la función <a href="http://emu.music.ufl.edu/csman/sigio/out.htm">outs</a>:</td>
+</tr>
+<tr>
+<td><code>outs asndfile * idryamt, asndfile * idryamt</code><br><code>endin</code></td>
+</tr>
+<tr>
+<td>Tenemos definido un segundo instrumento que implementará el fenómeno de reverberación:</td>
+</tr>
+<tr>
+<td><code>instr 2312</code><br><code>atmp = [alpass](http://emu.music.ufl.edu/csman/sigmod/comb.htm) gadrysig, 1.7, .1</code><br><code>aleft = [alpass](http://emu.music.ufl.edu/csman/sigmod/comb.htm) atmp, 1.01, .07</code><br><code>atmp = [alpass](http://emu.music.ufl.edu/csman/sigmod/comb.htm) gadrysig, 1.5, .2</code><br><code>aright = [alpass](http://emu.music.ufl.edu/csman/sigmod/comb.htm) atmp, 1.33, .05</code></td>
+</tr>
+<tr>
+<td><code>kdel1 = [randi](http://emu.music.ufl.edu/csman/siggen/rand.htm) .01, 1, .666</code><br><code>kdel1 = kdel1 + .1</code></td>
+</tr>
+<tr>
+<td><code>addl1 = [delayr](http://emu.music.ufl.edu/csman/sigmod/delayr.htm) .3</code><br><code>afeed1 = [deltapi](http://emu.music.ufl.edu/csman/sigmod/deltap.htm) kdel1</code><br><code>afeed1 = afeed1 + gifeed * aleft</code></td>
+</tr>
+<tr>
+<td><code>delayw aleft</code></td>
+</tr>
+<tr>
+<td><code>kdel2 = [randi](http://emu.music.ufl.edu/csman/siggen/rand.htm) .01, .95, .777</code><br><code>kdel2 = kdel2 + .1</code><br><code>addl2 = [delayr](http://emu.music.ufl.edu/csman/sigmod/delayr.htm) .3</code><br><code>afeed2 = [deltapi](http://emu.music.ufl.edu/csman/sigmod/deltap.htm) kdel2</code><br><code>afeed2 = afeed2 + gifeed * aright</code><br><code>delayw aright</code></td>
+</tr>
+<tr>
+<td><code>outs aleft, aright</code><br><code>gadrysig = 0</code><br><code>endin</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><strong>La sintaxis del archivo 2312.sco:</strong><br>El instrumento 2307 se ejecutará de 0 hasta 8 segundos, mientras que el instrumento 2312 se ejecutará desde 0 hasta los 12 segundos.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>;INST ST DUR REVERB_AMT</code><br><code>i 2307 0 8 .4</code><br><code>i 2312 0 12</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>2. 3D SOUND</strong></p>
+<p>Se recomienda leer previamente el apartado de <a href="../../func_referencia.htm">funciones</a>, como referencia, así como los manuales. Hay algunos muy simplificados.</p>
+<p>Empecemos con un ejemplo sencillo, lo podemos encontrar en la referencia <a href="../../csound/docs/ejemplos-csound/#_ftn5">2</a>. A continuación, pasamos a explicar el comportamiento de este fichero y más adelante haremos unas modificaciones e implementaremos otros efectos.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Comenzamos con el archivo orquesta. Tal y como hemos explicado en secciones anteriores, la cosa quedaría así.</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sr = 44100</code><br><code>kr = 4410</code><br><code>ksmps = 10</code><br><code>nchnls = 2</code></td>
+</tr>
+<tr>
+<td><code>instr 2501 ; HRTFER ejemplo de archivo orquesta.</code><br><code>iazstart = p4</code><br><code>iazend = p5</code><br><code>ielstart = p6</code><br><code>ielend = p7</code></td>
+</tr>
+<tr>
+<td>Mueve el sonido horizontalmente desde <code>IAZSTART</code> hacia <code>IAZEND</code>:</td>
+</tr>
+<tr>
+<td><code>kaz = [line](http://emu.music.ufl.edu/csman/siggen/line.htm) iazstart, p3, iazend</code></td>
+</tr>
+<tr>
+<td>Mueve el sonido verticalmente desde <code>IELSTART</code> a <code>IELEND</code>:</td>
+</tr>
+<tr>
+<td><code>kel = [line](http://emu.music.ufl.edu/csman/siggen/line.htm) ielstart, p3, ielend</code></td>
+</tr>
+<tr>
+<td>Aquí llamamos mediante la función <a href="http://emu.music.ufl.edu/csman/sigio/in.htm">soundin</a> al archivo <code>&quot;speech1.aif&quot;</code> y la salida es una variable <code>a_rsr (a_source)</code>:</td>
+</tr>
+<tr>
+<td><code>asrc = soundin &quot;speech1.aif&quot;</code></td>
+</tr>
+<tr>
+<td>Aquí es cuando utilizamos la función <a href="http://emu.music.ufl.edu/csman/sigio/hrtfer.htm">hrtfer</a>:</td>
+</tr>
+<tr>
+<td><code>aleft, aright = hrtfer asrc, kaz, kel, &quot;HRTFcompact&quot;</code></td>
+</tr>
+<tr>
+<td><code>aleftscale = aleft * 300</code><br><code>arightscale = aright * 300</code></td>
+</tr>
+<tr>
+<td>Sacamos el resultado a la salida mediante la función <a href="http://emu.music.ufl.edu/csman/sigio/out.htm">outs</a>:</td>
+</tr>
+<tr>
+<td><code>outs aleftscale, arightscale</code><br><code>endin</code></td>
+</tr>
+</tbody>
+</table>
+<p>La sintaxis del &ldquo;score&rdquo; o del archivo partitura es distinta y más complicada. En primer lugar, el propósito del score es indicar a los instrumentos cuándo deben tocar. La sintaxis del score se puede ver en el apartado <a href="../../csound.htm">2</a> y <a href="../../funciones.htm">2.1</a>.</p>
+<p>En el caso de nuestro estudio, el archivo partitura es:</p>
+<p><code>f 1 0 8192 10 1</code><br><code>; INST ST DUR AZ START AZ END EL START EL END</code><br><code>i 2501 0 7.57 0 360 -45 45</code></p>
+<p>A continuación, dejamos los archivos estudiados y el resultado del archivo de audio. Estos son ejemplos del libro de Richard Boulanger, <em>Csound Book</em>. Te recomendamos guardar los archivos e intentar jugar con los parámetros, pues a partir de aquí ya se puede crear todos los archivos que se quieran.</p>
+<table>
+<thead>
+<tr>
+<th>ARCHIVO ORQUESTA (.orc)</th>
+<th>ARCHIVO PARTITURA (.sco)</th>
+<th>RESULTADO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="ejemplos/Csound/2501.orc">2501.orc</a></td>
+<td><a href="ejemplos/Csound/2501.sco">2501.sco</a></td>
+<td><audio controls><source src="ejemplos/Csound/2501.aif" type="audio/aiff">Your browser does not support the audio tag.</audio></td>
+</tr>
+</tbody>
+</table>
+<p>Ponemos ahora un esquema del sonido 2501, tal y como se hace en Csound:</p>
+<p><img alt="Esquema del sonido 2501" src="../../Imagenes/2501.jpg"></p>
+<p><em>[2] Csound Book. Richard Boulanger. Pág. 502</em></p>
+<hr>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          <time datetime="0001-01-01"><i>🕒</i> Updated: 0001-01-01</time>
+          
+          <a href="../../docs/implementacion/"><i>﹤</i> Previous</a>
+          
+
+          
+          <a href="../../docs/bibliografia/">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents"></nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/repo" target="_blank">Ariana Jose</a><i>📅</i> 2004-2024<i>🚀</i> <a href="https://github.com/repo" target="_blank">GitHub</a></div>
+      <div>
+        <button class="btn"><i>☀️</i><i>⁄</i><i>🌑</i></button>
+      </div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="../../csound/assets/js/docs.min.12ffdc25c0149ef34e761ee54587f2aae17affcb8375298ad2180851930cb142.js" integrity=""></script>
+</body>
+</html>
