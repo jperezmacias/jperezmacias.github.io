@@ -58,12 +58,12 @@ header {
     font-size: 0.9em;
 }
 .full {
-    height: 55vh;
+    height: 51vh;
 }
 .layer {
     background-color: rgba(116,180,226,0.85); 
     width: 100%; 
-    height: 50%;
+    height: 31%;
 }
 section .row {
     padding: 5% 8%;
