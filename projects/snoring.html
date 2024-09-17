@@ -1,53 +1,111 @@
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snoring Detection Project</title>
-    <link href="../styles/style.css" rel="stylesheet">
-    <script>
-        window.onload = function() {
-            var host = window.location.hostname;
-            var link = document.getElementById('dynamic-link');
-            if(host.includes('github.io')) {
-                link.setAttribute('href', '/');
-            } else if(host.includes('tuni.fi')) {
-                link.setAttribute('href', '/jose.perez-macias/');
-            }
-        };
-    </script>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="keywords"
+            content="Snoring detection, Emfit sensor, sleep analysis, heart rate, breathing rate, movement detection, snoring algorithm, physiological measurement, machine learning, support vector machines, convolutional neural networks, source separation, biomedical informatics, Jose Maria Perez-Macias, sleep research, IEEE, sleep monitoring, contactless sensor" />
+        <!-- Charset and viewport settings -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    
-    <section id="masthead"> 
-    <h1><a id="dynamic-link" href="#" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a></h1>
-    </section>
-    
-    <h1>Snoring Detection using Emfit</h1>
+        <!-- Description for the project -->
+        <meta
+            name="description"
+            content="This project focuses on the detection of snoring sounds during sleep using the Emfit sensor, a contactless tool that measures heart rate, breathing rate, and movement. The data gathered is used to develop algorithms for snoring detection and sleep analysis." />
 
-    <img src="img/snoring.webp" alt="snoring-project-image" width="300" class="float-left">
+        <!-- Open Graph tags for social media sharing -->
+        <meta property="og:title" content="Snoring Detection Project using Emfit Sensor" />
+        <meta
+            property="og:description"
+            content="Explore methods and algorithms to detect snoring using Emfit sensor data, covering heart rate, breathing rate, and movement analysis." />
+        <meta property="og:image" content="img/snoring.webp" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourwebsite.com/snoring-detection" />
 
-    <p>This project focuses on developing algorithms and methods to detect snoring sounds during sleep.
-        The project is based on the Emfit sensor, which is a contactless sensor that measures heart rate, breathing rate, and movement during sleep.
-        The goal is to use the data collected by the sensor to detect snoring sounds and provide feedback to the user.
-    </p>
-    <p> 
-        The project has produced the following articles
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Snoring Detection Project using Emfit Sensor" />
+        <meta
+            name="twitter:description"
+            content="Algorithms and methods for detecting snoring using contactless Emfit sensor data." />
+        <meta name="twitter:image" content="img/snoring.webp" />
+
+        <!-- Author -->
+        <meta name="author" content="Jose Maria Perez-Macias" />
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://yourwebsite.com/snoring-detection" />
+
+        <!-- CSS Link -->
+        <link href="../styles/style.css" rel="stylesheet" />
+
+        <title>Snoring Detection Project</title>
+        <link href="../styles/style.css" rel="stylesheet" />
+        <script>
+            window.onload = function () {
+                var host = window.location.hostname;
+                var link = document.getElementById("dynamic-link");
+                if (host.includes("github.io")) {
+                    link.setAttribute("href", "/");
+                } else if (host.includes("tuni.fi")) {
+                    link.setAttribute("href", "/jose.perez-macias/");
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <section id="masthead">
+            <h1><a id="dynamic-link" href="#" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a></h1>
+        </section>
+
+        <h1>Snoring Detection using Emfit</h1>
+
+        <img src="img/snoring.webp" alt="snoring-project-image" width="300" class="float-left" />
+
+        <p>
+            This project focuses on developing algorithms and methods to detect snoring sounds during sleep. The project
+            is based on the Emfit sensor, which is a contactless sensor that measures heart rate, breathing rate, and
+            movement during sleep. The goal is to use the data collected by the sensor to detect snoring sounds and
+            provide feedback to the user.
+        </p>
+        <p>The project has produced the following articles</p>
         <ol>
-            <li><strong><a href="https://doi.org/10.1088/0967-3334/37/12/2130">Spectral analysis of snoring events from an Emfit mattress</a></strong>. JM Perez-Macias, J Viik, A Varri, SL Himanen, M TenhunenPhysiological measurement 37 (12), 2130 3 2016</li>
-
-            <li><strong>Snoring detection with emfit sleep mattress.</strong> JM Perez-Macias, SL Himanen, J Viik, M TenhunenJOURNAL OF SLEEP RESEARCH 25, 159-160 2016</li>
-
-            <li><b><a href="http://bit.ly/2hbUPPX" target="_blank">Assessment of support vector machines and convolutional neural networks to detect snoring using Emfit mattress</a></b><br>Jose M. Perez-Macias, Sharath Adavanne, Jari Viik, Alpo Värri, Sari-Leena Himanen, and Mirja Tenhunen, <a href="https://embc.embs.org/2017/">The Engineering in Medicine and Biology Conference (EMBC 2017)</a> (old draft <a href="papers/EMBC17_perezmacias.pdf">here</a>)
+            <li>
+                <strong
+                    ><a href="https://doi.org/10.1088/0967-3334/37/12/2130"
+                        >Spectral analysis of snoring events from an Emfit mattress</a
+                    ></strong
+                >. JM Perez-Macias, J Viik, A Varri, SL Himanen, M TenhunenPhysiological measurement 37 (12), 2130 3
+                2016
             </li>
 
-            <li><strong><a href="http://ieeexplore.ieee.org/document/8052489/">Detection of snores using source separation on an Emfit signal </a></strong>. JM Perez-Macias, M Tenhunen, A V&auml;rri, SL Himanen, J Viik. IEEE Journal of Biomedical and Health Informatics</li>
+            <li>
+                <strong>Snoring detection with emfit sleep mattress.</strong> JM Perez-Macias, SL Himanen, J Viik, M
+                TenhunenJOURNAL OF SLEEP RESEARCH 25, 159-160 2016
+            </li>
 
-        </ul>
+            <li>
+                <b
+                    ><a href="http://bit.ly/2hbUPPX" target="_blank"
+                        >Assessment of support vector machines and convolutional neural networks to detect snoring using
+                        Emfit mattress</a
+                    ></b
+                ><br />Jose M. Perez-Macias, Sharath Adavanne, Jari Viik, Alpo Värri, Sari-Leena Himanen, and Mirja
+                Tenhunen,
+                <a href="https://embc.embs.org/2017/">The Engineering in Medicine and Biology Conference (EMBC 2017)</a>
+                (old draft <a href="papers/EMBC17_perezmacias.pdf">here</a>)
+            </li>
 
-    </p>
-</body>
+            <li>
+                <strong
+                    ><a href="http://ieeexplore.ieee.org/document/8052489/"
+                        >Detection of snores using source separation on an Emfit signal
+                    </a></strong
+                >. JM Perez-Macias, M Tenhunen, A V&auml;rri, SL Himanen, J Viik. IEEE Journal of Biomedical and Health
+                Informatics
+            </li>
+        </ol>
+    </body>
 </html>

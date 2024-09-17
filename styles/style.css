@@ -5,8 +5,8 @@ body {
 #particles-js {
   position: absolute;
   width: 100%;
-  height: 100%;
-  background: url(../img/kayak_nasijarvi_cut.jpg) no-repeat center center;
+  height: 55%;
+  background: url(../img/kayak_nasijarvi_cut_small.jpg) no-repeat center center;
   background-size: cover;
 
 }
@@ -21,10 +21,11 @@ h1,h2,h3,h4,h5,h6 {
 	
 }
 header {
-    background: url(../img/kayak_nasijarvi_cut.jpg) no-repeat center center;
+    background: url(../img/kayak_nasijarvi_cut_small.jpg) no-repeat center center;
     background-size: cover;
     overflow-x: hidden;
     overflow-y: hidden;
+
 }
 #profile {
     width: 400px;
@@ -57,12 +58,12 @@ header {
     font-size: 0.9em;
 }
 .full {
-    height: 100vh;
+    height: 55vh;
 }
 .layer {
     background-color: rgba(116,180,226,0.85); 
     width: 100%; 
-    height: 100%;
+    height: 50%;
 }
 section .row {
     padding: 5% 8%;

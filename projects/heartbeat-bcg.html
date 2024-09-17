@@ -1,40 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heart Beat Detection Project using Emfit Mattress sensor</title>
-    <link href="../styles/style.css" rel="stylesheet">
-    <script>
-        window.onload = function() {
-            var host = window.location.hostname;
-            var link = document.getElementById('dynamic-link');
-            if(host.includes('github.io')) {
-                link.setAttribute('href', '/');
-            } else if(host.includes('tuni.fi')) {
-                link.setAttribute('href', '/jose.perez-macias/');
-            }
-        };
-    </script>
-</head>
-<body>
-    <section id="masthead"> 
-        <h1>click back to <a id="dynamic-link" href="#" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a></h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Charset and viewport settings -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Description for the project -->
+        <meta
+            name="description"
+            content="This project focuses on detecting heartbeats using the Emfit mattress sensor, utilizing spectral and source separation techniques to develop a position-independent heart signal. The study compares the Emfit Pulse (EP) to electrocardiogram (ECG) readings, demonstrating reliable heart rate detection." />
+
+        <!-- Keywords for search engine optimization -->
+        <meta
+            name="keywords"
+            content="Heartbeat detection, Emfit mattress sensor, ballistocardiography, source separation, spectral analysis, heart rate estimation, polysomnography, ECG, heart signal detection, unobtrusive sensors, sleep monitoring" />
+
+        <!-- Open Graph tags for social media sharing -->
+        <meta property="og:title" content="Heart Beat Detection Project using Emfit Mattress Sensor" />
+        <meta
+            property="og:description"
+            content="Developing methods for reliable heart rate detection using the Emfit mattress sensor and advanced signal processing techniques." />
+        <meta property="og:image" content="img/bcg-heartpulse-emfit.webp" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourwebsite.com/heartbeat-detection" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Heart Beat Detection Project using Emfit Mattress Sensor" />
+        <meta
+            name="twitter:description"
+            content="Isolating heart signals using Emfit mattress sensor data for clinical applications, comparing it with ECG readings." />
+        <meta name="twitter:image" content="img/bcg-heartpulse-emfit.webp" />
+
+        <!-- Author -->
+        <meta name="author" content="Jose Maria Perez-Macias" />
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://yourwebsite.com/heartbeat-detection" />
+
+        <!-- CSS Link -->
+        <link href="../styles/style.css" rel="stylesheet" />
+
+        <title>Heart Beat Detection Project using Emfit Mattress sensor</title>
+        <link href="../styles/style.css" rel="stylesheet" />
+        <script>
+            window.onload = function () {
+                var host = window.location.hostname;
+                var link = document.getElementById("dynamic-link");
+                if (host.includes("github.io")) {
+                    link.setAttribute("href", "/");
+                } else if (host.includes("tuni.fi")) {
+                    link.setAttribute("href", "/jose.perez-macias/");
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <section id="masthead">
+            <h1>
+                click back to <a id="dynamic-link" href="#" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a>
+            </h1>
         </section>
 
+        <h1>Heart Beat Detection Project using Emfit Matress sensor</h1>
+        <img src="img/bcg-heartpulse-emfit.webp" alt="snoring-project-image" width="300" class="center-block" />
 
-    <h1>Heart Beat Detection Project using Emfit Matress sensor</h1>
-    <img src="img/bcg-heartpulse-emfit.webp" alt="snoring-project-image" width="300" class="float-left">
+        <p>
+            This project aims to develop reliable methods for detecting heartbeats using various sensors and data
+            processing techniques.
+        </p>
 
-    <p>This project aims to develop reliable methods for detecting heartbeats using various sensors and data processing techniques. </p>
+        <p>The project produced the following publications</p>
 
-    <p>The project produced the following publications
-
-    </p>
-
-<ol>
-    <li><strong><a href="https://homepages.tuni.fi/jose.perez-macias/papers/Cinc-2022-preprint.pdf">Heart pulse demodulation from Emfit mattress sensor using spectral and source separation techniques.
-    </a></strong>. JM Perez-Macias, M Tenhunen, A V&auml;rri, SL Himanen, J Viik. 2022 Computing in Cardiology (CinC)</li>
-</ol>
-</body>
+        <ol>
+            <li>
+                <strong
+                    ><a href="https://homepages.tuni.fi/jose.perez-macias/papers/Cinc-2022-preprint.pdf"
+                        >Heart pulse demodulation from Emfit mattress sensor using spectral and source separation
+                        techniques.
+                    </a></strong
+                >. JM Perez-Macias, M Tenhunen, A V&auml;rri, SL Himanen, J Viik. 2022 Computing in Cardiology (CinC)
+            </li>
+        </ol>
+    </body>
 </html>
