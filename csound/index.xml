@@ -79,9 +79,9 @@
     </item>
     <item>
       <title>Introduccion a Csound</title>
-      <link>https://jperezmacias.github.io/csound/docs/introduccion/</link>
+      <link>https://jperezmacias.github.io/csound/docs/generalintroduccion/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://jperezmacias.github.io/csound/docs/introduccion/</guid>
+      <guid>https://jperezmacias.github.io/csound/docs/generalintroduccion/</guid>
       <description>1. Introducción CSOUND es un programa que ayuda a realizar música por ordenador mediante la sintetización de señales de audio digitales.&#xA;Con Csound conseguimos una especificación detallada del sonido en cada instante y lo realiza de dos maneras:&#xA;Mediante los instrumentos de orquesta, que realizan un programa capaz de generar sonido. Mediante los eventos de la partitura, fichero de datos con los que el programa del instrumento puede trabajar, ya que contiene información sobre la altura, duración y otros elementos de control, codificados numéricamente en un formato estándar de partitura.</description>
     </item>
     <item>
