@@ -1,5 +1,43 @@
 <html lang="en">
-  
-
-    <head></head><body></body>
+  <head>
+    <title>Research Lines - projects</title>
+    <!-- CSS Link -->
+    <link href="../styles/style.css" rel="stylesheet" />
+ 
+    
+            <script>
+            window.onload = function () {
+                var host = window.location.hostname;
+                var link = document.getElementById("dynamic-link");
+                if (host.includes("github.io")) {
+                    link.setAttribute("href", "/");
+                } else if (host.includes("tuni.fi")) {
+                    link.setAttribute("href", "/jose.perez-macias/");
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <section id="masthead">
+            <h1>
+                click back to <a id="dynamic-link" href="#" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a>
+            </h1>
+        </section>
+      
+    <h3>Research Projects</h3>
+    <ul>
+      <li><a href="research-projects/snoring.html">Snoring detection</a></li>
+      <li><a href="research-projects/breathing-disorders.html">Breathing disorders - Breathing efforts</a></li>
+      <li><a href="research-projects/heartbeat-bcg.html">Heart beat detection</a></li>
+      <li>
+        <a href="research-projects/video-breathing.html">Breathing detection using video and other signals</a>
+      </li>
+      <li>
+        <a href="research-projects/eeg-trends-ICU.html"
+          >Software I wrote to analyze EEG trends in intensive care patients, an ongoing project I am supporting a bit
+          (2021) - When the time comes I share the Git Project.</a
+        >
+      </li>
+    </ul>
+  </body>
 </html>
