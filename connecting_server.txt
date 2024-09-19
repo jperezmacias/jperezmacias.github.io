@@ -1,2 +1,0 @@
-Apologies, I wasn't clear with my instructions. You can find and edit your www.cs.tut.fi www pages on linux-ssh.cc.tut.fi (or other TUT Linux computers) under directory /intra/wwwcshome/perezmac/public_html/ . Directory listing of /intra/wwwcshome/ does not list your directory, but it will be automatically mounted when you change to that directory of when you list the files under it. Please note that you have to login to linux-ssh.cc.tut.fi with password, with ssh public key authentication can't be used. 
-
