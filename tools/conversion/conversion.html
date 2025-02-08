@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Conversion Toolkit - Quick & Easy Conversions</title>
+    <meta name="description" content="Free online unit converter for temperature, length, speed, and currency. Convert Fahrenheit-Celsius, inches/feet-cm, miles-km, km/h-m/s, and EUR-USD with instant results and detailed explanations.">
+    <meta name="keywords" content="unit converter, temperature conversion, length conversion, currency converter, speed conversion, Fahrenheit to Celsius, inches to cm, km to miles">
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .converter { border: 1px solid #ccc; padding: 20px; margin: 15px 0; border-radius: 8px; }
+        input[type="number"] { width: 200px; padding: 5px; }
+        button { background-color: #4CAF50; color: white; padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer; }
+        .result { margin-top: 10px; font-weight: bold; }
+        .explanation { color: #666; font-size: 0.9em; margin-top: 10px; }
+        h2 { color: #2c3e50; }
+    </style>
+</head>
+<body>
+    <h1>Unit Conversion Toolkit</h1>
+    Sometimes I find myself wanting to convert things like temperature, length, speed, or currency. So I made this simple tool to help me out. Feel free to use it too! 
+    I also thought about to explain what it means, how it is converted, and how to do it mentally.
+    
+    <!-- Temperature Converter -->
+    <div class="converter">
+        <h2>Temperature Converter (°F ↔ °C)</h2>
+        <input type="number" id="tempInput" placeholder="Enter temperature">
+        <select id="tempScale">
+            <option value="f">Fahrenheit to Celsius</option>
+            <option value="c">Celsius to Fahrenheit</option>
+        </select>
+        <button onclick="convertTemp()">Convert</button>
+        <div class="result" id="tempResult"></div>
+        <div class="explanation">
+            Formula: °C = (°F - 32) × 5/9 | °F = (°C × 9/5) + 32<br>
+            Quick mental conversion: For rough estimates, subtract 30 from Fahrenheit and halve to get Celsius
+        </div>
+    </div>
+
+    <!-- Length Converter -->
+    <div class="converter">
+        <h2>Length Converter</h2>
+        <input type="number" id="lengthInput" placeholder="Enter value">
+        <select id="lengthType">
+            <option value="inches">Inches to cm</option>
+            <option value="feet">Feet to cm</option>
+            <option value="miles">Miles to km</option>
+        </select>
+        <button onclick="convertLength()">Convert</button>
+        <div class="result" id="lengthResult"></div>
+        <div class="explanation">
+            1 inch = 2.54 cm | 1 foot = 30.48 cm | 1 mile = 1.60934 km<br>
+            Common uses: Height measurements (feet/inches to cm), road distances
+        </div>
+    </div>
+
+    <!-- Speed Converter -->
+    <div class="converter">
+        <h2>Speed Converter (km/h ↔ m/s)</h2>
+        <input type="number" id="speedInput" placeholder="Enter speed">
+        <select id="speedType">
+            <option value="kmh">km/h to m/s</option>
+            <option value="ms">m/s to km/h</option>
+        </select>
+        <button onclick="convertSpeed()">Convert</button>
+        <div class="result" id="speedResult"></div>
+        <div class="explanation" id="speedExplanation"></div>
+    </div>
+
+    <!-- Currency Converter -->
+    <div class="converter">
+        <h2>Currency Converter (EUR ↔ USD)</h2>
+        <input type="number" id="currencyInput" placeholder="Enter amount">
+        <select id="currencyType">
+            <option value="eur">EUR to USD</option>
+            <option value="usd">USD to EUR</option>
+        </select>
+        <button onclick="convertCurrency()">Convert</button>
+        <div class="result" id="currencyResult"></div>
+        <div class="explanation">Rates updated every hour using ECB data</div>
+    </div>
+
+    <h1>Some interesting facts</h1>
+
+
+    <h2>Speeds and Reaction Times in Cars</h2>
+    
+    <h2>Typical Reaction Times</h2>
+    <ul>
+        <li>Average human reaction time: 0.2 to 0.3 seconds (for a simple stimulus like a brake light). So, for example, if 70km/h is approximately 20m/s, then you would have run 0.3s * 20m/s = 6 m. Just noticing!</li>
+        <li>Under stress or distraction: 1 to 1.5 seconds (common for drivers).</li>
+    </ul>
+
+    <h2>Braking Distance</h2>
+    <ul>
+        <li>Watch: 36 meters (120 feet) at 50 km/h (31 mph).</li>
+        <li>Formula: Braking distance increases with the square of speed. Double the speed = 4x the braking distance.</li>
+    </ul>
+
+    <h3>Example at 100 km/h (62 mph):</h3>
+    <ul>
+        <li>Reaction distance (1.5 seconds): 42 meters.</li>
+        <li>Braking distance (dry road): 96 meters.</li>
+        <li>Total stopping distance: 138 meters.</li>
+    </ul>
+
+    <h2>Field Sizes (for visualizing distances)</h2>
+    
+    <h3>Football (Soccer) Field:</h3>
+    <ul>
+        <li>Length: 100-110 meters (110-120 yards).</li>
+        <li>Width: 64-75 meters (70-80 yards).</li>
+    </ul>
+
+    <h3>American Football Field:</h3>
+    <ul>
+        <li>Length: 91.44 meters (100 yards) + end zones (9.14 meters each).</li>
+        <li>Width: 48.8 meters (53.3 yards).</li>
+    </ul>
+
+    <h3>Football 7 (7-a-side Soccer):</h3>
+    <ul>
+        <li>Length: 50-65 meters.</li>
+        <li>Width: 35-45 meters.</li>
+    </ul>
+
+    <h3>Futsal Field:</h3>
+    <ul>
+        <li>Length: 38-42 meters.</li>
+        <li>Width: 20-25 meters.</li>
+    </ul>
+
+    <h3>Tennis Court:</h3>
+    <ul>
+        <li>Length: 23.77 meters (78 feet).</li>
+        <li>Width: 8.23 meters (27 feet) for singles, 10.97 meters (36 feet) for doubles.</li>
+    </ul>
+
+    <h2>Speeds of Animals and Humans</h2>
+    <p>I find this one specially interesting. Have you ever wondered if you can outran any animal? So here are some information to figure it out. Also with the bike! So yeah, I hate to brake it to you, but it is very possible that you will not outrun a dog.</p>
+
+    <h3>Humans:</h3>
+    <ul>
+        <li>Average walking speed: 1.4 m/s (5 km/h or 3 mph).</li>
+        <li>Average running speed: 3-4 m/s (10-14 km/h or 6-9 mph).</li>
+        <li>Usain Bolt's top speed: 12.4 m/s (44.7 km/h or 27.8 mph).</li>
+    </ul>
+
+    <h3>Animals:</h3>
+    <ul>
+        <li>Leopard: 18 m/s (65 km/h or 40 mph).</li>
+        <li>Bear: 12 m/s (43 km/h or 27 mph).</li>
+        <li>Dog (Greyhound): 18 m/s (65 km/h or 40 mph).</li>
+        <li>Elephant: 7 m/s (25 km/h or 15 mph).</li>
+        <li>Bird (Peregrine Falcon in dive): 89 m/s (320 km/h or 200 mph).</li>
+    </ul>
+
+    <h3>Bicycle:</h3>
+    <ul>
+        <li>Average cyclist: 5.5 m/s (20 km/h or 12 mph).</li>
+        <li>Professional speed: 20-25 m/s (72-90 km/h or 45-56 mph).</li>
+    </ul>
+
+    <h2>Visualizing Speeds</h2>
+    <ul>
+        <li>1 m/s: A slow walk.</li>
+        <li>5 m/s: A brisk run or cycling speed.</li>
+        <li>10 m/s: A fast sprint or car in a residential area.</li>
+        <li>30 m/s: A cheetah running or a car on the highway.</li>
+        <li>100 m/s: A high-speed train or a peregrine falcon diving.</li>
+    </ul>
+
+    <h2>Practical Examples</h2>
+    
+    <h3>Car at 50 km/h (13.9 m/s):</h3>
+    <ul>
+        <li>Covers 13.9 meters every second.</li>
+        <li>Reaction distance (1.5 seconds): 20.8 meters.</li>
+        <li>Braking distance (dry road): 24 meters.</li>
+        <li>Total stopping distance: 44.8 meters (about half a soccer field).</li>
+    </ul>
+
+    <h3>Human Running at 10 km/h (2.8 m/s):</h3>
+    <ul>
+        <li>Covers 2.8 meters every second.</li>
+        <li>Takes 3.6 seconds to run the length of a soccer field.</li>
+    </ul>
+
+    <h2>How to Use This Information</h2>
+    <ul>
+        <li>For your website include a table or interactive tool where users can input a speed and see how far they travel in a second, how long it takes to cross a football field, or how their speed compares to animals or vehicles.</li>
+        <li>Visual aids: Use diagrams of fields or tracks to show distances.</li>
+        <li>Comparisons: Add fun facts like "At 100 km/h, your car covers the length of a soccer field in 3.6 seconds—faster than a cheetah!"</li>
+    </ul>
+
+
+    <section class="usage-section">
+        <h2>How to Use This Information</h2>
+        
+        <!-- Interactive Speed Calculator -->
+        <div class="calculator">
+            <h3>Speed Impact Calculator</h3>
+            <div class="input-group">
+                <input type="number" id="speed" placeholder="Enter speed" min="0">
+                <select id="unit">
+                    <option value="kmh">km/h</option>
+                    <option value="mph">mph</option>
+                </select>
+                <button onclick="calculateSpeedImpact()">Calculate</button>
+            </div>
+            <div class="results" id="speedResults"></div>
+        </div>
+    
+        <!-- Visual Field Comparison -->
+        <div class="field-visualization">
+            <h3>Field Length Comparison</h3>
+            <div class="field" id="soccerField">
+                <div class="car-icon" id="movingCar">🚗</div>
+            </div>
+            <p id="fieldTime"></p>
+        </div>
+    
+        <!-- Speed Comparison Table -->
+        <div class="comparison-table">
+            <h3>Speed Comparisons</h3>
+            <table>
+                <tr>
+                    <th>Entity</th>
+                    <th>Speed (km/h)</th>
+                    <th>Speed (mph)</th>
+                    <th>Fun Fact</th>
+                </tr>
+                <tr>
+                    <td>Cheetah</td>
+                    <td>110</td>
+                    <td>68</td>
+                    <td>Fastest land animal</td>
+                </tr>
+                <tr>
+                    <td>Average Car</td>
+                    <td>60</td>
+                    <td>37</td>
+                    <td>Urban speed limit</td>
+                </tr>
+                <tr>
+                    <td>Professional Cyclist</td>
+                    <td>50</td>
+                    <td>31</td>
+                    <td>Tour de France downhill</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    
+    <style>
+    .calculator, .field-visualization, .comparison-table {
+        border: 1px solid #e0e0e0;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+    }
+    
+    .input-group {
+        display: flex;
+        gap: 10px;
+        margin: 15px 0;
+    }
+    
+    .field {
+        width: 100%;
+        height: 50px;
+        background: #2ecc71;
+        position: relative;
+        margin: 15px 0;
+    }
+    
+    .car-icon {
+        position: absolute;
+        left: 0;
+        transition: left 0.5s ease-in-out;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+    
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    
+    .results {
+        margin-top: 15px;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+    </style>
+    
+    <script>
+    function calculateSpeedImpact() {
+        const speed = parseFloat(document.getElementById('speed').value);
+        const unit = document.getElementById('unit').value;
+        const soccerFieldLength = 105; // meters
+        
+        // Convert to m/s
+        let speedMps = unit === 'kmh' ? speed / 3.6 : speed * 0.44704;
+        
+        // Calculations
+        const metersPerSecond = speedMps.toFixed(1);
+        const fieldTime = (soccerFieldLength / speedMps).toFixed(1);
+        
+        // Update results
+        document.getElementById('speedResults').innerHTML = `
+            At ${speed} ${unit === 'kmh' ? 'km/h' : 'mph'}:<br>
+            • ${metersPerSecond} meters per second<br>
+            • Crosses a soccer field in ${fieldTime} seconds
+        `;
+    
+        // Animate car
+        const car = document.getElementById('movingCar');
+        car.style.left = `${Math.min(speed, 100)}%`;
+        
+        // Update comparison
+        document.getElementById('fieldTime').textContent = 
+            `At this speed, you'd cross a soccer field (105m) in ${fieldTime} seconds!`;
+    }
+    </script>
+
+    <script>
+        // Temperature Conversion
+        function convertTemp() {
+            const input = parseFloat(document.getElementById('tempInput').value);
+            const scale = document.getElementById('tempScale').value;
+            let result;
+            if (scale === 'f') {
+                result = (input - 32) * 5/9;
+                document.getElementById('tempResult').innerHTML = `${input}°F = ${result.toFixed(1)}°C`;
+            } else {
+                result = (input * 9/5) + 32;
+                document.getElementById('tempResult').innerHTML = `${input}°C = ${result.toFixed(1)}°F`;
+            }
+        }
+
+        // Length Conversion
+        function convertLength() {
+            const input = parseFloat(document.getElementById('lengthInput').value);
+            const type = document.getElementById('lengthType').value;
+            let result;
+            if (type === 'inches') result = input * 2.54;
+            else if (type === 'feet') result = input * 30.48;
+            else result = input * 1.60934;
+            document.getElementById('lengthResult').innerHTML = `${input} ${type} = ${result.toFixed(2)} ${type === 'miles' ? 'km' : 'cm'}`;
+        }
+
+        // Speed Conversion
+        function convertSpeed() {
+            const input = parseFloat(document.getElementById('speedInput').value);
+            const type = document.getElementById('speedType').value;
+            let result, explanation;
+            if (type === 'kmh') {
+                result = input / 3.6;
+                explanation = `At ${input} km/h: ${result.toFixed(1)} m/s | 100 km/h = ~27.8 m/s<br>
+                Reaction distance (1.5s): ${(result * 1.5).toFixed(1)}m`;
+            } else {
+                result = input * 3.6;
+                explanation = `${input} m/s = ${result.toFixed(1)} km/h`;
+            }
+            document.getElementById('speedResult').innerHTML = `${input} ${type === 'kmh' ? 'km/h' : 'm/s'} = ${result.toFixed(2)} ${type === 'kmh' ? 'm/s' : 'km/h'}`;
+            document.getElementById('speedExplanation').innerHTML = explanation;
+        }
+
+        // Currency Conversion (using ExchangeRate-API)
+        async function convertCurrency() {
+            const amount = parseFloat(document.getElementById('currencyInput').value);
+            const type = document.getElementById('currencyType').value;
+            try {
+                const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${type === 'eur' ? 'EUR' : 'USD'}`);
+                const data = await response.json();
+                const rate = type === 'eur' ? data.rates.USD : data.rates.EUR;
+                const result = amount * rate;
+                document.getElementById('currencyResult').innerHTML = `${amount} ${type === 'eur' ? 'EUR' : 'USD'} = ${result.toFixed(2)} ${type === 'eur' ? 'USD' : 'EUR'}`;
+            } catch (error) {
+                document.getElementById('currencyResult').innerHTML = "Error fetching rates. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>
