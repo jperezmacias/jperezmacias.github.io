@@ -54,6 +54,36 @@
         </div>
     </div>
 
+    <h2>Height Converter: Feet & Inches to Centimeters</h2>
+    <div class="converter">
+        <label for="feet">Feet:</label>
+        <input type="number" id="feet" placeholder="Feet" min="0">
+        <label for="inches">Inches:</label>
+        <input type="number" id="inches" placeholder="Inches" min="0" max="11">
+        <button onclick="convertHeight()">Convert</button>
+        <div class="result" id="heightResult"></div>
+    </div>
+    
+    <h3>Common Height Examples</h3>
+    <table>
+        <tr>
+            <th>Feet & Inches</th>
+            <th>Centimeters</th>
+        </tr>
+        <tr>
+            <td>5' 0"</td>
+            <td>152.4 cm</td>
+        </tr>
+        <tr>
+            <td>5' 6"</td>
+            <td>167.6 cm</td>
+        </tr>
+        <tr>
+            <td>6' 0"</td>
+            <td>182.9 cm</td>
+        </tr>
+    </table>
+
     <!-- Speed Converter -->
     <div class="converter">
         <h2>Speed Converter (km/h ↔ m/s)</h2>
@@ -351,35 +381,7 @@
         </li>
     </ul>
 
-    <h2>Height Converter: Feet & Inches to Centimeters</h2>
-<div class="converter">
-    <label for="feet">Feet:</label>
-    <input type="number" id="feet" placeholder="Feet" min="0">
-    <label for="inches">Inches:</label>
-    <input type="number" id="inches" placeholder="Inches" min="0" max="11">
-    <button onclick="convertHeight()">Convert</button>
-    <div class="result" id="heightResult"></div>
-</div>
 
-<h3>Common Height Examples</h3>
-<table>
-    <tr>
-        <th>Feet & Inches</th>
-        <th>Centimeters</th>
-    </tr>
-    <tr>
-        <td>5' 0"</td>
-        <td>152.4 cm</td>
-    </tr>
-    <tr>
-        <td>5' 6"</td>
-        <td>167.6 cm</td>
-    </tr>
-    <tr>
-        <td>6' 0"</td>
-        <td>182.9 cm</td>
-    </tr>
-</table>
 
 <script>
 function convertHeight() {
