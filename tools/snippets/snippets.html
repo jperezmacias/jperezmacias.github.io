@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A resource page for tech tips, including system commands, Git usage, and coding snippets.">
+    <meta name="keywords" content="tech tips, Linux commands, Git tutorials, code snippets">
+    <meta name="author" content="Your Name">
+    <title>Tech Tips and Code Snippets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Tech Tips and Code Snippets</h1>
+    </header>
+
+    <section id="mount-drive">
+        <h2>How to Mount a Drive with Permissions</h2>
+        <pre>
+<code>
+    sudo mount -t cifs //drive/folder  /media/name -o username=xxxx,password=xxxx,uid=1000,gid=1000
+</code>
+<button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
+        </pre>
+        <p>Description: This command mounts an ext4 filesystem from device <code>/dev/sdX1</code> to the directory
+            <code>/mnt/mount-point</code> with specific user and group ownership, and file/directory permissions.</p>
+    </section>
+
+
+    <section id="git-manual">
+        <h2>Using Git - Mini Manual</h2>
+        <h3>Initialize a Git Repository</h3>
+        <pre>
+<code>
+git init
+git add .
+git commit -m "Your commit message"
+</code>
+<button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
+    </pre>
+        <p>Description: This command initializes a new Git repository in the current directory.</p>
+
+
+
+
+
+<section id="code-snippets">
+            <h2>Code Snippets</h2>
+            <h3>Python - Print Hello World</h3>
+            <pre>
+<code>
+print("Hello, World!")
+</code>
+<button class="copy-button" onclick="copyToClipboard(this)">Copy</button>
+        </pre>
+
+
+        <footer>
+            <p>© 2025 Your Name. All rights reserved.</p>
+        </footer>
+
+        <script>
+            function copyToClipboard(button) {
+                const code = button.previousElementSibling.textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    button.textContent = "Copied!";
+                    setTimeout(() => button.textContent = "Copy", 2000);
+                }).catch(err => {
+                    console.error('Failed to copy: ', err);
+                    button.textContent = "Error";
+                });
+            }
+        </script>
+</body>
+
+</html>
