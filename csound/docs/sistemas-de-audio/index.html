@@ -19,14 +19,6 @@
 <link rel="icon" href="../../favicon/favicon-16x16.png" sizes="16x16" type="image/png">
 <link rel="icon" href="../../favicon/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../favicon/apple-touch-icon.png" sizes="180x180">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-XXXXXXXXXX');
-</script>
 </head>
 
 <body>
@@ -222,7 +214,7 @@
           <button class="btn"><i>⬅️</i> On this section</button>
           <button class="btn">On this page <i>➡️</i></button>
         </nav>
-        <header>
+        <header id="top">
           <h1>Sonido 3D - Introduccion</h1>
           <p></p>
         </header>
@@ -230,32 +222,32 @@
           <h1 id="43-sistemas-de-audio-espaciales-simples">4.3. SISTEMAS DE AUDIO ESPACIALES SIMPLES</h1>
 <p>Los sistemas de audio espaciales se limitan a localizar solamente el azimut. Hay tres clases de estos sistemas simples:</p>
 <ul>
-<li><a href="../../docs/sistemas-de-audio/#dos-canales">Dos canales (stereo)</a></li>
-<li><a href="../../docs/sistemas-de-audio/#multicanal">Multicanal</a></li>
-<li><a href="../../docs/sistemas-de-audio/#binaural">Grabaciones binaurales</a></li>
+<li><a href="#dos-canales">Dos canales (stereo)</a></li>
+<li><a href="#multicanal">Multicanal</a></li>
+<li><a href="#binaural">Grabaciones binaurales</a></li>
 </ul>
 <h2 id="dos-canales">A. Sistemas de dos canales (Stereo)</h2>
 <p>En la industria de entretenimiento, el estéreo fue el primer producto comercial que daba la sensación de sonido en 3D. La idea era simple: si queríamos situar un sonido a la izquierda, llevábamos la señal al altavoz izquierdo; para situarlo a la derecha, a la derecha. Si la misma señal se envía a ambos altavoces, el oyente percibirá la fuente de sonido como si estuviera realmente delante. Esto es efectivo en habitaciones regulares.</p>
-<p>Podemos cambiar la localización de la fuente utilizando el <a href="../../eco.htm">precedence effect</a>. Si el sonido de la izquierda se retrasa 10 o 15 ms en relación al altavoz derecho, localizaremos la fuente en el lado derecho, incluso si el sonido de la izquierda es más intenso. Sin embargo, si el retraso es excesivo, el oyente notará el efecto y lo asociará a un eco molesto.</p>
-<p><a href="../../docs/sistemas-de-audio/#arriba">Arriba</a></p>
+<p>Podemos cambiar la localización de la fuente utilizando el <a href="../ecos-y-rev/">precedence effect</a>. Si el sonido de la izquierda se retrasa 10 o 15 ms en relación al altavoz derecho, localizaremos la fuente en el lado derecho, incluso si el sonido de la izquierda es más intenso. Sin embargo, si el retraso es excesivo, el oyente notará el efecto y lo asociará a un eco molesto.</p>
+<p><a href="#top">Arriba</a></p>
 <h2 id="multicanal">B. Sistemas multicanal (Surround Sound)</h2>
-<p>Otra forma de localizar sonidos es separar los canales para cada dirección deseada, incluyendo arriba y abajo. Esto es lo que se hace en los sistemas de teatro, como Dolby Pro Logic Surround Sound. En ambientes reverberantes, se puede aprovechar el <a href="../../eco.htm">Franssen effect</a> usando pequeños altavoces alrededor, excepto por un subwoofer que proporciona contenido de baja frecuencia.</p>
+<p>Otra forma de localizar sonidos es separar los canales para cada dirección deseada, incluyendo arriba y abajo. Esto es lo que se hace en los sistemas de teatro, como Dolby Pro Logic Surround Sound. En ambientes reverberantes, se puede aprovechar el <a href="../ecos-y-rev/">Franssen effect</a> usando pequeños altavoces alrededor, excepto por un subwoofer que proporciona contenido de baja frecuencia.</p>
 <p>Aunque estos sistemas producen efectos espaciales satisfactorios, son caros e inconvenientes, y no juegan un papel importante en HCI (sistemas de interacción hombre-máquina). Este apartado incluiría aspectos como ambisonics, quadraphonics y Motion Picture Sound, que son principalmente para cines.</p>
-<p><a href="../../docs/sistemas-de-audio/#arriba">Arriba</a></p>
+<p><a href="#top">Arriba</a></p>
 <h2 id="binaural">C. Grabaciones binaurales</h2>
 <p>Se ha sabido durante mucho tiempo que no es necesario tener múltiples canales para crear un efecto 3D convincente. Dos canales son suficientes. El truco es recrear las presiones del sonido en ambos oídos, como si el oyente estuviera en el lugar real.</p>
 <p>Una aproximación consiste en situar dos micrófonos en los canales auditivos de un maniquí, o dos maniquís cerca de las orejas, para grabar lo que nuestros oídos registran.</p>
 <p>Si el maniquí tiene la misma forma y tamaño de cabeza, los mismos tiempos de ITD y ILD serán recibidos. Así, si tuviera el mismo pabellón auditivo con la misma forma y tamaño, la información de elevación sería recibida perfectamente.</p>
 <p>A estas grabaciones se les llama grabaciones binaurales, y pueden producir casi un sonido 3D. Aunque son económicamente viables y efectivas, tienen grandes desventajas:</p>
 <ul>
-<li>Requieren el uso de altavoces. (ver <a href="../../44.htm">cross-talk cancelled stereo</a>).</li>
+<li>Requieren el uso de altavoces. (ver <a href="../hrtf/">cross-talk cancelled stereo</a>).</li>
 <li>No son interactivas, deben ser grabadas con antelación.</li>
 <li>Si el oyente se mueve, también lo hace la fuente.</li>
 <li>Las fuentes de sonido justo en frente parecen estar muy cerca.</li>
 <li>Debido a que los pabellones auditivos de cada persona son distintos, los efectos de elevación no son posibles.</li>
 </ul>
 <p>Para mejorar las grabaciones binaurales se requiere una comprensión de las HRTF.</p>
-<p><a href="../../docs/sistemas-de-audio/#arriba">Arriba</a></p>
+<p><a href="#top">Arriba</a></p>
 
         </div>
 

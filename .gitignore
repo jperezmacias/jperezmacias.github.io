@@ -2,3 +2,9 @@
 .idea/*
 trash/*
 img/test/*
+check_links
+check_links.go
+check_links.py
+check_links_report.txt
+*.250304
+research-projects/test*.html

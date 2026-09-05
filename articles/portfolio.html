@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Portfolio - Jose Maria Perez-Macias</title>
+    <script>
+        window.onload = function() {
+            var host = window.location.hostname;
+            var link = document.getElementById('dynamic-link');
+            if(host.includes('github.io')) {
+                link.setAttribute('href', '/');
+            } else if(host.includes('tuni.fi')) {
+                link.setAttribute('href', '/jose.perez-macias/');
+            }
+        };
+    </script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="/styles/style-secondary.css">
+
+</head>
+<body>
+    <section id="masthead">
+        <h1>Go back to .. <a id="dynamic-link" href="../index.html" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a></h1>
+        </section>
+        <h1>Projects</h1>
+<ul>
+    <li><a href="https://destinonatural.cordoba.es/">Cordoba Destino Natural</a></li>
+</ul>
+
+        <script>
+            // Additional JS functionality if needed
+            console.log(" list loaded successfully!");
+        </script>
+
+</body>
+</html>

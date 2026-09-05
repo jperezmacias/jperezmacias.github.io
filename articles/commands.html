@@ -1,0 +1,11 @@
+
+
+# get ip from hostname Debian
+hostname -I
+# view hostname or change it
+hostnamectl
+sudo hostnamectl set-hostname <new_hostname> After changing, it's recommended to update the /etc/hosts file and reboot for the changes to fully apply
+sudo nano /etc/hosts
+For example, if the line was 127.0.0.1 localhost oldname, change it to 127.0.0.1 localhost newname.
+sudo reboot
+

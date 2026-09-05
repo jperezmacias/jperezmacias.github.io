@@ -19,14 +19,6 @@
 <link rel="icon" href="../../favicon/favicon-16x16.png" sizes="16x16" type="image/png">
 <link rel="icon" href="../../favicon/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../favicon/apple-touch-icon.png" sizes="180x180">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-XXXXXXXXXX');
-</script>
 </head>
 
 <body>
@@ -309,8 +301,8 @@
 </tbody>
 </table>
 <p><strong>2. 3D SOUND</strong></p>
-<p>Se recomienda leer previamente el apartado de <a href="../../func_referencia.htm">funciones</a>, como referencia, así como los manuales. Hay algunos muy simplificados.</p>
-<p>Empecemos con un ejemplo sencillo, lo podemos encontrar en la referencia <a href="../../docs/ejemplos-csound/#_ftn5">2</a>. A continuación, pasamos a explicar el comportamiento de este fichero y más adelante haremos unas modificaciones e implementaremos otros efectos.</p>
+<p>Se recomienda leer previamente el apartado de <a href="../funciones/">funciones</a>, como referencia, así como los manuales. Hay algunos muy simplificados.</p>
+<p>Empecemos con un ejemplo sencillo, lo podemos encontrar en la referencia <a href="#ref2">2</a>. A continuación, pasamos a explicar el comportamiento de este fichero y más adelante haremos unas modificaciones e implementaremos otros efectos.</p>
 <table>
 <thead>
 <tr>
@@ -359,7 +351,7 @@
 </tr>
 </tbody>
 </table>
-<p>La sintaxis del &ldquo;score&rdquo; o del archivo partitura es distinta y más complicada. En primer lugar, el propósito del score es indicar a los instrumentos cuándo deben tocar. La sintaxis del score se puede ver en el apartado <a href="../../csound.htm">2</a> y <a href="../../funciones.htm">2.1</a>.</p>
+<p>La sintaxis del &ldquo;score&rdquo; o del archivo partitura es distinta y más complicada. En primer lugar, el propósito del score es indicar a los instrumentos cuándo deben tocar. La sintaxis del score se puede ver en el apartado <a href="../csound/">2</a> y <a href="../funciones/">2.1</a>.</p>
 <p>En el caso de nuestro estudio, el archivo partitura es:</p>
 <p><code>f 1 0 8192 10 1</code><br><code>; INST ST DUR AZ START AZ END EL START EL END</code><br><code>i 2501 0 7.57 0 360 -45 45</code></p>
 <p>A continuación, dejamos los archivos estudiados y el resultado del archivo de audio. Estos son ejemplos del libro de Richard Boulanger, <em>Csound Book</em>. Te recomendamos guardar los archivos e intentar jugar con los parámetros, pues a partir de aquí ya se puede crear todos los archivos que se quieran.</p>
@@ -381,7 +373,7 @@
 </table>
 <p>Ponemos ahora un esquema del sonido 2501, tal y como se hace en Csound:</p>
 <p><img alt="Esquema del sonido 2501" src="../../Imagenes/2501.jpg"></p>
-<p><em>[2] Csound Book. Richard Boulanger. Pág. 502</em></p>
+<p id="ref2"><em>[2] Csound Book. Richard Boulanger. Pág. 502</em></p>
 <hr>
 
         </div>
