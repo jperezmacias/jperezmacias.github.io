@@ -69,7 +69,7 @@
     "url": "https://homepages.tuni.fi/jose.perez-macias/",
     "sameAs": [
       "https://www.linkedin.com/in/jose-maria-perez-macias/",
-      "https://scholar.google.com/citations?user=yourGoogleScholarID",
+      "https://scholar.google.fi/citations?user=2eM13MsAAAAJ&hl=en",
       "https://github.com/jose-perez-macias",
       "https://www.researchgate.net/profile/Jose_Perez-Macias",
       "https://github.com/jperezmacias"
@@ -146,11 +146,27 @@
 
                 <h2>Bio</h2>
                 <p><a href="now.html">check My NOW page</a></p>
-                <p>I enjoy leading deep technical projects.</p>
-                <p>Contributed in projects in Philips Research (Medical Signal Processing Team), Huawei Helsinki
-                    Concept Lab in the Wearable team building wearable prototypes, Emfit Oy leading algorithm
-                    development for
+                <p>I lead deep technical projects.</p>
+
+                <p>
+                    For a more
+                    detailed CV ask me for my CV in pdf. My ORCID <a
+                        href="https://orcid.org/0000-0003-3485-0874">0000-0003-3485-0874</a>
+                </p>
+                <p>Contributed in projects in Philips Research (Medical Signal Processing Team), Huawei Helsinki Concept
+                    Lab in the Wearable team building wearable prototypes, Emfit Oy leading algorithm development for
                     sleep monitoring, Technical Lead in Aalto University in an ARPA-H funded project. </p>
+
+
+                <p>
+                    I develop algorithms for unobtrusive sensors—like mattress sensors and
+                    wearables—to detect physiological signals such as snoring, breathing patterns, and heart rate. With
+                    a background in telecommunications and biomedical engineering, I bring a multidisciplinary approach
+                    to my work. I’m passionate about simple, effective solutions and am currently seeking opportunities
+                    in AI development, wearable technologies, or related fields. I’m open to remote work (or on-site
+                    roles in Finland) and enjoy collaborating with teams or working independently.
+                </p>
+
 
                 <p>I defended my thesis in June 2025 at Tampere University, Finland, specializing in sleep monitoring
                     and
@@ -159,28 +175,11 @@
                     I also appeared in the news! which is cool. <a href="articles/elama-article.html">HERE is the
                         article</a>.
                 </p>
-                <p>
-                    I develop algorithms for unobtrusive sensors—like mattress sensors and
-                    wearables—to detect physiological signals such as snoring, breathing patterns, and heart rate. With
-                    a background in telecommunications and biomedical engineering, I bring a multidisciplinary approach
-                    to my work. I’m passionate about simple, effective solutions and am currently seeking opportunities
-                    in AI development, wearable technologies, or related fields. I’m open to remote work (or on-site
-                    roles in Finland) and enjoy collaborating with teams or working independently.</p>
-                <p>
-                    For a more
-                    detailed CV ask me for my CV in pdf. My ORCID <a
-                        href="https://orcid.org/0000-0003-3485-0874">0000-0003-3485-0874</a>
-                </p>
+
                 <p>
                     Outside research, I play piano and explore how music and technology intersect, often inspiring my
-                    signal processing projects. As a strange quirk... I do enjoy reading patents.</p>
-
-
-
-
-
-
-
+                    signal processing projects. As a strange quirk... I do enjoy reading patents.
+                </p>
             </div>
 
             <div class="col-md-4">
@@ -751,30 +750,6 @@
 
     <footer>Jose Maria Perez-Macias @ Tampere University of Technology</footer>
 
-    <!--<script src="js/bootstrap.min.js"></script>-->
-
-    <script>
-        var $allVideos = $(".js-resize"),
-            $fluidEl = $("figure");
-
-        $allVideos.each(function () {
-            $(this)
-                // jQuery .data does not work on object/embed elements
-                .attr("data-aspectRatio", this.height / this.width)
-                .removeAttr("height")
-                .removeAttr("width");
-        });
-
-        $(window)
-            .resize(function () {
-                var newWidth = $fluidEl.width();
-                $allVideos.each(function () {
-                    var $el = $(this);
-                    $el.width(newWidth).height(newWidth * $el.attr("data-aspectRatio"));
-                });
-            })
-            .resize();
-    </script>
 </body>
 
 </html>
