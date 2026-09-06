@@ -85,7 +85,7 @@ Every research page on `jperezmacias.github.io` must include these tags inside `
 ```html
 <!-- Google Scholar / Highwire Press Meta Tags -->
 <meta name="citation_title" content="The Use of Wrist EMG Increases the PPG Heart Rate Accuracy in Smartwatches" />
-<meta name="citation_author" content="Friman, Sofia" />
+<meta name="citation_author" content="Friman, Severi" />
 <meta name="citation_author" content="Vehkaoja, Antti" />
 <meta name="citation_author" content="Perez-Macias, Jose Maria" />
 <meta name="citation_publication_date" content="2022/12/15" />
@@ -243,7 +243,7 @@ Every research landing page on your site should feature an interactive citation 
   </p>
 
   <pre id="bibtex-code" style="background:#0f172a; color:#f8fafc; padding:12px; border-radius:6px; overflow-x:auto; font-size:0.82rem; line-height:1.4;"><code>@article{friman2022wrist,
-  author    = {Friman, Sofia and Vehkaoja, Antti and Perez-Macias, Jose Maria},
+  author    = {Friman, Severi and Vehkaoja, Antti and Perez-Macias, Jose Maria},
   title     = {The Use of Wrist EMG Increases the PPG Heart Rate Accuracy in Smartwatches},
   journal   = {IEEE Sensors Journal},
   volume    = {22},
