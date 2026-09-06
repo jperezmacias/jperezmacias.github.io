@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#ffffff">
   
 
-  <title>Csound · Wave Engineering</title>
+  <title>Csound Architecture · Wave Engineering</title>
   <link rel="canonical" href="../../../en/docs/csound/">
   <link rel="stylesheet" href="../../../assets/css/docs.min.163931c9a15d36bcf1bca33a253ae3ca2da221f1befeb7b7db13f8e63b7d6ef0.css" integrity="">
 
@@ -247,145 +247,81 @@
           <button class="btn">On this page <i>➡️</i></button>
         </nav>
         <header>
-          <h1>Csound</h1>
+          <h1>Csound Architecture</h1>
           <p></p>
         </header>
         <div id="article-body">
           <h1 id="2-csound">2. CSOUND</h1>
-<h2 id="estructura-de-un-programa-csound">ESTRUCTURA DE UN PROGRAMA CSOUND.</h2>
-<p>Los instrumentos de Csound son creados en una <em>orquesta</em>, mientras que la lista de notas a ser ejecutadas se escribe en un fichero <em>partitura</em> separado. Ambos pueden ser creados usando un procesador de textos estándar. Cuando ejecutas Csound son una orquesta y partitura determinadas, la partitura es ordenada en el tiempo, la orquesta traducida y cargada, y las tablas de onda calculadas y rellenadas antes de ejecutar la partitura.</p>
-<p>A diferencia de los sintetizadores comerciales por hardware de hoy día, que tienen una serie limitada de osciladores, generadores de envolvente y filtros, así como un número limitado de maneras en las que éstos pueden ser interconectados, la potencia de Csound no se ve limitada de forma alguna. Si quieres un instrumento con cientos de osciladores, generadores de envolvente y filtros, lo único que tienes que hacer es teclearlos. Y aún más importante es la absoluta libertad a la hora de interconectar los módulos y de interrelacionar los parámetros que los controlan. Como los instrumentos acústicos, los instrumentos de Csound pueden exhibir una delicada sensibilidad natural al contexto musical y demostrar un nivel de &ldquo;inteligencia musical&rdquo; al cual los sintetizadores por hardware no pueden ni tan siquiera aspirar.</p>
-<p>Como bien se ha dicho, Csound es un programa que consta de dos archivos:</p>
-<ul>
-<li>El archivo de orquesta (<em>.org</em>).</li>
-<li>El archivo de partitura o score (<em>.sco</em>).</li>
-</ul>
-<p>Se va a realizar una pequeña introducción en el programa de Csound, estudiando las principales características de cada uno de los archivos que estructuran el programa Csound.</p>
-<h3 id="archivo-orquesta">ARCHIVO ORQUESTA</h3>
-<p>El archivo orquesta va a ser ejecutado y revisado cada cierto tiempo para evitar errores en los parámetros, por ello se distinguen cuatro tipos de frecuencias distintas, que son:</p>
-<ul>
-<li>Una vez sólo, cuando la orquesta es configurada (es, en realidad, una asignación permanente).</li>
-<li>Una vez al principio de cada nota (es decir, en su inicialización, tipo <em>i-</em>).</li>
-<li>Una vez en cada bucle de control de la ejecución (frecuencia de control o tipo <em>k-</em>).</li>
-<li>Una vez cada muestra de sonido de cada bucle de control (frecuencia de audio o tipo <em>a-</em>).</li>
-</ul>
-<p>Cada sentencia ocupa una única línea y tiene el mismo formato básico:</p>
-<p><em>resultado acción argumentos</em></p>
-<p>El archivo de Orquesta en Csound estará estructurado en dos partes:</p>
-<ul>
-<li>Sentencias de cabecera.</li>
-<li>Bloques de instrumento.</li>
-</ul>
-<p>Las sentencias de cabecera se caracterizan por:</p>
-<table>
-<thead>
-<tr>
-<th>CARACTERÍSTICAS</th>
-<th>EJEMPLO</th>
-<th>COMENTARIO</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Confirman varios parámetros globales.</td>
-<td><strong>sr</strong> = 44100</td>
-<td><strong>sr</strong>: establecemos la frecuencia de muestreo en 44100 muestras por segundo y por canal.</td>
-</tr>
-<tr>
-<td>Operan sólo una vez, precisamente en el momento de la configuración de la orquesta.</td>
-<td><strong>kr</strong> = 4410</td>
-<td><strong>kr</strong>: establece la frecuencia de control en 4410 muestras por segundo.</td>
-</tr>
-<tr>
-<td>Todas las sentencias pertenecen a un pseudo-instrumento 0.</td>
-<td><strong>ksmps</strong> = 10</td>
-<td><strong>ksmps</strong>: establece en 10 el número de muestras en cada periodo de control. Este valor debe ser <strong>sr/kr</strong>.</td>
-</tr>
-<tr>
-<td></td>
-<td><strong>nchnls</strong> = 1</td>
-<td><strong>nchnls</strong>: establece en 1 el número de canales de la salida del audio.</td>
-</tr>
-</tbody>
-</table>
-<p>Los bloques de instrumento representan los distintos instrumentos, están compuestos por sentencias ordinarias que definen valores, controlan el flujo lógico de la señal o llaman a los distintos tipos de subcircuitos de procesado de la señal que calculan la salida de audio.</p>
-<p>Todos los instrumentos son numerados y referenciados según dicho número en la partitura. Los instrumentos en Csound son similares a los patches de un sintetizador por hardware. Cada instrumento consiste en una serie de <em>generadores simples</em>, o <em>módulos</em> de software, que son conectados mediante bloques de variables de entrada/salida de tipo i-, k- o a-. A diferencia de un módulo en hardware, uno en software tiene un número variable de <em>argumentos</em> que el usuario debe proporcionar para determinar su comportamiento.</p>
-<table>
-<thead>
-<tr>
-<th>EJEMPLO</th>
-<th>DIAGRAMA</th>
-<th>COMENTARIO</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>instr 101</code></td>
-<td><img alt="Oscilador" src="../../../Imagenes/oscil.gif"></td>
-<td><strong>instr</strong>: indica el número del instrumento del nuevo evento. <strong>oscil</strong>: es un oscilador con amplitud 10000, frecuencia 440.</td>
-</tr>
-<tr>
-<td><code>a1 oscil 10000, 440, 1</code></td>
-<td></td>
-<td>Produce una señal periódica de audio. <strong>endin</strong>: indica el fin del instrumento.</td>
-</tr>
-<tr>
-<td><code>out a1</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>endin</code></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>En el archivo de orquesta se dividen las sentencias en categorías, que a su vez se dividirán en subcategorías. Las categorías son:</p>
-<ol>
-<li>Síntesis de Orquesta.</li>
-<li>Control de los instrumentos.</li>
-<li>Operaciones matemáticas.</li>
-<li>Convertidores de altura.</li>
-<li>Soporte MIDI.</li>
-<li>Generadores de Señal.</li>
-<li>Control de Tablas de función.</li>
-<li>Modificadores de Señal.</li>
-<li>Sistema de cableado Zak.</li>
-<li>Operaciones que usan Tipo s Espectrales de Datos.</li>
-<li>Entrada y Salida de Señales.</li>
-</ol>
-<h3 id="archivo-partitura">ARCHIVO PARTITURA</h3>
-<p>Una partitura (colección de sentencias de partitura) se divide en secciones ordenadas en el tiempo por las sentencias <em>s</em> (de sección). Antes de ser leídas por la orquesta, la partitura es preprocesada sección a sección. Cada una de ellas es procesada normalmente por tres rutinas:</p>
-<ul>
-<li>Carry.</li>
-<li>Tempo.</li>
-<li>Sort.</li>
-</ul>
-<p>Cada columna de la partitura constituye un campo paramétrico, denominado <em>p</em>, numerados de izquierda a derecha. De hecho, los primeros tres campos <em>p</em> de la sentencia <em>i</em> tienen una función reservada.</p>
-<ul>
-<li><em>p1</em> = número de instrumento.</li>
-<li><em>p2</em> = instante de comienzo.</li>
-<li><em>p3</em> = duración.</li>
-</ul>
-<p>Todos los demás campos <em>p</em> son considerados según la manera en la que el diseñador de sonido los defina en sus instrumentos.</p>
-<h4 id="carry">CARRY</h4>
-<p>Dentro de un grupo de sentencias <em>i</em> consecutivas cuyos números enteros <em>p1</em> se correspondan, cualquier campo <em>p</em> vacío tomará el valor del mismo campo <em>p</em> de la sentencia precedente. Un campo <em>p</em> vacío se puede indicar por un punto (.) limitado por espacios. La salida del preprocesado de Carry mostrará los valores explícitos. El procesado de Carry no se ve afectado por comentarios o líneas en blanco.</p>
-<h4 id="tempo">TEMPO</h4>
-<p>Esta operación modifica el tempo de una sección de partitura según la sentencia <em>t</em>. La operación de tempo convierte <em>p2</em> (y, para las sentencias <em>i</em>, <em>p3</em>) de su formato original a pulsos en segundos reales, ya que esa es la unidad de tiempo requerida por los <em>opcodes</em> de la orquesta.</p>
-<h4 id="sort">SORT</h4>
-<p>Esta rutina ordena todas las sentencias que implican una acción en el tiempo según el orden cronológico especificado por el valor <em>p2</em>. También ordena eventos coincidentes en orden de precedencia.</p>
-<h3 id="variables-y-constantes">VARIABLES Y CONSTANTES</h3>
-<p>Tanto en la cabecera como en los bloques de instrumentos de la orquesta y en la partitura se va a trabajar con constantes y variables. Las configuraciones en Orquesta son:</p>
-<ul>
-<li>En la inicialización de cada nota (tipo <em>i-</em>).</li>
-<li>En el bucle de control (tipo <em>k-</em>).</li>
-<li>En cada muestra del audio digital producido (tipo <em>a-</em>).</li>
-</ul>
-<h3 id="comentarios">COMENTARIOS</h3>
-<p>Para incluir texto en los archivos orquesta o los archivos partitura que no sea interpretado por el programa como código, hay que precederlo de un punto y coma (;). Esto permite hacer aclaraciones y comentarios en el código.</p>
+<h2 id="csound-program-structure">CSOUND PROGRAM STRUCTURE</h2>
+<p>Csound instruments are created inside an <strong>orchestra</strong>, while the list of notes and performance events are specified in a <strong>score</strong>.</p>
+<p>The standard command-line invocation syntax is:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">csound -flags orchestra_file score_file
+</span></span></code></pre></div><p>Csound compiles the orchestra, translates the score events, and executes them in temporal sequence, generating a digital audio output file (<code>.wav</code> or <code>.aiff</code>) or streaming live audio in real time.</p>
 <hr>
+<h3 id="orchestra-file">ORCHESTRA FILE</h3>
+<p>An orchestra file consists of two primary sections:</p>
+<ol>
+<li>
+<p><strong>Header Section:</strong> Configures global audio rates and output parameters:</p>
+<ul>
+<li><code>sr</code>: Audio sampling rate in Hz (e.g. 44100).</li>
+<li><code>kr</code>: Control sampling rate in Hz (e.g. 4410).</li>
+<li><code>ksmps</code>: Ratio of <code>sr / kr</code>, defining the control period block size (e.g. 10).</li>
+<li><code>nchnls</code>: Number of output channels (1 = mono, 2 = stereo, 4 = quadraphonic).</li>
+</ul>
+</li>
+<li>
+<p><strong>Instrument Blocks:</strong> Individual synthesis instruments bounded by <code>instr</code> and <code>endin</code>:</p>
+</li>
+</ol>
+<pre tabindex="0"><code class="language-csound" data-lang="csound">; Global Configuration Header
+sr = 44100
+kr = 4410
+ksmps = 10
+nchnls = 1
 
+instr 1
+  ; Instrument definition
+  a1 oscil 10000, 440, 1
+  out a1
+endin
+</code></pre><hr>
+<h3 id="score-file">SCORE FILE</h3>
+<p>The score file contains event lines (p-fields) that generate function tables and schedule instrument note events:</p>
+<ul>
+<li><code>f</code> statements generate function tables (stored waveforms, window shapes).</li>
+<li><code>i</code> statements schedule instrument note events.</li>
+<li><code>t</code> statements alter tempo dynamically.</li>
+<li><code>s</code> and <code>e</code> statements mark sections and score completion.</li>
+</ul>
+<p>Standard note parameters (p-fields):</p>
+<ul>
+<li><code>p1</code>: Instrument number.</li>
+<li><code>p2</code>: Start time (in seconds or beats).</li>
+<li><code>p3</code>: Duration (in seconds or beats).</li>
+<li><code>p4...pn</code>: Custom parameters passed directly to the instrument (e.g., amplitude, frequency, spatial position).</li>
+</ul>
+<pre tabindex="0"><code class="language-csound" data-lang="csound">; Function Table 1: 4096-point sine wave
+f 1 0 4096 10 1
+
+; Play instrument 1 at time 0 for 2 seconds at 440 Hz
+i 1 0 2 10000 440
+e
+</code></pre><hr>
+<h3 id="variables-and-constants">VARIABLES AND CONSTANTS</h3>
+<p>Csound variables are classified by processing rate and scope:</p>
+<ol>
+<li><strong>Audio variables (<code>a-</code> prefix):</strong> Updated at the audio rate (<code>sr</code>). Hold arrays of audio samples calculated across each <code>ksmps</code> cycle.</li>
+<li><strong>Control variables (<code>k-</code> prefix):</strong> Updated at the control rate (<code>kr</code>). Used for envelopes, modulation signals, and time-varying parameters.</li>
+<li><strong>Initialization variables (<code>i-</code> prefix):</strong> Evaluated only once at note initialization time (<code>p2</code>). Do not change during note execution.</li>
+<li><strong>Global variables (<code>ga-</code>, <code>gk-</code>, <code>gi-</code> prefix):</strong> Accessible across all running instruments simultaneously, enabling audio bussing, effects sends, and master processing.</li>
+</ol>
+<hr>
+<h3 id="comments">COMMENTS</h3>
+<p>Comments in Csound can be written using a semicolon <code>;</code>:</p>
+<pre tabindex="0"><code class="language-csound" data-lang="csound">; This is a comment in Csound
+a1 oscil 1000, 440, 1 ; generate audio signal
+</code></pre>
         </div>
 
         <footer>
@@ -451,12 +387,12 @@
         <strong>On this page</strong>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#estructura-de-un-programa-csound">ESTRUCTURA DE UN PROGRAMA CSOUND.</a>
+    <li><a href="#csound-program-structure">CSOUND PROGRAM STRUCTURE</a>
       <ul>
-        <li><a href="#archivo-orquesta">ARCHIVO ORQUESTA</a></li>
-        <li><a href="#archivo-partitura">ARCHIVO PARTITURA</a></li>
-        <li><a href="#variables-y-constantes">VARIABLES Y CONSTANTES</a></li>
-        <li><a href="#comentarios">COMENTARIOS</a></li>
+        <li><a href="#orchestra-file">ORCHESTRA FILE</a></li>
+        <li><a href="#score-file">SCORE FILE</a></li>
+        <li><a href="#variables-and-constants">VARIABLES AND CONSTANTS</a></li>
+        <li><a href="#comments">COMMENTS</a></li>
       </ul>
     </li>
   </ul>

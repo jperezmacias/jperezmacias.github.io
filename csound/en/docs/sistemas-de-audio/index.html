@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#ffffff">
   
 
-  <title>Sonido 3D - Introduccion · Wave Engineering</title>
+  <title>Spatial Audio Systems · Wave Engineering</title>
   <link rel="canonical" href="../../../en/docs/sistemas-de-audio/">
   <link rel="stylesheet" href="../../../assets/css/docs.min.163931c9a15d36bcf1bca33a253ae3ca2da221f1befeb7b7db13f8e63b7d6ef0.css" integrity="">
 
@@ -247,39 +247,30 @@
           <button class="btn">On this page <i>➡️</i></button>
         </nav>
         <header>
-          <h1>Sonido 3D - Introduccion</h1>
+          <h1>Spatial Audio Systems</h1>
           <p></p>
         </header>
         <div id="article-body">
-          <h1 id="arriba">4.3. SISTEMAS DE AUDIO ESPACIALES SIMPLES</h1>
-<p>Los sistemas de audio espaciales se limitan a localizar solamente el azimut. Hay tres clases de estos sistemas simples:</p>
+          <h1 id="43-simple-spatial-audio-systems">4.3. SIMPLE SPATIAL AUDIO SYSTEMS</h1>
+<p>Spatial audio reproduction systems are generally categorized by transducer configuration and delivery technique:</p>
+<h3 id="1-two-channel-stereo-loudspeakers">1. Two-Channel Stereo (Loudspeakers)</h3>
+<p>Standard stereophonic setups use two loudspeakers positioned symmetrically in front of the listener (typically at $\pm 30^\circ$).</p>
 <ul>
-<li><a href="../../../en/docs/sistemas-de-audio/#dos-canales">Dos canales (stereo)</a></li>
-<li><a href="../../../en/docs/sistemas-de-audio/#multicanal">Multicanal</a></li>
-<li><a href="../../../en/docs/sistemas-de-audio/#binaural">Grabaciones binaurales</a></li>
+<li>By varying the relative gain between channels (panning / interchannel level differences), a &ldquo;phantom center&rdquo; or virtual source can be positioned between the speakers.</li>
+<li><strong>Limitation:</strong> Virtual sources cannot be positioned behind, above, or around the listener without specialized acoustic crosstalk cancellation or multichannel surround arrays.</li>
 </ul>
-<h2 id="dos-canales">A. Sistemas de dos canales (Stereo)</h2>
-<p>En la industria de entretenimiento, el estéreo fue el primer producto comercial que daba la sensación de sonido en 3D. La idea era simple: si queríamos situar un sonido a la izquierda, llevábamos la señal al altavoz izquierdo; para situarlo a la derecha, a la derecha. Si la misma señal se envía a ambos altavoces, el oyente percibirá la fuente de sonido como si estuviera realmente delante. Esto es efectivo en habitaciones regulares.</p>
-<p>Podemos cambiar la localización de la fuente utilizando el <a href="../ecos-y-rev/">precedence effect</a>. Si el sonido de la izquierda se retrasa 10 o 15 ms en relación al altavoz derecho, localizaremos la fuente en el lado derecho, incluso si el sonido de la izquierda es más intenso. Sin embargo, si el retraso es excesivo, el oyente notará el efecto y lo asociará a un eco molesto.</p>
-<p><a href="../../../en/docs/sistemas-de-audio/#arriba">Arriba</a></p>
-<h2 id="multicanal">B. Sistemas multicanal (Surround Sound)</h2>
-<p>Otra forma de localizar sonidos es separar los canales para cada dirección deseada, incluyendo arriba y abajo. Esto es lo que se hace en los sistemas de teatro, como Dolby Pro Logic Surround Sound. En ambientes reverberantes, se puede aprovechar el <a href="../ecos-y-rev/">Franssen effect</a> usando pequeños altavoces alrededor, excepto por un subwoofer que proporciona contenido de baja frecuencia.</p>
-<p>Aunque estos sistemas producen efectos espaciales satisfactorios, son caros e inconvenientes, y no juegan un papel importante en HCI (sistemas de interacción hombre-máquina). Este apartado incluiría aspectos como ambisonics, quadraphonics y Motion Picture Sound, que son principalmente para cines.</p>
-<p><a href="../../../en/docs/sistemas-de-audio/#arriba">Arriba</a></p>
-<h2 id="binaural">C. Grabaciones binaurales</h2>
-<p>Se ha sabido durante mucho tiempo que no es necesario tener múltiples canales para crear un efecto 3D convincente. Dos canales son suficientes. El truco es recrear las presiones del sonido en ambos oídos, como si el oyente estuviera en el lugar real.</p>
-<p>Una aproximación consiste en situar dos micrófonos en los canales auditivos de un maniquí, o dos maniquís cerca de las orejas, para grabar lo que nuestros oídos registran.</p>
-<p>Si el maniquí tiene la misma forma y tamaño de cabeza, los mismos tiempos de ITD y ILD serán recibidos. Así, si tuviera el mismo pabellón auditivo con la misma forma y tamaño, la información de elevación sería recibida perfectamente.</p>
-<p>A estas grabaciones se les llama grabaciones binaurales, y pueden producir casi un sonido 3D. Aunque son económicamente viables y efectivas, tienen grandes desventajas:</p>
+<h3 id="2-multichannel-surround-sound">2. Multichannel Surround Sound</h3>
+<p>Surround setups use discrete loudspeaker channels distributed around the room (e.g., 5.1, 7.1, or 3D formats like 22.2).</p>
 <ul>
-<li>Requieren el uso de altavoces. (ver <a href="../sistemas-hrtf/">cross-talk cancelled stereo</a>).</li>
-<li>No son interactivas, deben ser grabadas con antelación.</li>
-<li>Si el oyente se mueve, también lo hace la fuente.</li>
-<li>Las fuentes de sonido justo en frente parecen estar muy cerca.</li>
-<li>Debido a que los pabellones auditivos de cada persona son distintos, los efectos de elevación no son posibles.</li>
+<li>Techniques such as Vector Base Amplitude Panning (VBAP) distribute energy across adjacent speaker triplets to position sources across 360°.</li>
+<li><strong>Limitation:</strong> High cost, strict acoustic room requirements, and sweet-spot localization constraints.</li>
 </ul>
-<p>Para mejorar las grabaciones binaurales se requiere una comprensión de las HRTF.</p>
-<p><a href="../../../en/docs/sistemas-de-audio/#arriba">Arriba</a></p>
+<h3 id="3-binaural-reproduction-headphones">3. Binaural Reproduction (Headphones)</h3>
+<p>Binaural systems deliver sound directly into the listener&rsquo;s ear canals over headphones.</p>
+<ul>
+<li>By convolving monaural source signals with Head-Related Impulse Responses (HRIRs) measured for each ear, full 3D spatialization (azimuth, elevation, and distance) can be achieved over standard stereo headphones.</li>
+<li>Headphone reproduction eliminates room reflections and interchannel acoustic crosstalk, making it the ideal delivery platform for personalized spatial audio.</li>
+</ul>
 
         </div>
 
@@ -402,9 +393,13 @@
         <strong>On this page</strong>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#dos-canales">A. Sistemas de dos canales (Stereo)</a></li>
-    <li><a href="#multicanal">B. Sistemas multicanal (Surround Sound)</a></li>
-    <li><a href="#binaural">C. Grabaciones binaurales</a></li>
+    <li>
+      <ul>
+        <li><a href="#1-two-channel-stereo-loudspeakers">1. Two-Channel Stereo (Loudspeakers)</a></li>
+        <li><a href="#2-multichannel-surround-sound">2. Multichannel Surround Sound</a></li>
+        <li><a href="#3-binaural-reproduction-headphones">3. Binaural Reproduction (Headphones)</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </aside>

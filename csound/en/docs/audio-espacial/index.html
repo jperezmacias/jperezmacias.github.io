@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#ffffff">
   
 
-  <title>Sonido 3D - Introduccion · Wave Engineering</title>
+  <title>Spatial Audio Mechanisms · Wave Engineering</title>
   <link rel="canonical" href="../../../en/docs/audio-espacial/">
   <link rel="stylesheet" href="../../../assets/css/docs.min.163931c9a15d36bcf1bca33a253ae3ca2da221f1befeb7b7db13f8e63b7d6ef0.css" integrity="">
 
@@ -247,56 +247,35 @@
           <button class="btn">On this page <i>➡️</i></button>
         </nav>
         <header>
-          <h1>Sonido 3D - Introduccion</h1>
+          <h1>Spatial Audio Mechanisms</h1>
           <p></p>
         </header>
         <div id="article-body">
-          <h2 id="41-mecanismos-de-audición-espacial-2">4.1. Mecanismos de audición espacial <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></h2>
-<p>A continuación, listamos una serie de parámetros que nuestro oído utiliza para localizar la fuente del sonido. Muchos de ellos dependen de cada individuo, así como de la forma de su cabeza y de sus distintos miembros. Veremos más adelante cómo algunos definen la situación vertical, otros la izquierda-derecha, y otros dependen de la frecuencia.</p>
-<p>Según <em>Begault</em>, hay ocho características por las que localizamos el sonido. Estas son: diferencia de tiempos interaurales (ITD), el movimiento de la cabeza y la fuente, la respuesta del pabellón auditivo (características de ITD e IID, HRTF), características de la distancia (intensidad, volumen, influencia de la familiaridad, características espectrales y binaurales), y reverberación. A continuación, describimos los aspectos más importantes:</p>
-<ol>
-<li>
-<p>El tiempo de llegada del frente de onda a los oídos, o mejor dicho, la diferencia de los tiempos de llegada entre los dos oídos, es uno de los mecanismos que usa nuestro sistema auditivo para localizar una fuente de sonido. Este tiempo se conoce como <strong>ITD (Interaural Time Difference)</strong>. Este efecto es útil hasta una frecuencia en la que la longitud de onda del sonido se aproxima al doble de la distancia entre los dos oídos, a partir de la cual no se diferencia un sonido de otro. Este tiempo de llegada del sonido nos permite localizarlo en un ángulo horizontal de 90º (derecha) a 270º (izquierda). Parece ser efectivo a frecuencias por debajo de los 900 Hz.</p>
-</li>
-<li>
-<p>El sonido de una fuente que venga de la izquierda, por ejemplo, llegará primero al oído izquierdo, pero tendrá que viajar más hasta el otro lado. En realidad, el sonido se difracta alrededor de la cabeza para llegar al oído derecho y, por lo tanto, tendrá que viajar más. Este tiempo se llama <strong>ILD (Interaural Level Difference)</strong>, que abarca tanto el efecto pantalla de la cabeza como la distancia extra que recorre.</p>
-</li>
-<li>
-<p>Cuando los ITD e ILD son prácticamente los mismos, entra en juego otro factor: <strong>HRTF (Head Related Transfer Functions)</strong>. Esto ocurre cuando el sonido está localizado en el plano medio, pareciendo que la localización se lleva a cabo con la convolución de la señal y la forma de nuestro torso superior, cabeza, cuello y orejas. Esta información es útil para determinar tanto la elevación como la localización trasera o delantera.</p>
-</li>
-<li>
-<p><strong>Distancia</strong>:</p>
+          <h2 id="41-mechanisms-of-spatial-hearing">4.1. Mechanisms of Spatial Hearing</h2>
+<p>The human brain relies on several complementary physical and psychoacoustic cues to localize sound sources in three dimensions:</p>
+<h3 id="1-interaural-time-difference-itd">1. Interaural Time Difference (ITD)</h3>
+<p>Because our ears are separated by approximately 17 to 20 cm of skull, sound originating off the median plane arrives at the closer ear slightly earlier than at the contralateral ear.</p>
 <ul>
-<li><strong>El volumen</strong>: Aunque parezca sencillo, el volumen de un sonido es un parámetro poco fiable para la localización del sonido. La energía acústica cae inversamente al cuadrado de la distancia, pero cuando manejamos solo amplitudes, no es lo mismo que la impresión de volumen. Esto se debe a que el volumen no está linealmente relacionado con la amplitud y es muy dependiente de nuestro conocimiento adquirido del comportamiento de las fuentes sonoras que lo crean.</li>
-<li><strong>Proporcionalidad entre reverberación y sonido seco</strong>: En habitaciones cerradas, la energía de una densa reverberación será más o menos constante, mientras que la energía de un sonido directo (seco) caerá con la distancia.</li>
-<li><strong>Absorción de las altas frecuencias</strong>: Tiene que ver con los gases del aire. Este efecto es similar a un filtro paso bajo y se considera relevante a distancias mayores de 50 metros.</li>
-<li><strong>Tiempo de reverberación</strong>: El mismo nombre lo indica.</li>
-<li><strong>Balance espectral</strong>: Las habitaciones actúan como filtros, modificando el espectro de las señales acústicas.</li>
-<li><strong>Difusión</strong>: Tiene que ver con la absorción de los materiales; normalmente, las frecuencias altas caen más rápidamente.</li>
+<li>The maximum ITD for a source directly to one side (azimuth 90°) is approximately <strong>0.65 to 0.7 milliseconds</strong>.</li>
+<li>Below ~1.5 kHz, the auditory system tracks phase differences in sound waves between the two ears with microsecond precision.</li>
 </ul>
-</li>
-<li>
-<p>Nuestra habilidad para <strong>mover la cabeza</strong> nos ayuda a integrar la información visual y auditiva. Además, nos sirve para minimizar el ITD, ILD y la diferencia entre las HRTF de los dos oídos.</p>
-</li>
-<li>
-<p>El <strong>efecto Doppler</strong> es importante en la localización. Observamos cómo el tono de una fuente en movimiento aumenta o disminuye según se aleja o se acerca.</p>
-</li>
-<li>
-<p><strong>The Precedence Effect o el Efecto Haas</strong>: Este efecto explica cómo somos capaces de localizar una fuente aunque seamos confundidos por las reflexiones y los ecos. La ley del primer frente de ondas (&ldquo;the law of the first wavefront&rdquo;).</p>
-<p><img alt="The Precedence Effect" src="../../../Imagenes/image001.gif"></p>
-</li>
-<li>
-<p>La <strong>forma en que la fuente emite el sonido</strong>: Una fuente que irradia energía de igual manera en todas las direcciones se considera omnidireccional. Esto es una idealización, ya que normalmente no es así.</p>
-</li>
-</ol>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p>Spatial hearing mechanisms and sound reproduction. D.G. Malham, University of York, England 1998. <a href="http://web.archive.org/web/20180603185342/https://www.york.ac.uk/inst/mustech/3d_audio/ambis2.htm">http://web.archive.org/web/20180603185342/https://www.york.ac.uk/inst/mustech/3d_audio/ambis2.htm</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
+<h3 id="2-interaural-level-difference-ild">2. Interaural Level Difference (ILD)</h3>
+<p>At higher frequencies (above ~1.5 kHz), the human head acts as an acoustic obstacle, casting an &ldquo;acoustic shadow.&rdquo;</p>
+<ul>
+<li>Sound reaching the far ear is attenuated significantly compared to the near ear.</li>
+<li>High-frequency ILD differences can reach up to <strong>20 dB</strong> or more depending on frequency and angle.</li>
+</ul>
+<p>Together, ITD and ILD form the basis of Lord Rayleigh&rsquo;s classic <strong>Duplex Theory</strong> of sound localization.</p>
+<p><img alt="Interaural cues: ITD and ILD" src="../../../Imagenes/image007.gif"></p>
+<h3 id="3-spectral-pinna-cues-cone-of-confusion-resolution">3. Spectral Pinna Cues (Cone of Confusion Resolution)</h3>
+<p>A given pair of ITD and ILD values does not define a unique point in space, but rather a geometric cone known as the <strong>Cone of Confusion</strong>. Sound sources located on this cone produce identical time and level differences between the two ears.</p>
+<p>To resolve front from back and determine elevation:</p>
+<ul>
+<li>The folds of the outer ear (pinna), along with reflections from the shoulders and torso, create direction-dependent acoustic resonances and notches at high frequencies (above 4 kHz).</li>
+<li>These spectral notches serve as direction-dependent fingerprints that allow the brain to disambiguate front/back and judge source elevation.</li>
+</ul>
+<h3 id="4-dynamic-head-motion-cues">4. Dynamic Head Motion Cues</h3>
+<p>Slight head rotations alter ITD, ILD, and spectral pinna cues in real time. The brain processes these dynamic changes to lock onto source positions and eliminate front/back reversals.</p>
 
         </div>
 
@@ -403,7 +382,14 @@
         <strong>On this page</strong>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#41-mecanismos-de-audición-espacial-2">4.1. Mecanismos de audición espacial </a></li>
+    <li><a href="#41-mechanisms-of-spatial-hearing">4.1. Mechanisms of Spatial Hearing</a>
+      <ul>
+        <li><a href="#1-interaural-time-difference-itd">1. Interaural Time Difference (ITD)</a></li>
+        <li><a href="#2-interaural-level-difference-ild">2. Interaural Level Difference (ILD)</a></li>
+        <li><a href="#3-spectral-pinna-cues-cone-of-confusion-resolution">3. Spectral Pinna Cues (Cone of Confusion Resolution)</a></li>
+        <li><a href="#4-dynamic-head-motion-cues">4. Dynamic Head Motion Cues</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </aside>

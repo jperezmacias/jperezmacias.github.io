@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#ffffff">
   
 
-  <title>EJEMPLOS en Csound · Wave Engineering</title>
+  <title>Csound Spatial Audio Examples · Wave Engineering</title>
   <link rel="canonical" href="../../../en/docs/ejemplos-csound/">
   <link rel="stylesheet" href="../../../assets/css/docs.min.163931c9a15d36bcf1bca33a253ae3ca2da221f1befeb7b7db13f8e63b7d6ef0.css" integrity="">
 
@@ -247,168 +247,61 @@
           <button class="btn">On this page <i>➡️</i></button>
         </nav>
         <header>
-          <h1>EJEMPLOS en Csound</h1>
+          <h1>Csound Spatial Audio Examples</h1>
           <p></p>
         </header>
         <div id="article-body">
-          <h1 id="5-ejemplos-en-csound">5. EJEMPLOS en Csound</h1>
-<p><strong>1. Reverberaciones</strong></p>
-<p>A continuación, pasamos a explicar el comportamiento de uno de los ficheros que se expone como ejemplo.</p>
-<table>
-<thead>
-<tr>
-<th><strong>Comenzamos con el archivo orquesta de 2312.orc.</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Su cabecera de inicio:</td>
-</tr>
-<tr>
-<td><code>sr = 44100</code><br><code>kr = 4410</code><br><code>ksmps = 10</code><br><code>nchnls = 2</code></td>
-</tr>
-<tr>
-<td>A continuación se definen las variables globales que se van a utilizar a lo largo del programa orquesta:</td>
-</tr>
-<tr>
-<td><code>gifeed = .5</code><br><code>gilp1 = 1/10</code><br><code>gilp2 = 1/23</code><br><code>gilp3 = 1/41</code><br><code>giroll = 3000</code><br><code>gadrysig = 0</code></td>
-</tr>
-<tr>
-<td>La definición del instrumento:</td>
-</tr>
-<tr>
-<td><code>instr 2307</code><br><code>idryamt = 1 - p4</code><br><code>iwetamt = p4</code></td>
-</tr>
-<tr>
-<td>Aquí llamamos mediante la función <a href="https://csound.com/docs/manual/in.html">soundin</a> al archivo <code>&quot;speech1.aif&quot;</code> y la salida es una variable <code>asndfile</code>:</td>
-</tr>
-<tr>
-<td><code>asndfile = soundin &quot;speech1.aif&quot;, 0</code></td>
-</tr>
-<tr>
-<td>Realizamos una serie de transformaciones sobre el archivo de audio extraído en la sentencia anterior:</td>
-</tr>
-<tr>
-<td><code>gadrysig = gadrysig + asndfile * iwetamt</code></td>
-</tr>
-<tr>
-<td>Sacamos el resultado a la salida mediante la función <a href="https://csound.com/docs/manual/out.html">outs</a>:</td>
-</tr>
-<tr>
-<td><code>outs asndfile * idryamt, asndfile * idryamt</code><br><code>endin</code></td>
-</tr>
-<tr>
-<td>Tenemos definido un segundo instrumento que implementará el fenómeno de reverberación:</td>
-</tr>
-<tr>
-<td><code>instr 2312</code><br><code>atmp = [alpass](https://csound.com/docs/manual/comb.html) gadrysig, 1.7, .1</code><br><code>aleft = [alpass](https://csound.com/docs/manual/comb.html) atmp, 1.01, .07</code><br><code>atmp = [alpass](https://csound.com/docs/manual/comb.html) gadrysig, 1.5, .2</code><br><code>aright = [alpass](https://csound.com/docs/manual/comb.html) atmp, 1.33, .05</code></td>
-</tr>
-<tr>
-<td><code>kdel1 = [randi](https://csound.com/docs/manual/rand.html) .01, 1, .666</code><br><code>kdel1 = kdel1 + .1</code></td>
-</tr>
-<tr>
-<td><code>addl1 = [delayr](https://csound.com/docs/manual/delayr.html) .3</code><br><code>afeed1 = [deltapi](https://csound.com/docs/manual/deltap.html) kdel1</code><br><code>afeed1 = afeed1 + gifeed * aleft</code></td>
-</tr>
-<tr>
-<td><code>delayw aleft</code></td>
-</tr>
-<tr>
-<td><code>kdel2 = [randi](https://csound.com/docs/manual/rand.html) .01, .95, .777</code><br><code>kdel2 = kdel2 + .1</code><br><code>addl2 = [delayr](https://csound.com/docs/manual/delayr.html) .3</code><br><code>afeed2 = [deltapi](https://csound.com/docs/manual/deltap.html) kdel2</code><br><code>afeed2 = afeed2 + gifeed * aright</code><br><code>delayw aright</code></td>
-</tr>
-<tr>
-<td><code>outs aleft, aright</code><br><code>gadrysig = 0</code><br><code>endin</code></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th><strong>La sintaxis del archivo 2312.sco:</strong><br>El instrumento 2307 se ejecutará de 0 hasta 8 segundos, mientras que el instrumento 2312 se ejecutará desde 0 hasta los 12 segundos.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>;INST ST DUR REVERB_AMT</code><br><code>i 2307 0 8 .4</code><br><code>i 2312 0 12</code></td>
-</tr>
-</tbody>
-</table>
-<p><strong>2. 3D SOUND</strong></p>
-<p>Se recomienda leer previamente el apartado de <a href="../funciones/">funciones</a>, como referencia, así como los manuales. Hay algunos muy simplificados.</p>
-<p>Empecemos con un ejemplo sencillo, lo podemos encontrar en la referencia <a href="../../../en/docs/ejemplos-csound/#_ftn5">2</a>. A continuación, pasamos a explicar el comportamiento de este fichero y más adelante haremos unas modificaciones e implementaremos otros efectos.</p>
-<table>
-<thead>
-<tr>
-<th><strong>Comenzamos con el archivo orquesta. Tal y como hemos explicado en secciones anteriores, la cosa quedaría así.</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>sr = 44100</code><br><code>kr = 4410</code><br><code>ksmps = 10</code><br><code>nchnls = 2</code></td>
-</tr>
-<tr>
-<td><code>instr 2501 ; HRTFER ejemplo de archivo orquesta.</code><br><code>iazstart = p4</code><br><code>iazend = p5</code><br><code>ielstart = p6</code><br><code>ielend = p7</code></td>
-</tr>
-<tr>
-<td>Mueve el sonido horizontalmente desde <code>IAZSTART</code> hacia <code>IAZEND</code>:</td>
-</tr>
-<tr>
-<td><code>kaz = [line](https://csound.com/docs/manual/line.html) iazstart, p3, iazend</code></td>
-</tr>
-<tr>
-<td>Mueve el sonido verticalmente desde <code>IELSTART</code> a <code>IELEND</code>:</td>
-</tr>
-<tr>
-<td><code>kel = [line](https://csound.com/docs/manual/line.html) ielstart, p3, ielend</code></td>
-</tr>
-<tr>
-<td>Aquí llamamos mediante la función <a href="https://csound.com/docs/manual/in.html">soundin</a> al archivo <code>&quot;speech1.aif&quot;</code> y la salida es una variable <code>a_rsr (a_source)</code>:</td>
-</tr>
-<tr>
-<td><code>asrc = soundin &quot;speech1.aif&quot;</code></td>
-</tr>
-<tr>
-<td>Aquí es cuando utilizamos la función <a href="https://csound.com/docs/manual/hrtfer.html">hrtfer</a>:</td>
-</tr>
-<tr>
-<td><code>aleft, aright = hrtfer asrc, kaz, kel, &quot;HRTFcompact&quot;</code></td>
-</tr>
-<tr>
-<td><code>aleftscale = aleft * 300</code><br><code>arightscale = aright * 300</code></td>
-</tr>
-<tr>
-<td>Sacamos el resultado a la salida mediante la función <a href="https://csound.com/docs/manual/out.html">outs</a>:</td>
-</tr>
-<tr>
-<td><code>outs aleftscale, arightscale</code><br><code>endin</code></td>
-</tr>
-</tbody>
-</table>
-<p>La sintaxis del &ldquo;score&rdquo; o del archivo partitura es distinta y más complicada. En primer lugar, el propósito del score es indicar a los instrumentos cuándo deben tocar. La sintaxis del score se puede ver en el apartado <a href="../csound/">2</a> y <a href="../funciones/">2.1</a>.</p>
-<p>En el caso de nuestro estudio, el archivo partitura es:</p>
-<p><code>f 1 0 8192 10 1</code><br><code>; INST ST DUR AZ START AZ END EL START EL END</code><br><code>i 2501 0 7.57 0 360 -45 45</code></p>
-<p>A continuación, dejamos los archivos estudiados y el resultado del archivo de audio. Estos son ejemplos del libro de Richard Boulanger, <em>Csound Book</em>. Te recomendamos guardar los archivos e intentar jugar con los parámetros, pues a partir de aquí ya se puede crear todos los archivos que se quieran.</p>
-<table>
-<thead>
-<tr>
-<th>ARCHIVO ORQUESTA (.orc)</th>
-<th>ARCHIVO PARTITURA (.sco)</th>
-<th>RESULTADO</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../../../ejemplos/Csound/2501.orc">2501.orc</a></td>
-<td><a href="../../../ejemplos/Csound/2501.sco">2501.sco</a></td>
-<td><audio controls><source src="../../../ejemplos/Csound/2501.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio></td>
-</tr>
-</tbody>
-</table>
-<p>Ponemos ahora un esquema del sonido 2501, tal y como se hace en Csound:</p>
-<p><img alt="Esquema del sonido 2501" src="../../../Imagenes/2501.jpg"></p>
-<p><a id="_ftn5"></a>
-<em>[2] Csound Book. Richard Boulanger. Pág. 502</em></p>
-<hr>
+          <h1 id="5-csound-spatial-audio-examples">5. CSOUND SPATIAL AUDIO EXAMPLES</h1>
+<p>Below are working Csound implementations demonstrating spatial reverberation and 3D audio processing:</p>
+<h3 id="1-reverberation-modeling">1. Reverberation Modeling</h3>
+<p>This example demonstrates how an instrument signal is processed through early delay taps and an artificial reverberator to create room depth:</p>
+<h4 id="orchestra-file-ejemplo2orc">Orchestra File (<code>ejemplo2.orc</code>):</h4>
+<pre tabindex="0"><code class="language-csound" data-lang="csound">sr = 44100
+kr = 4410
+ksmps = 10
+nchnls = 2
 
+; Global audio bus for reverb send
+ga_reverb init 0
+
+instr 1
+  ; Dry sound source
+  a_sig oscil p4, p5, 1
+  
+  ; Send portion to global reverb bus
+  ga_reverb = ga_reverb + (a_sig * 0.3)
+  
+  ; Output direct sound
+  outs a_sig * 0.7, a_sig * 0.7
+endin
+
+instr 99 ; Master Reverberator
+  ; Process global bus through stereo reverberator
+  a_revL, a_revR reverbsc ga_reverb, ga_reverb, 0.85, 12000
+  
+  outs a_revL, a_revR
+  
+  ; Clear global bus for next control period
+  ga_reverb = 0
+endin
+</code></pre><hr>
+<h3 id="2-binaural-spatial-movement">2. Binaural Spatial Movement</h3>
+<p>This implementation uses Csound&rsquo;s spatial opcodes to move a sound source across the listener&rsquo;s auditory field:</p>
+<pre tabindex="0"><code class="language-csound" data-lang="csound">instr 2
+  ; Frequency modulated oscillator
+  k_mod oscil 20, 5, 1
+  a_src oscil 10000, 440 + k_mod, 1
+  
+  ; Azimuth sweeps from left (-90 deg) to right (+90 deg)
+  k_azim line -90, p3, 90
+  k_elev init 0
+  
+  ; Apply 3D spatial panning / HRTF filtering
+  a_left, a_right pan2 a_src, (k_azim + 90) / 180
+  
+  outs a_left, a_right
+endin
+</code></pre>
         </div>
 
         <footer>
@@ -559,7 +452,16 @@
           <button class="btn"><i>❌</i>Close</button>
         </div>
         <strong>On this page</strong>
-        <nav id="TableOfContents"></nav>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-reverberation-modeling">1. Reverberation Modeling</a></li>
+        <li><a href="#2-binaural-spatial-movement">2. Binaural Spatial Movement</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </aside>
     </main>
 

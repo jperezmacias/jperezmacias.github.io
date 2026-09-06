@@ -2,6 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/en/docs/sonido-3d-introduccion/</loc>
+    <lastmod>2004-05-24T11:16:54+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="/docs/sonido-3d-introduccion/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/docs/sonido-3d-introduccion/"
+                />
+  </url><url>
+    <loc>/en/docs/inicio/</loc>
+    <lastmod>2004-05-24T11:16:54+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="/docs/inicio/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/docs/inicio/"
+                />
+  </url><url>
+    <loc>/en/docs/ejemplos/</loc>
+    <lastmod>2004-05-24T11:16:54+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="/docs/ejemplos/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/docs/ejemplos/"
+                />
+  </url><url>
     <loc>/en/docs/bibliografia/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
@@ -13,6 +52,19 @@
                 rel="alternate"
                 hreflang="en-US"
                 href="/en/docs/bibliografia/"
+                />
+  </url><url>
+    <loc>/en/docs/implementacion/</loc>
+    <lastmod>2004-05-24T11:16:54+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="/docs/implementacion/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/docs/implementacion/"
                 />
   </url><url>
     <loc>/en/docs/coordenadas/</loc>
@@ -41,6 +93,19 @@
                 href="/en/docs/csound/"
                 />
   </url><url>
+    <loc>/en/docs/ejemplos-csound/</loc>
+    <lastmod>2004-05-24T11:16:54+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="es-ES"
+                href="/docs/ejemplos-csound/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="/en/docs/ejemplos-csound/"
+                />
+  </url><url>
     <loc>/en/docs/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
@@ -67,58 +132,6 @@
                 href="/en/docs/ecos-y-rev/"
                 />
   </url><url>
-    <loc>/en/docs/ejemplos/</loc>
-    <lastmod>2004-05-24T11:16:54+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="/docs/ejemplos/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="/en/docs/ejemplos/"
-                />
-  </url><url>
-    <loc>/en/docs/ejemplos-csound/</loc>
-    <lastmod>2004-05-24T11:16:54+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="/docs/ejemplos-csound/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="/en/docs/ejemplos-csound/"
-                />
-  </url><url>
-    <loc>/en/docs/inicio/</loc>
-    <lastmod>2004-05-24T11:16:54+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="/docs/inicio/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="/en/docs/inicio/"
-                />
-  </url><url>
-    <loc>/en/docs/funciones/</loc>
-    <lastmod>2004-05-24T11:16:54+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="/docs/funciones/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="/en/docs/funciones/"
-                />
-  </url><url>
     <loc>/en/docs/hrtf/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
@@ -132,17 +145,17 @@
                 href="/en/docs/hrtf/"
                 />
   </url><url>
-    <loc>/en/docs/implementacion/</loc>
+    <loc>/en/docs/sistemas-hrtf/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/implementacion/"
+                href="/docs/sistemas-hrtf/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/implementacion/"
+                href="/en/docs/sistemas-hrtf/"
                 />
   </url><url>
     <loc>/en/docs/generalintroduccion/</loc>
@@ -171,30 +184,17 @@
                 href="/en/docs/overview/"
                 />
   </url><url>
-    <loc>/en/docs/sistemas-hrtf/</loc>
+    <loc>/en/docs/funciones/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/sistemas-hrtf/"
+                href="/docs/funciones/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/sistemas-hrtf/"
-                />
-  </url><url>
-    <loc>/en/docs/sonido-3d-introduccion/</loc>
-    <lastmod>2004-05-24T11:16:54+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="es-ES"
-                href="/docs/sonido-3d-introduccion/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="/en/docs/sonido-3d-introduccion/"
+                href="/en/docs/funciones/"
                 />
   </url><url>
     <loc>/en/docs/audio-espacial/</loc>

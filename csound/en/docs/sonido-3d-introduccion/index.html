@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#ffffff">
   
 
-  <title>Sonido 3D - Introduccion · Wave Engineering</title>
+  <title>3D Audio - Introduction · Wave Engineering</title>
   <link rel="canonical" href="../../../en/docs/sonido-3d-introduccion/">
   <link rel="stylesheet" href="../../../assets/css/docs.min.163931c9a15d36bcf1bca33a253ae3ca2da221f1befeb7b7db13f8e63b7d6ef0.css" integrity="">
 
@@ -247,24 +247,26 @@
           <button class="btn">On this page <i>➡️</i></button>
         </nav>
         <header>
-          <h1>Sonido 3D - Introduccion</h1>
+          <h1>3D Audio - Introduction</h1>
           <p></p>
         </header>
         <div id="article-body">
-          <h1 id="sonido-en-3d">Sonido en 3D</h1>
-<h2 id="40-introducción">4.0. INTRODUCCIÓN</h2>
-<p>Imagina que cierras los ojos en la calle; en ese instante comienzas a experimentar un mundo completo en tres dimensiones. Los coches que se mueven, a tu izquierda oyes los pasos de los peatones, las obras de dos calles más arriba, el sonido de los pájaros y palomas por encima de ti. En nuestro ambiente natural, percibimos los sonidos en tres dimensiones y podemos localizarlos en cualquier instante. Nuestro cerebro se ha estado entrenando toda la vida, memorizando una serie de parámetros basados en la experiencia y personalizados para cada uno.</p>
-<p>Sin embargo, en la música grabada, esto no es así. El estéreo tradicional nos da algo de información espacial, pero no lo suficiente para recrear la sensación de estar en una habitación escuchando un concierto de los Rolling Stones o de la ópera de Viena. En lugar de dar la sensación de que estás en un espacio tridimensional, la reproducción por altavoces da la impresión de que estás frente a la fuente de sonido.</p>
-<h3 id="el-alcance-de-la-tecnología-3d-audio">EL ALCANCE DE LA TECNOLOGÍA 3D AUDIO</h3>
-<p>Se puede discutir que los equipos estéreo tradicionales pueden producir efectos 3D, pero en realidad, cuando nos referimos a sonido 3D, normalmente hablamos de sensaciones espaciales que no se experimentan con el sistema estéreo.</p>
-<p>En el caso de altavoces, esperamos la posibilidad de situar sonidos fuera de los límites de los altavoces, y en los auriculares, que el sistema sitúe los sonidos fuera de la cabeza.</p>
-<p>La clave del desarrollo en el sonido 3D se debe al uso del procesado de señal mediante funciones de transferencia direccionalmente dependientes. Teóricamente, podemos simular todo el espacio en 3D, pero no es tan sencillo. El lento desarrollo de la tecnología en 3D se debe fundamentalmente a la espera de sistemas digitales que permiten muchas más posibilidades que los sistemas analógicos.</p>
-<p>El modelo científico del sonido en 3D ha sido estudiado en la literatura por tres disciplinas: acústica física, psicoacústica y neuropsicología auditiva. La <em>acústica física</em> se centra en las ondas sonoras que alcanzan al receptor desde el pabellón auditivo y el fenómeno acústico que determina sus propiedades específicas. La <em>psicoacústica</em> estudia la relación entre las ondas acústicas en el pabellón auditivo y la percepción de la imaginación espacial que experimentan los receptores. La <em>neuropsicología auditiva</em> trata sobre la comprensión de las estructuras neuronales que dan sentido a la sensación del sonido.</p>
-<h3 id="sistemas-de-reproducción-y-grabación-de-audio-3d">SISTEMAS DE REPRODUCCIÓN Y GRABACIÓN DE AUDIO 3D</h3>
-<p>Hay varias formas de recrear el sonido 3D, dependiendo de las aplicaciones. Veremos equipos estéreo, equipos de varios canales y equipos binaurales, cada uno con distintas aplicaciones. Las grabaciones binaurales tienen grandes aplicaciones en el terreno de la realidad virtual, y los sistemas multicanales están diseñados para grandes audiencias, cines y equipos caseros simples.</p>
-<p>El modelo de Surround Sound desarrollado por los británicos no es el único capaz de producir tal efecto. Hasta ahora ha habido poco en el mercado debido a los pocos equipos existentes para realizar tal técnica. Esto cambiará cuando salgan al mercado nuevos equipos diseñados por el Dr. Geoff Barton del &lsquo;Ambisonic Technology Centre&rsquo; de Reading. Este prototipo ha sido instalado en un estudio de Crunchfield Manor en Berkshire, siendo el primer estudio con capacidad de grabar Ambisonic multitrack. El formato B (B-Format) es un estándar para señales Ambisonic que consiste en cuatro señales: X, W, Y y Z, donde W es una señal mono. X representa delante-atrás, Y izquierda-derecha, y Z arriba-abajo. Dado que solo se considera sonido surround horizontal, podemos prescindir de la señal Z.</p>
-<p>[1]: Ambisonic mixing - Richard Elen<br>
-<a href="http://web.archive.org/web/20151110052822/http://www.york.ac.uk:80/inst/mustech/3d_audio/elen/ambimix.htm">http://web.archive.org/web/20151110052822/http://www.york.ac.uk:80/inst/mustech/3d_audio/elen/ambimix.htm</a></p>
+          <h1 id="3d-sound">3D Sound</h1>
+<h2 id="40-introduction">4.0. INTRODUCTION</h2>
+<p>Imagine closing your eyes while standing on a busy street corner. In that instant, you can easily perceive cars passing from left to right, footsteps approaching behind you, someone speaking to your right, and an airplane passing overhead. Human hearing naturally localizes sounds in full three-dimensional space.</p>
+<p>The goal of <strong>3D spatial audio technology</strong> is to recreate this rich acoustic sensation artificially over headphones or loudspeakers, making listeners perceive sound sources as originating from specific three-dimensional coordinates in space.</p>
+<h3 id="applications-of-3d-audio-technology">Applications of 3D Audio Technology</h3>
+<ul>
+<li><strong>Virtual Reality &amp; Simulation:</strong> Flight simulators, spatial teleconferencing, and immersive military communication systems.</li>
+<li><strong>Entertainment &amp; Gaming:</strong> Interactive spatial audio engines that adjust source positions dynamically based on player orientation.</li>
+<li><strong>Music &amp; Auditory Display:</strong> Electroacoustic music composition, binaural recordings, and data sonification.</li>
+</ul>
+<h3 id="audio-playback-and-recording-systems">Audio Playback and Recording Systems</h3>
+<ol>
+<li><strong>Binaural Recording (Dummy Head):</strong> Microphones placed inside the ear canals of an artificial acoustic manikin record sound exactly as human ears receive it.</li>
+<li><strong>HRTF Synthesis:</strong> Filtering dry mono audio with digital filters derived from measured head transfer functions to position virtual sounds in space.</li>
+<li><strong>Multichannel Loudspeaker Arrays:</strong> Using Ambisonics, Vector Base Amplitude Panning (VBAP), or Wave Field Synthesis (WFS) across multi-speaker installations.</li>
+</ol>
 
         </div>
 
@@ -363,10 +365,10 @@
         <strong>On this page</strong>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#40-introducción">4.0. INTRODUCCIÓN</a>
+    <li><a href="#40-introduction">4.0. INTRODUCTION</a>
       <ul>
-        <li><a href="#el-alcance-de-la-tecnología-3d-audio">EL ALCANCE DE LA TECNOLOGÍA 3D AUDIO</a></li>
-        <li><a href="#sistemas-de-reproducción-y-grabación-de-audio-3d">SISTEMAS DE REPRODUCCIÓN Y GRABACIÓN DE AUDIO 3D</a></li>
+        <li><a href="#applications-of-3d-audio-technology">Applications of 3D Audio Technology</a></li>
+        <li><a href="#audio-playback-and-recording-systems">Audio Playback and Recording Systems</a></li>
       </ul>
     </li>
   </ul>

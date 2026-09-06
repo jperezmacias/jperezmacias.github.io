@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#ffffff">
   
 
-  <title>Introduccion a Csound · Wave Engineering</title>
+  <title>Introduction to Csound · Wave Engineering</title>
   <link rel="canonical" href="../../../en/docs/generalintroduccion/">
   <link rel="stylesheet" href="../../../assets/css/docs.min.163931c9a15d36bcf1bca33a253ae3ca2da221f1befeb7b7db13f8e63b7d6ef0.css" integrity="">
 
@@ -247,49 +247,49 @@
           <button class="btn">On this page <i>➡️</i></button>
         </nav>
         <header>
-          <h1>Introduccion a Csound</h1>
+          <h1>Introduction to Csound</h1>
           <p></p>
         </header>
         <div id="article-body">
-          <h1 id="1-introducción">1. Introducción</h1>
-<p>CSOUND es un programa que ayuda a realizar música por ordenador mediante la sintetización de señales de audio digitales.</p>
-<p>Con Csound conseguimos una especificación detallada del sonido en cada instante y lo realiza de dos maneras:</p>
+          <h1 id="1-introduction">1. Introduction</h1>
+<p><strong>CSOUND</strong> is a computer software system designed to synthesize digital audio signals and facilitate computer music composition.</p>
+<p>Csound achieves precise, sample-accurate control over sound generation at every instant through two complementary files:</p>
 <ul>
-<li>Mediante los instrumentos de orquesta, que realizan un programa capaz de generar sonido.</li>
-<li>Mediante los eventos de la partitura, fichero de datos con los que el programa del instrumento puede trabajar, ya que contiene información sobre la altura, duración y otros elementos de control, codificados numéricamente en un formato estándar de partitura.</li>
+<li><strong>Orchestra instruments:</strong> Programmatic routines that define the digital signal processing algorithms capable of generating and manipulating sound.</li>
+<li><strong>Score events:</strong> A structured data file specifying when and how instruments are invoked, containing pitch, duration, amplitude, and spatial coordinates encoded in a standard numerical score format.</li>
 </ul>
-<p><strong>Historia</strong></p>
-<p>A continuación, se realizará una breve introducción de la evolución de los programas para generar sonidos hasta llegar al CSOUND. Aunque bien sabemos, Csound está basado en los programas desarrollados a lo largo de la historia.</p>
-<ul>
-<li>
-<p><strong>Años 60</strong>:<br>
-Music 4, un programa escrito por Max Mathews a principios de los 60 en los laboratorios de la Bell Telephone. Este programa introdujo el concepto de almacenamiento en tablas, así como mucha de la terminología que desde entonces ha permitido a los investigadores en música por ordenador comunicarse entre ellos. Godfrey Winham, en Princeton, realizó valiosas aportaciones con su Music 4B; mi propio Music 360 (1968) le debe mucho a su trabajo.</p>
-</li>
-<li>
-<p><strong>En 1973</strong>:<br>
-Music 11 tomó otra dirección: después de un intenso trabajo en años precedentes en el diseño del hardware de sintetizadores surgió la idea de separar el procesado de las señales de audio del de las de control. Esta división aún perdura en Csound. Gracias a que está escrito íntegramente en C, Csound puede ser instalado fácilmente en cualquier máquina basada en Unix o en C. En el MIT, Csound se ejecuta en estaciones VAX/DEC bajo Ultrix 4.2, en SUNs bajo OS 4.1, en SGIs bajo 5.0, en IBM PCs bajo DOS 6.2 y Windows 3.1, y en Macintosh bajo ThinkC 5.0.</p>
-</li>
-</ul>
-<p>Tomando este único lenguaje para definir el procesado de la señal digital y formatos de audio portables, como AIFF y WAV, los usuarios pueden cambiar de una máquina a otra fácilmente.</p>
+<h3 id="historical-background">Historical Background</h3>
+<p>Below is a brief introduction to the evolution of sound synthesis software leading up to CSOUND:</p>
 <ul>
 <li>
-<p><strong>En 1991</strong>:<br>
-En una nueva versión, se añadió un codificador vocal de fase (fase Vocoder), FOF (del francés Fonction d&rsquo;onde formantique, Funciones de Ondas de Formantes) y los tipos de datos espectrales.</p>
+<p><strong>1960s — Music 4:</strong><br>
+Written by Max Mathews at Bell Telephone Laboratories in the early 1960s. This program introduced wavetable lookup synthesis and established the terminology that allowed computer music researchers worldwide to communicate effectively. Godfrey Winham at Princeton made crucial contributions with Music 4B, and Barry Vercoe&rsquo;s Music 360 (1968) built directly upon this foundation.</p>
 </li>
 <li>
-<p><strong>En 1992</strong>:<br>
-Se desarrollaron las unidades de conversión y de control MIDI, permitiendo a Csound recibir datos desde ficheros MIDI o desde un teclado externo.</p>
-</li>
-<li>
-<p><strong>En 1994</strong>:<br>
-Se integraron los programas de análisis de sonido (lpc, pvoc) en el módulo principal, permitiendo así que todo el procesado de Csound se hiciera desde un único fichero ejecutable. Además, Csound podía ahora pasar directamente partituras a la orquesta para realizar ejecuciones iterativas.</p>
-</li>
-<li>
-<p><strong>En 1995</strong>:<br>
-La nueva versión que salió al mercado expandió las opciones MIDI e introdujo el generador linseg orientado a MIDI, filtros Butterworth, síntesis granular y, además, mejoró el rastreador de altura basado en los tipos espectrales. De especial importancia fue la introducción de herramientas para la generación de eventos en tiempo de ejecución (Csore y MIDI), ya que permitían configurar mecanismos de percepción y respuesta en campos como los de la composición y la experimentación interactiva.</p>
+<p><strong>1973 — Music 11:</strong><br>
+Developed by Barry Vercoe at MIT, Music 11 established the fundamental architectural separation between audio signal processing and control signal processing—a dual-rate architecture that remains a cornerstone of Csound today. Because Csound was subsequently rewritten entirely in portable C, it could be compiled and run across diverse platforms: Unix workstations, VAX/DEC under Ultrix, SunOS, SGI IRIX, DOS/Windows, and Macintosh.</p>
 </li>
 </ul>
-<p>© 2004 Ingeniería de Ondas</p>
+<p>By establishing a unified, hardware-independent language for digital signal processing along with support for standard audio formats (such as WAV and AIFF), Csound enabled musicians and researchers to transfer projects seamlessly across platforms.</p>
+<ul>
+<li>
+<p><strong>1991:</strong><br>
+A major update introduced the Phase Vocoder for time-scale and pitch-scale modification, FOF (<em>Fonction d&rsquo;onde formantique</em>) synthesis for singing voice simulation, and spectral data types.</p>
+</li>
+<li>
+<p><strong>1992:</strong><br>
+MIDI conversion and control opcodes were developed, enabling Csound to respond to external MIDI hardware controllers and standard MIDI files.</p>
+</li>
+<li>
+<p><strong>1994:</strong><br>
+Audio analysis tools (LPC, PVOC) were directly integrated into the main executable, consolidating the entire workflow into a single command-line tool. Csound also added real-time iterative score generation.</p>
+</li>
+<li>
+<p><strong>1995:</strong><br>
+Real-time MIDI capabilities were greatly enhanced, adding the <code>linseg</code> generator, Butterworth filter opcodes, granular synthesis, and real-time interactive score event handling.</p>
+</li>
+</ul>
+<p>© 2004 Wave Engineering</p>
 
         </div>
 
@@ -346,7 +346,15 @@ La nueva versión que salió al mercado expandió las opciones MIDI e introdujo 
           <button class="btn"><i>❌</i>Close</button>
         </div>
         <strong>On this page</strong>
-        <nav id="TableOfContents"></nav>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#historical-background">Historical Background</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
       </aside>
     </main>
 

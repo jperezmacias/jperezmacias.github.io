@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#ffffff">
   
 
-  <title>Implementacion - SIMULACIÓN EN LOS ORDENADORES · Wave Engineering</title>
+  <title>Computer Simulation &amp; Implementation · Wave Engineering</title>
   <link rel="canonical" href="../../../en/docs/implementacion/">
   <link rel="stylesheet" href="../../../assets/css/docs.min.163931c9a15d36bcf1bca33a253ae3ca2da221f1befeb7b7db13f8e63b7d6ef0.css" integrity="">
 
@@ -247,74 +247,29 @@
           <button class="btn">On this page <i>➡️</i></button>
         </nav>
         <header>
-          <h1>Implementacion - SIMULACIÓN EN LOS ORDENADORES</h1>
+          <h1>Computer Simulation &amp; Implementation</h1>
           <p></p>
         </header>
         <div id="article-body">
-          <h1 id="46-implementación">4.6. Implementación</h1>
-<p><strong>SIMULACIÓN EN LOS ORDENADORES</strong> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<p>En primer lugar, es importante discernir entre en qué ambiente se encuentra nuestra fuente acústica (como por ejemplo en una iglesia) y en qué punto del espacio se encuentra nuestra fuente. La técnica más utilizada para hacer esto último consiste en crear fuentes de sonido falsas, simulando ecos y reflexiones. Las técnicas de procesamiento digital de señal que involucran estos procedimientos toman en cuenta la energía, el tiempo y la información espectral.</p>
+          <h1 id="46-implementation-room-acoustic-simulation">4.6. Implementation: Room Acoustic Simulation</h1>
+<p>To create a realistic 3D acoustic simulation in software, we must synthesize not only the direct sound and HRTF cues, but also the reflective acoustic characteristics of an enclosed room.</p>
+<h3 id="the-image-source-method">The Image Source Method</h3>
+<p>A standard method for simulating room acoustics is Allen &amp; Berkley&rsquo;s <strong>Image Source Model</strong>.</p>
+<ul>
+<li>Each boundary wall acts as an acoustic mirror.</li>
+<li>For each physical reflection, a &ldquo;virtual mirror source&rdquo; is placed behind the reflecting wall at an equal distance.</li>
+<li>The impulse response of the room is constructed by summing the direct sound and each mirror image source, attenuated by the wall absorption coefficients and delayed by the acoustic propagation time:</li>
+</ul>
+<p>$$t_i = \frac{d_i}{c}$$</p>
+<p>where $d_i$ is the distance to image source $i$ and $c$ is the speed of sound (~343 m/s).</p>
+<h3 id="room-acoustics-breakdown">Room Acoustics Breakdown:</h3>
 <ol>
-<li>
-<p><strong>Energía</strong>.<br>
-Es posible calcular la energía recibida de un punto en concreto dado un punto en el espacio determinado para la fuente, el receptor, el número de canales, la localización de los altavoces y las características direccionales de la fuente, para así cambiar la ganancia y la fase de la señal a la salida. Este procedimiento se llama &lsquo;intensity panning&rsquo;. Aunque ha sido muy utilizado, también ha sido muy criticado, ya que es efectivo para un pequeño grupo de espectadores localizados en el centro de una habitación.</p>
-<p>Además, se añaden otros problemas, como la reutilización; una vez modificadas las señales para los distintos altavoces, no es posible reproducir el sonido en otra configuración distinta. También existen problemas de información redundante, ya que la misma información llega a ambos oídos del espectador. Michael Gerzon y otros ingenieros de sonido crearon una técnica llamada Ambisonic, que es muy usada en la actualidad.</p>
-<p>Esta técnica intenta reparar las limitaciones antes comentadas, codificando la señal de la misma manera que un micrófono especial llamado Calrec Soundifield. Este registra información de la energía emitida por una fuente de sonido localizada en un campo tridimensional usando cuatro señales (hay otras formas de codificación que utilizan más de cuatro señales). Estas cuatro señales son tres apuntando a los ejes cartesianos y una señal omnidireccional, registrándose como si se colocara un micrófono en cada uno de los ocho altavoces más uno omnidireccional que se fuera a utilizar. La ventaja es que podemos decodificar para el equipo de altavoces que queramos.</p>
-</li>
-<li>
-<p><strong>Tiempo</strong>.<br>
-<strong>Líneas de retardo</strong>. Para simular la información temporal, sabemos calcular el tiempo que tarda una señal en llegar a un punto especificado. Esto incluye, por ejemplo, calcular la diferencia de tiempo en que el sonido tarda en llegar a un oído y al otro (simulación del ITD), o calcular la diferencia de tiempo entre los distintos altavoces. Para la simulación de estas líneas de retardo, se utilizan procesos de interpolación para calcular valores aproximados. Si el espectador no está en el punto ideal, se obtienen resultados distorsionados.</p>
-</li>
-<li>
-<p><strong>Información espectral</strong>.<br>
-<strong>Filtrado HTRF</strong>. Para simular esto, se registran una serie de respuestas al impulso utilizando un maniquí con micrófonos binaurales. Estas grabaciones se utilizan para filtrar la señal, bien por convolución (filtros FIR) o bien para diseñar filtros IIR dinámicos.</p>
-<p>Como la información registrada es discreta, se utilizan métodos complejos para obtener valores aproximados del espacio real. Sin embargo, está en discusión si esto da una precisión adecuada en la localización, ya que parece depender de la forma de la cabeza y el cuerpo de cada persona; no todas las HTRF, incluso las universales, sirven para todos de igual manera. El resultado no es demasiado fidedigno si utilizamos altavoces, alcanzando resultados bastante aceptables usando auriculares.</p>
-</li>
+<li><strong>Direct Sound:</strong> Travels directly from source to listener; localized via direct-path HRIRs.</li>
+<li><strong>Early Reflections (10–80 ms):</strong> Low reflection density; each individual reflection is spatially positioned using the HRIR corresponding to its angle of arrival.</li>
+<li><strong>Late Reverberation (&gt;80 ms):</strong> High reflection density; modeled efficiently using feedback delay networks (FDNs) or diffuse artificial reverberators.</li>
 </ol>
-<h2 id="simulación-de-las-características-de-una-habitación">Simulación de las características de una habitación</h2>
-<p>Hay dos métodos que se utilizan con frecuencia para simular las características de una habitación: la convolución rápida y las redes de filtros IIR.</p>
-<p>Es posible capturar la respuesta al impulso de una habitación, grabando un sonido como una explosión de un globo o una pistola dentro de la habitación. Esto nos da información sobre la reverberación de la habitación en relación con la localización de la fuente y del receptor. La respuesta obtenida se usa para convolucionarla con cualquier sonido, simulando la producción del sonido en la habitación. Sin embargo, esto requiere mucho cálculo computacional.</p>
-<p>Otra aproximación es simular la reverberación a través de una red de filtros (comb, lowpass y allpass) conectados en paralelo y en serie. Este resultado, aunque es artificial, es más controlable por ordenador y requiere mucho menos coste computacional.</p>
-<h2 id="vistazo-general-de-un-sistema-de-espacialización-e-importantes-advertencias">Vistazo general de un sistema de espacialización e importantes advertencias</h2>
-<p>Como hemos visto, para producir una buena simulación, no solo son necesarios unos procedimientos DSP apropiados, sino que también debemos tener en cuenta la posición de los espectadores y el sistema de reproducción que se utilizará posteriormente.</p>
-<p>Así, nuestro sistema deberá tener información sobre:</p>
-<ol>
-<li>Localización de la fuente y/o movimiento.</li>
-<li>Características direccionales (omnidireccional, cardioide, etc.).</li>
-<li>Orientación de la fuente (si la radiación de la fuente no es omnidireccional).</li>
-<li>Propiedades de la sala: tamaño, geometría, difusión, equilibrio espectral.</li>
-<li>Localización del espectador.</li>
-</ol>
-<p>Para obtener buenos resultados en la simulación espacial, la señal a procesar debería seguir las siguientes condiciones:</p>
-<ol>
-<li>Debería ser grabada sin ningún tipo de reverberación o distorsión.</li>
-<li>Suficiente energía en la banda de frecuencias usada para la simulación. Por ejemplo, un seno de 200 Hz no es una buena idea, a menos que estés usando un ITD.</li>
-<li>Si se quiere simular la localización del sonido muy cerca del espectador, la señal de entrada tiene que tener suficiente energía.</li>
-<li>Cuando se simulan fuentes en movimiento, debe haber suficiente energía media a lo largo de toda su longitud.</li>
-<li>Cuando se simulan fuentes en movimiento, deberían producirse cambios espectrales durante su evolución.</li>
-<li>Evitar cambios abruptos en la señal (clicks). La reverberación no lo arreglará y se hará más evidente.</li>
-</ol>
-<p>Si consideramos los movimientos de la fuente:</p>
-<ol>
-<li>Evitar movimientos muy rápidos.</li>
-<li>Detener el movimiento en un punto y mantenerlo poco tiempo para dar la oportunidad al sistema del auditorio para seguir su localización.</li>
-<li>Evitar movimientos imposibles. Las fuentes naturales de sonido no alcanzan máxima velocidad instantáneamente ni paran instantáneamente.</li>
-<li>No colocar la fuente de sonido exactamente en el mismo lugar que otra fuente. El sistema auditivo creerá que solo hay una fuente (la ley del &lsquo;common fate&rsquo;).</li>
-</ol>
-<p>Respecto al sistema de reproducción:</p>
-<ol>
-<li>Los altavoces deben tener una respuesta plana a lo largo de la banda frecuencial del sonido a reproducir, al menos a más de un ángulo de 60 grados.</li>
-<li>Los altavoces deben tener la respuesta de fase debidamente sincronizada.</li>
-<li>Si la señal fue procesada considerando una distancia y unos ángulos determinados, la situación de los altavoces debe ser la misma. Se pueden hacer ciertas modificaciones, pero a costa de la reducción del espacio audible.</li>
-</ol>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p><em>Spatial listening and its computer simulation on electronic Music</em>. <a href="http://web.archive.org/web/20100617235906/http://musica.unq.edu.ar:80/personales/odiliscia/papers/spatial-listening.htm">http://web.archive.org/web/20100617235906/http://musica.unq.edu.ar:80/personales/odiliscia/papers/spatial-listening.htm</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
+<h3 id="implementation-considerations-in-csound">Implementation Considerations in Csound</h3>
+<p>In Csound, early reflections can be synthesized using tapped delay lines (<code>delay</code>, <code>deltapi</code>) routed into spatial panning or HRTF opcodes (<code>hrtfmove</code>, <code>hrtfstat</code>, <code>spat3d</code>), while late reverberation is generated via comb and allpass filter networks (<code>reverbsc</code>, <code>freeverb</code>).</p>
 
         </div>
 
@@ -461,8 +416,13 @@ Es posible calcular la energía recibida de un punto en concreto dado un punto e
         <strong>On this page</strong>
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#simulación-de-las-características-de-una-habitación">Simulación de las características de una habitación</a></li>
-    <li><a href="#vistazo-general-de-un-sistema-de-espacialización-e-importantes-advertencias">Vistazo general de un sistema de espacialización e importantes advertencias</a></li>
+    <li>
+      <ul>
+        <li><a href="#the-image-source-method">The Image Source Method</a></li>
+        <li><a href="#room-acoustics-breakdown">Room Acoustics Breakdown:</a></li>
+        <li><a href="#implementation-considerations-in-csound">Implementation Considerations in Csound</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
       </aside>

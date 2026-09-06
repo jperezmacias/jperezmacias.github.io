@@ -9,116 +9,116 @@
     <lastBuildDate>Mon, 24 May 2004 11:16:54 +0000</lastBuildDate>
     <atom:link href="/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Bibliografia</title>
-      <link>/en/docs/bibliografia/</link>
+      <title>3D Audio - Introduction</title>
+      <link>/en/docs/sonido-3d-introduccion/</link>
       <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
-      <guid>/en/docs/bibliografia/</guid>
-      <description>6. Bibliografía 3D sound.&#xA;http://web.archive.org/web/20090614180221/http://interface.cipic.ucdavis.edu:80/CIL_tutorial/3D_sys2/convtron.htm&#xA;Cámaras anecoicas.&#xA;http://web.archive.org/web/20210210202155/https://www.monografias.com/trabajos4/salasanecoicas/salasanecoicas.shtml&#xA;Ambisonics &amp;ndash; stereo.&#xA;http://web.archive.org/web/20170917233312/http://www.ambiophonics.org:80/AESJune2003/AES_June_2003_8.htm&#xA;Transformaciones de ambisonics a Stereo.&#xA;http://web.archive.org/web/20090426090445/http://www.geocities.com:80/ambinutter/UHJ_and_Ambisonic_equations.html&#xA;[Begault 1994] D. Begault. 3-D sound for virtual reality and multimedia&#xA;3D sound for virtual reality systems using Ambisonic techniques. D.G. Malham.&#xA;Using Csound to position and decode Ambisonically.&#xA;http://web.archive.org/web/20160724223758/http://www.york.ac.uk:80/inst/mustech/3d_audio/csambi.html&#xA;Un sistema hipermedial para no videntes usando sonido 3D:&#xA;http://web.archive.org/web/20221127073814/http://enlaces.c5.cl/Congreso/HTML/charla10.htm&#xA;La navegación por sonido:&#xA;http://web.archive.org/web/20200220151750/http://www7.nationalacademies.org:80/spanishbeyonddiscovery/ear_007522-02.html#TopOfPage</description>
+      <guid>/en/docs/sonido-3d-introduccion/</guid>
+      <description>3D Sound 4.0. INTRODUCTION Imagine closing your eyes while standing on a busy street corner. In that instant, you can easily perceive cars passing from left to right, footsteps approaching behind you, someone speaking to your right, and an airplane passing overhead. Human hearing naturally localizes sounds in full three-dimensional space.&#xA;The goal of 3D spatial audio technology is to recreate this rich acoustic sensation artificially over headphones or loudspeakers, making listeners perceive sound sources as originating from specific three-dimensional coordinates in space.</description>
     </item>
     <item>
-      <title>Coordenadas</title>
-      <link>/en/docs/coordenadas/</link>
-      <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
-      <guid>/en/docs/coordenadas/</guid>
-      <description>4.2. SISTEMAS DE COORDENADAS Para especificar la localización de un sonido, necesitamos un sistema de coordenadas. Una elección natural es un sistema centrado en la cabeza. Los tres ejes coordinados definen tres planos: x-y (plano horizontal), x-z (plano frontal) y y-z (plano mediano), definiendo arriba/abajo, delante/atrás y derecha/izquierda respectivamente. Debido a la forma esférica de la cabeza, se utilizan coordenadas esféricas, que incluyen azimut, elevación y radio. A continuación, definimos dos sistemas de coordenadas empleados:</description>
-    </item>
-    <item>
-      <title>Csound</title>
-      <link>/en/docs/csound/</link>
-      <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
-      <guid>/en/docs/csound/</guid>
-      <description>2. CSOUND ESTRUCTURA DE UN PROGRAMA CSOUND. Los instrumentos de Csound son creados en una orquesta, mientras que la lista de notas a ser ejecutadas se escribe en un fichero partitura separado. Ambos pueden ser creados usando un procesador de textos estándar. Cuando ejecutas Csound son una orquesta y partitura determinadas, la partitura es ordenada en el tiempo, la orquesta traducida y cargada, y las tablas de onda calculadas y rellenadas antes de ejecutar la partitura.</description>
-    </item>
-    <item>
-      <title>Ecos y Reverberaciones</title>
-      <link>/en/docs/ecos-y-rev/</link>
-      <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
-      <guid>/en/docs/ecos-y-rev/</guid>
-      <description>3. ECOS Y REVERBERACIONES Normalmente no somos conscientes de la gran cantidad de energía que proviene de las reflexiones. Incluso en el exterior, una cantidad apreciable proviene de reflexiones del suelo, de las estructuras que nos rodean y de la vegetación. Nosotros solo nos damos cuenta de estas reflexiones cuando el retardo es mayor que 30 o 50 ms; en ese tiempo, somos conscientes de este retardo.&#xA;El Eco. La Reverberación.</description>
-    </item>
-    <item>
-      <title>Ejemplos</title>
-      <link>/en/docs/ejemplos/</link>
-      <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
-      <guid>/en/docs/ejemplos/</guid>
-      <description>2.2. EJEMPLO DE CÓDIGO DEL CSOUND Vamos a mostrar a continuación algún ejemplo de códigos Csound y su resultado:&#xA;NOMBRE ARCHIVO ORQUESTA (.orc) ARCHIVO PARTITURA (.sco) RESULTADO Otis, Costello. otis.orc otis.sco Your browser does not support the audio element. Hiway1, Alves. hiway1.orc hiway1.sco Your browser does not support the audio element. Hiway2, Alves. hiway2.orc hiway2.sco Your browser does not support the audio element. Invade, Pierce. invade.orc invade.sco Your browser does not support the audio element.</description>
-    </item>
-    <item>
-      <title>EJEMPLOS en Csound</title>
-      <link>/en/docs/ejemplos-csound/</link>
-      <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
-      <guid>/en/docs/ejemplos-csound/</guid>
-      <description>5. EJEMPLOS en Csound 1. Reverberaciones&#xA;A continuación, pasamos a explicar el comportamiento de uno de los ficheros que se expone como ejemplo.&#xA;Comenzamos con el archivo orquesta de 2312.orc. Su cabecera de inicio: sr = 44100&#xA;kr = 4410&#xA;ksmps = 10&#xA;nchnls = 2 A continuación se definen las variables globales que se van a utilizar a lo largo del programa orquesta: gifeed = .5&#xA;gilp1 = 1/10</description>
-    </item>
-    <item>
-      <title>Fenomenos acusticos a traves del Csound</title>
+      <title>Acoustic phenomena through Csound</title>
       <link>/en/docs/inicio/</link>
       <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
       <guid>/en/docs/inicio/</guid>
-      <description>Ingeniería de Ondas. Primavera 2004&#xA;Fenómenos acústicos a través del Csound&#xA;E.T.S. INGENIEROS DE TELECOMUNICACIÓN&#xA;Autores:&#xA;José Maria Pérez-Macías : jpermar@ribera.tel.uva.es&#xA;Ariana de la Cuesta de Diego : acuedie@ribera.tel.uva.es&#xA;This website was built in 2004. Twenty years later has been re-built with new technologies to be compatible with newer browsers.&#xA;All the best. Jose Maria Perez-Macias&#xA;the original page can be found in&#xA;Original page Somewhat adapted page </description>
+      <description>Wave Engineering · Spring 2004&#xA;Acoustic phenomena through Csound&#xA;Higher Technical School of Telecommunication Engineering&#xA;Authors:&#xA;José María Pérez-Macías : jpermar@ribera.tel.uva.es&#xA;Ariana de la Cuesta de Diego : acuedie@ribera.tel.uva.es&#xA;This website was built in 2004. Twenty years later it has been re-built with new technologies to be compatible with newer browsers.&#xA;All the best,&#xA;José María Pérez-Macías&#xA;The historical and adapted pages can be found at:&#xA;Original historical archive Adapted archive page </description>
     </item>
     <item>
-      <title>Funciones</title>
-      <link>/en/docs/funciones/</link>
+      <title>Basic Csound Examples</title>
+      <link>/en/docs/ejemplos/</link>
       <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
-      <guid>/en/docs/funciones/</guid>
-      <description>2.1. FUNCIONES ELEMENTALES DEL CSOUND ALGUNAS SENTENCIAS QUE CONSIDERAMOS PRINCIPALES PARA EL ARCHIVO DE PARTITURA.&#xA;SENTENCIA f Esta sentencia hace que una subrutina GEN almacene valores en una tabla de función, para usarla con los instrumentos de la orquesta.&#xA;f p1 p2 p3 p4&amp;hellip;&#xA;p1: número de la tabla con el que será conocida la función almacenada, un número negativo indica que la tabla debe ser destruida. p2: instante de comienzo de la generación (o destrucción) de la función en pulsos.</description>
+      <guid>/en/docs/ejemplos/</guid>
+      <description>2.2. CSOUND CODE EXAMPLES Below are working Csound code examples demonstrating synthesis and audio playback:&#xA;NAME ORCHESTRA FILE (.orc) SCORE FILE (.sco) RESULT Otis, Costello. otis.orc otis.sco Your browser does not support the audio element. Hiway1, Alves. hiway1.orc hiway1.sco Your browser does not support the audio element. Hiway2, Alves. hiway2.orc hiway2.sco Your browser does not support the audio element. Invade, Pierce. invade.orc invade.sco Your browser does not support the audio element.</description>
+    </item>
+    <item>
+      <title>Bibliography &amp; References</title>
+      <link>/en/docs/bibliografia/</link>
+      <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
+      <guid>/en/docs/bibliografia/</guid>
+      <description>6. Bibliography and References 3D Sound &amp;amp; CIPIC HRTF Database:&#xA;CIPIC Interface Laboratory - UC Davis&#xA;Algorithmic research on Head-Related Transfer Functions and psychoacoustic localization.&#xA;The Csound Reference Manual:&#xA;Barry Vercoe et al., MIT Media Lab. Comprehensive reference guide for Csound opcodes, language syntax, and DSP architecture.&#xA;Spatial Audio and Virtual Acoustics:&#xA;Begault, Durand R. 3-D Sound for Virtual Reality and Multimedia. Academic Press, 1994.&#xA;Head-Related Transfer Functions and Acoustic Measurement:</description>
+    </item>
+    <item>
+      <title>Computer Simulation &amp; Implementation</title>
+      <link>/en/docs/implementacion/</link>
+      <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
+      <guid>/en/docs/implementacion/</guid>
+      <description>4.6. Implementation: Room Acoustic Simulation To create a realistic 3D acoustic simulation in software, we must synthesize not only the direct sound and HRTF cues, but also the reflective acoustic characteristics of an enclosed room.&#xA;The Image Source Method A standard method for simulating room acoustics is Allen &amp;amp; Berkley&amp;rsquo;s Image Source Model.&#xA;Each boundary wall acts as an acoustic mirror. For each physical reflection, a &amp;ldquo;virtual mirror source&amp;rdquo; is placed behind the reflecting wall at an equal distance.</description>
+    </item>
+    <item>
+      <title>Coordinate Systems</title>
+      <link>/en/docs/coordenadas/</link>
+      <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
+      <guid>/en/docs/coordenadas/</guid>
+      <description>4.2. COORDINATE SYSTEMS FOR SPATIAL AUDIO To precisely specify the position of a virtual sound source relative to the listener, spatial audio systems use spherical coordinate systems centered at the midpoint between the listener&amp;rsquo;s ears:&#xA;The Three Spatial Dimensions: Azimuth ($\theta$): The angle in the horizontal plane, measured from the frontal line of sight ($0^\circ$).&#xA;$0^\circ$: Directly in front $+90^\circ$: Directly to the right $180^\circ$: Directly behind $-90^\circ$ (or $270^\circ$): Directly to the left Elevation ($\phi$): The vertical angle relative to the horizontal plane.</description>
+    </item>
+    <item>
+      <title>Csound Architecture</title>
+      <link>/en/docs/csound/</link>
+      <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
+      <guid>/en/docs/csound/</guid>
+      <description>2. CSOUND CSOUND PROGRAM STRUCTURE Csound instruments are created inside an orchestra, while the list of notes and performance events are specified in a score.&#xA;The standard command-line invocation syntax is:&#xA;csound -flags orchestra_file score_file Csound compiles the orchestra, translates the score events, and executes them in temporal sequence, generating a digital audio output file (.wav or .aiff) or streaming live audio in real time.&#xA;ORCHESTRA FILE An orchestra file consists of two primary sections:</description>
+    </item>
+    <item>
+      <title>Csound Spatial Audio Examples</title>
+      <link>/en/docs/ejemplos-csound/</link>
+      <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
+      <guid>/en/docs/ejemplos-csound/</guid>
+      <description>5. CSOUND SPATIAL AUDIO EXAMPLES Below are working Csound implementations demonstrating spatial reverberation and 3D audio processing:&#xA;1. Reverberation Modeling This example demonstrates how an instrument signal is processed through early delay taps and an artificial reverberator to create room depth:&#xA;Orchestra File (ejemplo2.orc): sr = 44100 kr = 4410 ksmps = 10 nchnls = 2 ; Global audio bus for reverb send ga_reverb init 0 instr 1 ; Dry sound source a_sig oscil p4, p5, 1 ; Send portion to global reverb bus ga_reverb = ga_reverb + (a_sig * 0.</description>
+    </item>
+    <item>
+      <title>Echoes &amp; Reverberation</title>
+      <link>/en/docs/ecos-y-rev/</link>
+      <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
+      <guid>/en/docs/ecos-y-rev/</guid>
+      <description>3. ECHOES AND REVERBERATION In everyday listening, we are rarely aware of how much acoustic energy reaching our ears consists of reflections rather than direct sound. In enclosed spaces, the direct sound from a source is immediately followed by a dense series of reflections off walls, ceilings, floors, and furniture.&#xA;Direct Sound and The Precedence Effect (Haas Effect) The direct sound travels in a straight line from source to listener and arrives first.</description>
     </item>
     <item>
       <title>Head-Related Transfer Functions</title>
       <link>/en/docs/hrtf/</link>
       <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
       <guid>/en/docs/hrtf/</guid>
-      <description>4.4. Head-Related Transfer Functions Para encontrar la presión sonora que una señal x(t) produce en el pabellón auditivo, necesitamos la respuesta al impulso h(t) de la fuente en el pabellón auditivo. Esto se llama Head-Related Impulse Response (HRIR), y su transformada de Fourier se llama Head-Related Transfer Function (HRTF). La HRTF captura muchas cualidades que utilizamos para localizar un sonido. Una vez conocido para ambos oídos, podemos sintetizar señales binaurales a partir de una señal monoaural.</description>
+      <description>4.4. Head-Related Transfer Functions To determine the acoustic pressure that an arbitrary sound signal $x(t)$ produces at the eardrum, we require the acoustic impulse response $h(t)$ between the source position and the eardrum. This impulse response is known as the Head-Related Impulse Response (HRIR), and its Fourier transform is the Head-Related Transfer Function (HRTF). The HRTF encapsulates all physical cues used by the human auditory system to localize sound in three dimensions.</description>
     </item>
     <item>
-      <title>Implementacion - SIMULACIÓN EN LOS ORDENADORES</title>
-      <link>/en/docs/implementacion/</link>
+      <title>HRTF-Based Systems</title>
+      <link>/en/docs/sistemas-hrtf/</link>
       <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
-      <guid>/en/docs/implementacion/</guid>
-      <description>4.6. Implementación SIMULACIÓN EN LOS ORDENADORES 1&#xA;En primer lugar, es importante discernir entre en qué ambiente se encuentra nuestra fuente acústica (como por ejemplo en una iglesia) y en qué punto del espacio se encuentra nuestra fuente. La técnica más utilizada para hacer esto último consiste en crear fuentes de sonido falsas, simulando ecos y reflexiones. Las técnicas de procesamiento digital de señal que involucran estos procedimientos toman en cuenta la energía, el tiempo y la información espectral.</description>
+      <guid>/en/docs/sistemas-hrtf/</guid>
+      <description>4.5. HRTF-Based Spatial Audio Systems Spatial audio systems based on Head-Related Transfer Functions are capable of creating convincing three-dimensional acoustic sensations by filtering sound through finite impulse response (FIR) filter pairs representing the left and right ear HRTFs:&#xA;Digital Signal Processing Architecture Given a dry monaural input audio signal $s(t)$, the binaural signals delivered to the left and right ears are synthesized via time-domain convolution with the respective Head-Related Impulse Responses $h_L(t, heta, \phi)$ and $h_R(t, heta, \phi)$:</description>
     </item>
     <item>
-      <title>Introduccion a Csound</title>
+      <title>Introduction to Csound</title>
       <link>/en/docs/generalintroduccion/</link>
       <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
       <guid>/en/docs/generalintroduccion/</guid>
-      <description>1. Introducción CSOUND es un programa que ayuda a realizar música por ordenador mediante la sintetización de señales de audio digitales.&#xA;Con Csound conseguimos una especificación detallada del sonido en cada instante y lo realiza de dos maneras:&#xA;Mediante los instrumentos de orquesta, que realizan un programa capaz de generar sonido. Mediante los eventos de la partitura, fichero de datos con los que el programa del instrumento puede trabajar, ya que contiene información sobre la altura, duración y otros elementos de control, codificados numéricamente en un formato estándar de partitura.</description>
+      <description>1. Introduction CSOUND is a computer software system designed to synthesize digital audio signals and facilitate computer music composition.&#xA;Csound achieves precise, sample-accurate control over sound generation at every instant through two complementary files:&#xA;Orchestra instruments: Programmatic routines that define the digital signal processing algorithms capable of generating and manipulating sound. Score events: A structured data file specifying when and how instruments are invoked, containing pitch, duration, amplitude, and spatial coordinates encoded in a standard numerical score format.</description>
     </item>
     <item>
       <title>Overview</title>
       <link>/en/docs/overview/</link>
       <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
       <guid>/en/docs/overview/</guid>
-      <description>Ingeniería de Ondas. Primavera 2004 Fenómenos acústicos a través del Csound E.T.S. INGENIEROS DE TELECOMUNICACIÓN&#xA;Autores:&#xA;José Maria Pérez-Macías : jpermar@ribera.tel.uva.es Ariana de la Cuesta de Diego : acuedie@ribera.tel.uva.es&#xA;This website was built in 2004. Twenty years later has been re-built with new technologies to be compatible with newer browsers.&#xA;All the best. Jose Maria Perez-Macias</description>
+      <description>Wave Engineering · Spring 2004 Acoustic phenomena through Csound Higher Technical School of Telecommunication Engineering&#xA;Authors:&#xA;José María Pérez-Macías : jpermar@ribera.tel.uva.es Ariana de la Cuesta de Diego : acuedie@ribera.tel.uva.es&#xA;This website was created in 2004. Twenty years later it has been re-built with modern web technologies to be fully compatible with current web browsers.&#xA;All the best, José María Pérez-Macías</description>
     </item>
     <item>
-      <title>Sistemas basados en HRTF</title>
-      <link>/en/docs/sistemas-hrtf/</link>
+      <title>Score Statements &amp; Functions</title>
+      <link>/en/docs/funciones/</link>
       <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
-      <guid>/en/docs/sistemas-hrtf/</guid>
-      <description>4.5. Sistemas basados en HRTF Los sistemas basados en las funciones de transferencia HRTF son capaces de simular elevación, distancia y azimut. Esto significa que, al menos en principio, pueden crear la impresión de un sistema en 3D. En la práctica, es más sencillo controlar el azimut que la elevación y la distancia debido a las diferencias entre las personas y las limitaciones computacionales. Aún así, los sistemas basados en HRTF están convirtiéndose en un estándar para sistemas avanzados de 3D.</description>
+      <guid>/en/docs/funciones/</guid>
+      <description>2.1. ELEMENTARY CSOUND FUNCTIONS ESSENTIAL SCORE STATEMENTS FOR THE SCORE FILE&#xA;f Statement (Function Table Generator) The f statement generates wavetables and lookup arrays used by oscillators and envelopes:&#xA;p1: Table number (positive integer). p2: Time at which the table is generated (usually 0). p3: Table size (must be a power of two, or power of two plus one, e.g. 512, 1024, 4096). p4: GEN routine number (the algorithm used to fill the table).</description>
     </item>
     <item>
-      <title>Sonido 3D - Introduccion</title>
-      <link>/en/docs/sonido-3d-introduccion/</link>
-      <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
-      <guid>/en/docs/sonido-3d-introduccion/</guid>
-      <description>Sonido en 3D 4.0. INTRODUCCIÓN Imagina que cierras los ojos en la calle; en ese instante comienzas a experimentar un mundo completo en tres dimensiones. Los coches que se mueven, a tu izquierda oyes los pasos de los peatones, las obras de dos calles más arriba, el sonido de los pájaros y palomas por encima de ti. En nuestro ambiente natural, percibimos los sonidos en tres dimensiones y podemos localizarlos en cualquier instante.</description>
-    </item>
-    <item>
-      <title>Sonido 3D - Introduccion</title>
+      <title>Spatial Audio Mechanisms</title>
       <link>/en/docs/audio-espacial/</link>
       <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
       <guid>/en/docs/audio-espacial/</guid>
-      <description>4.1. Mecanismos de audición espacial 1 A continuación, listamos una serie de parámetros que nuestro oído utiliza para localizar la fuente del sonido. Muchos de ellos dependen de cada individuo, así como de la forma de su cabeza y de sus distintos miembros. Veremos más adelante cómo algunos definen la situación vertical, otros la izquierda-derecha, y otros dependen de la frecuencia.&#xA;Según Begault, hay ocho características por las que localizamos el sonido.</description>
+      <description>4.1. Mechanisms of Spatial Hearing The human brain relies on several complementary physical and psychoacoustic cues to localize sound sources in three dimensions:&#xA;1. Interaural Time Difference (ITD) Because our ears are separated by approximately 17 to 20 cm of skull, sound originating off the median plane arrives at the closer ear slightly earlier than at the contralateral ear.&#xA;The maximum ITD for a source directly to one side (azimuth 90°) is approximately 0.</description>
     </item>
     <item>
-      <title>Sonido 3D - Introduccion</title>
+      <title>Spatial Audio Systems</title>
       <link>/en/docs/sistemas-de-audio/</link>
       <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
       <guid>/en/docs/sistemas-de-audio/</guid>
-      <description>4.3. SISTEMAS DE AUDIO ESPACIALES SIMPLES Los sistemas de audio espaciales se limitan a localizar solamente el azimut. Hay tres clases de estos sistemas simples:&#xA;Dos canales (stereo) Multicanal Grabaciones binaurales A. Sistemas de dos canales (Stereo) En la industria de entretenimiento, el estéreo fue el primer producto comercial que daba la sensación de sonido en 3D. La idea era simple: si queríamos situar un sonido a la izquierda, llevábamos la señal al altavoz izquierdo; para situarlo a la derecha, a la derecha.</description>
+      <description>4.3. SIMPLE SPATIAL AUDIO SYSTEMS Spatial audio reproduction systems are generally categorized by transducer configuration and delivery technique:&#xA;1. Two-Channel Stereo (Loudspeakers) Standard stereophonic setups use two loudspeakers positioned symmetrically in front of the listener (typically at $\pm 30^\circ$).&#xA;By varying the relative gain between channels (panning / interchannel level differences), a &amp;ldquo;phantom center&amp;rdquo; or virtual source can be positioned between the speakers. Limitation: Virtual sources cannot be positioned behind, above, or around the listener without specialized acoustic crosstalk cancellation or multichannel surround arrays.</description>
     </item>
   </channel>
 </rss>
