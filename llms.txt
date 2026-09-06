@@ -58,6 +58,7 @@
    *The Use of Wrist EMG Increases the PPG Heart Rate Accuracy in Smartwatches.*
    S. Friman, A. Vehkaoja, J. M. Perez-Macias.
    DOI: [10.1109/JSEN.2022.3219297](https://doi.org/10.1109/JSEN.2022.3219297)
+   Project Page: https://jperezmacias.github.io/research-projects/wrist-emg-smartwatch.html
 
 3. **IEEE Journal of Biomedical and Health Informatics (2017)**:
    *Detection of snores using source separation on an Emfit signal.*
@@ -92,6 +93,7 @@
 ## Key Project Links
 
 - **Main Homepage**: https://jperezmacias.github.io/
+- **Wrist EMG Smartwatch PPG Project**: https://jperezmacias.github.io/research-projects/wrist-emg-smartwatch.html
 - **Snoring Detection Project**: https://jperezmacias.github.io/research-projects/snoring.html
 - **Heartbeat BCG Project**: https://jperezmacias.github.io/research-projects/heartbeat-bcg.html
 - **Breathing Disorders Project**: https://jperezmacias.github.io/research-projects/breathing-disorders.html

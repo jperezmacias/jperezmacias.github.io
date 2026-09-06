@@ -120,20 +120,41 @@
     <h2>Results</h2>
        Preliminary tests show promising accuracy in heartbeat detection, independent of patient position or movement. 
 
-       <h2>Resources</h2>
-  
+        <p>
+            <a href="../papers/Cinc-2022-preprint.pdf" class="btn-download-pdf">
+                📄 Download Open-Access Preprint (PDF)
+            </a>
+        </p>
 
-        <p>The project produced the following publications</p>
+        <!-- 1-Click BibTeX Citation Box -->
+        <div class="citation-box">
+            <div class="citation-header">
+                <h3>Cite This Research</h3>
+                <button class="citation-copy-btn" onclick="copyBibtex()">Copy BibTeX</button>
+            </div>
+            <p style="font-size:0.9em; color:#475569; margin: 6px 0 10px 0;">
+                <strong>CinC Citation:</strong> J. M. Perez-Macias, M. Tenhunen, A. Värri, S.-L. Himanen, and J. Viik, "Heart pulse demodulation from Emfit mattress sensor using spectral and source separation techniques," in <em>Computing in Cardiology (CinC)</em>, vol. 498, pp. 1–4, 2022, doi: 10.22489/CinC.2022.285.
+            </p>
+            <pre class="citation-code" id="bibtex-bcg"><code>@inproceedings{perezmacias2022heart,
+  author    = {Perez-Macias, Jose Maria and Tenhunen, Mirja and V{\"a}rri, Alpo and Himanen, Sari-Leena and Viik, Jari},
+  title     = {Heart pulse demodulation from Emfit mattress sensor using spectral and source separation techniques},
+  booktitle = {2022 Computing in Cardiology (CinC)},
+  volume    = {498},
+  pages     = {1--4},
+  year      = {2022},
+  doi       = {10.22489/CinC.2022.285}
+}</code></pre>
+        </div>
 
-        <ol>
-            <li>
-                <strong
-                    ><a href="../papers/Cinc-2022-preprint.pdf"
-                        >Heart pulse demodulation from Emfit mattress sensor using spectral and source separation
-                        techniques.
-                    </a></strong
-                >. JM Perez-Macias, M Tenhunen, A V&auml;rri, SL Himanen, J Viik. 2022 Computing in Cardiology (CinC)
-            </li>
-        </ol>
+        <script>
+            function copyBibtex() {
+                var code = document.getElementById("bibtex-bcg").innerText;
+                navigator.clipboard.writeText(code).then(function() {
+                    alert("BibTeX citation copied to clipboard!");
+                }).catch(function(err) {
+                    console.error("Could not copy BibTeX: ", err);
+                });
+            }
+        </script>
     </body>
 </html>

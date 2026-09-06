@@ -152,14 +152,44 @@
             (old draft <a href="../papers/EMBC17_perezmacias.pdf">here</a>)
         </li>
 
-        <li>
-            <strong><a href="http://ieeexplore.ieee.org/document/8052489/">Detection of snores using source separation
-                    on an Emfit signal
-                </a></strong>. JM Perez-Macias, M Tenhunen, A V&auml;rri, SL Himanen, J Viik. IEEE Journal of Biomedical
-            and Health
-            Informatics
-        </li>
-    </ol>
+    <p>
+        <a href="../papers/EMBC17_perezmacias.pdf" class="btn-download-pdf">
+            📄 Download Open-Access Conference Preprint (EMBC PDF)
+        </a>
+    </p>
+
+    <!-- 1-Click BibTeX Citation Box -->
+    <div class="citation-box">
+        <div class="citation-header">
+            <h3>Cite This Research (IEEE JBHI)</h3>
+            <button class="citation-copy-btn" onclick="copyBibtex()">Copy BibTeX</button>
+        </div>
+        <p style="font-size:0.9em; color:#475569; margin: 6px 0 10px 0;">
+            <strong>IEEE JBHI:</strong> J. M. Perez-Macias, M. Tenhunen, A. Värri, S.-L. Himanen, and J. Viik, "Detection of snores using source separation on an Emfit signal," <em>IEEE Journal of Biomedical and Health Informatics</em>, vol. 22, no. 4, pp. 1060–1068, July 2018, doi: 10.1109/JBHI.2017.2757041.
+        </p>
+        <pre class="citation-code" id="bibtex-snoring"><code>@article{perezmacias2017snoring,
+  author    = {Perez-Macias, Jose Maria and Tenhunen, Mirja and V{\"a}rri, Alpo and Himanen, Sari-Leena and Viik, Jari},
+  title     = {Detection of snores using source separation on an Emfit signal},
+  journal   = {IEEE Journal of Biomedical and Health Informatics},
+  volume    = {22},
+  number    = {4},
+  pages     = {1060--1068},
+  year      = {2018},
+  publisher = {IEEE},
+  doi       = {10.1109/JBHI.2017.2757041}
+}</code></pre>
+    </div>
+
+    <script>
+        function copyBibtex() {
+            var code = document.getElementById("bibtex-snoring").innerText;
+            navigator.clipboard.writeText(code).then(function() {
+                alert("BibTeX citation copied to clipboard!");
+            }).catch(function(err) {
+                console.error("Could not copy BibTeX: ", err);
+            });
+        }
+    </script>
 </body>
 
 </html>

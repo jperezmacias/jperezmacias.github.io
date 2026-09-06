@@ -186,3 +186,67 @@ ul.social-buttons li a:active {
     float: right;
     margin-left: 40px; /* Optional, space between the image and text */
 }
+
+/* Academic Citation Box & 1-Click Copy */
+.citation-box {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 28px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.citation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.citation-header h3 {
+    margin: 0;
+    font-size: 1.15em;
+    color: #1e293b;
+}
+.citation-copy-btn {
+    background: #0284c7;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-size: 0.85em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.citation-copy-btn:hover {
+    background: #0369a1;
+}
+.citation-code {
+    background: #0f172a;
+    color: #f1f5f9;
+    padding: 14px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.84em;
+    line-height: 1.45;
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.btn-download-pdf {
+    display: inline-block;
+    background: #10b981;
+    color: #ffffff !important;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95em;
+    margin: 12px 0 20px 0;
+    transition: background 0.2s ease;
+}
+.btn-download-pdf:hover {
+    background: #059669;
+}

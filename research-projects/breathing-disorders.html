@@ -132,13 +132,41 @@
 
         <ol>
             <li>
-                <strong
-                    ><a href="https://link.springer.com/chapter/10.1007/978-981-10-5122-7_194"
-                        >Time characteristics of prolonged partial obstruction periods using an Emfit mattres</a
-                    ></strong
-                >. JM Perez-Macias, J Viik, A Varri, SL Himanen, M TenhunenPhysiological measurement 37 (12), 2130 3
-                2016
+                <strong><a href="https://link.springer.com/chapter/10.1007/978-981-10-5122-7_194" target="_blank" rel="noopener">Time characteristics of prolonged partial obstruction periods using an Emfit mattress</a></strong>. JM Perez-Macias, J Viik, A Värri, SL Himanen, M Tenhunen. EMBEC &amp; NBC 2017, IFMBE Proceedings, vol. 65, pp. 777–780, Springer, 2017. DOI: 10.1007/978-981-10-5122-7_194.
             </li>
         </ol>
+
+        <!-- 1-Click BibTeX Citation Box -->
+        <div class="citation-box">
+            <div class="citation-header">
+                <h3>Cite This Research</h3>
+                <button class="citation-copy-btn" onclick="copyBibtex()">Copy BibTeX</button>
+            </div>
+            <p style="font-size:0.9em; color:#475569; margin: 6px 0 10px 0;">
+                <strong>Springer IFMBE Citation:</strong> J. M. Perez-Macias, J. Viik, A. Värri, S.-L. Himanen, and M. Tenhunen, "Time Characteristics of Prolonged Partial Obstruction Periods Using an Emfit Mattress," in <em>EMBEC &amp; NBC 2017</em>, H. Eskola et al., Eds., IFMBE Proceedings, vol. 65, Springer, Singapore, 2017, pp. 777–780, doi: 10.1007/978-981-10-5122-7_194.
+            </p>
+            <pre class="citation-code" id="bibtex-breathing"><code>@inproceedings{perezmacias2017obstruction,
+  author    = {Perez-Macias, Jose Maria and Viik, Jari and V{\"a}rri, Alpo and Himanen, Sari-Leena and Tenhunen, Mirja},
+  title     = {Time Characteristics of Prolonged Partial Obstruction Periods Using an Emfit Mattress},
+  booktitle = {Joint Conference of the European Medical and Biological Engineering Conference (EMBEC) and the Nordic-Baltic Conference on Biomedical Engineering and Medical Physics (NBC)},
+  series    = {IFMBE Proceedings},
+  volume    = {65},
+  pages     = {777--780},
+  year      = {2017},
+  publisher = {Springer, Singapore},
+  doi       = {10.1007/978-981-10-5122-7_194}
+}</code></pre>
+        </div>
+
+        <script>
+            function copyBibtex() {
+                var code = document.getElementById("bibtex-breathing").innerText;
+                navigator.clipboard.writeText(code).then(function() {
+                    alert("BibTeX citation copied to clipboard!");
+                }).catch(function(err) {
+                    console.error("Could not copy BibTeX: ", err);
+                });
+            }
+        </script>
     </body>
 </html>
