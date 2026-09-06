@@ -118,111 +118,119 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Csound Wave Engineering (Spanish) -->
+  <!-- Csound Entry Point -->
   <url>
     <loc>https://jperezmacias.github.io/csound/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Csound Spanish Section (/csound/es/...) -->
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/inicio/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jperezmacias.github.io/csound/es/docs/inicio/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/generalintroduccion/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/generalintroduccion/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/csound/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/csound/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/funciones/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/funciones/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/ejemplos/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/ejemplos/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/ecos-y-rev/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/ecos-y-rev/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/sonido-3d-introduccion/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/sonido-3d-introduccion/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/audio-espacial/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/audio-espacial/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/coordenadas/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/coordenadas/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/sistemas-de-audio/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/sistemas-de-audio/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/hrtf/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/hrtf/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/sistemas-hrtf/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/sistemas-hrtf/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/implementacion/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/implementacion/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/ejemplos-csound/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/ejemplos-csound/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/bibliografia/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/bibliografia/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://jperezmacias.github.io/csound/docs/overview/</loc>
+    <loc>https://jperezmacias.github.io/csound/es/docs/overview/</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- Csound Wave Engineering (English - Pure English URLs) -->
+  <!-- Csound English Section (/csound/en/...) -->
   <url>
     <loc>https://jperezmacias.github.io/csound/en/</loc>
     <lastmod>2026-09-06</lastmod>

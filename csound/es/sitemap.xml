@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/docs/bibliografia/</loc>
+    <loc>/es/docs/bibliografia/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -12,10 +12,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/bibliografia/"
+                href="/es/docs/bibliografia/"
                 />
   </url><url>
-    <loc>/docs/coordenadas/</loc>
+    <loc>/es/docs/coordenadas/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -25,10 +25,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/coordenadas/"
+                href="/es/docs/coordenadas/"
                 />
   </url><url>
-    <loc>/docs/csound/</loc>
+    <loc>/es/docs/csound/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -38,10 +38,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/csound/"
+                href="/es/docs/csound/"
                 />
   </url><url>
-    <loc>/docs/</loc>
+    <loc>/es/docs/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -51,10 +51,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/"
+                href="/es/docs/"
                 />
   </url><url>
-    <loc>/docs/ecos-y-rev/</loc>
+    <loc>/es/docs/ecos-y-rev/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -64,10 +64,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/ecos-y-rev/"
+                href="/es/docs/ecos-y-rev/"
                 />
   </url><url>
-    <loc>/docs/ejemplos/</loc>
+    <loc>/es/docs/ejemplos/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -77,10 +77,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/ejemplos/"
+                href="/es/docs/ejemplos/"
                 />
   </url><url>
-    <loc>/docs/ejemplos-csound/</loc>
+    <loc>/es/docs/ejemplos-csound/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -90,10 +90,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/ejemplos-csound/"
+                href="/es/docs/ejemplos-csound/"
                 />
   </url><url>
-    <loc>/docs/inicio/</loc>
+    <loc>/es/docs/inicio/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -103,10 +103,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/inicio/"
+                href="/es/docs/inicio/"
                 />
   </url><url>
-    <loc>/docs/funciones/</loc>
+    <loc>/es/docs/funciones/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -116,10 +116,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/funciones/"
+                href="/es/docs/funciones/"
                 />
   </url><url>
-    <loc>/docs/hrtf/</loc>
+    <loc>/es/docs/hrtf/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -129,10 +129,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/hrtf/"
+                href="/es/docs/hrtf/"
                 />
   </url><url>
-    <loc>/docs/implementacion/</loc>
+    <loc>/es/docs/implementacion/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -142,10 +142,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/implementacion/"
+                href="/es/docs/implementacion/"
                 />
   </url><url>
-    <loc>/</loc>
+    <loc>/es/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -155,10 +155,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/"
+                href="/es/"
                 />
   </url><url>
-    <loc>/docs/generalintroduccion/</loc>
+    <loc>/es/docs/generalintroduccion/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -168,10 +168,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/generalintroduccion/"
+                href="/es/docs/generalintroduccion/"
                 />
   </url><url>
-    <loc>/docs/overview/</loc>
+    <loc>/es/docs/overview/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -181,10 +181,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/overview/"
+                href="/es/docs/overview/"
                 />
   </url><url>
-    <loc>/docs/sistemas-hrtf/</loc>
+    <loc>/es/docs/sistemas-hrtf/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -194,10 +194,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/sistemas-hrtf/"
+                href="/es/docs/sistemas-hrtf/"
                 />
   </url><url>
-    <loc>/docs/sonido-3d-introduccion/</loc>
+    <loc>/es/docs/sonido-3d-introduccion/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -207,10 +207,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/sonido-3d-introduccion/"
+                href="/es/docs/sonido-3d-introduccion/"
                 />
   </url><url>
-    <loc>/docs/audio-espacial/</loc>
+    <loc>/es/docs/audio-espacial/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -220,10 +220,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/audio-espacial/"
+                href="/es/docs/audio-espacial/"
                 />
   </url><url>
-    <loc>/docs/sistemas-de-audio/</loc>
+    <loc>/es/docs/sistemas-de-audio/</loc>
     <lastmod>2004-05-24T11:16:54+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
@@ -233,10 +233,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/docs/sistemas-de-audio/"
+                href="/es/docs/sistemas-de-audio/"
                 />
   </url><url>
-    <loc>/categories/</loc>
+    <loc>/es/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -245,10 +245,10 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/categories/"
+                href="/es/categories/"
                 />
   </url><url>
-    <loc>/tags/</loc>
+    <loc>/es/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
@@ -257,7 +257,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="es-ES"
-                href="/tags/"
+                href="/es/tags/"
                 />
   </url>
 </urlset>

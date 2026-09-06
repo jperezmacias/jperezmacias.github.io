@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Descripcion">
+  <meta name="author" content="Ariana de La Cuesta de Diego y Jose Maria Perez-Macias">
+  <meta name="theme-color" content="#ffffff">
+  
+
+  <title>Csound · Ingenieria de Ondas</title>
+  <link rel="canonical" href="../../../es/docs/csound/">
+  <link rel="stylesheet" href="../../../assets/css/docs.min.163931c9a15d36bcf1bca33a253ae3ca2da221f1befeb7b7db13f8e63b7d6ef0.css" integrity="">
+
+  <link rel="manifest" href="../../../manifest.json">
+<link rel="icon" type="image/svg+xml" href="../../../favicon/favicon.svg">
+<link rel="icon" href="../../../favicon/favicon.ico">
+<link rel="icon" href="../../../favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../../favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../../favicon/apple-touch-icon.png" sizes="180x180">
+
+  
+
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--padding);">
+        <div class="lang-switcher" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85em; font-weight: 500;">
+          
+            
+            
+              <span style="font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 1px;">ES</span>
+            
+          
+            <span style="opacity: 0.4;">|</span>
+            
+              <a href="../../../en/docs/csound/" style="color: inherit; opacity: 0.7; text-decoration: none;">EN</a>
+            
+          
+        </div>
+        <button class="btn"><i>❌</i>Cerrar</button>
+      </div>
+      <a href="../../../es/" class="site-logo">Ingenieria de Ondas</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Overview</summary>
+          <ul><li>
+              
+              <a class="" href="../../../es/docs/inicio/">
+                
+                Inicio
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/generalintroduccion/">
+                
+                GeneralIntroduccion
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Csound</summary>
+          <ul><li>
+              
+              <a class="active" href="../../../es/docs/csound/">
+                
+                Csound
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/funciones/">
+                
+                Funciones
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/ejemplos/">
+                
+                Ejemplos
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ecos y Reverberacion</summary>
+          <ul><li>
+              
+              <a class="" href="../../../es/docs/ecos-y-rev/">
+                
+                Ecos y Rev
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Sonido 3D</summary>
+          <ul><li>
+              
+              <a class="" href="../../../es/docs/sonido-3d-introduccion/">
+                
+                Sonido 3D Introduccion
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/audio-espacial/">
+                
+                Audio Espacial
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/coordenadas/">
+                
+                Coordenadas
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/sistemas-de-audio/">
+                
+                Sistemas de Audio
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/hrtf/">
+                
+                HRTF
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/sistemas-hrtf/">
+                
+                Sistemas HRTF
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/implementacion/">
+                
+                Implementacion
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ejemplos Csound</summary>
+          <ul><li>
+              
+              <a class="" href="../../../es/docs/ejemplos-csound/">
+                
+                Ejemplos Csound
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Bibliografia</summary>
+          <ul><li>
+              
+              <a class="" href="../../../es/docs/bibliografia/">
+                
+                Bibliografia
+                
+              </a>
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header style="display: flex; align-items: center; justify-content: space-between; padding-right: var(--padding);">
+      <a href="../../../es/" class="site-logo">Ingenieria de Ondas</a>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div class="lang-switcher" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85em; font-weight: 500;">
+          
+            
+            
+              <span style="font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 1px;">ES</span>
+            
+          
+            <span style="opacity: 0.4;">|</span>
+            
+              <a href="../../../en/docs/csound/" style="color: inherit; opacity: 0.7; text-decoration: none;">EN</a>
+            
+          
+        </div>
+        <a href="../../../../index.html" style="font-size: 0.85em; text-decoration: none; color: inherit; opacity: 0.85;">← Jose Maria Perez-Macias</a>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> En esta sección</button>
+          <button class="btn">En esta página <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>Csound</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <h1 id="2-csound">2. CSOUND</h1>
+<h2 id="estructura-de-un-programa-csound">ESTRUCTURA DE UN PROGRAMA CSOUND.</h2>
+<p>Los instrumentos de Csound son creados en una <em>orquesta</em>, mientras que la lista de notas a ser ejecutadas se escribe en un fichero <em>partitura</em> separado. Ambos pueden ser creados usando un procesador de textos estándar. Cuando ejecutas Csound son una orquesta y partitura determinadas, la partitura es ordenada en el tiempo, la orquesta traducida y cargada, y las tablas de onda calculadas y rellenadas antes de ejecutar la partitura.</p>
+<p>A diferencia de los sintetizadores comerciales por hardware de hoy día, que tienen una serie limitada de osciladores, generadores de envolvente y filtros, así como un número limitado de maneras en las que éstos pueden ser interconectados, la potencia de Csound no se ve limitada de forma alguna. Si quieres un instrumento con cientos de osciladores, generadores de envolvente y filtros, lo único que tienes que hacer es teclearlos. Y aún más importante es la absoluta libertad a la hora de interconectar los módulos y de interrelacionar los parámetros que los controlan. Como los instrumentos acústicos, los instrumentos de Csound pueden exhibir una delicada sensibilidad natural al contexto musical y demostrar un nivel de &ldquo;inteligencia musical&rdquo; al cual los sintetizadores por hardware no pueden ni tan siquiera aspirar.</p>
+<p>Como bien se ha dicho, Csound es un programa que consta de dos archivos:</p>
+<ul>
+<li>El archivo de orquesta (<em>.org</em>).</li>
+<li>El archivo de partitura o score (<em>.sco</em>).</li>
+</ul>
+<p>Se va a realizar una pequeña introducción en el programa de Csound, estudiando las principales características de cada uno de los archivos que estructuran el programa Csound.</p>
+<h3 id="archivo-orquesta">ARCHIVO ORQUESTA</h3>
+<p>El archivo orquesta va a ser ejecutado y revisado cada cierto tiempo para evitar errores en los parámetros, por ello se distinguen cuatro tipos de frecuencias distintas, que son:</p>
+<ul>
+<li>Una vez sólo, cuando la orquesta es configurada (es, en realidad, una asignación permanente).</li>
+<li>Una vez al principio de cada nota (es decir, en su inicialización, tipo <em>i-</em>).</li>
+<li>Una vez en cada bucle de control de la ejecución (frecuencia de control o tipo <em>k-</em>).</li>
+<li>Una vez cada muestra de sonido de cada bucle de control (frecuencia de audio o tipo <em>a-</em>).</li>
+</ul>
+<p>Cada sentencia ocupa una única línea y tiene el mismo formato básico:</p>
+<p><em>resultado acción argumentos</em></p>
+<p>El archivo de Orquesta en Csound estará estructurado en dos partes:</p>
+<ul>
+<li>Sentencias de cabecera.</li>
+<li>Bloques de instrumento.</li>
+</ul>
+<p>Las sentencias de cabecera se caracterizan por:</p>
+<table>
+<thead>
+<tr>
+<th>CARACTERÍSTICAS</th>
+<th>EJEMPLO</th>
+<th>COMENTARIO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Confirman varios parámetros globales.</td>
+<td><strong>sr</strong> = 44100</td>
+<td><strong>sr</strong>: establecemos la frecuencia de muestreo en 44100 muestras por segundo y por canal.</td>
+</tr>
+<tr>
+<td>Operan sólo una vez, precisamente en el momento de la configuración de la orquesta.</td>
+<td><strong>kr</strong> = 4410</td>
+<td><strong>kr</strong>: establece la frecuencia de control en 4410 muestras por segundo.</td>
+</tr>
+<tr>
+<td>Todas las sentencias pertenecen a un pseudo-instrumento 0.</td>
+<td><strong>ksmps</strong> = 10</td>
+<td><strong>ksmps</strong>: establece en 10 el número de muestras en cada periodo de control. Este valor debe ser <strong>sr/kr</strong>.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>nchnls</strong> = 1</td>
+<td><strong>nchnls</strong>: establece en 1 el número de canales de la salida del audio.</td>
+</tr>
+</tbody>
+</table>
+<p>Los bloques de instrumento representan los distintos instrumentos, están compuestos por sentencias ordinarias que definen valores, controlan el flujo lógico de la señal o llaman a los distintos tipos de subcircuitos de procesado de la señal que calculan la salida de audio.</p>
+<p>Todos los instrumentos son numerados y referenciados según dicho número en la partitura. Los instrumentos en Csound son similares a los patches de un sintetizador por hardware. Cada instrumento consiste en una serie de <em>generadores simples</em>, o <em>módulos</em> de software, que son conectados mediante bloques de variables de entrada/salida de tipo i-, k- o a-. A diferencia de un módulo en hardware, uno en software tiene un número variable de <em>argumentos</em> que el usuario debe proporcionar para determinar su comportamiento.</p>
+<table>
+<thead>
+<tr>
+<th>EJEMPLO</th>
+<th>DIAGRAMA</th>
+<th>COMENTARIO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>instr 101</code></td>
+<td><img alt="Oscilador" src="../../../Imagenes/oscil.gif"></td>
+<td><strong>instr</strong>: indica el número del instrumento del nuevo evento. <strong>oscil</strong>: es un oscilador con amplitud 10000, frecuencia 440.</td>
+</tr>
+<tr>
+<td><code>a1 oscil 10000, 440, 1</code></td>
+<td></td>
+<td>Produce una señal periódica de audio. <strong>endin</strong>: indica el fin del instrumento.</td>
+</tr>
+<tr>
+<td><code>out a1</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>endin</code></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>En el archivo de orquesta se dividen las sentencias en categorías, que a su vez se dividirán en subcategorías. Las categorías son:</p>
+<ol>
+<li>Síntesis de Orquesta.</li>
+<li>Control de los instrumentos.</li>
+<li>Operaciones matemáticas.</li>
+<li>Convertidores de altura.</li>
+<li>Soporte MIDI.</li>
+<li>Generadores de Señal.</li>
+<li>Control de Tablas de función.</li>
+<li>Modificadores de Señal.</li>
+<li>Sistema de cableado Zak.</li>
+<li>Operaciones que usan Tipo s Espectrales de Datos.</li>
+<li>Entrada y Salida de Señales.</li>
+</ol>
+<h3 id="archivo-partitura">ARCHIVO PARTITURA</h3>
+<p>Una partitura (colección de sentencias de partitura) se divide en secciones ordenadas en el tiempo por las sentencias <em>s</em> (de sección). Antes de ser leídas por la orquesta, la partitura es preprocesada sección a sección. Cada una de ellas es procesada normalmente por tres rutinas:</p>
+<ul>
+<li>Carry.</li>
+<li>Tempo.</li>
+<li>Sort.</li>
+</ul>
+<p>Cada columna de la partitura constituye un campo paramétrico, denominado <em>p</em>, numerados de izquierda a derecha. De hecho, los primeros tres campos <em>p</em> de la sentencia <em>i</em> tienen una función reservada.</p>
+<ul>
+<li><em>p1</em> = número de instrumento.</li>
+<li><em>p2</em> = instante de comienzo.</li>
+<li><em>p3</em> = duración.</li>
+</ul>
+<p>Todos los demás campos <em>p</em> son considerados según la manera en la que el diseñador de sonido los defina en sus instrumentos.</p>
+<h4 id="carry">CARRY</h4>
+<p>Dentro de un grupo de sentencias <em>i</em> consecutivas cuyos números enteros <em>p1</em> se correspondan, cualquier campo <em>p</em> vacío tomará el valor del mismo campo <em>p</em> de la sentencia precedente. Un campo <em>p</em> vacío se puede indicar por un punto (.) limitado por espacios. La salida del preprocesado de Carry mostrará los valores explícitos. El procesado de Carry no se ve afectado por comentarios o líneas en blanco.</p>
+<h4 id="tempo">TEMPO</h4>
+<p>Esta operación modifica el tempo de una sección de partitura según la sentencia <em>t</em>. La operación de tempo convierte <em>p2</em> (y, para las sentencias <em>i</em>, <em>p3</em>) de su formato original a pulsos en segundos reales, ya que esa es la unidad de tiempo requerida por los <em>opcodes</em> de la orquesta.</p>
+<h4 id="sort">SORT</h4>
+<p>Esta rutina ordena todas las sentencias que implican una acción en el tiempo según el orden cronológico especificado por el valor <em>p2</em>. También ordena eventos coincidentes en orden de precedencia.</p>
+<h3 id="variables-y-constantes">VARIABLES Y CONSTANTES</h3>
+<p>Tanto en la cabecera como en los bloques de instrumentos de la orquesta y en la partitura se va a trabajar con constantes y variables. Las configuraciones en Orquesta son:</p>
+<ul>
+<li>En la inicialización de cada nota (tipo <em>i-</em>).</li>
+<li>En el bucle de control (tipo <em>k-</em>).</li>
+<li>En cada muestra del audio digital producido (tipo <em>a-</em>).</li>
+</ul>
+<h3 id="comentarios">COMENTARIOS</h3>
+<p>Para incluir texto en los archivos orquesta o los archivos partitura que no sea interpretado por el programa como código, hay que precederlo de un punto y coma (;). Esto permite hacer aclaraciones y comentarios en el código.</p>
+<hr>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+          
+
+          <time datetime="2004-05-24"><i>🕒</i> Actualizado: 2004-05-24</time>
+          
+          <a href="../../../es/docs/generalintroduccion/"><i>﹤</i> Anterior</a>
+          
+
+          
+          <a href="../../../es/docs/funciones/">Siguiente <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Cerrar</button>
+        </div>
+        <strong>En esta página</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#estructura-de-un-programa-csound">ESTRUCTURA DE UN PROGRAMA CSOUND.</a>
+      <ul>
+        <li><a href="#archivo-orquesta">ARCHIVO ORQUESTA</a></li>
+        <li><a href="#archivo-partitura">ARCHIVO PARTITURA</a></li>
+        <li><a href="#variables-y-constantes">VARIABLES Y CONSTANTES</a></li>
+        <li><a href="#comentarios">COMENTARIOS</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Creado por y copyright<a href="https://github.com/repo" target="_blank">Ariana de La Cuesta de Diego y Jose Maria Perez-Macias</a><i>📅</i> 2004-2024<i>🚀</i> <a href="https://github.com/repo" target="_blank">GitHub</a></div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="../../../assets/js/docs.min.b55220f931994168ec64fd76cf95230f3676d8e351388cc18eab8fa9a52dec05.js" integrity=""></script>
+</body>
+</html>
