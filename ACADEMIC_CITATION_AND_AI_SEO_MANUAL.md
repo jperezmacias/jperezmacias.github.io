@@ -508,3 +508,58 @@ As of this update, the following enhancements are live on `jperezmacias.github.i
 6. **Link Integrity**: 100% verified with 0 broken links across 1,300+ URLs.
 
 By maintaining this structure and following the checklist for future publications, researchers searching on Google Scholar, Google, Perplexity, and ChatGPT will consistently land on your research and have everything they need to cite it.
+
+---
+
+## 8. Search Consoles & Immediate Discovery Playbook
+
+When you deploy a new paper or update your website, you do not have to wait weeks for web spiders to discover it. Use this playbook to force search engines and AI models to index your work immediately.
+
+### 8.1 Google Search Console (Primary Web & Gemini Index)
+* **Status**: Verified via `google63bb926bf1436394.html` on `https://jperezmacias.github.io/`.
+* **Action 1 - Submit Sitemap**:
+  1. In the left sidebar, click **Sitemaps**.
+  2. Enter `sitemap.xml` and click **Submit**.
+  3. Status will display as **Success**, notifying Google of all 56 URLs.
+* **Action 2 - Force Priority Crawl ("Request Indexing")**:
+  1. In the top search bar (*"Inspect any URL in 'https://jperezmacias.github.io/'"*), paste:
+     `https://jperezmacias.github.io/research-projects/wrist-emg-smartwatch.html`
+  2. Press Enter.
+  3. Click **Request Indexing**.
+  4. Repeat for any newly updated research pages (e.g. `heartbeat-bcg.html`).
+  5. **Effect:** Googlebot places your paper at the top of its crawl queue, typically fetching and indexing it within a few hours.
+
+### 8.2 Bing Webmaster Tools (Powers ChatGPT Search & Copilot)
+* **Why this is critical:** ChatGPT Search, Microsoft Copilot, and DuckDuckGo rely directly on **Bing's search index**. If a page is not indexed on Bing, ChatGPT Search may fail to retrieve it during live web queries.
+* **10-Second Setup via GSC Import:**
+  1. Go to [Bing Webmaster Tools](https://www.bing.com/webmasters).
+  2. Sign in with your Google account.
+  3. Select **Import from Google Search Console**.
+  4. Bing will automatically copy your verified ownership and sitemap in 10 seconds—no files to upload!
+* **Instant URL Submission:**
+  1. Under **URL Submission**, click **Submit URLs**.
+  2. Paste your research page URLs to trigger Bingbot crawling within minutes.
+
+### 8.3 Google Scholar Profile Homepage Link
+* **Action**:
+  1. Go to your [Google Scholar Profile](https://scholar.google.fi/citations?user=2eM13MsAAAAJ&hl=en).
+  2. Click the edit (pencil) icon next to your name.
+  3. In the **Homepage** field, enter: `https://jperezmacias.github.io/`.
+  4. Click **Save**.
+* **Effect**: Google Scholar crawlers (`Googlebot-Scholar`) crawl your homepage regularly, discover the Highwire Press `<meta name="citation_*">` tags on your project pages, and attach the green/blue **`[PDF] jperezmacias.github.io`** download badge next to your papers in Scholar search results.
+
+### 8.4 The "AI Live-Seeding" Prompt Technique
+* **How It Works**: When an AI engine (Perplexity, ChatGPT with browsing, Claude) is given a specific URL or domain filter, its backend spins up a live scraper (`GPTBot` / `PerplexityBot`) to fetch and vectorize the page.
+* **Action**:
+  Run a targeted prompt in Perplexity Pro or ChatGPT Search:
+  > *"Analyze the signal processing methodology and heart rate accuracy findings from https://jperezmacias.github.io/research-projects/wrist-emg-smartwatch.html and summarize how wrist EMG cancels PPG motion artifacts."*
+* **Effect**: The AI scraper makes an HTTP GET request to your page, parses the abstract, headings, and schema, and permanently caches the vector embeddings in its retrieval-augmented generation (RAG) index.
+
+### 8.5 Institutional University Backlinks (The PageRank Express Pass)
+* In Google's ranking algorithms, `.fi` and `.edu` accredited university domains possess immense domain authority (PageRank).
+* **Action**:
+  1. **Aalto University**: Add `https://jperezmacias.github.io/` to your official Aalto researcher/staff page (`aalto.fi/en/people/...`).
+  2. **Tampere University (Trepo)**: Ensure your doctoral dissertation record or alumni profile links to your personal research portal.
+  3. **ORCID (`0000-0003-3485-0874`)**: In your ORCID profile, ensure `https://jperezmacias.github.io/` is listed under **Websites & Social Links**.
+* **Effect**: Inbound links from university domains pass high authority to `jperezmacias.github.io`, signaling to Google that your site is an authoritative academic source.
+
