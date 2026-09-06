@@ -1,0 +1,1 @@
+const lsKeyColorPreference="color-preference";localStorage.setItem(lsKeyColorPreference,"light"),document.firstElementChild.setAttribute("data-color","light")
