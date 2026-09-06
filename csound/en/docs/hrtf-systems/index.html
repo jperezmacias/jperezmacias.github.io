@@ -22,6 +22,21 @@
 
   
 
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -225,9 +240,9 @@
 <p>Spatial audio systems based on Head-Related Transfer Functions are capable of creating convincing three-dimensional acoustic sensations by filtering sound through finite impulse response (FIR) filter pairs representing the left and right ear HRTFs:</p>
 <p><img alt="Measuring the HRTF of a KEMAR manikin" src="../../../Imagenes/image020.jpg"></p>
 <h3 id="digital-signal-processing-architecture">Digital Signal Processing Architecture</h3>
-<p>Given a dry monaural input audio signal $s(t)$, the binaural signals delivered to the left and right ears are synthesized via time-domain convolution with the respective Head-Related Impulse Responses $h_L(t, 	heta, \phi)$ and $h_R(t, 	heta, \phi)$:</p>
-<p>$$x_L(t) = s(t) * h_L(t, 	heta, \phi)$$
-$$x_R(t) = s(t) * h_R(t, 	heta, \phi)$$</p>
+<p>Given a dry monaural input audio signal $s(t)$, the binaural signals delivered to the left and right ears are synthesized via time-domain convolution with the respective Head-Related Impulse Responses $h_L(t, \theta, \phi)$ and $h_R(t, \theta, \phi)$:</p>
+<p>$$x_L(t) = s(t) * h_L(t, \theta, \phi)$$
+$$x_R(t) = s(t) * h_R(t, \theta, \phi)$$</p>
 <h3 id="the-convolvotron">The Convolvotron</h3>
 <p>In the early 1990s, Elizabeth Wenzel and Scott Foster developed the <strong>Convolvotron</strong> for NASA Ames Research Center. It was one of the earliest real-time hardware convolution engines, capable of calculating real-time HRTF convolutions with dynamic head tracking for virtual reality flight simulation environments.</p>
 <h3 id="headphones-vs-loudspeakers-crosstalk-cancellation">Headphones vs. Loudspeakers: Crosstalk Cancellation</h3>

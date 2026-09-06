@@ -83,7 +83,7 @@
       <link>/en/docs/hrtf-systems/</link>
       <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
       <guid>/en/docs/hrtf-systems/</guid>
-      <description>4.5. HRTF-Based Spatial Audio Systems Spatial audio systems based on Head-Related Transfer Functions are capable of creating convincing three-dimensional acoustic sensations by filtering sound through finite impulse response (FIR) filter pairs representing the left and right ear HRTFs:&#xA;Digital Signal Processing Architecture Given a dry monaural input audio signal $s(t)$, the binaural signals delivered to the left and right ears are synthesized via time-domain convolution with the respective Head-Related Impulse Responses $h_L(t, heta, \phi)$ and $h_R(t, heta, \phi)$:</description>
+      <description>4.5. HRTF-Based Spatial Audio Systems Spatial audio systems based on Head-Related Transfer Functions are capable of creating convincing three-dimensional acoustic sensations by filtering sound through finite impulse response (FIR) filter pairs representing the left and right ear HRTFs:&#xA;Digital Signal Processing Architecture Given a dry monaural input audio signal $s(t)$, the binaural signals delivered to the left and right ears are synthesized via time-domain convolution with the respective Head-Related Impulse Responses $h_L(t, \theta, \phi)$ and $h_R(t, \theta, \phi)$:</description>
     </item>
     <item>
       <title>Introduction to Csound</title>

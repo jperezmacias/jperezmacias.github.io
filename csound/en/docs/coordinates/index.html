@@ -22,6 +22,21 @@
 
   
 
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -230,19 +245,19 @@
 <p><strong>Azimuth ($\theta$):</strong>
 The angle in the horizontal plane, measured from the frontal line of sight ($0^\circ$).</p>
 <ul>
-<li>$0^\circ$: Directly in front</li>
-<li>$+90^\circ$: Directly to the right</li>
-<li>$180^\circ$: Directly behind</li>
-<li>$-90^\circ$ (or $270^\circ$): Directly to the left</li>
+<li><strong>$0^\circ$</strong>: Directly in front</li>
+<li><strong>$+90^\circ$</strong>: Directly to the right</li>
+<li><strong>$180^\circ$</strong>: Directly behind</li>
+<li><strong>$-90^\circ$</strong> (or <strong>$270^\circ$</strong>): Directly to the left</li>
 </ul>
 </li>
 <li>
 <p><strong>Elevation ($\phi$):</strong>
 The vertical angle relative to the horizontal plane.</p>
 <ul>
-<li>$0^\circ$: Eye level (horizontal plane)</li>
-<li>$+90^\circ$: Directly overhead (zenith)</li>
-<li>$-90^\circ$: Directly below</li>
+<li><strong>$0^\circ$</strong>: Eye level (horizontal plane)</li>
+<li><strong>$+90^\circ$</strong>: Directly overhead (zenith)</li>
+<li><strong>$-90^\circ$</strong>: Directly below</li>
 </ul>
 </li>
 <li>
