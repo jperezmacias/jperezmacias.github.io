@@ -19,25 +19,23 @@
 - **GitHub**: [github.com/jperezmacias](https://github.com/jperezmacias)
 - **Official Website**: https://jperezmacias.github.io/
 
-## Research Focus Areas
+## Current Research & Scientific Focus
 
-1. **Unobtrusive Sleep Monitoring & Emfit Mattress Sensors**:
-   - Developing contactless algorithms for monitoring sleep architecture, physiological signals, and sleep-disordered breathing.
-   - Using electro-mechanical film (Emfit) transducers embedded under bed mattresses to capture mechanical movements without attaching electrodes to patients.
+1. **Wearable Sensors & Sensor Fusion (Smartwatches, Wrist EMG + PPG)**:
+   - Investigating multi-modal sensor fusion combining wrist Surface Electromyography (EMG) and Photoplethysmography (PPG) to dramatically enhance heart rate estimation accuracy during motion artifacts in smartwatches (*IEEE Sensors Journal*, 2022).
 
-2. **Snoring Detection & Classification**:
-   - Time-domain, spectral analysis, and source separation (Non-negative Matrix Factorization - NMF) on mattress sensor signals.
-   - Machine learning classification using Support Vector Machines (SVM) and Convolutional Neural Networks (CNN) for discriminating snoring from normal respiratory movements.
+2. **Ballistocardiography (BCG) & Contactless Heart Pulse Demodulation**:
+   - Isolating and demodulating continuous heartbeat and arterial pulse signals from unobtrusive bed mattress sensors (Emfit) using non-negative tensor factorization and spectral demodulation (*CinC*, 2022).
+   - Generating position-independent pulse signals that correlate with reference ECG and PPG for non-invasive cardiovascular and sleep monitoring.
 
-3. **Ballistocardiography (BCG) & Heart Pulse Demodulation**:
-   - Demodulating heartbeat and pulse signals from mattress sensor data using tensor factorization and spectral techniques.
-   - Deriving position-independent physiological signals comparable to ECG and PPG for long-term clinical monitoring.
+3. **Unobtrusive Sleep Monitoring & Contactless Diagnostics**:
+   - Pioneering algorithms for non-contact electro-mechanical film (Emfit) bed transducers to track sleep stages, cardiac cycles, and respiratory dynamics without body-worn sensors.
 
-4. **Respiratory Effort & Sleep-Disordered Breathing**:
-   - Detecting increased respiratory effort, prolonged partial upper airway obstructions, and abnormal ventilation patterns in sleep apnea and pediatric patients.
+4. **Snoring Classification & Acoustic Source Separation**:
+   - Machine learning pipelines utilizing Support Vector Machines (SVM), Convolutional Neural Networks (CNN), and Non-negative Matrix Factorization (NMF) to detect and classify snoring events (*IEEE Journal of Biomedical and Health Informatics*, *Physiological Measurement*).
 
-5. **3D Spatial Audio & Sound Synthesis (Csound)**:
-   - Head-Related Transfer Functions (HRTF), binaural synthesis, interaural time/level differences (ITD/ILD), room acoustics image source modeling, and digital signal processing opcodes in Csound.
+5. **Clinical Respiratory Effort & Pediatric Ventilation**:
+   - Developing automated detection algorithms for upper airway resistance, prolonged partial obstructions, and abnormal ventilation patterns in pediatric and adult sleep monitoring (*Child Neurology Open*, *Springer IFMBE*).
 
 ## Doctoral Dissertation
 
@@ -85,6 +83,11 @@
    *Time characteristics of prolonged partial obstruction periods using an Emfit mattress.*
    J. M. Perez-Macias, J. Viik, A. Värri, S.-L. Himanen, M. Tenhunen.
    DOI: [10.1007/978-981-10-5122-7_194](https://doi.org/10.1007/978-981-10-5122-7_194)
+
+## Historical / Archive Projects
+
+- **3D Spatial Audio & Csound DSP (2004 Course Project)**:
+  - Undergraduate student project on 3D audio, Head-Related Transfer Functions (HRTF), and digital sound synthesis opcodes in Csound from 2004 (Universidad de Valladolid). Maintained as an online legacy educational reference.
 
 ## Key Project Links
 
