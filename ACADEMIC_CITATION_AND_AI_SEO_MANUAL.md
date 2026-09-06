@@ -563,3 +563,18 @@ When you deploy a new paper or update your website, you do not have to wait week
   3. **ORCID (`0000-0003-3485-0874`)**: In your ORCID profile, ensure `https://jperezmacias.github.io/` is listed under **Websites & Social Links**.
 * **Effect**: Inbound links from university domains pass high authority to `jperezmacias.github.io`, signaling to Google that your site is an authoritative academic source.
 
+### 8.6 Institutional Email Verification & Scholar Audit
+* **Why verify institutional email on Google Scholar?**
+  1. **Public Search Indexing**: Google Scholar will **not** display an author profile in public search results without a verified university email address (`.fi`, `.edu`, etc.).
+  2. **Permanent Credibility Badge**: Once verified, the **`✔ Verified email at aalto.fi`** badge remains on your Google Scholar profile permanently, even after an employment contract concludes.
+  3. **Lifetime Control**: Keep your personal Gmail as the owner/primary login for both Google Scholar and ORCID, using the institutional address strictly for the verification badge.
+* **Google Scholar Publication Audit**:
+  - Periodically verify that all major papers appear in your Google Scholar profile:
+    - *The Use of Wrist EMG Increases the PPG Heart Rate Accuracy in Smartwatches* (IEEE Sensors Journal 2022)
+    - *Heart pulse demodulation from Emfit mattress sensor using spectral and source separation techniques* (Computing in Cardiology 2022)
+    - *Detection of snores using source separation on an Emfit signal* (IEEE JBHI 2017)
+  - If any paper is missing, click the **`+`** icon -> **Add articles** -> search the title to link it immediately.
+* **Crawl Propagation Timeline**:
+  - After submitting sitemaps and requesting indexing, search engines and AI crawlers typically process, render, and index new pages within **24 to 72 hours**.
+
+
