@@ -6,8 +6,38 @@
     <title>Unit Conversion Toolkit - Quick & Easy Conversions</title>
     <meta name="description" content="Free online unit converter for temperature, length, speed, and currency. Convert Fahrenheit-Celsius, inches/feet-cm, miles-km, km/h-m/s, and EUR-USD with instant results and detailed explanations.">
     <meta name="keywords" content="unit converter, temperature conversion, length conversion, currency converter, speed conversion, Fahrenheit to Celsius, inches to cm, km to miles">
+    <script>
+        window.onload = function() {
+            var host = window.location.hostname;
+            var link = document.getElementById('dynamic-link');
+            if (link) {
+                if(host.includes('github.io')) {
+                    link.setAttribute('href', '/');
+                } else if(host.includes('tuni.fi')) {
+                    link.setAttribute('href', '/jose.perez-macias/');
+                }
+            }
+        };
+    </script>
     <style>
         body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        #masthead {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        #masthead h2 {
+            font-size: 1.2em;
+            margin: 0;
+            color: #333;
+        }
+        #masthead a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        #masthead a:hover {
+            text-decoration: underline;
+        }
         .converter { border: 1px solid #ccc; padding: 20px; margin: 15px 0; border-radius: 8px; }
         input[type="number"] { width: 200px; padding: 5px; }
         button { background-color: #4CAF50; color: white; padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer; }
@@ -17,6 +47,10 @@
     </style>
 </head>
 <body>
+    <section id="masthead">
+        <h2>Go back to .. <a id="dynamic-link" href="../../index.html" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a> / <a href="../tools.html" title="Tools">Tools</a></h2>
+    </section>
+
     <h1>Unit Conversion Toolkit</h1>
     Sometimes I find myself wanting to convert things like temperature, length, speed, or currency. So I made this simple tool to help me out. Feel free to use it too! 
     I also thought about to explain what it means, how it is converted, and how to do it mentally.

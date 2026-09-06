@@ -1,11 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useful Linux Commands - Jose Maria Perez-Macias</title>
+    <link href="../styles/style.css" rel="stylesheet">
+    <script>
+        window.onload = function() {
+            var host = window.location.hostname;
+            var link = document.getElementById('dynamic-link');
+            if(host.includes('github.io')) {
+                link.setAttribute('href', '/');
+            } else if(host.includes('tuni.fi')) {
+                link.setAttribute('href', '/jose.perez-macias/');
+            }
+        };
+    </script>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 12px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: monospace;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <section id="masthead">
+        <h1>Go back to .. <a id="dynamic-link" href="../index.html" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a></h1>
+    </section>
 
+    <h1>Useful Linux Commands</h1>
 
-# get ip from hostname Debian
-hostname -I
-# view hostname or change it
-hostnamectl
-sudo hostnamectl set-hostname <new_hostname> After changing, it's recommended to update the /etc/hosts file and reboot for the changes to fully apply
-sudo nano /etc/hosts
-For example, if the line was 127.0.0.1 localhost oldname, change it to 127.0.0.1 localhost newname.
-sudo reboot
+    <h2>Get IP Address from Hostname (Debian / Ubuntu)</h2>
+    <pre><code>hostname -I</code></pre>
 
+    <h2>View or Change Hostname</h2>
+    <p>View current hostname details:</p>
+    <pre><code>hostnamectl</code></pre>
+
+    <p>Set a new hostname:</p>
+    <pre><code>sudo hostnamectl set-hostname &lt;new_hostname&gt;</code></pre>
+
+    <p>After changing the hostname, update <code>/etc/hosts</code> and reboot for changes to fully apply:</p>
+    <pre><code>sudo nano /etc/hosts
+# For example, change:
+# 127.0.0.1 localhost oldname
+# to:
+# 127.0.0.1 localhost newname
+
+sudo reboot</code></pre>
+
+</body>
+</html>

@@ -7,14 +7,49 @@
     <meta name="description"
         content="A resource page for tech tips, including system commands, Git usage, and coding snippets.">
     <meta name="keywords" content="tech tips, Linux commands, Git tutorials, code snippets">
-    <meta name="author" content="Your Name">
-    <title>Tech Tips and Code Snippets</title>
+    <meta name="author" content="Jose Maria Perez-Macias">
+    <title>Tech Tips and Code Snippets - Jose Maria Perez-Macias</title>
+    <script>
+        window.onload = function() {
+            var host = window.location.hostname;
+            var link = document.getElementById('dynamic-link');
+            if (link) {
+                if(host.includes('github.io')) {
+                    link.setAttribute('href', '/');
+                } else if(host.includes('tuni.fi')) {
+                    link.setAttribute('href', '/jose.perez-macias/');
+                }
+            }
+        };
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0 auto;
             width: 80%;
+        }
+
+        #masthead {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        #masthead h2 {
+            font-size: 1.2em;
+            margin: 0;
+            color: #333;
+        }
+
+        #masthead a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        #masthead a:hover {
+            text-decoration: underline;
         }
 
         h1,
@@ -44,6 +79,10 @@
 </head>
 
 <body>
+    <section id="masthead">
+        <h2>Go back to .. <a id="dynamic-link" href="../../index.html" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a> / <a href="../tools.html" title="Tools">Tools</a></h2>
+    </section>
+
     <header>
         <h1>Tech Tips and Code Snippets</h1>
     </header>

@@ -5,7 +5,7 @@
     <link>/</link>
     <description>Recent content on Ingenieria de Ondas</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
+    <language>es-ES</language>
     <lastBuildDate>Mon, 24 May 2004 11:16:54 +0000</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -13,7 +13,7 @@
       <link>/docs/bibliografia/</link>
       <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
       <guid>/docs/bibliografia/</guid>
-      <description>6. Bibliografía 3D sound.&#xA;http://interface.cipic.ucdavis.edu/CIL_tutorial/3D_sys2/convtron.htm&#xA;Cámaras anecoicas.&#xA;http://www.monografias.com/trabajos4/salasanecoicas/salasanecoicas.shtml&#xA;Ambisonics &amp;ndash; stereo.&#xA;http://www.ambiophonics.org/AESJune2003/AES_June_2003_8.htm&#xA;Transformaciones de ambisonics a Stereo.&#xA;http://www.geocities.com/ambinutter/UHJ_and_Ambisonic_equations.html&#xA;[Begault 1994] D. Begault. 3-D sound for virtual reality and multimedia&#xA;3D sound for virtual reality systems using Ambisonic techniques. D.G. Malham.&#xA;Using Csound to position and decode Ambisonically.&#xA;http://www.york.ac.uk/inst/mustech/3d_audio/csambi.html&#xA;Un sistema hipermedial para no videntes usando sonido 3D:&#xA;http://enlaces.c5.cl/Congreso/HTML/charla10.htm&#xA;La navegación por sonido:&#xA;http://www7.nationalacademies.org/spanishbeyonddiscovery/ear_007522-02.html#TopOfPage</description>
+      <description>6. Bibliografía 3D sound.&#xA;http://web.archive.org/web/20090614180221/http://interface.cipic.ucdavis.edu:80/CIL_tutorial/3D_sys2/convtron.htm&#xA;Cámaras anecoicas.&#xA;http://web.archive.org/web/20210210202155/https://www.monografias.com/trabajos4/salasanecoicas/salasanecoicas.shtml&#xA;Ambisonics &amp;ndash; stereo.&#xA;http://web.archive.org/web/20170917233312/http://www.ambiophonics.org:80/AESJune2003/AES_June_2003_8.htm&#xA;Transformaciones de ambisonics a Stereo.&#xA;http://web.archive.org/web/20090426090445/http://www.geocities.com:80/ambinutter/UHJ_and_Ambisonic_equations.html&#xA;[Begault 1994] D. Begault. 3-D sound for virtual reality and multimedia&#xA;3D sound for virtual reality systems using Ambisonic techniques. D.G. Malham.&#xA;Using Csound to position and decode Ambisonically.&#xA;http://web.archive.org/web/20160724223758/http://www.york.ac.uk:80/inst/mustech/3d_audio/csambi.html&#xA;Un sistema hipermedial para no videntes usando sonido 3D:&#xA;http://web.archive.org/web/20221127073814/http://enlaces.c5.cl/Congreso/HTML/charla10.htm&#xA;La navegación por sonido:&#xA;http://web.archive.org/web/20200220151750/http://www7.nationalacademies.org:80/spanishbeyonddiscovery/ear_007522-02.html#TopOfPage</description>
     </item>
     <item>
       <title>Coordenadas</title>
@@ -65,6 +65,13 @@
       <description>2.1. FUNCIONES ELEMENTALES DEL CSOUND ALGUNAS SENTENCIAS QUE CONSIDERAMOS PRINCIPALES PARA EL ARCHIVO DE PARTITURA.&#xA;SENTENCIA f Esta sentencia hace que una subrutina GEN almacene valores en una tabla de función, para usarla con los instrumentos de la orquesta.&#xA;f p1 p2 p3 p4&amp;hellip;&#xA;p1: número de la tabla con el que será conocida la función almacenada, un número negativo indica que la tabla debe ser destruida. p2: instante de comienzo de la generación (o destrucción) de la función en pulsos.</description>
     </item>
     <item>
+      <title>Head-Related Transfer Functions</title>
+      <link>/docs/hrtf/</link>
+      <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
+      <guid>/docs/hrtf/</guid>
+      <description>4.4. Head-Related Transfer Functions Para encontrar la presión sonora que una señal x(t) produce en el pabellón auditivo, necesitamos la respuesta al impulso h(t) de la fuente en el pabellón auditivo. Esto se llama Head-Related Impulse Response (HRIR), y su transformada de Fourier se llama Head-Related Transfer Function (HRTF). La HRTF captura muchas cualidades que utilizamos para localizar un sonido. Una vez conocido para ambos oídos, podemos sintetizar señales binaurales a partir de una señal monoaural.</description>
+    </item>
+    <item>
       <title>Implementacion - SIMULACIÓN EN LOS ORDENADORES</title>
       <link>/docs/implementacion/</link>
       <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
@@ -112,13 +119,6 @@
       <pubDate>Mon, 24 May 2004 11:16:54 +0000</pubDate>
       <guid>/docs/sistemas-de-audio/</guid>
       <description>4.3. SISTEMAS DE AUDIO ESPACIALES SIMPLES Los sistemas de audio espaciales se limitan a localizar solamente el azimut. Hay tres clases de estos sistemas simples:&#xA;Dos canales (stereo) Multicanal Grabaciones binaurales A. Sistemas de dos canales (Stereo) En la industria de entretenimiento, el estéreo fue el primer producto comercial que daba la sensación de sonido en 3D. La idea era simple: si queríamos situar un sonido a la izquierda, llevábamos la señal al altavoz izquierdo; para situarlo a la derecha, a la derecha.</description>
-    </item>
-    <item>
-      <title>Head-Related Transfer Functions</title>
-      <link>/docs/hrtf/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/docs/hrtf/</guid>
-      <description>4.4. Head-Related Transfer Functions Para encontrar la presión sonora que una señal x(t) produce en el pabellón auditivo, necesitamos la respuesta al impulso h(t) de la fuente en el pabellón auditivo. Esto se llama Head-Related Impulse Response (HRIR), y su transformada de Fourier se llama Head-Related Transfer Function (HRTF). La HRTF captura muchas cualidades que utilizamos para localizar un sonido. Una vez conocido para ambos oídos, podemos sintetizar señales binaurales a partir de una señal monoaural.</description>
     </item>
   </channel>
 </rss>

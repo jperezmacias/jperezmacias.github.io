@@ -12,27 +12,53 @@
     <meta name="keywords" content="text converter, online text tools, text case converter, text analysis, word count, character count">
     
     <!-- Meta Author -->
-    <meta name="author" content="Your Name">
+    <meta name="author" content="Jose Maria Perez-Macias">
     
     <!-- Open Graph Meta Tags for Social Media Sharing -->
-    <meta property="og:title" content="Text Converter - Convert and Analyze Your Text Online">
-    <meta property="og:description" content="A simple and effective online tool for converting text cases and analyzing text statistics.">
+    <meta property="og:title" content="Text Converter - Jose Maria Perez-Macias">
+    <meta property="og:description" content="A simple online tool to convert text cases and analyze text statistics.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwebsite.com/text-converter">
-    <meta property="og:image" content="https://yourwebsite.com/images/text-converter-thumbnail.png">
+    <meta property="og:url" content="https://jperezmacias.github.io/tools/case/case.html">
 
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Text Converter - Convert and Analyze Your Text Online">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Text Converter - Jose Maria Perez-Macias">
     <meta name="twitter:description" content="Use this tool to convert text cases and analyze your text for various statistics.">
-    <meta name="twitter:image" content="https://yourwebsite.com/images/text-converter-thumbnail.png">
 
-    
-    <title>Text Converter</title>
+    <script>
+        window.onload = function() {
+            var host = window.location.hostname;
+            var link = document.getElementById('dynamic-link');
+            if (link) {
+                if(host.includes('github.io')) {
+                    link.setAttribute('href', '/');
+                } else if(host.includes('tuni.fi')) {
+                    link.setAttribute('href', '/jose.perez-macias/');
+                }
+            }
+        };
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+        }
+        #masthead {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        #masthead h2 {
+            font-size: 1.2em;
+            margin: 0;
+            color: #333;
+        }
+        #masthead a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        #masthead a:hover {
+            text-decoration: underline;
         }
         textarea {
             width: 100%;
@@ -56,6 +82,9 @@
     </style>
 </head>
 <body>
+    <section id="masthead">
+        <h2>Go back to .. <a id="dynamic-link" href="../../index.html" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a> / <a href="../tools.html" title="Tools">Tools</a></h2>
+    </section>
 
     <h1>Text Converter</h1>
 

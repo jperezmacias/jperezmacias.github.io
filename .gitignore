@@ -5,6 +5,12 @@ img/test/*
 check_links
 check_links.go
 check_links.py
+check_links.zig
+check_links_zig
 check_links_report.txt
+check_links_zig_report.txt
+*.o
 *.250304
 research-projects/test*.html
+.zig-cache/
+zig-out/
