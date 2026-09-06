@@ -7,7 +7,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/bibliografia/"
+                href="/en/docs/bibliography/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -20,7 +20,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/coordenadas/"
+                href="/en/docs/coordinates/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -59,7 +59,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/ecos-y-rev/"
+                href="/en/docs/echoes-and-reverb/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -72,7 +72,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/ejemplos/"
+                href="/en/docs/examples/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -85,7 +85,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/ejemplos-csound/"
+                href="/en/docs/csound-examples/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -98,7 +98,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/inicio/"
+                href="/en/docs/home/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -111,7 +111,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/funciones/"
+                href="/en/docs/functions/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -137,7 +137,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/implementacion/"
+                href="/en/docs/implementation/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -163,7 +163,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/generalintroduccion/"
+                href="/en/docs/general-introduction/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -189,7 +189,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/sistemas-hrtf/"
+                href="/en/docs/hrtf-systems/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -202,7 +202,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/sonido-3d-introduccion/"
+                href="/en/docs/3d-sound-introduction/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -215,7 +215,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/audio-espacial/"
+                href="/en/docs/spatial-audio/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -228,7 +228,7 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
-                href="/en/docs/sistemas-de-audio/"
+                href="/en/docs/audio-systems/"
                 />
     <xhtml:link
                 rel="alternate"
