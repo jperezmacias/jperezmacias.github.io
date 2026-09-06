@@ -1,23 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EEG Trends Analysis in Intensive Care Patients Project</title>
-    <link href="../styles/style.css" rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EEG Trends Analysis in Intensive Care Patients Project - Jose Maria Perez-Macias</title>
+    <meta name="description"
+        content="Software and signal processing algorithms to analyze continuous EEG trends in ICU patients, detecting signs of delayed cerebral ischemia and neurological deterioration." />
+    <meta name="keywords"
+        content="EEG trends, ICU monitoring, Alpha Delta Ratio, Relative Alpha Variability, cerebral ischemia, neurological monitoring, signal processing, Jose Maria Perez-Macias" />
+    <meta name="author" content="Jose Maria Perez-Macias" />
+    <link rel="canonical" href="https://jperezmacias.github.io/research-projects/eeg-trends-ICU.html" />
+
+    <meta property="og:title" content="EEG Trends Analysis in Intensive Care Patients Project" />
+    <meta property="og:description"
+        content="Continuous ICU EEG trend analysis using Alpha Delta Ratio (ADR) and Relative Alpha Variability (RAV) algorithms." />
+    <meta property="og:image" content="https://jperezmacias.github.io/research-projects/img/icu-eeg.webp" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jperezmacias.github.io/research-projects/eeg-trends-ICU.html" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EEG Trends Analysis in Intensive Care Patients Project" />
+    <meta name="twitter:description"
+        content="Continuous ICU EEG monitoring software to assist clinicians with automated neurological deterioration alarms." />
+    <meta name="twitter:image" content="https://jperezmacias.github.io/research-projects/img/icu-eeg.webp" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalScholarlyArticle",
+      "headline": "EEG Trends Analysis in Intensive Care Patients",
+      "name": "ICU EEG Trend Analysis Software",
+      "description": "Continuous EEG trend analysis algorithms in intensive care unit settings utilizing Alpha Delta Ratio (ADR) and Relative Alpha Variability (RAV) to detect neurological deterioration.",
+      "author": {
+        "@type": "Person",
+        "name": "Jose Maria Perez-Macias",
+        "url": "https://jperezmacias.github.io/",
+        "sameAs": "https://orcid.org/0000-0003-3485-0874",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Aalto University"
+        }
+      },
+      "keywords": [
+        "EEG trends",
+        "ICU neuro-monitoring",
+        "Alpha Delta Ratio",
+        "Cerebral ischemia detection",
+        "Biomedical signal processing"
+      ],
+      "url": "https://jperezmacias.github.io/research-projects/eeg-trends-ICU.html",
+      "image": "https://jperezmacias.github.io/research-projects/img/icu-eeg.webp",
+      "about": {
+        "@type": "MedicalSpecialty",
+        "name": "Critical Care Medicine and Clinical Neurophysiology"
+      }
+    }
+    </script>
+
+    <link href="../styles/style.css" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
     <script>
-        window.onload = function() {
+        window.onload = function () {
             var host = window.location.hostname;
-            var link = document.getElementById('dynamic-link');
-            if(host.includes('github.io')) {
-                link.setAttribute('href', '/');
-            } else if(host.includes('tuni.fi')) {
-                link.setAttribute('href', '/jose.perez-macias/');
+            var link = document.getElementById("dynamic-link");
+            if (host.includes("github.io")) {
+                link.setAttribute("href", "/");
+            } else if (host.includes("tuni.fi")) {
+                link.setAttribute("href", "/jose.perez-macias/");
             }
         };
     </script>

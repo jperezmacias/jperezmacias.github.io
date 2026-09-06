@@ -1,0 +1,94 @@
+# Jose Maria Perez-Macias, PhD - Academic & Research Portfolio
+
+> Biomedical & Telecommunications Engineer, Healthcare Technology Researcher, and Technical Leader. Specializing in unobtrusive sleep monitoring, contactless physiological sensors, biomedical signal processing, ballistocardiography (BCG), and 3D spatial audio. Currently affiliated with Aalto University; doctoral degree completed at Tampere University, Finland.
+
+## Profile Summary
+
+- **Full Name**: Jose Maria Perez-Macias
+- **Degree**: PhD in Biomedical Sciences and Engineering (Tampere University, 2025)
+- **Current Affiliation**: Aalto University, Finland
+- **Previous Affiliations**: Tampere University Hospital (TAYS), Tampere University, University of Valladolid
+- **ORCID**: [0000-0003-3485-0874](https://orcid.org/0000-0003-3485-0874)
+- **Google Scholar**: [Citations Profile](https://scholar.google.fi/citations?user=2eM13MsAAAAJ&hl=en)
+- **LinkedIn**: [jose-maria-perez-macias](https://www.linkedin.com/in/jose-maria-perez-macias/)
+- **GitHub**: [github.com/jperezmacias](https://github.com/jperezmacias)
+- **Official Website**: https://jperezmacias.github.io/
+
+## Research Focus Areas
+
+1. **Unobtrusive Sleep Monitoring & Emfit Mattress Sensors**:
+   - Developing contactless algorithms for monitoring sleep architecture, physiological signals, and sleep-disordered breathing.
+   - Using electro-mechanical film (Emfit) transducers embedded under bed mattresses to capture mechanical movements without attaching electrodes to patients.
+
+2. **Snoring Detection & Classification**:
+   - Time-domain, spectral analysis, and source separation (Non-negative Matrix Factorization - NMF) on mattress sensor signals.
+   - Machine learning classification using Support Vector Machines (SVM) and Convolutional Neural Networks (CNN) for discriminating snoring from normal respiratory movements.
+
+3. **Ballistocardiography (BCG) & Heart Pulse Demodulation**:
+   - Demodulating heartbeat and pulse signals from mattress sensor data using tensor factorization and spectral techniques.
+   - Deriving position-independent physiological signals comparable to ECG and PPG for long-term clinical monitoring.
+
+4. **Respiratory Effort & Sleep-Disordered Breathing**:
+   - Detecting increased respiratory effort, prolonged partial upper airway obstructions, and abnormal ventilation patterns in sleep apnea and pediatric patients.
+
+5. **3D Spatial Audio & Sound Synthesis (Csound)**:
+   - Head-Related Transfer Functions (HRTF), binaural synthesis, interaural time/level differences (ITD/ILD), room acoustics image source modeling, and digital signal processing opcodes in Csound.
+
+## Doctoral Dissertation
+
+- **Title**: *Methods for Snoring and Heart Pulse Detection Using Unobtrusive Mattress Sensor*
+- **Author**: Jose Maria Perez-Macias
+- **Degree**: Doctoral Dissertation, Tampere University, Faculty of Biomedical Sciences and Engineering, June 2025
+- **Permanent URN**: [http://urn.fi/URN:ISBN:978-952-03-2953-7](http://urn.fi/URN:ISBN:978-952-03-2953-7)
+- **Institutional Repository**: [Tampere University Trepo (Handle: 10024/227620)](https://trepo.tuni.fi/handle/10024/227620)
+- **ISBN**: 978-952-03-2952-0 (print), 978-952-03-2953-7 (pdf)
+- **Summary**: Investigates signal processing architectures for extracting vital physiological parameters from contactless Emfit bed mattress sensors. Establishes novel algorithms for position-independent heart pulse demodulation and machine learning models for accurate snoring event detection.
+
+## Selected Peer-Reviewed Publications
+
+1. **Child Neurology Open (2023)**:
+   *Methods for Detecting Abnormal Ventilation in Children - the Case Study of 13-Years old Pitt-Hopkins Girl.*
+   P. Nokelainen, J. M. Perez-Macias, S.-L. Himanen, A. Hakala, M. Tenhunen.
+   DOI: [10.1177/2329048X231151361](https://doi.org/10.1177/2329048X231151361) | PMCID: PMC9944179
+
+2. **IEEE Sensors Journal (2022)**:
+   *The Use of Wrist EMG Increases the PPG Heart Rate Accuracy in Smartwatches.*
+   S. Friman, A. Vehkaoja, J. M. Perez-Macias.
+   DOI: [10.1109/JSEN.2022.3219297](https://doi.org/10.1109/JSEN.2022.3219297)
+
+3. **IEEE Journal of Biomedical and Health Informatics (2017)**:
+   *Detection of snores using source separation on an Emfit signal.*
+   J. M. Perez-Macias, M. Tenhunen, A. Värri, S.-L. Himanen, J. Viik.
+   DOI: [10.1109/JBHI.2017.2757041](https://doi.org/10.1109/JBHI.2017.2757041)
+
+4. **Physiological Measurement (2016)**:
+   *Spectral analysis of snoring events from an Emfit mattress.*
+   J. M. Perez-Macias, J. Viik, A. Värri, S.-L. Himanen, M. Tenhunen.
+   DOI: [10.1088/0967-3334/37/12/2130](https://doi.org/10.1088/0967-3334/37/12/2130)
+
+5. **Computing in Cardiology - CinC (2022)**:
+   *Heart pulse demodulation from Emfit mattress sensor using spectral and source separation techniques.*
+   J. M. Perez-Macias, M. Tenhunen, A. Värri, S.-L. Himanen, J. Viik.
+   Preprint: https://jperezmacias.github.io/papers/Cinc-2022-preprint.pdf
+
+6. **Engineering in Medicine and Biology Conference - EMBC (2017)**:
+   *Assessment of support vector machines and convolutional neural networks to detect snoring using Emfit mattress.*
+   J. M. Perez-Macias, S. Adavanne, J. Viik, A. Värri, S.-L. Himanen, M. Tenhunen.
+   Preprint: https://jperezmacias.github.io/papers/EMBC17_perezmacias.pdf
+
+7. **Springer IFMBE Proceedings (2016)**:
+   *Time characteristics of prolonged partial obstruction periods using an Emfit mattress.*
+   J. M. Perez-Macias, J. Viik, A. Värri, S.-L. Himanen, M. Tenhunen.
+   DOI: [10.1007/978-981-10-5122-7_194](https://doi.org/10.1007/978-981-10-5122-7_194)
+
+## Key Project Links
+
+- **Main Homepage**: https://jperezmacias.github.io/
+- **Snoring Detection Project**: https://jperezmacias.github.io/research-projects/snoring.html
+- **Heartbeat BCG Project**: https://jperezmacias.github.io/research-projects/heartbeat-bcg.html
+- **Breathing Disorders Project**: https://jperezmacias.github.io/research-projects/breathing-disorders.html
+- **Contactless Video Breathing Project**: https://jperezmacias.github.io/research-projects/video-breathing.html
+- **ICU EEG Trends Analysis Project**: https://jperezmacias.github.io/research-projects/eeg-trends-ICU.html
+- **Csound 3D Audio & Wave Engineering Documentation**:
+  - English: https://jperezmacias.github.io/csound/en/docs/overview/
+  - Spanish: https://jperezmacias.github.io/csound/es/docs/overview/

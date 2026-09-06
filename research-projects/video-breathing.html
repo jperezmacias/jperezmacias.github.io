@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breathing Evaluation Using Video and Other Signals Project</title>
-    <link href="../styles/style.css" rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breathing Detection Using Video and Other Signals - Jose Maria Perez-Macias</title>
+    <meta name="description"
+        content="Exploring computer vision, optical flow, and machine learning to assess breathing patterns and respiratory rates from video streams and contactless sensors." />
+    <meta name="keywords"
+        content="video breathing detection, optical flow, computer vision, contactless respiration, sleep monitoring, non-invasive sensors, Jose Maria Perez-Macias" />
+    <meta name="author" content="Jose Maria Perez-Macias" />
+    <link rel="canonical" href="https://jperezmacias.github.io/research-projects/video-breathing.html" />
+
+    <meta property="og:title" content="Breathing Detection Using Video and Other Signals" />
+    <meta property="og:description"
+        content="Computer vision and multi-sensor fusion algorithms to accurately evaluate breathing patterns without physical contact." />
+    <meta property="og:image" content="https://jperezmacias.github.io/research-projects/img/breathing-video.webp" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jperezmacias.github.io/research-projects/video-breathing.html" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Breathing Detection Using Video and Other Signals" />
+    <meta name="twitter:description"
+        content="Contactless breathing pattern evaluation combining video analysis with non-invasive sensors." />
+    <meta name="twitter:image" content="https://jperezmacias.github.io/research-projects/img/breathing-video.webp" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ResearchProject",
+      "name": "Breathing Evaluation Using Video and Contactless Signals",
+      "description": "Techniques utilizing video streams, optical flow, and sensor fusion to evaluate respiratory patterns without physical contact.",
+      "author": {
+        "@type": "Person",
+        "name": "Jose Maria Perez-Macias",
+        "url": "https://jperezmacias.github.io/",
+        "sameAs": "https://orcid.org/0000-0003-3485-0874",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Aalto University"
+        }
+      },
+      "url": "https://jperezmacias.github.io/research-projects/video-breathing.html",
+      "image": "https://jperezmacias.github.io/research-projects/img/breathing-video.webp"
+    }
+    </script>
+
+    <link href="../styles/style.css" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
     <script>
-        window.onload = function() {
+        window.onload = function () {
             var host = window.location.hostname;
-            var link = document.getElementById('dynamic-link');
-            if(host.includes('github.io')) {
-                link.setAttribute('href', '/');
-            } else if(host.includes('tuni.fi')) {
-                link.setAttribute('href', '/jose.perez-macias/');
+            var link = document.getElementById("dynamic-link");
+            if (host.includes("github.io")) {
+                link.setAttribute("href", "/");
+            } else if (host.includes("tuni.fi")) {
+                link.setAttribute("href", "/jose.perez-macias/");
             }
         };
     </script>
