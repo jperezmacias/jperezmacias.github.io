@@ -242,7 +242,7 @@ Every research landing page on your site should feature an interactive citation 
     <strong>APA:</strong> Friman, S., Vehkaoja, A., & Perez-Macias, J. M. (2022). The Use of Wrist EMG Increases the PPG Heart Rate Accuracy in Smartwatches. <em>IEEE Sensors Journal</em>, 22(24), 24197–24204.
   </p>
 
-  <pre id="bibtex-code" style="background:#0f172a; color:#f8fafc; padding:12px; border-radius:6px; overflow-x:auto; font-size:0.82rem; line-height:1.4;"><code>@article{friman2022wrist,
+  <pre id="bibtex-code" style="background:#ffffff; color:#1e293b; border:1px solid #cbd5e1; padding:14px; border-radius:6px; overflow-x:auto; font-size:0.85rem; line-height:1.45;"><code>@article{friman2022wrist,
   author    = {Friman, Severi and Vehkaoja, Antti and Perez-Macias, Jose Maria},
   title     = {The Use of Wrist EMG Increases the PPG Heart Rate Accuracy in Smartwatches},
   journal   = {IEEE Sensors Journal},
@@ -422,7 +422,7 @@ When creating a new page in `research-projects/`, duplicate this template and fi
                     Copy BibTeX
                 </button>
             </div>
-            <pre id="bibtex" style="background:#0f172a; color:#f8fafc; padding:12px; border-radius:6px; overflow-x:auto; margin-top:10px;"><code>@[entryType]{[citekey],
+            <pre id="bibtex" style="background:#ffffff; color:#1e293b; border:1px solid #cbd5e1; padding:14px; border-radius:6px; overflow-x:auto; margin-top:10px;"><code>@[entryType]{[citekey],
   author    = {[Authors]},
   title     = {[Paper Title]},
   journal   = {[Journal Name]},
