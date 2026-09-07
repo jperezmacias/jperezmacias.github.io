@@ -90,47 +90,65 @@ footer {
 
 
 /* social buttons */
-.social-buttons img{
+.social-buttons img {
   border: none !important;
 }
 
 ul.social-buttons {
-
-    margin-right: 0;
-	
-    margin-bottom: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
 }
 
 ul.social-buttons li {
-  padding-left:  0px;
-  padding-right: 0px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
 }
+
 ul.social-buttons li a {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: 100%;
+  border-radius: 50%;
   font-size: 20px;
-  line-height: 40px;
+  line-height: 1;
   outline: 0;
-  color: rgba(255, 255, 255, 0.75); /*#fff; */
-  background-color: rgba(0, 0, 0, 0.65); /*#222;*/
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  transition: all .3s;
+  color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(0, 0, 0, 0.65);
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  transition: all .25s ease;
   text-align: center;
-  vertical-align: middle;
-  padding-top: 10px;
-  
+  text-decoration: none !important;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul.social-buttons li a i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 19px;
+  margin: 0;
+  padding: 0;
 }
 
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-    color: rgba(255, 255, 255, 1.0);
-    background-color: rgba(240, 95, 64, 0.75); /*#fed136;*/
+  color: #ffffff;
+  background-color: rgba(240, 95, 64, 0.85);
+  text-decoration: none !important;
+  transform: scale(1.08);
 }
 
 
