@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio &amp; Acoustic Signal Processing Projects - Jose Perez-Macias</title>
+
+    <!-- Description & Keywords -->
+    <meta name="description" content="Audio and acoustic signal processing projects by Jose Maria Perez-Macias: sound source localization with microphone arrays and 3D spatial audio in Csound." />
+    <meta name="keywords" content="Audio signal processing, acoustic source localization, sound localization, microphone array, UMA-8, Csound, spatial audio, HRTF, beamforming, SRP-PHAT, Jose Maria Perez-Macias, Tampere University" />
+    <meta name="author" content="Jose Maria Perez-Macias" />
+    <link rel="canonical" href="https://jperezmacias.github.io/projects_audio/" />
+
+    <!-- Open Graph tags for social media & AI rich previews -->
+    <meta property="og:title" content="Audio &amp; Acoustic Signal Processing Projects - Jose Perez-Macias" />
+    <meta property="og:description" content="Curated collection of audio engineering and acoustic signal processing projects: microphone array sound localization and Csound 3D spatial audio." />
+    <meta property="og:image" content="https://jperezmacias.github.io/projects_audio/sound-localization/img/sound-tracking-car1.webp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jperezmacias.github.io/projects_audio/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Audio &amp; Acoustic Signal Processing Projects - Jose Perez-Macias" />
+    <meta name="twitter:description" content="Audio and acoustic signal processing projects: sound source localization and Csound 3D spatial audio." />
+    <meta name="twitter:image" content="https://jperezmacias.github.io/projects_audio/sound-localization/img/sound-tracking-car1.webp" />
+
+    <!-- Schema.org JSON-LD for AI Search & Knowledge Graphs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "headline": "Audio & Acoustic Signal Processing Projects",
+      "name": "Audio & Acoustic Projects Hub",
+      "description": "Curated collection of audio engineering and acoustic signal processing projects by Jose Maria Perez-Macias, including acoustic source localization with microphone arrays and 3D spatial audio synthesis in Csound.",
+      "author": {
+        "@type": "Person",
+        "name": "Jose Maria Perez-Macias",
+        "url": "https://jperezmacias.github.io/",
+        "sameAs": "https://orcid.org/0000-0003-3485-0874"
+      },
+      "url": "https://jperezmacias.github.io/projects_audio/"
+    }
+    </script>
+
+    <!-- CSS Link -->
+    <link href="../styles/style.css" rel="stylesheet" />
+
+    <style>
+        body {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px 24px 60px 24px;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        .hub-lead {
+            font-size: 1.12em;
+            color: #334155;
+            margin: 12px 0 28px 0;
+            line-height: 1.75;
+        }
+
+        .project-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 24px;
+            margin: 28px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            align-items: center;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+            transform: translateY(-2px);
+        }
+
+        .project-card-img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            object-fit: cover;
+        }
+
+        .project-card-body {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .project-card-title {
+            margin: 0 0 6px 0;
+            font-size: 1.3em;
+            color: #0284c7;
+        }
+
+        .project-card-meta {
+            font-size: 0.9em;
+            color: #64748b;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .project-card-desc {
+            color: #475569;
+            margin-bottom: 18px;
+            font-size: 0.96em;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: #0284c7;
+            color: #ffffff !important;
+            padding: 8px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: background 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background: #0369a1;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: #ffffff;
+            color: #334155 !important;
+            border: 1px solid #cbd5e1;
+            padding: 8px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #f1f5f9;
+            color: #0284c7 !important;
+            border-color: #94a3b8;
+        }
+
+        .relationship-box {
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+            border-left: 4px solid #0284c7;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 36px 0 20px 0;
+        }
+
+        .relationship-box h3 {
+            margin-top: 0;
+            color: #0369a1;
+            font-size: 1.15em;
+        }
+
+        .relationship-box p {
+            margin-bottom: 0;
+            font-size: 0.95em;
+            color: #0f172a;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var host = window.location.hostname;
+            var link = document.getElementById("dynamic-link");
+            if (host.includes("github.io")) {
+                link.setAttribute("href", "/");
+            } else if (host.includes("tuni.fi")) {
+                link.setAttribute("href", "/jose.perez-macias/");
+            }
+        };
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+</head>
+
+<body>
+    <section id="masthead">
+        <p class="masthead-nav" style="font-size: 1.4em; font-weight: bold; margin: 15px 0;">Go back to .. <a id="dynamic-link" href="../index.html" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a></p>
+    </section>
+
+    <h1>Audio &amp; Acoustic Signal Processing Projects</h1>
+
+    <p class="hub-lead">
+        A curated collection of projects exploring acoustics, wave engineering, digital sound synthesis, and multi-channel microphone array signal processing.
+    </p>
+
+    <!-- Project 1: Sound Localization -->
+    <div class="project-card">
+        <img class="project-card-img" src="sound-localization/img/sound-tracking-car1.webp" alt="Acoustic sound localization vehicle tracking heatmap" />
+        <div class="project-card-body">
+            <h2 class="project-card-title">Acoustic Source Localization &amp; Vehicle Tracking</h2>
+            <div class="project-card-meta">
+                Advanced Audio Processing (2018), Tampere University &bull; Supervised by Pasi Pertil&auml;
+            </div>
+            <p class="project-card-desc">
+                Investigates how multi-channel microphone arrays "see" sound in 3D space. Uses an 8-channel circular microphone array (miniDSP UMA-8) and Steered Response Power with Phase Transform (SRP-PHAT) beamforming algorithms to passively track moving vehicles in outdoor Finnish road traffic. Includes mathematical formulation, array geometry, field experimental data, and video demonstrations.
+            </p>
+            <div class="btn-group">
+                <a href="sound-localization/" class="btn-primary">Explore Project Tutorial &rarr;</a>
+                <a href="https://github.com/jperezmacias/project_advanced_audio" target="_blank" rel="noopener" class="btn-secondary">GitHub Repository &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project 2: Csound 3D Audio -->
+    <div class="project-card">
+        <img class="project-card-img" src="../img/hrtf_clip_image002.gif" alt="3D Spatial Audio and Head-Related Transfer Functions in Csound" style="background: #fff;" />
+        <div class="project-card-body">
+            <h2 class="project-card-title">3D Spatial Audio &amp; Sound Synthesis in Csound</h2>
+            <div class="project-card-meta">
+                Sound and Wave Engineering (2003/2004), Universidad de Valladolid &bull; Laboratory for Image Processing (LPI-UVa)
+            </div>
+            <p class="project-card-desc">
+                An extensive project exploring spatial acoustics, digital sound synthesis opcodes, Head-Related Transfer Functions (HRTF), binaural panning, and virtual room acoustic reflections using Csound. Documented in full detail with code examples, instrument orchestra (.orc) and score (.sco) definitions, and audio demonstrations.
+            </p>
+            <div class="btn-group">
+                <a href="../csound/en/" class="btn-primary">Explore Documentation (English) &rarr;</a>
+                <a href="../csound/es/" class="btn-secondary">Versi&oacute;n en Espa&ntilde;ol</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Two Sides of Spatial Acoustics -->
+    <div class="relationship-box">
+        <h3>Spatial Acoustics: From Synthesis to Sensing</h3>
+        <p>
+            These two projects represent complementary halves of spatial acoustic engineering: <strong>Csound</strong> focuses on <em>acoustic emission and spatial synthesis</em> (placing synthetic sound at arbitrary 3D coordinates using HRTF and binaural cues), whereas <strong>Acoustic Source Localization</strong> focuses on <em>acoustic reception and spatial sensing</em> (analyzing incoming wavefront phase differences across a microphone array to estimate the physical coordinates of radiating objects).
+        </p>
+    </div>
+
+</body>
+</html>

@@ -95,9 +95,21 @@
   <!-- Other Projects & Interactive Tools -->
   <url>
     <loc>https://jperezmacias.github.io/other-projects/sound-projects.html</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jperezmacias.github.io/projects_audio/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jperezmacias.github.io/projects_audio/sound-localization/</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jperezmacias.github.io/tools/tools.html</loc>

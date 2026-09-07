@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sound / Audio Projects</title>
+    <title>Sound / Audio Projects - Jose Maria Perez-Macias</title>
     <script>
         window.onload = function() {
             var host = window.location.hostname;
@@ -22,50 +20,108 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <meta name="description" content="Audio and sound engineering projects by Jose Maria Perez-Macias, featuring Csound, spatial audio, and acoustic wave simulation." />
+    <meta name="description" content="Audio and sound engineering projects by Jose Maria Perez-Macias, featuring Csound, spatial audio, and acoustic sound localization." />
     <link rel="canonical" href="https://jperezmacias.github.io/other-projects/sound-projects.html" />
     <meta property="og:title" content="Sound / Audio Projects - Jose Maria Perez-Macias" />
     <meta property="og:url" content="https://jperezmacias.github.io/other-projects/sound-projects.html" />
+    <link href="../styles/style.css" rel="stylesheet" />
+    <style>
+        body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 24px 60px 24px;
+            line-height: 1.7;
+        }
+        .project-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 22px;
+            margin: 24px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .project-card img {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+        }
+        .project-card-content {
+            flex: 1;
+            min-width: 260px;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: #0284c7;
+            color: #ffffff !important;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: background 0.2s;
+        }
+        .btn-primary:hover {
+            background: #0369a1;
+        }
+        .btn-secondary {
+            display: inline-block;
+            background: #ffffff;
+            color: #334155 !important;
+            border: 1px solid #cbd5e1;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover {
+            background: #f1f5f9;
+            color: #0284c7 !important;
+            border-color: #94a3b8;
+        }
+    </style>
 </head>
 <body>
-
 
     <section id="masthead">
         <p class="masthead-nav" style="font-size: 1.4em; font-weight: bold; margin: 15px 0;">Go back to .. <a id="dynamic-link" href="../index.html" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a></p>
     </section>
 
+    <h1>Audio &amp; Sound Engineering Projects</h1>
 
-<h1>Audio / Sound Projects</h1>
+    <div style="background: #f0fdf4; border-left: 4px solid #10b981; padding: 12px 18px; border-radius: 6px; margin: 16px 0; font-size: 0.95em;">
+        Looking for the comprehensive project collection? Visit the <a href="../projects_audio/"><strong>Audio &amp; Acoustic Signal Processing Projects Hub &rarr;</strong></a>
+    </div>
 
-        <h2>Csound 2003/2004</h2>
+    <h2>Sound Source Localization &amp; Vehicle Tracking</h2>
+    <div class="project-card">
+        <img src="../projects_audio/sound-localization/img/sound-tracking-car1.webp" alt="Acoustic sound localization vehicle tracking heatmap" />
+        <div class="project-card-content">
+            <h3 style="margin-top: 0; color: #0284c7; font-size: 1.25em;">Acoustic Source Localization: Sound Visualization of Moving Vehicles</h3>
+            <p style="color: #475569; margin: 8px 0 16px 0;">
+                An educational project examining how multi-microphone arrays "see" sound in 3D space. Developed as part of the Advanced Audio Processing course at Tampere University, this project implements 8-channel circular microphone array (miniDSP UMA-8) beamforming and Steered Response Power with Phase Transform (SRP-PHAT) algorithms to track moving vehicles in road traffic.
+            </p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="../projects_audio/sound-localization/" class="btn-primary">Explore Project &amp; Tutorial &rarr;</a>
+                <a href="https://github.com/jperezmacias/project_advanced_audio" target="_blank" rel="noopener" class="btn-secondary">GitHub Repository</a>
+            </div>
+        </div>
+    </div>
 
-
-
-                <p>
-                    This is a super old project done in <a href="https://csound.com/">Csound</a> about Spatial Sound and sound synthesis, from an old course of "Sound and Wave Engineering back in 2003/2004. It
-                    is funny to see how much interest I still have in Sound, Biosignals...1D
-                    signals/timeseries.
-                    <a href="https://en.wikipedia.org/wiki/Richard_Boulanger">
-                        Still remember Richard Boulanger</a>!! <br />
-                    The project was about using Csound, documenting it. And finally we created two examples
-                    made by ourselves.<br />
-                    The original site is still on! but does not work properly in modern html... so I made
-                    some changes and put it
-                    <a href="../csound/">here.</a>
-
-                    <br />
-                    Old page... it is in this link from the Image Processing Laboratory (LPI-UVa)
-                    <a
-                        href="https://web.archive.org/web/20190124115403/https://www.lpi.tel.uva.es/~nacho/docencia/ing_ond_1/trabajos_03_04/Csound/index.htm" target="_blank" rel="noopener">here (archived).</a>
-                </p>
-
-
-
-
-    <h2>Sound localization</h2>
-<p>
-	<strong><a href="https://github.com/jperezmacias/project_advanced_audio">Here is the link to the Github Project</a></strong>. In short the project is a bout Sound source Localization using an eigth-microphone Array (UMA-8 from MiniDSP).
-</p>
+    <h2>Csound 2003/2004: Spatial Sound &amp; Wave Synthesis</h2>
+    <p>
+        This is a sound synthesis and spatial acoustics project done in <a href="https://csound.com/">Csound</a> from the "Sound and Wave Engineering" course back in 2003/2004 at the University of Valladolid (inspired by Richard Boulanger's Csound book).
+    </p>
+    <p>
+        The project explores instrument design, spatial audio trajectories, and acoustic sound models. The modernized web version is available <a href="../csound/en/">here in English</a> and <a href="../csound/es/">here in Spanish</a> (archived original page from the Image Processing Laboratory LPI-UVa <a href="https://web.archive.org/web/20190124115403/https://www.lpi.tel.uva.es/~nacho/docencia/ing_ond_1/trabajos_03_04/Csound/index.htm" target="_blank" rel="noopener">here</a>).
+    </p>
 
 </body>
 </html>

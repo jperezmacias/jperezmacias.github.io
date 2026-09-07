@@ -85,7 +85,12 @@
    J. M. Perez-Macias, J. Viik, A. Värri, S.-L. Himanen, M. Tenhunen.
    DOI: [10.1007/978-981-10-5122-7_194](https://doi.org/10.1007/978-981-10-5122-7_194)
 
-## Historical / Archive Projects
+## Audio & Signal Processing Projects
+
+- **Acoustic Source Localization & Vehicle Tracking (Advanced Audio Processing, Tampere University)**:
+  - Educational project and tutorial examining acoustic beamforming with circular microphone arrays (miniDSP UMA-8, 8 channels) and Steered Response Power with Phase Transform (SRP-PHAT) algorithms to track moving vehicles in road traffic.
+  - URL: https://jperezmacias.github.io/projects_audio/sound-localization/
+  - Code: https://github.com/jperezmacias/project_advanced_audio
 
 - **3D Spatial Audio & Csound DSP (2004 Course Project)**:
   - Undergraduate student project on 3D audio, Head-Related Transfer Functions (HRTF), and digital sound synthesis opcodes in Csound from 2004 (Universidad de Valladolid). Maintained as an online legacy educational reference.
@@ -99,6 +104,9 @@
 - **Breathing Disorders Project**: https://jperezmacias.github.io/research-projects/breathing-disorders.html
 - **Contactless Video Breathing Project**: https://jperezmacias.github.io/research-projects/video-breathing.html
 - **ICU EEG Trends Analysis Project**: https://jperezmacias.github.io/research-projects/eeg-trends-ICU.html
+- **Audio & Acoustic Projects Hub**: https://jperezmacias.github.io/projects_audio/
+- **Acoustic Sound Source Localization & Vehicle Tracking**: https://jperezmacias.github.io/projects_audio/sound-localization/
+- **Sound / Audio Engineering Projects**: https://jperezmacias.github.io/other-projects/sound-projects.html
 - **Csound 3D Audio & Wave Engineering Documentation**:
   - English: https://jperezmacias.github.io/csound/en/docs/overview/
   - Spanish: https://jperezmacias.github.io/csound/es/docs/overview/

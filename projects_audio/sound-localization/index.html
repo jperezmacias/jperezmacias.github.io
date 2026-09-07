@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sound Source Localization & Vehicle Tracking - Jose Perez-Macias</title>
+
+    <!-- Description & Keywords -->
+    <meta name="description" content="Educational overview of acoustic source localization, 8-channel microphone arrays (UMA-8), and SRP-PHAT beamforming for tracking moving vehicles." />
+    <meta name="keywords" content="Acoustic source localization, sound localization, microphone array, UMA-8, miniDSP, SRP-PHAT, beamforming, TDOA, direction of arrival, vehicle tracking, audio signal processing, Jose Maria Perez-Macias, Tampere University" />
+    <meta name="author" content="Jose Maria Perez-Macias" />
+    <link rel="canonical" href="https://jperezmacias.github.io/projects_audio/sound-localization/" />
+
+    <!-- Open Graph tags for social media & AI rich previews -->
+    <meta property="og:title" content="Acoustic Source Localization & Vehicle Tracking" />
+    <meta property="og:description" content="Educational project on acoustic source localization, 8-channel circular microphone arrays, and SRP-PHAT beamforming algorithms for tracking moving cars." />
+    <meta property="og:image" content="https://jperezmacias.github.io/projects_audio/sound-localization/img/sound-tracking-car1.webp" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jperezmacias.github.io/projects_audio/sound-localization/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Acoustic Source Localization & Vehicle Tracking" />
+    <meta name="twitter:description" content="Educational overview of microphone array beamforming, TDOA, and SRP-PHAT algorithms for tracking moving vehicles." />
+    <meta name="twitter:image" content="https://jperezmacias.github.io/projects_audio/sound-localization/img/sound-tracking-car1.webp" />
+
+    <!-- Schema.org JSON-LD for AI Search & Knowledge Graphs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Acoustic Source Localization: Sound Visualization of Moving Vehicles",
+      "name": "Sound Source Localization & Vehicle Tracking",
+      "description": "Educational project and tutorial examining acoustic source localization, circular microphone arrays (miniDSP UMA-8), and Steered Response Power with Phase Transform (SRP-PHAT) algorithms for vehicle tracking.",
+      "author": {
+        "@type": "Person",
+        "name": "Jose Maria Perez-Macias",
+        "url": "https://jperezmacias.github.io/",
+        "sameAs": "https://orcid.org/0000-0003-3485-0874",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Tampere University / Aalto University"
+        }
+      },
+      "keywords": [
+        "Acoustic source localization",
+        "Microphone array",
+        "SRP-PHAT",
+        "TDOA",
+        "Beamforming",
+        "Vehicle tracking",
+        "Audio signal processing"
+      ],
+      "url": "https://jperezmacias.github.io/projects_audio/sound-localization/",
+      "image": "https://jperezmacias.github.io/projects_audio/sound-localization/img/sound-tracking-car1.webp",
+      "about": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Advanced Audio Processing, Tampere University"
+      }
+    }
+    </script>
+
+    <!-- CSS Link -->
+    <link href="../../styles/style.css" rel="stylesheet" />
+
+    <style>
+        body {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 20px 24px 60px 24px;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        .authors {
+            font-size: 1.1em;
+            color: #475569;
+            margin-top: -6px;
+            margin-bottom: 4px;
+        }
+
+        .course-meta {
+            font-style: italic;
+            color: #64748b;
+            margin-top: 0;
+            margin-bottom: 24px;
+            font-size: 0.95em;
+        }
+
+        .edu-banner {
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+            border-left: 4px solid #0284c7;
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 20px 0 30px 0;
+            font-size: 0.96em;
+            color: #0f172a;
+        }
+
+        .edu-banner strong {
+            color: #0369a1;
+        }
+
+        .img-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 14px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .img-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .img-caption {
+            font-size: 0.88em;
+            color: #64748b;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .math-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 12px 18px;
+            margin: 18px 0;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .code-snippet {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 18px 20px;
+            border-radius: 8px;
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+            font-size: 0.88em;
+            line-height: 1.55;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .video-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-card h4 {
+            margin: 0 0 8px 0;
+            font-size: 1em;
+            color: #0284c7;
+        }
+
+        .video-card p {
+            font-size: 0.88em;
+            color: #475569;
+            margin-bottom: 12px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background: #0284c7;
+            color: #ffffff !important;
+            padding: 6px 14px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn-link:hover {
+            background: #0369a1;
+        }
+
+        .repo-link {
+            display: inline-block;
+            background: #f8fafc;
+            color: #0284c7 !important;
+            border: 1px solid #cbd5e1;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 0.95em;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 0 20px 0;
+            transition: all 0.2s ease;
+        }
+
+        .repo-link:hover {
+            background: #e0f2fe;
+            border-color: #38bdf8;
+            color: #0369a1 !important;
+        }
+
+        .ref-list {
+            font-size: 0.9em;
+            color: #334155;
+            padding-left: 20px;
+        }
+
+        .ref-list li {
+            margin-bottom: 8px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var host = window.location.hostname;
+            var link = document.getElementById("dynamic-link");
+            if (host.includes("github.io")) {
+                link.setAttribute("href", "/");
+            } else if (host.includes("tuni.fi")) {
+                link.setAttribute("href", "/jose.perez-macias/");
+            }
+        };
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+    <!-- MathJax 3 Configuration -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [["$", "$"], ["\\(", "\\)"]],
+          displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+          processEscapes: true,
+          processEnvironments: true
+        },
+        options: {
+          skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+        }
+      };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <section id="masthead">
+        <p class="masthead-nav" style="font-size: 1.4em; font-weight: bold; margin: 15px 0;">Go back to .. <a id="dynamic-link" href="../../index.html" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a> / <a href="../index.html" title="Audio & Acoustic Projects">Audio Projects</a></p>
+    </section>
+
+    <h1>Acoustic Source Localization: Sound Visualization of Moving Vehicles</h1>
+    <p class="authors"><strong>Jose Maria Perez-Macias</strong></p>
+    <p class="course-meta">
+        Advanced Audio Processing (Spring 2018) — Audio Research Group, Tampere University<br />
+        Course Instructor: <strong>Prof. Tuomas Virtanen</strong> | Project Supervisor: <strong>Pasi Pertil&auml;</strong> | TA: <strong>Sharath Adavanne</strong>
+    </p>
+
+    <div class="edu-banner">
+        <strong>Educational Purpose:</strong> This page presents an educational introduction to Acoustic Source Localization (ASL) and microphone array beamforming. It explains the physics and signal processing behind how multi-microphone arrays "see" sound, featuring an experimental setup for passive vehicle tracking on Finnish roads.
+    </div>
+
+    <h2>1. Introduction: How Microphones Can "See" Sound</h2>
+    <p>
+        <strong>Acoustic Source Localization (ASL)</strong> is the ability to determine the 3D position or Direction of Arrival (DOA, $\theta$) of a sound source in space using acoustic sensors. While conventional cameras rely on reflected photons, acoustic systems rely on mechanical compression waves propagating through the air.
+    </p>
+    <p>
+        ASL techniques are divided into two main paradigms:
+    </p>
+    <ul>
+        <li><strong>Active ASL (e.g., Sonar / Echolocation):</strong> A probe sound pulse is emitted and the system measures the round-trip delay of returned echoes.</li>
+        <li><strong>Passive ASL (Listening):</strong> The system emits no sound of its own. It records sounds naturally radiated by target sources (e.g., automobile engine noise, tire-road contact friction, speech, or industrial vibrations) using one or more calibrated microphones.</li>
+    </ul>
+    <p>
+        Passive acoustic localization is particularly valuable in surveillance, robotics, and traffic monitoring because it operates continuously in zero-light conditions, through fog, rain, or glare, and without capturing intrusive optical details of individuals.
+    </p>
+
+    <h3>Biological Inspiration</h3>
+    <p>
+        Human spatial hearing relies on our two ears (binaural cues) and anatomical filtering by the head and pinna (monaural spectral cues):
+    </p>
+    <ul>
+        <li><strong>Interaural Time Difference (ITD):</strong> A sound arriving from the left reaches the left ear slightly earlier than the right ear (a delay of up to &sim;0.65 ms across the head diameter).</li>
+        <li><strong>Interaural Level Difference (ILD):</strong> High-frequency sounds are shadowed by the head, resulting in higher acoustic intensity in the ear facing the sound source.</li>
+    </ul>
+    <p>
+        By expanding from two human ears to an array of eight or more synchronized microphones, algorithmic systems can calculate relative arrival delays across multiple sensor baselines simultaneously, enabling precise multi-dimensional localization.
+    </p>
+
+    <h2>2. Hardware Setup &amp; Microphone Array Geometry</h2>
+    <p>
+        For this project, we used the <strong>miniDSP UMA-8</strong>, an 8-channel USB microphone array designed around low-noise MEMS sensors.
+    </p>
+
+    <div class="grid-2col">
+        <div class="img-card">
+            <img src="img/uma8-schema.webp" alt="UMA-8 circular microphone array layout schematic" style="max-height: 380px; width: auto; max-width: 100%; object-fit: contain;" />
+            <div class="img-caption">Figure 1: miniDSP UMA-8 layout featuring 7 peripheral MEMS microphones uniformly distributed on a circle (radius 43 mm) plus 1 center microphone.</div>
+        </div>
+        <div class="img-card">
+            <img src="img/recording-setup.webp" alt="Field recording setup with UMA-8 array and webcam on tripod" style="max-height: 380px; width: auto; max-width: 100%; object-fit: contain;" />
+            <div class="img-caption">Figure 2: Outdoor field recording setup at Arvo Ylp&ouml;n katu, Tampere, with array and camera mounted co-axially on a tripod.</div>
+        </div>
+    </div>
+
+    <h3>Why a Circular Array Topology?</h3>
+    <p>
+        The spatial layout of microphones dictates the array's directional response:
+    </p>
+    <ul>
+        <li><strong>Linear Arrays:</strong> Microphones placed along a straight line create a conical ambiguity—they cannot distinguish whether a sound originated from the front or the back (180&deg; mirror symmetry).</li>
+        <li><strong>Circular Arrays:</strong> Distributing microphones symmetrically in a circle breaks directional ambiguity, delivering uniform 360&deg; angular resolution in the horizontal plane without requiring bulky apertures.</li>
+    </ul>
+    <p>
+        The UMA-8 coordinates consist of 7 microphones spaced at 51.43&deg; increments around a 43 mm radius circle, plus a central microphone at origin (0, 0, 0).
+    </p>
+
+    <h2>3. Mathematical Formulation: How Beamforming Works</h2>
+
+    <h3>3.1 Delay-and-Sum Beamforming &amp; Steered Response Power (SRP)</h3>
+    <p>
+        The fundamental concept behind microphone array localization is <em>steered response power</em>. If an acoustic source is located at candidate position $\mathbf{x}_s$, the wavefront reaches microphone $m$ with a propagation delay $\tau_m$:
+    </p>
+    <div class="math-box">
+        $$\tau_m = \frac{\|\mathbf{x}_s - \mathbf{m}_m\|}{c}$$
+    </div>
+    <p>
+        where $\mathbf{m}_m$ is the 3D position vector of microphone $m$, and $c \approx 343\text{ m/s}$ is the speed of sound in air. By compensating for each relative delay $\delta_m = \tau_m - \tau_0$, we steer the array toward that focal direction:
+    </p>
+    <div class="math-box">
+        $$y(t, \delta_1, \dots, \delta_M) = \sum_{m=1}^M x_m(t - \delta_m)$$
+    </div>
+    <p>
+        When the steering delays match the true source direction, incoming wavefronts across all $M$ channels align constructively in phase, causing the steered output power $P(\boldsymbol{\delta})$ to peak.
+    </p>
+
+    <h3>3.2 Steered Response Power with Phase Transform (SRP-PHAT)</h3>
+    <p>
+        In outdoor street environments and rooms, echoes and multipath reflections bounce off asphalt, walls, and car bodies. Traditional cross-correlation produces smeared peaks and false detections because loud spectral peaks dominate the summation.
+    </p>
+    <p>
+        In the frequency domain with array weighting filters $G_m(\omega)$, the beamformer output is $Y(\omega, \delta_1, \dots, \delta_M) = \sum_{m=1}^M G_m(\omega) X_m(\omega) e^{-j\omega \delta_m}$. The total steered response power $P$ across all microphone pairs is:
+    </p>
+    <div class="math-box">
+        $$P(\delta_1, \dots, \delta_M) = \sum_{k=1}^M \sum_{l=1}^M \int_{-\infty}^{\infty} \Psi_{kl}(\omega) X_k(\omega) X_l^*(\omega) e^{j\omega \tau_{lk}} d\omega$$
+    </div>
+    <p>
+        where the <strong>Phase Transform (PHAT)</strong> weighting function is defined as:
+    </p>
+    <div class="math-box">
+        $$\Psi_{kl}^{\text{PHAT}}(\omega) = \frac{1}{|X_k(\omega) X_l^*(\omega)|}$$
+    </div>
+    <p>
+        <strong>Why does PHAT work so well?</strong> By discarding spectral magnitude and preserving purely the phase information ($\Phi_{kl}(\omega)$), the cross-correlation approximates an ideal Dirac delta impulse at the true time-delay $\tau_{lk}$. This dramatically suppresses diffuse reverberant energy and sharpens the acoustic focal point.
+    </p>
+
+    <h3>3.3 Search Space Optimization: Grid Search vs. SRC</h3>
+    <p>
+        Finding the source location requires identifying the candidate position that maximizes the steered response power:
+    </p>
+    <div class="math-box">
+        $$\hat{\mathbf{x}}_s = \arg\max_{\mathbf{x}} P(\mathbf{x})$$
+    </div>
+    <ul>
+        <li><strong>Full Grid Search:</strong> Evaluates $P(\mathbf{x})$ across an entire angular grid (e.g., azimuth from $-90^\circ$ to $+90^\circ$). Highly robust, but computationally intensive as the spatial resolution increases.</li>
+        <li><strong>Stochastic Region Contraction (SRC):</strong> A randomized global optimization method (developed by Do, Silverman, and Yu) that stochastically samples regions with high power and contracts iteratively, reducing computational evaluation time for real-time tracking.</li>
+    </ul>
+
+    <h2>4. Field Experiment: Tracking Moving Vehicles</h2>
+    <p>
+        To evaluate ASL in a real-world scenario, recordings were conducted at <strong>Arvo Ylp&ouml;n katu (bus stop 5146, Tampere, Finland)</strong>. An 8-channel audio stream sampled at 11 kHz was captured simultaneously with a webcam video feed.
+    </p>
+
+    <div class="grid-2col">
+        <div class="img-card">
+            <img src="img/sound-tracking-car1.webp" alt="Sound localization heatmap overlay tracking car moving right-to-left" width="440" />
+            <div class="img-caption">Figure 3: Acoustic energy map (SRP-PHAT) overlaid on webcam frame as a vehicle enters the field of view. The peak contour centers on the car.</div>
+        </div>
+        <div class="img-card">
+            <img src="img/sound-tracking-car2.webp" alt="Acoustic localization tracking car as it passes the array" width="440" />
+            <div class="img-caption">Figure 4: Subsequent frame demonstrating real-time acoustic tracking as the vehicle moves across the sensor's field of view.</div>
+        </div>
+    </div>
+
+    <h3>Acoustic Heatmap Overlay</h3>
+    <p>
+        Figures 3 and 4 show the estimated acoustic direction of arrival mapped directly onto video frames. The primary sound energy radiates from the vehicle's tire-road interface and engine compartment, moving synchronously across the field of view as the vehicle travels along the roadway.
+    </p>
+
+    <div class="img-card">
+        <img src="img/algorithm-comparison.webp" alt="Comparison between Algorithm 1 and Algorithm 2 across vehicle transit" width="700" style="max-height: 480px; object-fit: contain;" />
+        <div class="img-caption">Figure 5: Comparison of estimated acoustic energy trajectories across successive frames during a vehicle pass-by event.</div>
+    </div>
+
+    <h3>Video Demonstrations</h3>
+    <p>
+        Short video captures showing the acoustic tracking overlay in motion are available on YouTube:
+    </p>
+    <div class="video-grid">
+        <div class="video-card">
+            <h4>Demonstration Video 1</h4>
+            <p>Single vehicle pass-by tracked with SRP-PHAT acoustic energy overlay.</p>
+            <a href="https://www.youtube.com/watch?v=4GfmdRCt4BI" target="_blank" rel="noopener" class="btn-link">Watch on YouTube &rarr;</a>
+        </div>
+        <div class="video-card">
+            <h4>Demonstration Video 2</h4>
+            <p>Acoustic source trajectory tracking across field of view at Arvo Ylp&ouml;n katu.</p>
+            <a href="https://www.youtube.com/watch?v=4nOxsq1C6zw" target="_blank" rel="noopener" class="btn-link">Watch on YouTube &rarr;</a>
+        </div>
+        <div class="video-card">
+            <h4>Demonstration Video 3</h4>
+            <p>Continuous vehicle tracking and algorithm evaluation comparison.</p>
+            <a href="https://www.youtube.com/watch?v=v4dTvRdv_sY" target="_blank" rel="noopener" class="btn-link">Watch on YouTube &rarr;</a>
+        </div>
+    </div>
+
+    <h2>5. MATLAB Implementation Example</h2>
+    <p>
+        The following MATLAB snippet illustrates how the UMA-8 array geometry is defined and how relative time delays are computed for any 2D steering angle &theta;:
+    </p>
+
+    <pre class="code-snippet"><code>% Define miniDSP UMA-8 microphone coordinates (in meters)
+% 7 circular microphones (radius = 43 mm) + 1 center microphone
+function loc = get_uma8_settings()
+    % Coordinates in [x; y; z] format
+    loc = [ 0.0000,   0.0000,   0.0000;   % Mic 1: Center
+            0.0422,   0.0000,   0.0000;   % Mic 2: 0 deg
+            0.0211,  -0.0366,   0.0000;   % Mic 3: -60 deg
+           -0.0211,  -0.0366,   0.0000;   % Mic 4: -120 deg
+           -0.0422,  -0.0000,   0.0000;   % Mic 5: 180 deg
+           -0.0211,   0.0366,   0.0000;   % Mic 6: +120 deg
+            0.0211,   0.0366,   0.0000];  % Mic 7: +60 deg
+end
+
+% Compute theoretical Time Difference of Arrival (TDOA) for azimuth theta
+function tau = compute_steering_delays(mic_locs, theta_rad, c)
+    if nargin < 3, c = 343.0; end % Speed of sound in m/s
+    % Steering unit vector in xy-plane
+    u = [cos(theta_rad), sin(theta_rad), 0];
+    % Delay relative to coordinate center (tau_m = -u * mic_pos / c)
+    tau = -(mic_locs * u') / c;
+end</code></pre>
+
+    <h2>6. Educational Insights &amp; Practical Considerations</h2>
+    <ul>
+        <li><strong>Sampling Frequency &amp; Latency:</strong> In this experiment, an 11 kHz sampling rate was selected. Road vehicle noise is dominated by tire-road interaction vibrations (< 2 kHz) and engine harmonics (< 4 kHz). A lower sampling rate dramatically cuts real-time FFT computation without sacrificing localization accuracy.</li>
+        <li><strong>Aperture vs. Array Size:</strong> The compact UMA-8 array (radius 43 mm) is convenient and portable, but physical baseline limits angular resolution at lower frequencies where acoustic wavelengths ($\lambda \approx 0.34\text{ m}$ at 1 kHz) are larger than the array diameter. Larger distributed arrays improve spatial resolution at the cost of cabling complexity.</li>
+        <li><strong>Atmospheric &amp; Weather Factors:</strong> Sound speed varies with ambient air temperature: $c \approx 331.3 \sqrt{1 + \frac{T}{273.15}}\text{ m/s}$. For outdoor road monitoring under Nordic climate conditions (ranging from -20&deg;C in winter to +25&deg;C in summer), updating <em>c</em> prevents systematic steering angle bias.
+        </li>
+    </ul>
+
+    <h2>7. Project Resources &amp; Source Code</h2>
+    <p>
+        The complete project source code (MATLAB scripts, signal processing functions, and coordinate utilities) is hosted on GitHub:
+    </p>
+    <p>
+        <a href="https://github.com/jperezmacias/project_advanced_audio" target="_blank" rel="noopener" class="repo-link">
+            <strong>jperezmacias/project_advanced_audio</strong> on GitHub &rarr;
+        </a>
+    </p>
+
+    <h2>8. References</h2>
+    <ol class="ref-list">
+        <li>
+            <strong>DiBiase, J. H., Silverman, H. F., &amp; Brandstein, M. S.</strong> (2001). Robust Localization in Reverberant Rooms. In <em>Microphone Arrays: Signal Processing Techniques and Applications</em> (pp. 157&ndash;180). Springer, Berlin, Heidelberg. <a href="https://doi.org/10.1007/978-3-662-04619-7_8" target="_blank" rel="noopener">doi:10.1007/978-3-662-04619-7_8</a>
+        </li>
+        <li>
+            <strong>Do, H. T. H.</strong> (2007). <em>Real-time SRP-PHAT Source Location Implementations on a Large-aperture Microphone Array</em>. M.Sc. Thesis, Division of Engineering, Brown University.
+        </li>
+        <li>
+            <strong>Do, H., Silverman, H. F., &amp; Yu, Y.</strong> (2007). A Real-Time SRP-PHAT Source Location Implementation using Stochastic Region Contraction (SRC) on a Large-Aperture Microphone Array. In <em>IEEE ICASSP</em>, vol. 1, pp. I-121&ndash;I-124. <a href="https://doi.org/10.1109/ICASSP.2007.366009" target="_blank" rel="noopener">doi:10.1109/ICASSP.2007.366009</a>
+        </li>
+        <li>
+            <strong>Astapov, S., Berdnikova, J., &amp; Preden, J.-S.</strong> (2015). A two-stage approach to 2D DOA estimation for a compact circular microphone array. In <em>2015 International Conference on Informatics, Electronics &amp; Vision (ICIEV)</em>, IEEE. <a href="https://doi.org/10.1109/ICIEV.2015.7333981" target="_blank" rel="noopener">doi:10.1109/ICIEV.2015.7333981</a>
+        </li>
+        <li>
+            <strong>Hafizovic, I., Nilsen, C.-I. C., &amp; Kj&oslash;lerbakken, M.</strong> (2010). Acoustic tracking of aircraft using a circular microphone array sensor. In <em>2010 IEEE International Symposium on Phased Array Systems and Technology</em> (pp. 1025&ndash;1032). IEEE.
+        </li>
+        <li>
+            <strong>Takashima, R., Takiguchi, T., &amp; Ariki, Y.</strong> (2010). Monaural sound-source-direction estimation using the acoustic transfer function of a parabolic reflection board. <em>Journal of the Acoustical Society of America</em>, 127(2), 902&ndash;908.
+        </li>
+    </ol>
+
+</body>
+</html>
