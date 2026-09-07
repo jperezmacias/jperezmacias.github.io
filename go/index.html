@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Links (go/) - Jose Maria Perez-Macias</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="Quick shortcuts and direct redirects (go/) for Dr. Jose Maria Perez-Macias." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- CSS Link -->
+    <link href="/styles/style.css" rel="stylesheet" />
+
+    <style>
+        body {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 30px 20px 70px 20px;
+            color: #1e293b;
+            line-height: 1.6;
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+        }
+
+        #masthead {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        #masthead a {
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        #masthead a:hover {
+            text-decoration: underline;
+        }
+
+        .go-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 36px 32px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .go-badge {
+            display: inline-block;
+            background-color: #f0fdf4;
+            color: #166534;
+            font-size: 0.8em;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            border: 1px solid #bbf7d0;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 0 0 10px 0;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .go-subtitle {
+            color: #64748b;
+            font-size: 1em;
+            margin-bottom: 28px;
+        }
+
+        .link-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .link-row:hover {
+            border-color: #0284c7;
+            box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .link-info {
+            flex: 1;
+            padding-right: 18px;
+        }
+
+        .link-title-line {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+
+        .link-slug {
+            font-family: monospace;
+            font-size: 1.05em;
+            font-weight: 700;
+            color: #0284c7;
+            background: #e0f2fe;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .link-name {
+            font-weight: 700;
+            color: #0f172a;
+            font-size: 1em;
+        }
+
+        .link-desc {
+            font-size: 0.88em;
+            color: #64748b;
+            margin: 4px 0 6px 0;
+        }
+
+        .link-url {
+            font-size: 0.78em;
+            color: #94a3b8;
+            word-break: break-all;
+        }
+
+        .btn-go {
+            display: inline-block;
+            background-color: #0284c7;
+            color: #ffffff !important;
+            font-weight: 600;
+            font-size: 0.9em;
+            padding: 8px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-go:hover {
+            background-color: #0369a1;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .link-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .btn-go {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var host = window.location.hostname;
+            var link = document.getElementById("dynamic-link");
+            if (link) {
+                if (host.includes("tuni.fi")) {
+                    link.setAttribute("href", "/jose.perez-macias/");
+                } else {
+                    link.setAttribute("href", "/");
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <section id="masthead">
+        <p class="masthead-nav" style="font-size: 1.15em; font-weight: bold; margin: 10px 0;">
+            Go back to .. <a id="dynamic-link" href="/" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a>
+        </p>
+    </section>
+
+    <main class="go-card">
+        <span class="go-badge">Quick Links Hub</span>
+        <h1>Shortlinks Directory (go/)</h1>
+        <p class="go-subtitle">
+            Central directory of official shortcuts and verified profiles for Dr. Jose Maria Perez-Macias.
+        </p>
+
+        <div class="links-list">
+            
+        <div class="link-row">
+            <div class="link-info">
+                <div class="link-title-line">
+                    <span class="link-slug">go/linkedin</span>
+                    <span class="link-name">LinkedIn Profile</span>
+                </div>
+                <p class="link-desc">Professional profile, industry track record, and technical leadership experience.</p>
+                <code class="link-url">https://www.linkedin.com/in/jose-maria-perez-macias-09177a10/</code>
+            </div>
+            <div class="link-action">
+                <a href="https://www.linkedin.com/in/jose-maria-perez-macias-09177a10/" target="_blank" rel="noopener" class="btn-go">Visit &rarr;</a>
+            </div>
+        </div>
+        <div class="link-row">
+            <div class="link-info">
+                <div class="link-title-line">
+                    <span class="link-slug">go/scholar</span>
+                    <span class="link-name">Google Scholar</span>
+                </div>
+                <p class="link-desc">Citations, peer-reviewed journal papers, conference proceedings, and h-index.</p>
+                <code class="link-url">https://scholar.google.fi/citations?user=2eM13MsAAAAJ&hl=en</code>
+            </div>
+            <div class="link-action">
+                <a href="https://scholar.google.fi/citations?user=2eM13MsAAAAJ&hl=en" target="_blank" rel="noopener" class="btn-go">Visit &rarr;</a>
+            </div>
+        </div>
+        <div class="link-row">
+            <div class="link-info">
+                <div class="link-title-line">
+                    <span class="link-slug">go/orcid</span>
+                    <span class="link-name">ORCID Record</span>
+                </div>
+                <p class="link-desc">Official digital persistent identifier for research contributions (0000-0003-3485-0874).</p>
+                <code class="link-url">https://orcid.org/0000-0003-3485-0874</code>
+            </div>
+            <div class="link-action">
+                <a href="https://orcid.org/0000-0003-3485-0874" target="_blank" rel="noopener" class="btn-go">Visit &rarr;</a>
+            </div>
+        </div>
+        <div class="link-row">
+            <div class="link-info">
+                <div class="link-title-line">
+                    <span class="link-slug">go/github</span>
+                    <span class="link-name">GitHub Profile</span>
+                </div>
+                <p class="link-desc">Open-source repositories, audio signal processing code, and biomedical projects.</p>
+                <code class="link-url">https://github.com/jperezmacias</code>
+            </div>
+            <div class="link-action">
+                <a href="https://github.com/jperezmacias" target="_blank" rel="noopener" class="btn-go">Visit &rarr;</a>
+            </div>
+        </div>
+        <div class="link-row">
+            <div class="link-info">
+                <div class="link-title-line">
+                    <span class="link-slug">go/thesis</span>
+                    <span class="link-name">Doctoral Dissertation (Trepo)</span>
+                </div>
+                <p class="link-desc">Methods for Snoring and Heart Pulse Detection Using Unobtrusive Mattress Sensor (Tampere University, 2025).</p>
+                <code class="link-url">https://trepo.tuni.fi/handle/10024/227620</code>
+            </div>
+            <div class="link-action">
+                <a href="https://trepo.tuni.fi/handle/10024/227620" target="_blank" rel="noopener" class="btn-go">Visit &rarr;</a>
+            </div>
+        </div>
+        </div>
+    </main>
+</body>
+</html>
