@@ -1,0 +1,29 @@
+name: IndexNow Ping
+
+'on':
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  ping-indexnow:
+    name: Submit URLs to Search Engines
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Wait for GitHub Pages CDN deployment
+        run: |
+          echo "Waiting 25 seconds for GitHub Pages edge deployment..."
+          sleep 25
+
+      - name: Ping IndexNow (Bing, Yahoo, DuckDuckGo, Yandex)
+        run: python3 indexnow.py
