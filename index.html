@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <!-- Last edit 17 de Septiembre 2024 -->
 <!-- My n-th webpage! Since my first in 1997! -->
@@ -36,8 +37,10 @@
     <link href="styles/style.css" rel="stylesheet" />
     <link href="theme/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="theme/assets/academicons/css/academicons.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet" type="text/css" />
     <link href="theme/assets/fullpage/jquery.fullpage.min.css" rel="stylesheet" type="text/css" />
     <link href="styles/projects.css" rel="stylesheet" />
 
@@ -206,6 +209,19 @@
     <meta property="og:url" content="https://jperezmacias.github.io/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Jose Maria Perez-Macias, PhD - Overview" />
+    <script>
+        function loadYt(el) {
+            var id = el.getAttribute('data-id');
+            var title = el.getAttribute('data-title') || 'YouTube video';
+            var iframe = document.createElement('iframe');
+            iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1');
+            iframe.setAttribute('title', title);
+            iframe.setAttribute('style', 'border: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%;');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            iframe.setAttribute('allowfullscreen', '1');
+            el.parentNode.replaceChild(iframe, el);
+        }
+    </script>
 </head>
 
 <body>
@@ -807,10 +823,15 @@
                         style="color: inherit; text-decoration: none;">COMSOL Simulation of an Action Potential</a></h4>
                 <div class="thumbnail">
                     <div class="videoWrapper">
-                        <iframe title="COMSOL Simulation of an Action Potential" width="300" height="315"
-                            src="https://www.youtube-nocookie.com/embed/ssmZV2swrf4" style="border: none"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+                        <div class="yt-facade" role="button" tabindex="0" data-id="ssmZV2swrf4"
+                            data-title="COMSOL Simulation of an Action Potential"
+                            aria-label="Play video: COMSOL Simulation of an Action Potential"
+                            style="background-image: url('https://i.ytimg.com/vi/ssmZV2swrf4/hqdefault.jpg');"
+                            onclick="loadYt(this)" onkeydown="if(event.key==='Enter'||event.key===' ')loadYt(this);">
+                            <div class="yt-play-btn" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff" style="margin-left: 2px;"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
                     </div>
                     <div class="caption">
                         <p>
@@ -854,10 +875,15 @@
                 <h4>TimeLapse with a Raspberry Pi</h4>
                 <div class="thumbnail">
                     <div class="videoWrapper">
-                        <iframe title="TimeLapse with a Raspberry Pi" width="300" height="315"
-                            src="https://www.youtube-nocookie.com/embed/oeSyCpV7Wuc" style="border: none"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="yt-facade" role="button" tabindex="0" data-id="oeSyCpV7Wuc"
+                            data-title="TimeLapse with a Raspberry Pi"
+                            aria-label="Play video: TimeLapse with a Raspberry Pi"
+                            style="background-image: url('https://i.ytimg.com/vi/oeSyCpV7Wuc/hqdefault.jpg');"
+                            onclick="loadYt(this)" onkeydown="if(event.key==='Enter'||event.key===' ')loadYt(this);">
+                            <div class="yt-play-btn" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff" style="margin-left: 2px;"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
                     </div>
                     <div class="caption">
                         <p>
@@ -999,10 +1025,15 @@
                         </p>
                     </div>
                     <div class="videoWrapper">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/v4dTvRdv_sY"
-                            title="YouTube video player" style="border: none"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                        <div class="yt-facade" role="button" tabindex="0" data-id="v4dTvRdv_sY"
+                            data-title="Acoustic Source Localization &amp; Vehicle Tracking"
+                            aria-label="Play video: Acoustic Source Localization and Vehicle Tracking"
+                            style="background-image: url('https://i.ytimg.com/vi/v4dTvRdv_sY/hqdefault.jpg');"
+                            onclick="loadYt(this)" onkeydown="if(event.key==='Enter'||event.key===' ')loadYt(this);">
+                            <div class="yt-play-btn" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff" style="margin-left: 2px;"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
