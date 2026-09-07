@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engineering, Embedded &amp; Side Projects - Jose Perez-Macias</title>
+
+    <!-- Description & Keywords -->
+    <meta name="description" content="Engineering, embedded systems, IoT, and simulation side projects by Jose Maria Perez-Macias: COMSOL neuron models, Raspberry Pi automation, RTOS, and more." />
+    <meta name="keywords" content="Jose Maria Perez-Macias, embedded systems, Raspberry Pi, IoT, COMSOL Multiphysics, FitzHugh-Nagumo, RTOS, Xenomai, PureData, microcontrollers, maker projects" />
+    <meta name="author" content="Jose Maria Perez-Macias" />
+    <link rel="canonical" href="https://jperezmacias.github.io/other-projects/" />
+
+    <!-- Open Graph tags for social media & AI rich previews -->
+    <meta property="og:title" content="Engineering, Embedded &amp; Side Projects - Jose Perez-Macias" />
+    <meta property="og:description" content="Collection of engineering, embedded hardware, IoT, and simulation side projects by Jose Maria Perez-Macias." />
+    <meta property="og:image" content="https://jperezmacias.github.io/img/raspfx.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jperezmacias.github.io/other-projects/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Engineering, Embedded &amp; Side Projects - Jose Perez-Macias" />
+    <meta name="twitter:description" content="Engineering, embedded systems, IoT, and simulation side projects by Jose Maria Perez-Macias." />
+    <meta name="twitter:image" content="https://jperezmacias.github.io/img/raspfx.png" />
+
+    <!-- Schema.org JSON-LD for AI Search & Knowledge Graphs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "headline": "Engineering, Embedded & Side Projects",
+      "name": "Side Projects & Engineering Showcase",
+      "description": "Collection of hands-on engineering, embedded Linux, IoT automation, and numerical simulation projects by Jose Maria Perez-Macias.",
+      "author": {
+        "@type": "Person",
+        "name": "Jose Maria Perez-Macias",
+        "url": "https://jperezmacias.github.io/",
+        "sameAs": "https://orcid.org/0000-0003-3485-0874"
+      },
+      "url": "https://jperezmacias.github.io/other-projects/"
+    }
+    </script>
+
+    <!-- CSS Link -->
+    <link href="../styles/style.css" rel="stylesheet" />
+
+    <style>
+        body {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 20px 24px 60px 24px;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        .lead-text {
+            font-size: 1.1em;
+            color: #334155;
+            margin: 14px 0 28px 0;
+            line-height: 1.75;
+        }
+
+        .project-section-title {
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 40px;
+            color: #0f172a;
+            font-size: 1.5em;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 24px 0;
+        }
+
+        .card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        }
+
+        .card-media {
+            width: 100%;
+            background: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-media img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-tag {
+            display: inline-block;
+            align-self: flex-start;
+            background: #e0f2fe;
+            color: #0369a1;
+            font-size: 0.75em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            color: #0284c7;
+        }
+
+        .card-desc {
+            color: #475569;
+            font-size: 0.94em;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .card-links {
+            margin-top: auto;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-link-clean {
+            display: inline-block;
+            background: #ffffff;
+            color: #0284c7 !important;
+            border: 1px solid #cbd5e1;
+            padding: 6px 14px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn-link-clean:hover {
+            background: #f0fdf4;
+            border-color: #86efac;
+            color: #166534 !important;
+        }
+
+        .btn-link-yt {
+            display: inline-block;
+            background: #ffffff;
+            color: #dc2626 !important;
+            border: 1px solid #fca5a5;
+            padding: 6px 14px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .btn-link-yt:hover {
+            background: #fef2f2;
+        }
+
+        .hubs-banner {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 24px;
+            margin: 40px 0 20px 0;
+        }
+
+        .hubs-banner h3 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        .hubs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-top: 14px;
+        }
+
+        .hub-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .hub-card h4 {
+            margin: 0 0 6px 0;
+            color: #0284c7;
+        }
+
+        .hub-card p {
+            font-size: 0.88em;
+            color: #64748b;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var host = window.location.hostname;
+            var link = document.getElementById("dynamic-link");
+            if (host.includes("github.io")) {
+                link.setAttribute("href", "/");
+            } else if (host.includes("tuni.fi")) {
+                link.setAttribute("href", "/jose.perez-macias/");
+            }
+        };
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+</head>
+
+<body>
+    <section id="masthead">
+        <p class="masthead-nav" style="font-size: 1.4em; font-weight: bold; margin: 15px 0;">Go back to .. <a id="dynamic-link" href="../index.html" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a></p>
+    </section>
+
+    <h1>Engineering, Embedded &amp; Side Projects</h1>
+
+    <p class="lead-text">
+        Alongside academic research in biomedical signal processing, I enjoy building hands-on engineering projects spanning numerical multiphysics modeling, embedded Linux systems, IoT automation, and real-time control. Here is a curated collection of side projects, maker prototypes, and university engineering works.
+    </p>
+
+    <!-- SECTION 1: Embedded Systems & IoT -->
+    <h2 class="project-section-title">Embedded Systems, IoT &amp; Hardware</h2>
+    <div class="projects-grid">
+
+        <!-- Card: Plant Watering -->
+        <div class="card">
+            <div class="card-media">
+                <img src="../img/plants_small.jpg" alt="Automated Plant Irrigation System with Raspberry Pi" />
+            </div>
+            <div class="card-body">
+                <span class="card-tag">IoT &bull; Raspberry Pi</span>
+                <h3 class="card-title">Automated Plant Irrigation &amp; Lighting</h3>
+                <p class="card-desc">
+                    An automated system built with a Raspberry Pi to keep houseplants alive during extended travels. Uses relay switches controlled via automated cron schedules for lighting cycles, integrated with medical-grade peristaltic dosing pumps to deliver precise water volume.
+                </p>
+                <div class="card-links">
+                    <a href="https://github.com/jperezmacias/raspi_relay_using_cron" target="_blank" rel="noopener" class="btn-link-clean">GitHub Repository &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card: Real Time Control -->
+        <div class="card">
+            <div class="card-media">
+                <img src="../img/realtimecontrol.png" alt="Real Time Control using Xenomai RTOS" />
+            </div>
+            <div class="card-body">
+                <span class="card-tag">RTOS &bull; Xenomai &bull; C</span>
+                <h3 class="card-title">Real-Time Control with Xenomai RTOS</h3>
+                <p class="card-desc">
+                    A real-time networked control system implemented using the Xenomai Real-Time Operating System (RTOS) dual-kernel architecture. Developed during studies at Chalmers University of Technology, focusing on deterministic latency, packet jitter mitigation, and distributed control loops over network interfaces.
+                </p>
+                <div class="card-links">
+                    <a href="https://github.com/jperezmacias/realtimecontrol" target="_blank" rel="noopener" class="btn-link-clean">GitHub Repository &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card: Wireless Sensor Monitor -->
+        <div class="card">
+            <div class="card-media">
+                <img src="../img/Tietotalo2_reduced.png" alt="Wireless Sensor Network Monitor at TUT" />
+            </div>
+            <div class="card-body">
+                <span class="card-tag">Embedded C &bull; Wireless Sensors</span>
+                <h3 class="card-title">Wireless Sensor Monitor (Tietotalo)</h3>
+                <p class="card-desc">
+                    A low-power distributed wireless sensor monitor programmed in C and deployed across the Tietotalo engineering facility at Tampere University of Technology (TUT). Gathers continuous telemetry for environmental and wireless network diagnostics.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card: Microcontroller Alarm -->
+        <div class="card">
+            <div class="card-body">
+                <span class="card-tag">Microcontrollers &bull; Assembly &bull; C</span>
+                <h3 class="card-title">Microcontroller House Alarm with Keypad</h3>
+                <p class="card-desc">
+                    An embedded security keypad alarm developed back in 2006 using an Intel 8051-family microcontroller. Implements matrix keypad scanning, armed/disarmed state machines, PIN authentication, and siren relay triggering with low-level register control.
+                </p>
+                <div class="card-links">
+                    <a href="https://github.com/jperezmacias/ucontroller_alarm" target="_blank" rel="noopener" class="btn-link-clean">GitHub Repository &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SECTION 2: Numerical Simulations & Computational Modeling -->
+    <h2 class="project-section-title">Numerical Simulation &amp; Computational Modeling</h2>
+    <div class="projects-grid">
+
+        <!-- Card: COMSOL Neuron -->
+        <div class="card">
+            <div class="card-media" style="position: relative; height: 200px;">
+                <iframe title="Comsol Simulation of a Neuron" width="100%" height="200"
+                    src="https://www.youtube-nocookie.com/embed/ssmZV2swrf4" style="border: none"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <span class="card-tag">COMSOL &bull; Multiphysics &bull; Electrophysiology</span>
+                <h3 class="card-title">COMSOL Simulation of an Action Potential</h3>
+                <p class="card-desc">
+                    A computational finite-element simulation of neuron membrane excitability developed at TUT. Implements the nonlinear FitzHugh-Nagumo mathematical model to simulate the propagation of action potentials and transmembrane ionic currents across nerve fibers.
+                </p>
+                <div class="card-links">
+                    <a href="https://www.youtube.com/watch?v=ssmZV2swrf4" target="_blank" rel="noopener" class="btn-link-yt">&#9654; Watch Simulation Video</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card: Raspberry Pi Timelapse -->
+        <div class="card">
+            <div class="card-media" style="position: relative; height: 200px;">
+                <iframe title="TimeLapse with a Raspberry Pi" width="100%" height="200"
+                    src="https://www.youtube-nocookie.com/embed/oeSyCpV7Wuc" style="border: none"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="card-body">
+                <span class="card-tag">Python &bull; Computer Vision</span>
+                <h3 class="card-title">Finnish Winter Day-Night Timelapse</h3>
+                <p class="card-desc">
+                    An automated timelapse camera capturing the progression from polar night to morning activity in Tampere (watching goods arrive at the local Sale market and the gym open at 6:00 AM). Built with a Raspberry Pi, a lightweight Python frame-capture script, and automated assembly.
+                </p>
+                <div class="card-links">
+                    <a href="https://www.youtube.com/watch?v=oeSyCpV7Wuc" target="_blank" rel="noopener" class="btn-link-yt">&#9654; Watch on YouTube</a>
+                    <a href="https://github.com/jperezmacias/timelapse_raspi" target="_blank" rel="noopener" class="btn-link-clean">GitHub Repository &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SECTION 3: Audio Tools, Web & Software -->
+    <h2 class="project-section-title">Audio Servers, Software &amp; Games</h2>
+    <div class="projects-grid">
+
+        <!-- Card: RaspFX -->
+        <div class="card">
+            <div class="card-media">
+                <img src="../img/raspfx.png" alt="RaspFX Raspberry Pi and PureData Audio Effects Server" />
+            </div>
+            <div class="card-body">
+                <span class="card-tag">Raspberry Pi &bull; PureData &bull; DSP</span>
+                <h3 class="card-title">RaspFX: PureData Web Audio Server</h3>
+                <p class="card-desc">
+                    A collaborative media services server hosted on a home Raspberry Pi. Users could upload audio files via a web interface and process them in real-time through custom PureData digital signal processing patches. Built with Carita Logr&eacute;n, Enrico Manuzzato, and Ugur Kar.
+                </p>
+                <p style="font-size: 0.85em; color: #64748b; margin-bottom: 12px;">
+                    Sample test recordings: 
+                    <a href="../sounds/guitar.wav">Guitar</a> &bull; 
+                    <a href="../sounds/harpsichord.wav">Harpsichord</a> &bull; 
+                    <a href="../sounds/viola2.wav">Viola</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Card: Animals Meteor Game -->
+        <div class="card">
+            <div class="card-body">
+                <span class="card-tag">Meteor.js &bull; JavaScript</span>
+                <h3 class="card-title">Animals: Interactive Game for Kids</h3>
+                <p class="card-desc">
+                    A touch-friendly educational web game designed for tablets and mobile devices. Developed in Meteor.js to create reactive, low-latency audio-visual feedback when children interact with animal characters.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card: Bus Ticket Project -->
+        <div class="card">
+            <div class="card-body">
+                <span class="card-tag">C++ &bull; Data Structures &bull; OOP</span>
+                <h3 class="card-title">Bus Ticketing System (C++ OOP)</h3>
+                <p class="card-desc">
+                    My first comprehensive software engineering project in C++, developed alongside classmate Alberto Le&oacute;n. Implements a multi-destination bus ticketing platform with object-oriented principles, custom linked-list data structures, and terminal interaction.
+                </p>
+                <div class="card-links">
+                    <a href="https://github.com/jperezmacias/bus_ticket_project" target="_blank" rel="noopener" class="btn-link-clean">GitHub Repository &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Hubs Banner -->
+    <div class="hubs-banner">
+        <h3>Explore Other Project Hubs</h3>
+        <p style="color: #475569; font-size: 0.95em; margin-bottom: 0;">
+            Check out the dedicated hubs for my academic PhD research and spatial acoustic engineering projects:
+        </p>
+        <div class="hubs-grid">
+            <div class="hub-card">
+                <h4>🔬 Biomedical Research Projects</h4>
+                <p>PhD thesis publications and sensor signal processing: PPG, sEMG, and Emfit contactless mattress monitoring.</p>
+                <a href="../research-projects/" class="btn-link-clean">View Research Projects &rarr;</a>
+            </div>
+            <div class="hub-card">
+                <h4>🔊 Audio &amp; Acoustic Projects</h4>
+                <p>Spatial audio synthesis in Csound and 8-channel microphone array sound source localization.</p>
+                <a href="../projects_audio/" class="btn-link-clean">View Audio Projects &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

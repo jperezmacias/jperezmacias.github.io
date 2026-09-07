@@ -105,6 +105,7 @@
 - **Contactless Video Breathing Project**: https://jperezmacias.github.io/research-projects/video-breathing.html
 - **ICU EEG Trends Analysis Project**: https://jperezmacias.github.io/research-projects/eeg-trends-ICU.html
 - **Audio & Acoustic Projects Hub**: https://jperezmacias.github.io/projects_audio/
+- **Engineering, Embedded & Side Projects**: https://jperezmacias.github.io/other-projects/
 - **Acoustic Sound Source Localization & Vehicle Tracking**: https://jperezmacias.github.io/projects_audio/sound-localization/
 - **Sound / Audio Engineering Projects**: https://jperezmacias.github.io/other-projects/sound-projects.html
 - **Csound 3D Audio & Wave Engineering Documentation**:
