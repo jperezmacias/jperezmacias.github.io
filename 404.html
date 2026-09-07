@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found (404) - Jose Maria Perez-Macias</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="The requested page could not be found. Explore research projects, biomedical engineering simulations, and publications by Jose Maria Perez-Macias." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- CSS Link -->
+    <link href="/styles/style.css" rel="stylesheet" />
+
+    <style>
+        body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px 24px 70px 24px;
+            color: #1e293b;
+            line-height: 1.6;
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+        }
+
+        #masthead {
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        #masthead a {
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        #masthead a:hover {
+            text-decoration: underline;
+        }
+
+        .error-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 40px 36px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
+        }
+
+        .error-badge {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            font-size: 0.85em;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            border: 1px solid #dbeafe;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin: 0 0 12px 0;
+            color: #0f172a;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .error-intro {
+            font-size: 1.1em;
+            color: #475569;
+            margin-bottom: 30px;
+            max-width: 680px;
+        }
+
+        .broken-path-container {
+            background-color: #f1f5f9;
+            border-left: 4px solid #94a3b8;
+            padding: 12px 18px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+            color: #334155;
+            word-break: break-all;
+        }
+
+        .broken-path-container code {
+            font-family: monospace;
+            color: #dc2626;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 30px 0 16px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .dest-card {
+            display: block;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 18px 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .dest-card:hover {
+            border-color: #0284c7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.08);
+            text-decoration: none;
+        }
+
+        .dest-title {
+            font-weight: 700;
+            color: #0284c7;
+            font-size: 1.05em;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .dest-card:hover .dest-title {
+            color: #0369a1;
+        }
+
+        .dest-desc {
+            font-size: 0.9em;
+            color: #64748b;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        .btn-home {
+            display: inline-block;
+            background-color: #0284c7;
+            color: #ffffff !important;
+            font-weight: 600;
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+            margin-top: 25px;
+        }
+
+        .btn-home:hover {
+            background-color: #0369a1;
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 20px 16px 50px 16px;
+            }
+
+            .error-card {
+                padding: 24px 20px;
+            }
+
+            h1 {
+                font-size: 1.7em;
+            }
+
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var host = window.location.hostname;
+            var path = window.location.pathname;
+
+            var link = document.getElementById("dynamic-link");
+            var homeBtn = document.getElementById("home-btn");
+            var basePrefix = "";
+
+            if (host.includes("tuni.fi")) {
+                basePrefix = "/jose.perez-macias/";
+            } else {
+                basePrefix = "/";
+            }
+
+            if (link) link.setAttribute("href", basePrefix);
+            if (homeBtn) homeBtn.setAttribute("href", basePrefix);
+
+            var pathEl = document.getElementById("requested-path");
+            if (pathEl && path) {
+                pathEl.textContent = window.location.pathname;
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <section id="masthead">
+        <p class="masthead-nav" style="font-size: 1.15em; font-weight: bold; margin: 10px 0;">
+            Go back to .. <a id="dynamic-link" href="/" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a>
+        </p>
+    </section>
+
+    <main class="error-card">
+        <span class="error-badge">Error 404</span>
+        <h1>Page Not Found</h1>
+        <p class="error-intro">
+            The page you requested does not exist, may have been moved, or the link you followed might be outdated.
+        </p>
+
+        <div class="broken-path-container" id="path-container">
+            Requested URL: <code id="requested-path">this location</code>
+        </div>
+
+        <a id="home-btn" href="/" class="btn-home">← Return to Homepage</a>
+
+        <div class="section-title">Explore Main Sections</div>
+        <div class="destinations-grid">
+            <a href="/research-projects/" class="dest-card">
+                <div class="dest-title">Research Projects <span>&rarr;</span></div>
+                <p class="dest-desc">Signal processing for sleep sensors (Emfit), snoring classification, wrist EMG, and ICU EEG trends.</p>
+            </a>
+
+            <a href="/biomedical-projects/" class="dest-card">
+                <div class="dest-title">Biomedical Engineering <span>&rarr;</span></div>
+                <p class="dest-desc">Computational electrophysiology, COMSOL Multiphysics action potential simulations, and telemetry.</p>
+            </a>
+
+            <a href="/projects_audio/" class="dest-card">
+                <div class="dest-title">Audio &amp; Sound Projects <span>&rarr;</span></div>
+                <p class="dest-desc">3D audio spatialization, acoustic source separation, and interactive Csound tutorials.</p>
+            </a>
+
+            <a href="/now.html" class="dest-card">
+                <div class="dest-title">What I&#39;m Doing Now <span>&rarr;</span></div>
+                <p class="dest-desc">Current academic research focus, active biomedical projects, and recent technical updates.</p>
+            </a>
+
+            <a href="/other-projects/" class="dest-card">
+                <div class="dest-title">Other Projects <span>&rarr;</span></div>
+                <p class="dest-desc">Open-source software, audio plugins, hardware hacks, and engineering tools.</p>
+            </a>
+
+            <a href="/#publications" class="dest-card">
+                <div class="dest-title">Publications &amp; Profiles <span>&rarr;</span></div>
+                <p class="dest-desc">Peer-reviewed journal articles, conference papers, Google Scholar, and ORCID profile.</p>
+            </a>
+        </div>
+    </main>
+</body>
+</html>
