@@ -301,3 +301,19 @@ ul.social-buttons li a:active {
 .btn-download-pdf:hover {
     background: #059669;
 }
+/* Accessibility & Typography Improvements */
+main p a, main li a:not(.btn):not(.brand-badge), main .caption a:not(.btn) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+main p a:hover, main li a:not(.btn):not(.brand-badge):hover, main .caption a:not(.btn):hover {
+    text-decoration: underline;
+    color: #0369a1;
+}
+.thumbnail h3, .card h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
