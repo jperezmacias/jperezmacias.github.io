@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Educational project exploring acoustic wave phenomena, 3D audio spatialization, and HRTF systems through Csound (2004).">
+  <meta name="author" content="Ariana de La Cuesta de Diego y Jose Maria Perez-Macias">
+  <meta name="theme-color" content="#ffffff">
+  
+
+  <title>Echoes &amp; Reverberation · Wave Engineering</title><link rel="canonical" href="https://jperezmacias.github.io/projects_audio/csound/en/docs/echoes-and-reverb/">
+  <meta property="og:title" content="Echoes &amp; Reverberation · Wave Engineering">
+  <meta property="og:url" content="https://jperezmacias.github.io/projects_audio/csound/en/docs/echoes-and-reverb/">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../../../assets/css/docs.min.163931c9a15d36bcf1bca33a253ae3ca2da221f1befeb7b7db13f8e63b7d6ef0.css" integrity="">
+
+  <link rel="manifest" href="../../../manifest.json">
+<link rel="icon" type="image/svg+xml" href="../../../favicon/favicon.svg">
+<link rel="icon" href="../../../favicon/favicon.ico">
+<link rel="icon" href="../../../favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../../favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../../favicon/apple-touch-icon.png" sizes="180x180">
+
+  
+
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Echoes \u0026amp; Reverberation",
+    "description": "Educational project exploring acoustic wave phenomena, 3D audio spatialization, and HRTF systems through Csound (2004).",
+    "url": "https:\/\/jperezmacias.github.io\/projects_audio\/csound\/en\/docs\/echoes-and-reverb\/",
+    "inLanguage": "en",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Jose Maria Perez-Macias",
+        "url": "https://jperezmacias.github.io/",
+        "sameAs": "https://orcid.org/0000-0003-3485-0874"
+      },
+      {
+        "@type": "Person",
+        "name": "Ariana de la Cuesta de Diego"
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Universidad de Valladolid - Higher Technical School of Telecommunication Engineering"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "3D Spatial Audio, Sound Synthesis, HRTF, and Csound Digital Signal Processing"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--padding);">
+        <div class="lang-switcher" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85em; font-weight: 500;">
+          
+            
+            
+              <a href="../../../es/docs/ecos-y-rev/" style="color: inherit; opacity: 0.7; text-decoration: none;">ES</a>
+            
+          
+            <span style="opacity: 0.4;">|</span>
+            
+              <span style="font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 1px;">EN</span>
+            
+          
+        </div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="../../../en/" class="site-logo">Wave Engineering</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Overview</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/home/">
+                
+                Home
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/general-introduction/">
+                
+                General Introduction
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Csound</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/csound/">
+                
+                Csound
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/functions/">
+                
+                Functions
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/examples/">
+                
+                Examples
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Echoes &amp; Reverberation</summary>
+          <ul><li>
+              
+              <a class="active" href="../../../en/docs/echoes-and-reverb/">
+                
+                Echoes and Reverb
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>3D Sound</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/3d-sound-introduction/">
+                
+                3D Sound Introduction
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/spatial-audio/">
+                
+                Spatial Audio
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/coordinates/">
+                
+                Coordinates
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/audio-systems/">
+                
+                Audio Systems
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/hrtf/">
+                
+                HRTF
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/hrtf-systems/">
+                
+                HRTF Systems
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/implementation/">
+                
+                Implementation
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Csound Examples</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/csound-examples/">
+                
+                Csound Examples
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Bibliography</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/bibliography/">
+                
+                Bibliography
+                
+              </a>
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header style="display: flex; align-items: center; justify-content: space-between; padding-right: var(--padding);">
+      <a href="../../../en/" class="site-logo">Wave Engineering</a>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div class="lang-switcher" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85em; font-weight: 500;">
+          
+            
+            
+              <a href="../../../es/docs/ecos-y-rev/" style="color: inherit; opacity: 0.7; text-decoration: none;">ES</a>
+            
+          
+            <span style="opacity: 0.4;">|</span>
+            
+              <span style="font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 1px;">EN</span>
+            
+          
+        </div>
+        <a href="../../../../index.html" style="font-size: 0.85em; text-decoration: none; color: inherit; opacity: 0.85;">← Audio Projects</a> <span style="opacity: 0.4;">|</span> <a href="../../../../../index.html" style="font-size: 0.85em; text-decoration: none; color: inherit; opacity: 0.85;">Home</a>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>Echoes &amp; Reverberation</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <h2 id="3-echoes-and-reverberation">3. ECHOES AND REVERBERATION</h2>
+<p>In everyday listening, we are rarely aware of how much acoustic energy reaching our ears consists of reflections rather than direct sound. In enclosed spaces, the direct sound from a source is immediately followed by a dense series of reflections off walls, ceilings, floors, and furniture.</p>
+<p><img alt="Direct sound and room reflections" src="../../../Imagenes/image001.gif"></p>
+<h3 id="direct-sound-and-the-precedence-effect-haas-effect">Direct Sound and The Precedence Effect (Haas Effect)</h3>
+<p>The direct sound travels in a straight line from source to listener and arrives first. It provides the primary acoustic cues for sound localization. If a reflection arrives within approximately 1 to 35 milliseconds of the direct sound, human hearing integrates it with the direct sound; rather than hearing a separate echo, the ear perceives increased loudness and warmth. This psychoacoustic phenomenon is known as the <strong>Law of the First Wavefront</strong> or the <strong>Haas Effect</strong>.</p>
+<h3 id="discrete-echoes-vs-diffuse-reverberation">Discrete Echoes vs. Diffuse Reverberation</h3>
+<ul>
+<li><strong>Echoes:</strong> Occur when a reflection is delayed by more than approximately 50 ms and retains sufficient energy to be perceived as a distinct, separated repetition of the original sound.</li>
+<li><strong>Reverberation:</strong> As reflections bounce repeatedly between room boundaries, their arrival density increases exponentially, blurring into a continuous, decaying wash of acoustic energy known as the reverberant tail.</li>
+</ul>
+<p><img alt="Reverberation impulse response diagram" src="../../../Imagenes/image003.gif"></p>
+<h3 id="anechoic-chambers">Anechoic Chambers</h3>
+<p>An anechoic chamber is a specialized acoustic laboratory room whose walls, ceiling, and floor are covered with sound-absorbing fiberglass or foam wedges. In an anechoic environment, virtually 100% of incident sound energy is absorbed, eliminating reflections and simulating completely open free-field acoustic conditions. Anechoic chambers are essential for measuring pure loudspeaker responses and anatomical Head-Related Transfer Functions (HRTFs).</p>
+<h3 id="localization-and-spatial-perception">Localization and Spatial Perception</h3>
+<p>Reverberation is not merely background noise; it is a critical distance cue. While the direct sound level decreases by 6 dB for each doubling of distance (inverse square law), the reverberant energy in an enclosed space remains relatively uniform. Consequently, the <strong>Direct-to-Reverberant Energy Ratio (D/R ratio)</strong> enables listeners to estimate how far away a sound source is located.</p>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+          
+
+          <time datetime="2004-05-24"><i>🕒</i> Updated: 2004-05-24</time>
+          
+          <a href="../../../en/docs/examples/"><i>﹤</i> Previous</a>
+          
+
+          
+          <a href="../../../en/docs/3d-sound-introduction/">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#direct-sound-and-the-precedence-effect-haas-effect">Direct Sound and The Precedence Effect (Haas Effect)</a></li>
+        <li><a href="#discrete-echoes-vs-diffuse-reverberation">Discrete Echoes vs. Diffuse Reverberation</a></li>
+        <li><a href="#anechoic-chambers">Anechoic Chambers</a></li>
+        <li><a href="#localization-and-spatial-perception">Localization and Spatial Perception</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/jperezmacias" target="_blank">Ariana de La Cuesta de Diego y Jose Maria Perez-Macias</a><i>📅</i> 2004-2024<i>🚀</i> <a href="https://github.com/jperezmacias.github.io" target="_blank">GitHub</a></div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="../../../assets/js/docs.min.b55220f931994168ec64fd76cf95230f3676d8e351388cc18eab8fa9a52dec05.js" integrity=""></script>
+</body>
+</html>

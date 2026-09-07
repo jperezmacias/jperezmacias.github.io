@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Educational project exploring acoustic wave phenomena, 3D audio spatialization, and HRTF systems through Csound (2004).">
+  <meta name="author" content="Ariana de La Cuesta de Diego y Jose Maria Perez-Macias">
+  <meta name="theme-color" content="#ffffff">
+  
+
+  <title>HRTF-Based Systems · Wave Engineering</title><link rel="canonical" href="https://jperezmacias.github.io/projects_audio/csound/en/docs/hrtf-systems/">
+  <meta property="og:title" content="HRTF-Based Systems · Wave Engineering">
+  <meta property="og:url" content="https://jperezmacias.github.io/projects_audio/csound/en/docs/hrtf-systems/">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../../../assets/css/docs.min.163931c9a15d36bcf1bca33a253ae3ca2da221f1befeb7b7db13f8e63b7d6ef0.css" integrity="">
+
+  <link rel="manifest" href="../../../manifest.json">
+<link rel="icon" type="image/svg+xml" href="../../../favicon/favicon.svg">
+<link rel="icon" href="../../../favicon/favicon.ico">
+<link rel="icon" href="../../../favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../../favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../../favicon/apple-touch-icon.png" sizes="180x180">
+
+  
+
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "HRTF-Based Systems",
+    "description": "Educational project exploring acoustic wave phenomena, 3D audio spatialization, and HRTF systems through Csound (2004).",
+    "url": "https:\/\/jperezmacias.github.io\/projects_audio\/csound\/en\/docs\/hrtf-systems\/",
+    "inLanguage": "en",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Jose Maria Perez-Macias",
+        "url": "https://jperezmacias.github.io/",
+        "sameAs": "https://orcid.org/0000-0003-3485-0874"
+      },
+      {
+        "@type": "Person",
+        "name": "Ariana de la Cuesta de Diego"
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Universidad de Valladolid - Higher Technical School of Telecommunication Engineering"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "3D Spatial Audio, Sound Synthesis, HRTF, and Csound Digital Signal Processing"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--padding);">
+        <div class="lang-switcher" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85em; font-weight: 500;">
+          
+            
+            
+              <a href="../../../es/docs/sistemas-hrtf/" style="color: inherit; opacity: 0.7; text-decoration: none;">ES</a>
+            
+          
+            <span style="opacity: 0.4;">|</span>
+            
+              <span style="font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 1px;">EN</span>
+            
+          
+        </div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="../../../en/" class="site-logo">Wave Engineering</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Overview</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/home/">
+                
+                Home
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/general-introduction/">
+                
+                General Introduction
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Csound</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/csound/">
+                
+                Csound
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/functions/">
+                
+                Functions
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/examples/">
+                
+                Examples
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Echoes &amp; Reverberation</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/echoes-and-reverb/">
+                
+                Echoes and Reverb
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>3D Sound</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/3d-sound-introduction/">
+                
+                3D Sound Introduction
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/spatial-audio/">
+                
+                Spatial Audio
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/coordinates/">
+                
+                Coordinates
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/audio-systems/">
+                
+                Audio Systems
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/hrtf/">
+                
+                HRTF
+                
+              </a>
+            </li><li>
+              
+              <a class="active" href="../../../en/docs/hrtf-systems/">
+                
+                HRTF Systems
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/implementation/">
+                
+                Implementation
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Csound Examples</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/csound-examples/">
+                
+                Csound Examples
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Bibliography</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/bibliography/">
+                
+                Bibliography
+                
+              </a>
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header style="display: flex; align-items: center; justify-content: space-between; padding-right: var(--padding);">
+      <a href="../../../en/" class="site-logo">Wave Engineering</a>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div class="lang-switcher" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85em; font-weight: 500;">
+          
+            
+            
+              <a href="../../../es/docs/sistemas-hrtf/" style="color: inherit; opacity: 0.7; text-decoration: none;">ES</a>
+            
+          
+            <span style="opacity: 0.4;">|</span>
+            
+              <span style="font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 1px;">EN</span>
+            
+          
+        </div>
+        <a href="../../../../index.html" style="font-size: 0.85em; text-decoration: none; color: inherit; opacity: 0.85;">← Audio Projects</a> <span style="opacity: 0.4;">|</span> <a href="../../../../../index.html" style="font-size: 0.85em; text-decoration: none; color: inherit; opacity: 0.85;">Home</a>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>HRTF-Based Systems</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <h2 id="45-hrtf-based-spatial-audio-systems">4.5. HRTF-Based Spatial Audio Systems</h2>
+<p>Spatial audio systems based on Head-Related Transfer Functions are capable of creating convincing three-dimensional acoustic sensations by filtering sound through finite impulse response (FIR) filter pairs representing the left and right ear HRTFs:</p>
+<p><img alt="Measuring the HRTF of a KEMAR manikin" src="../../../Imagenes/image020.jpg"></p>
+<h3 id="digital-signal-processing-architecture">Digital Signal Processing Architecture</h3>
+<p>Given a dry monaural input audio signal $s(t)$, the binaural signals delivered to the left and right ears are synthesized via time-domain convolution with the respective Head-Related Impulse Responses $h_L(t, \theta, \phi)$ and $h_R(t, \theta, \phi)$:</p>
+<p>$$x_L(t) = s(t) * h_L(t, \theta, \phi)$$
+$$x_R(t) = s(t) * h_R(t, \theta, \phi)$$</p>
+<h3 id="the-convolvotron">The Convolvotron</h3>
+<p>In the early 1990s, Elizabeth Wenzel and Scott Foster developed the <strong>Convolvotron</strong> for NASA Ames Research Center. It was one of the earliest real-time hardware convolution engines, capable of calculating real-time HRTF convolutions with dynamic head tracking for virtual reality flight simulation environments.</p>
+<h3 id="headphones-vs-loudspeakers-crosstalk-cancellation">Headphones vs. Loudspeakers: Crosstalk Cancellation</h3>
+<ul>
+<li><strong>Headphones:</strong> Naturally deliver the left binaural signal $x_L(t)$ exclusively to the left ear, and $x_R(t)$ exclusively to the right ear.</li>
+<li><strong>Loudspeakers:</strong> If binaural audio is reproduced over standard stereo speakers, an acoustic problem known as <strong>transaural crosstalk</strong> occurs: the sound from the left speaker reaches not only the left ear, but also diffracts around the head to reach the right ear. To reproduce 3D audio over speakers, digital <strong>crosstalk cancellation (CTC)</strong> filter networks (such as Recursive Transaural Filters or Cooper-Bauck filters) must be applied to cancel cross-bleeding acoustic paths in real time.</li>
+</ul>
+<h3 id="head-tracking-and-latency-requirements">Head Tracking and Latency Requirements</h3>
+<p>When listening over headphones without head tracking, turning your head causes the virtual sound source to rotate with you—an unnatural sensation that frequently leads to inside-the-head localization (lateralization) or front/back confusion. Integrating an electronic head tracker updates HRTF filter coefficients in response to head orientation, anchoring virtual sources firmly to fixed positions in room space. For realistic immersion, the total system latency must remain below <strong>30 to 50 milliseconds</strong>.</p>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+          
+
+          <time datetime="2004-05-24"><i>🕒</i> Updated: 2004-05-24</time>
+          
+          <a href="../../../en/docs/hrtf/"><i>﹤</i> Previous</a>
+          
+
+          
+          <a href="../../../en/docs/implementation/">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#digital-signal-processing-architecture">Digital Signal Processing Architecture</a></li>
+        <li><a href="#the-convolvotron">The Convolvotron</a></li>
+        <li><a href="#headphones-vs-loudspeakers-crosstalk-cancellation">Headphones vs. Loudspeakers: Crosstalk Cancellation</a></li>
+        <li><a href="#head-tracking-and-latency-requirements">Head Tracking and Latency Requirements</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/jperezmacias" target="_blank">Ariana de La Cuesta de Diego y Jose Maria Perez-Macias</a><i>📅</i> 2004-2024<i>🚀</i> <a href="https://github.com/jperezmacias.github.io" target="_blank">GitHub</a></div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="../../../assets/js/docs.min.b55220f931994168ec64fd76cf95230f3676d8e351388cc18eab8fa9a52dec05.js" integrity=""></script>
+</body>
+</html>

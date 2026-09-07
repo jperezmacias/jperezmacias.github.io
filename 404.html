@@ -194,6 +194,13 @@
             var host = window.location.hostname;
             var path = window.location.pathname;
 
+            // Legacy csound URL redirect
+            if (path && (path.includes("/csound/") || path.endsWith("/csound"))) {
+                var newPath = path.replace("/csound", "/projects_audio/csound");
+                window.location.replace(newPath);
+                return;
+            }
+
             var link = document.getElementById("dynamic-link");
             var homeBtn = document.getElementById("home-btn");
             var basePrefix = "";

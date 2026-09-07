@@ -118,5 +118,6 @@
 - **Acoustic Sound Source Localization & Vehicle Tracking**: https://jperezmacias.github.io/projects_audio/sound-localization/
 - **Sound / Audio Engineering Projects**: https://jperezmacias.github.io/other-projects/sound-projects.html
 - **Csound 3D Audio & Wave Engineering Documentation**:
-  - English: https://jperezmacias.github.io/csound/en/docs/overview/
-  - Spanish: https://jperezmacias.github.io/csound/es/docs/overview/
+  - English: https://jperezmacias.github.io/projects_audio/csound/en/docs/overview/
+  - Spanish: https://jperezmacias.github.io/projects_audio/csound/es/docs/overview/
+  - 2004 Historical Archive: https://jperezmacias.github.io/projects_audio/archive-csound-2004/

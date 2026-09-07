@@ -28,6 +28,10 @@ DEFAULT_URLS = [
     f"https://{HOST}/biomedical-projects/comsol-neuron/",
     f"https://{HOST}/projects_audio/",
     f"https://{HOST}/projects_audio/sound-localization/",
+    f"https://{HOST}/projects_audio/csound/",
+    f"https://{HOST}/projects_audio/csound/en/",
+    f"https://{HOST}/projects_audio/csound/es/",
+    f"https://{HOST}/projects_audio/archive-csound-2004/",
     f"https://{HOST}/other-projects/",
     f"https://{HOST}/articles/elama-article.html",
 ]
