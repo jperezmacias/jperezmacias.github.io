@@ -85,6 +85,12 @@
    J. M. Perez-Macias, J. Viik, A. Värri, S.-L. Himanen, M. Tenhunen.
    DOI: [10.1007/978-981-10-5122-7_194](https://doi.org/10.1007/978-981-10-5122-7_194)
 
+## Computational Modeling & Simulation Projects
+
+- **COMSOL Simulation of Action Potential Propagation (FitzHugh-Nagumo Model)**:
+  - Educational computational study simulating nerve axon excitation and action potential propagation in COMSOL Multiphysics using the FitzHugh-Nagumo reaction-diffusion PDE system coupled with extracellular electrostatics. Includes governing equations, 3D tetrahedral mesh design, threshold/refractory parameter sweeps, and animated simulation videos.
+  - URL: https://jperezmacias.github.io/biomedical-projects/comsol-neuron/
+
 ## Audio & Signal Processing Projects
 
 - **Acoustic Source Localization & Vehicle Tracking (Advanced Audio Processing, Tampere University)**:
@@ -104,8 +110,11 @@
 - **Breathing Disorders Project**: https://jperezmacias.github.io/research-projects/breathing-disorders.html
 - **Contactless Video Breathing Project**: https://jperezmacias.github.io/research-projects/video-breathing.html
 - **ICU EEG Trends Analysis Project**: https://jperezmacias.github.io/research-projects/eeg-trends-ICU.html
+- **Biomedical Engineering & Simulation Projects Hub**: https://jperezmacias.github.io/biomedical-projects/
+- **COMSOL Neuron Action Potential Simulation**: https://jperezmacias.github.io/biomedical-projects/comsol-neuron/
 - **Audio & Acoustic Projects Hub**: https://jperezmacias.github.io/projects_audio/
 - **Engineering, Embedded & Side Projects**: https://jperezmacias.github.io/other-projects/
+- **COMSOL Neuron Action Potential Simulation**: https://jperezmacias.github.io/biomedical-projects/comsol-neuron/
 - **Acoustic Sound Source Localization & Vehicle Tracking**: https://jperezmacias.github.io/projects_audio/sound-localization/
 - **Sound / Audio Engineering Projects**: https://jperezmacias.github.io/other-projects/sound-projects.html
 - **Csound 3D Audio & Wave Engineering Documentation**:

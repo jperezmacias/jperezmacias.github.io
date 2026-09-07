@@ -149,6 +149,20 @@
             flex-wrap: wrap;
         }
 
+        .btn-link-primary {
+            display: inline-block;
+            background: #0284c7;
+            color: #ffffff !important;
+            padding: 6px 14px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .btn-link-primary:hover {
+            background: #0369a1;
+        }
         .btn-link-clean {
             display: inline-block;
             background: #ffffff;
@@ -253,6 +267,10 @@
         Alongside academic research in biomedical signal processing, I enjoy building hands-on engineering projects spanning numerical multiphysics modeling, embedded Linux systems, IoT automation, and real-time control. Here is a curated collection of side projects, maker prototypes, and university engineering works.
     </p>
 
+    <div style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 20px 0 30px 0; font-size: 0.95em; color: #166534;">
+        <strong>Specialized Project Hubs:</strong> Looking for computational neuroscience or acoustics? Visit the dedicated <a href="../biomedical-projects/" style="font-weight: bold; color: #15803d; text-decoration: underline;">Biomedical Engineering &amp; Simulation Hub</a> or the <a href="../projects_audio/" style="font-weight: bold; color: #0284c7; text-decoration: underline;">Audio &amp; Acoustic Projects Hub</a>.
+    </div>
+
     <!-- SECTION 1: Embedded Systems & IoT -->
     <h2 class="project-section-title">Embedded Systems, IoT &amp; Hardware</h2>
     <div class="projects-grid">
@@ -328,10 +346,10 @@
         <!-- Card: COMSOL Neuron -->
         <div class="card">
             <div class="card-media" style="position: relative; height: 200px;">
-                <iframe title="Comsol Simulation of a Neuron" width="100%" height="200"
+                <iframe title="COMSOL Simulation of an Action Potential" width="100%" height="200"
                     src="https://www.youtube-nocookie.com/embed/ssmZV2swrf4" style="border: none"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    allowfullscreen></iframe>
             </div>
             <div class="card-body">
                 <span class="card-tag">COMSOL &bull; Multiphysics &bull; Electrophysiology</span>
@@ -340,6 +358,7 @@
                     A computational finite-element simulation of neuron membrane excitability developed at TUT. Implements the nonlinear FitzHugh-Nagumo mathematical model to simulate the propagation of action potentials and transmembrane ionic currents across nerve fibers.
                 </p>
                 <div class="card-links">
+                    <a href="../biomedical-projects/comsol-neuron/" class="btn-link-primary">Read Educational Tutorial &rarr;</a>
                     <a href="https://www.youtube.com/watch?v=ssmZV2swrf4" target="_blank" rel="noopener" class="btn-link-yt">&#9654; Watch Simulation Video</a>
                 </div>
             </div>
@@ -432,7 +451,7 @@
                 <a href="../research-projects/" class="btn-link-clean">View Research Projects &rarr;</a>
             </div>
             <div class="hub-card">
-                <h4>🔊 Audio &amp; Acoustic Projects</h4>
+                <h4>Audio &amp; Acoustic Projects</h4>
                 <p>Spatial audio synthesis in Csound and 8-channel microphone array sound source localization.</p>
                 <a href="../projects_audio/" class="btn-link-clean">View Audio Projects &rarr;</a>
             </div>

@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COMSOL Neuron Action Potential Simulation - Jose Perez-Macias</title>
+
+    <!-- Description & Keywords -->
+    <meta name="description" content="Educational computational study of neuron action potential propagation in COMSOL Multiphysics using the FitzHugh-Nagumo reaction-diffusion model." />
+    <meta name="keywords" content="COMSOL Multiphysics, FitzHugh-Nagumo model, action potential propagation, neuron simulation, finite element modeling, FEM, electrophysiology, bioelectromagnetism, reaction-diffusion PDE, Jose Maria Perez-Macias, Tampere University" />
+    <meta name="author" content="Jose Maria Perez-Macias" />
+    <link rel="canonical" href="https://jperezmacias.github.io/biomedical-projects/comsol-neuron/" />
+
+    <!-- Open Graph tags for social media & AI rich previews -->
+    <meta property="og:title" content="COMSOL Simulation of Action Potential Propagation (FitzHugh-Nagumo Model)" />
+    <meta property="og:description" content="Educational study of neuron action potential propagation in COMSOL Multiphysics using the FitzHugh-Nagumo reaction-diffusion PDE model." />
+    <meta property="og:image" content="https://jperezmacias.github.io/biomedical-projects/comsol-neuron/img/comsol-propagation-3d.webp" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jperezmacias.github.io/biomedical-projects/comsol-neuron/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="COMSOL Neuron Action Potential Simulation" />
+    <meta name="twitter:description" content="Educational computational modeling of neuron action potentials using COMSOL Multiphysics and FitzHugh-Nagumo equations." />
+    <meta name="twitter:image" content="https://jperezmacias.github.io/biomedical-projects/comsol-neuron/img/comsol-propagation-3d.webp" />
+
+    <!-- Schema.org JSON-LD for AI Search & Knowledge Graphs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "COMSOL Simulation of Action Potential Propagation (FitzHugh-Nagumo Model)",
+      "name": "COMSOL Neuron Action Potential Simulation",
+      "description": "Educational computational modeling study simulating nerve axon excitation and action potential propagation in COMSOL Multiphysics using the FitzHugh-Nagumo reaction-diffusion PDE system.",
+      "author": {
+        "@type": "Person",
+        "name": "Jose Maria Perez-Macias",
+        "url": "https://jperezmacias.github.io/",
+        "sameAs": "https://orcid.org/0000-0003-3485-0874",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Tampere University / BioMediTech"
+        }
+      },
+      "keywords": [
+        "COMSOL Multiphysics",
+        "FitzHugh-Nagumo model",
+        "Action potential",
+        "Neuron simulation",
+        "Finite Element Method",
+        "Reaction-diffusion PDE",
+        "Bioelectromagnetism"
+      ],
+      "url": "https://jperezmacias.github.io/biomedical-projects/comsol-neuron/",
+      "image": "https://jperezmacias.github.io/biomedical-projects/comsol-neuron/img/comsol-propagation-3d.webp",
+      "about": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Bioelectromagnetism & Finite Element Modeling, Tampere University of Technology"
+      }
+    }
+    </script>
+
+    <!-- CSS Link -->
+    <link href="../../styles/style.css" rel="stylesheet" />
+
+    <style>
+        body {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 20px 24px 60px 24px;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        .authors {
+            font-size: 1.1em;
+            color: #475569;
+            margin-top: -6px;
+            margin-bottom: 4px;
+        }
+
+        .course-meta {
+            font-style: italic;
+            color: #64748b;
+            margin-top: 0;
+            margin-bottom: 24px;
+            font-size: 0.95em;
+        }
+
+        .edu-banner {
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+            border-left: 4px solid #0284c7;
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 20px 0 30px 0;
+            font-size: 0.96em;
+            color: #0f172a;
+        }
+
+        .edu-banner strong {
+            color: #0369a1;
+        }
+
+        .img-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 14px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .img-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .img-caption {
+            font-size: 0.88em;
+            color: #64748b;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .grid-3col {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2col, .grid-3col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .math-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 18px 0;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .param-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+
+        .param-table th, .param-table td {
+            border: 1px solid #cbd5e1;
+            padding: 10px 14px;
+            text-align: left;
+        }
+
+        .param-table th {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .param-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 16px 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+
+        .video-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 18px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .video-card h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.05em;
+            color: #0284c7;
+        }
+
+        .video-card p {
+            font-size: 0.9em;
+            color: #475569;
+            margin-bottom: 14px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background: #0284c7;
+            color: #ffffff !important;
+            padding: 7px 16px;
+            border-radius: 5px;
+            font-size: 0.88em;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn-link:hover {
+            background: #0369a1;
+        }
+
+        .ref-list {
+            font-size: 0.9em;
+            color: #334155;
+            padding-left: 20px;
+        }
+
+        .ref-list li {
+            margin-bottom: 8px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var host = window.location.hostname;
+            var link = document.getElementById("dynamic-link");
+            if (host.includes("github.io")) {
+                link.setAttribute("href", "/");
+            } else if (host.includes("tuni.fi")) {
+                link.setAttribute("href", "/jose.perez-macias/");
+            }
+        };
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+
+    <!-- MathJax 3 Configuration -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [["$", "$"], ["\\(", "\\)"]],
+          displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+          processEscapes: true,
+          processEnvironments: true
+        },
+        options: {
+          skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+        }
+      };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <section id="masthead">
+        <p class="masthead-nav" style="font-size: 1.4em; font-weight: bold; margin: 15px 0;">Go back to .. <a id="dynamic-link" href="../../index.html" title="Jose Maria Perez-Macias">Jose Maria Perez-Macias</a> / <a href="../index.html" title="Biomedical Projects">Biomedical Projects</a></p>
+    </section>
+
+    <h1>COMSOL Simulation of Action Potential Propagation (FitzHugh-Nagumo Model)</h1>
+    <p class="authors"><strong>Jose Maria Perez-Macias</strong></p>
+    <p class="course-meta">
+        Bioelectromagnetism &amp; Finite Element Modeling (Fall 2016) &mdash; BioMediTech &amp; Department of Electronics and Communications Engineering, Tampere University of Technology (TUT), Finland
+    </p>
+
+    <div class="edu-banner">
+        <strong>Educational Summary:</strong> This page presents an educational computational study simulating how biological action potentials propagate along an unmyelinated nerve axon. Using <strong>COMSOL Multiphysics 5.2a</strong>, the nerve dynamics are implemented via the <strong>FitzHugh-Nagumo (FHN)</strong> reaction-diffusion partial differential equation (PDE) coupled to an electrostatic extracellular medium. This document details the mathematical formulation, FEM geometry, tetrahedral mesh design, stimulus pulse experiments, and animated video recordings.
+        <br /><br />
+        <em>Note on model files:</em> Rather than distributing proprietary, commercial 70+ MB <code>.mph</code> binary files (which require paid COMSOL licenses to inspect), this page provides the complete mathematical physics, boundary conditions, parameter tables, and mesh designs so students and researchers can reproduce the model in any FEM framework (COMSOL, FEniCS, OpenCMISS, or FreeFEM).
+    </div>
+
+    <h2>1. Introduction: Electrophysiology &amp; The "All-or-Nothing" Principle</h2>
+    <p>
+        Neurons communicate via electrical impulses termed <strong>action potentials</strong>. In biological nerve fibers, these impulses are generated by voltage-gated ionic channels (principally sodium $\text{Na}^+$ and potassium $\text{K}^+$) embedded across the cell membrane. The foundational biophysical description was formulated by Alan Hodgkin and Andrew Huxley in 1952 using four nonlinear differential equations describing individual ionic conductances.
+    </p>
+    <p>
+        While Hodgkin-Huxley (HH) provides high biological fidelity, its four coupled nonlinear equations can be computationally demanding for large-scale 3D finite element field simulations. In 1961, Richard FitzHugh introduced a simplified two-variable phase-plane reduction of the HH model, isolating the mathematical essence of excitability:
+    </p>
+    <ul>
+        <li>A fast <strong>excitation variable</strong> ($u_1$, representing membrane voltage), exhibiting positive feedback and cubic non-linearity.</li>
+        <li>A slow <strong>recovery variable</strong> ($u_2$, representing ionic channel deactivation/refractoriness), providing negative feedback and restoring the resting state.</li>
+    </ul>
+    <p>
+        In 1962, J. Nagumo, S. Arimoto, and S. Yoshizawa realized this mathematical model physically as an active pulse transmission electrical transmission line incorporating tunnel diodes (which possess the required N-shaped negative differential resistance characteristic).
+    </p>
+
+    <div class="img-card" style="max-width: 480px; margin: 20px auto;">
+        <img src="img/nagumo-circuit.webp" alt="Circuit diagram of the tunnel-diode nerve equivalent" width="224" height="235" style="background:#fff; padding:10px; border-radius:6px;" />
+        <div class="img-caption">Figure 1: Equivalent circuit diagram of the active nerve transmission line using tunnel diodes (Nagumo et al., 1962).</div>
+    </div>
+
+    <h3>Key Electrophysiological Phenomena Demonstrated</h3>
+    <ul>
+        <li><strong>The "All-or-Nothing" Threshold:</strong> A sub-threshold stimulus decays electrotonically along the axon without triggering a wave. Once a stimulus exceeds the critical threshold voltage ($\alpha$), a full-amplitude action potential is unleashed. Further increasing stimulus amplitude does not increase the action potential spike height.</li>
+        <li><strong>Frequency Coding:</strong> Because individual action potential spikes have constant amplitude, the nervous system cannot encode stimulus intensity by voltage height. Instead, biological sensory pathways encode signal strength into the <em>firing rate (frequency)</em> of action potentials.</li>
+        <li><strong>Refractory Period Limits:</strong> Immediately following an action potential, the nerve membrane enters an <em>absolute refractory period</em> during which no new spike can be initiated regardless of stimulus strength. This sets a fundamental physiological upper bound on neuronal firing frequency (typically 200&ndash;300 Hz in biological tissue, corresponding to a refractory recovery window of 3&ndash;5 ms).</li>
+        <li><strong>Conduction Velocity &amp; Geometry:</strong> In unmyelinated fibers (like the squid giant axon or earthworm median giant fiber), conduction speed is proportional to $\sqrt{d}$ (axon diameter). Vertebrates evolved myelin sheaths to achieve high conduction velocities (up to 120 m/s) via saltatory conduction from node to node without requiring massive axon diameters.</li>
+    </ul>
+
+    <h2>2. Governing Mathematical Physics (Reaction-Diffusion PDEs)</h2>
+    <p>
+        In COMSOL Multiphysics, the axon interior and membrane dynamics are solved using the <strong>Coefficient Form PDE</strong> module, while the surrounding fluid is solved using the <strong>Electrostatics</strong> module.
+    </p>
+
+    <h3>Axon Membrane Dynamics (FitzHugh-Nagumo PDEs)</h3>
+    <p>
+        The spatial-temporal evolution of the membrane excitation potential $u_1(\mathbf{x}, t)$ and the recovery variable $u_2(\mathbf{x}, t)$ along the axon domain is governed by:
+    </p>
+
+    <div class="math-box">
+        $$\frac{\partial u_1}{\partial t} - \nabla \cdot (D \nabla u_1) = u_1 (u_1 - \alpha)(1 - u_1) - u_2 + I_{\text{stim}}(t)$$
+    </div>
+    <div class="math-box">
+        $$\frac{\partial u_2}{\partial t} = \epsilon (\beta u_1 - \gamma u_2 - \delta)$$
+    </div>
+
+    <p>Where:</p>
+    <ul>
+        <li>$u_1(\mathbf{x}, t)$: Dimensionless/scaled membrane excitation potential.</li>
+        <li>$u_2(\mathbf{x}, t)$: Dimensionless recovery variable responsible for repolarization and the refractory period.</li>
+        <li>$D$: Diffusion coefficient representing longitudinal cytoplasmic electrical conductivity ($D = 1$).</li>
+        <li>$\alpha$: Excitation threshold parameter ($0 < \alpha < 1$). Stimuli that do not elevate $u_1 > \alpha$ decay to zero.</li>
+        <li>$\epsilon$: Small timescale separation parameter ($\epsilon \ll 1$), ensuring the excitation variable changes much faster than the recovery variable.</li>
+        <li>$\beta, \gamma, \delta$: Parameters defining the slope, intersection, and geometry of the nullclines in the $(u_1, u_2)$ phase plane.</li>
+        <li>$I_{\text{stim}}(t)$: Time-dependent external current stimulus injected at the proximal boundary.</li>
+    </ul>
+
+    <h3>Extracellular Medium (Electrostatics)</h3>
+    <p>
+        The volume surrounding the axon is modeled as an isotropic conductive medium governed by Poisson&rsquo;s equation for electrostatics:
+    </p>
+    <div class="math-box">
+        $$-\nabla \cdot (\epsilon_0 \epsilon_r \nabla V) = \rho$$
+    </div>
+    <p>
+        Where $\epsilon_0$ is the vacuum permittivity, $\epsilon_r = 80$ is the relative permittivity of the extracellular fluid (water/saline tissue), and space charge density $\rho = 0$.
+    </p>
+
+    <h3>Simulation Parameters &amp; Initial Conditions</h3>
+    <p>
+        Parameters were derived from classical electrophysiological literature and dimensionless scaled units:
+    </p>
+
+    <table class="param-table">
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Symbol</th>
+                <th>Value</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Excitation Threshold</td>
+                <td>$\alpha$</td>
+                <td>$0.1\text{ V}$</td>
+                <td>Minimum potential required to trigger self-sustaining depolarization</td>
+            </tr>
+            <tr>
+                <td>Timescale Separation</td>
+                <td>$\epsilon$</td>
+                <td>$0.01$</td>
+                <td>Ratio between fast voltage changes and slow recovery kinetics</td>
+            </tr>
+            <tr>
+                <td>Phase-Plane Slope</td>
+                <td>$\beta$</td>
+                <td>$0.75$</td>
+                <td>Coupling coefficient of excitation to recovery</td>
+            </tr>
+            <tr>
+                <td>Recovery Damping</td>
+                <td>$\gamma$</td>
+                <td>$1.0$</td>
+                <td>Linear decay rate of the recovery variable</td>
+            </tr>
+            <tr>
+                <td>Resting Offset</td>
+                <td>$\delta$</td>
+                <td>$0.0\text{ V}$</td>
+                <td>Resting baseline shift parameter</td>
+            </tr>
+            <tr>
+                <td>Diffusion Coefficient</td>
+                <td>$D$</td>
+                <td>$1.0$</td>
+                <td>Axial diffusion / electrotonic conduction coefficient</td>
+            </tr>
+            <tr>
+                <td>Relative Permittivity</td>
+                <td>$\epsilon_r$</td>
+                <td>$80$</td>
+                <td>Extracellular fluid dielectric property (saline/water)</td>
+            </tr>
+            <tr>
+                <td>Elevated Initial Potential</td>
+                <td>$V_0$</td>
+                <td>$1.0\text{ V}$</td>
+                <td>Initial depolarization at proximal zone ($z < d$)</td>
+            </tr>
+            <tr>
+                <td>Elevated Relaxation Value</td>
+                <td>$\nu_0$</td>
+                <td>$0.025\text{ V}$</td>
+                <td>Initial recovery state at proximal zone ($z < d$)</td>
+            </tr>
+            <tr>
+                <td>Active Initial Shift Zone</td>
+                <td>$d$</td>
+                <td>$8.0\text{ m}$</td>
+                <td>Spatial length of initial excitation zone required to exceed threshold</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. 3D Model Geometry &amp; Finite Element Mesh</h2>
+    <p>
+        The 3D domain was constructed in COMSOL Multiphysics 5.2a. Biological axons vary from $1\,\mu\text{m}$ (central nervous system) to $10\text{--}25\,\mu\text{m}$ (peripheral nerves), spanning lengths thousands of times their diameter. To maintain clean numerical conditioning during PDE integration, spatial dimensions were scaled ($1\cdot 10^{-6}:1\text{ m}$):
+    </p>
+    <ul>
+        <li><strong>Axon Cylinder:</strong> Radius $r = 100\text{ cm}$ ($1.0\text{ m}$), length $L = 135\text{ m}$.</li>
+        <li><strong>Extracellular Medium Box:</strong> Solid domain of $10\text{ m} \times 10\text{ m} \times 170\text{ m}$ surrounding the axon cylinder.</li>
+    </ul>
+
+    <div class="grid-3col">
+        <div class="img-card">
+            <img src="img/geometry-axon.webp" alt="3D geometry of axon cylinder inside extracellular domain" width="727" height="632" />
+            <div class="img-caption">Figure 2: 3D geometry of the cylindrical axon embedded within the rectangular extracellular saline domain box.</div>
+        </div>
+        <div class="img-card">
+            <img src="img/mesh-full.webp" alt="Full 3D finite element mesh in COMSOL" width="727" height="612" />
+            <div class="img-caption">Figure 3: Physics-controlled tetrahedral finite element mesh across the entire computational domain.</div>
+        </div>
+        <div class="img-card">
+            <img src="img/mesh-axon.webp" alt="Refined mesh along the axon cylinder" width="703" height="491" />
+            <div class="img-caption">Figure 4: Detailed view of the discretized mesh elements along the interior cylinder boundary.</div>
+        </div>
+    </div>
+
+    <h3>Boundary Conditions</h3>
+    <ul>
+        <li><strong>Axon Cylindrical Wall:</strong> Governed by the coupled FHN reaction-diffusion equations.</li>
+        <li><strong>Axon Proximal Boundary ($z = 0$):</strong> Point of external current stimulation $I_{\text{stim}}(t)$ or initial conditions.</li>
+        <li><strong>Axon Distal Boundary ($z = L$):</strong> Zero-flux Neumann condition ($\mathbf{n} \cdot \nabla u_1 = 0$).</li>
+        <li><strong>Extracellular Box Outer Walls:</strong> Zero-charge electrical insulation ($\mathbf{n} \cdot \mathbf{D} = 0$).</li>
+    </ul>
+
+    <h2>4. Simulation Experiments &amp; Animated Results</h2>
+
+    <h3>Experiment 1: Autonomous Wavefront Propagation from Initial Conditions</h3>
+    <p>
+        In the first experiment, the axon was initialized without an active external current, but with an elevated proximal zone:
+    </p>
+    <div class="math-box">
+        $$u_1(\mathbf{x}, 0) = \begin{cases} V_0 = 1.0\text{ V}, & z < d \\ 0, & z \ge d \end{cases}, \qquad u_2(\mathbf{x}, 0) = \begin{cases} \nu_0 = 0.025\text{ V}, & z < d \\ 0, & z \ge d \end{cases}$$
+    </div>
+    <p>
+        The spatial threshold distance $d = 8\text{ m}$ was found to be sufficient to surpass the critical activation barrier. A self-sustaining depolarization wave formed and traveled autonomously down the entire $135\text{ m}$ axon length over $t = 1\text{--}500\text{ s}$ (in $1\text{ s}$ time steps).
+    </p>
+
+    <div class="img-card" style="max-width: 780px; margin: 24px auto;">
+        <img src="img/comsol-propagation-3d.webp" alt="COMSOL 3D potential heatmap along axon during propagation" width="1200" height="1128" />
+        <div class="img-caption">Figure 5: 3D finite element simulation in COMSOL Multiphysics showing the active depolarization wavefront and extracellular electric potential distribution.</div>
+    </div>
+
+    <p>
+        Voltage probes were placed at $10\text{ m}$ (proximal) and $120\text{ m}$ (distal). As shown below, the action potential waveform retains its stereotyped shape and amplitude as it propagates, arriving at the distal probe ($120\text{ m}$) at approximately $t \approx 220\text{ s}$.
+    </p>
+
+    <div class="grid-2col">
+        <div class="img-card">
+            <img src="img/probe-10m.webp" alt="Action potential voltage trace at 10m probe" width="1200" height="749" />
+            <div class="img-caption">Figure 6a: Excitation variable $u_1(t)$ at the $10\text{ m}$ probe (rapid activation within initial 20 seconds).</div>
+        </div>
+        <div class="img-card">
+            <img src="img/probe-120m.webp" alt="Action potential voltage trace at 120m probe" width="1200" height="749" />
+            <div class="img-caption">Figure 6b: Excitation variable $u_1(t)$ at the $120\text{ m}$ probe, demonstrating arrival of the intact pulse at $t \approx 220\text{ s}$.</div>
+        </div>
+    </div>
+
+    <h3>Experiment 2: Periodic Pulse Train Stimulation ($A \cdot \text{rect}(t) + 0.1$)</h3>
+    <p>
+        To model realistic sensory stimulation, an analytical periodic pulse train was applied at the proximal boundary:
+    </p>
+    <div class="math-box">
+        $$I_{\text{stim}}(t) = A \cdot \text{rect}_1(t) + 0.1$$
+    </div>
+    <p>
+        Where $A$ is the pulse amplitude, $W$ is the rectangular pulse width, and $T$ is the stimulus period.
+    </p>
+
+    <div class="img-card" style="max-width: 650px; margin: 20px auto;">
+        <img src="img/stimulus-train.webp" alt="Rectangular pulse train activation function" width="1200" height="749" />
+        <div class="img-caption">Figure 7: Analytical rectangular pulse train activation function $I_{\text{stim}}(t) = A \cdot \text{rect}_1(t) + 0.1$.</div>
+    </div>
+
+    <h3>Video Animations of the Simulation</h3>
+    <p>
+        The animated dynamics from both experiments were recorded and uploaded to YouTube:
+    </p>
+
+    <div class="video-grid">
+        <div class="video-card">
+            <h4>1. Autonomous Action Potential Propagation</h4>
+            <p>Animated time-evolution showing the initial condition wave traveling autonomously down the 3D axon cylinder.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube-nocookie.com/embed/ssmZV2swrf4" title="Simulation of a neuron stimulus - COMSOL" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p style="margin-top: 10px;"><a href="https://youtu.be/ssmZV2swrf4" target="_blank" rel="noopener" class="btn-link">Watch on YouTube &rarr;</a></p>
+        </div>
+
+        <div class="video-card">
+            <h4>2. Pulse Train Re-stimulation</h4>
+            <p>Animated response under periodic train stimulation, showing repetitive wavefront generation and refractory limits.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube-nocookie.com/embed/UK_Ka_exzzQ" title="Video train of impulses - COMSOL" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p style="margin-top: 10px;"><a href="https://youtu.be/UK_Ka_exzzQ" target="_blank" rel="noopener" class="btn-link">Watch on YouTube &rarr;</a></p>
+        </div>
+    </div>
+
+    <h3>Experiment 3: Parameter Sweeps (Threshold, Width, and Frequency Limits)</h3>
+    <p>
+        Systematic parameter sweeps were conducted to evaluate how pulse period ($T$), pulse width ($W$), and amplitude ($A$) govern signal transmission:
+    </p>
+
+    <h4>Sub-Threshold ($A = 0.1\text{ V}$) vs. Supra-Threshold ($A = 2.0\text{ V}$)</h4>
+    <p>
+        When the injected amplitude is below the excitation threshold ($A = 0.1\text{ V}$, with $T = 40\text{ s}, W = 2\text{ s}$), only the initial condition pulse travels; subsequent stimulus pulses fail to initiate depolarization and are completely eliminated. In contrast, at $A = 2.0\text{ V}$, every stimulus pulse overcomes the threshold barrier and propagates all the way to the $120\text{ m}$ probe:
+    </p>
+
+    <div class="grid-2col">
+        <div class="img-card">
+            <img src="img/sweep-subthreshold-10m.webp" alt="Subthreshold stimulus at 10m probe" width="1200" height="697" />
+            <div class="img-caption">Sub-threshold ($A=0.1\text{ V}$) at $10\text{ m}$: Stimulus pulses fail to evoke full depolarization spikes.</div>
+        </div>
+        <div class="img-card">
+            <img src="img/sweep-subthreshold-120m.webp" alt="Subthreshold stimulus at 120m probe" width="1200" height="690" />
+            <div class="img-caption">Sub-threshold ($A=0.1\text{ V}$) at $120\text{ m}$: Zero pulses reach the distal end of the axon.</div>
+        </div>
+    </div>
+
+    <div class="grid-2col">
+        <div class="img-card">
+            <img src="img/sweep-suprathreshold-10m.webp" alt="Suprathreshold stimulus at 10m probe" width="1200" height="706" />
+            <div class="img-caption">Supra-threshold ($A=2.0\text{ V}$) at $10\text{ m}$: Repetitive full-amplitude action potentials triggered.</div>
+        </div>
+        <div class="img-card">
+            <img src="img/sweep-suprathreshold-120m.webp" alt="Suprathreshold stimulus at 120m probe" width="1200" height="709" />
+            <div class="img-caption">Supra-threshold ($A=2.0\text{ V}$) at $120\text{ m}$: Continuous train of propagated spikes arrives intact.</div>
+        </div>
+    </div>
+
+    <h4>Refractory Period &amp; Maximum Firing Frequency</h4>
+    <p>
+        When testing stimulus periods from $T = 10\text{ s}$ down to very rapid frequencies, the neuron failed to fire on every cycle. If a stimulus pulse arrives while the recovery variable $u_2$ is still elevated (the relative/absolute refractory period), the sodium-analog excitability is depressed, preventing pulse generation. In biological neurons, this restricts maximum firing rates to approximately $200\text{--}300\text{ Hz}$.
+    </p>
+
+    <h4>Axon Diameter &amp; Conduction Velocity Discussion</h4>
+    <p>
+        In physical nerve fibers, conduction velocity scales with axon caliber ($v \propto \sqrt{d}$ for unmyelinated fibers). Additional tests varying cylinder diameter (from $0.2\text{ m}$ to $3.0\text{ m}$) showed minimal variations in arrival time at the distal probe ($\sim 200\text{--}220\text{ s}$). This is because the standard FitzHugh-Nagumo reaction-diffusion formulation models the membrane potential field phenomenologically; it does not fully capture the radial internal cable resistance and 3D axial core-conductor electrodynamics without an explicitly resolved thin dielectric membrane boundary layer.
+    </p>
+
+    <h2>5. Key Takeaways for Computational Electrophysiology</h2>
+    <ul>
+        <li><strong>Phase-Plane Reduction:</strong> FitzHugh-Nagumo captures the essential nonlinear dynamics of nerve excitability (threshold, refractory period, all-or-nothing response, pulse propagation) using only two state variables rather than the four complex gating variables of Hodgkin-Huxley.</li>
+        <li><strong>FEM Mesh Requirements:</strong> In reaction-diffusion problems, the front of the action potential has steep spatial gradients ($\nabla u_1$). Adequate mesh density along the propagation axis is critical to avoid numerical dispersion or artificial conduction block.</li>
+        <li><strong>Reproducibility in Open Science:</strong> Proprietary multi-megabyte CAD/FEM project binaries (such as COMSOL <code>.mph</code> files) are often black boxes. Publishing explicit PDE formulations, boundary conditions, parameter sets, and response curves allows students and engineers to reconstruct the physics in any open-source solver (e.g. FEniCS or Python SciPy).</li>
+    </ul>
+
+    <h2>6. Academic References</h2>
+    <ol class="ref-list">
+        <li><strong>Hodgkin, A. L., &amp; Huxley, A. F. (1952).</strong> A quantitative description of membrane current and its application to conduction and excitation in nerve. <em>The Journal of Physiology</em>, 117(4), 500&ndash;544.</li>
+        <li><strong>FitzHugh, R. (1961).</strong> Impulses and physiological states in theoretical models of nerve membrane. <em>Biophysical Journal</em>, 1(6), 445&ndash;466.</li>
+        <li><strong>Nagumo, J., Arimoto, S., &amp; Yoshizawa, S. (1962).</strong> An active pulse transmission line simulating nerve axon. <em>Proceedings of the IRE</em>, 50(10), 2061&ndash;2070.</li>
+        <li><strong>Perez-Macias, J. M. (2016).</strong> Axon simulation using FitzHugh-Nagumo approximation. <em>TUT Course Report, Bioelectromagnetism and FEM</em>, BioMediTech &amp; Dept. of Electronics and Communications Engineering, Tampere University of Technology.</li>
+    </ol>
+
+    <hr style="margin: 40px 0 20px 0; border: 0; border-top: 1px solid #e2e8f0;" />
+    <footer style="text-align: center; color: #64748b; font-size: 0.9em; margin-bottom: 20px;">
+        <p>&copy; Jose Maria Perez-Macias &bull; Educational Engineering Project &bull; <a href="../../index.html">Home</a> &bull; <a href="../index.html">Biomedical Projects</a></p>
+    </footer>
+</body>
+
+</html>

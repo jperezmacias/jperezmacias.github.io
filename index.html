@@ -360,13 +360,16 @@
                 <h2>Resources</h2>
                 <div class="list-group">
                     <a href="research-projects/" class="list-group-item">
-                        <strong>🔬 Research Projects</strong>
+                        Research Projects
+                    </a>
+                    <a href="biomedical-projects/" class="list-group-item">
+                        Biomedical &amp; Simulation Projects
                     </a>
                     <a href="projects_audio/" class="list-group-item">
-                        <strong>🔊 Audio &amp; Acoustic Projects</strong>
+                        Audio &amp; Acoustic Projects
                     </a>
                     <a href="other-projects/" class="list-group-item">
-                        <strong>🛠️ Side &amp; Engineering Projects</strong>
+                        Side &amp; Engineering Projects
                     </a>
                     <a href="articles/people.html" class="list-group-item"> People </a>
                     <a href="articles/science-books.html" class="list-group-item"> Science Books </a>
@@ -384,9 +387,27 @@
                     </a>
                 </div>
 
-                <div class="panel panel-default" style="margin-top: 25px; border-color: #bae6fd; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <div class="panel panel-default" style="margin-top: 25px; border-color: #bbf7d0; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                    <div class="panel-heading" style="background: #f0fdf4; color: #166534; font-weight: bold; border-bottom: 1px solid #bbf7d0;">
+                        Biomedical &amp; Simulation Projects
+                    </div>
+                    <div class="panel-body" style="font-size: 0.9em; color: #475569; padding: 15px;">
+                        <p style="margin-bottom: 10px;">
+                            Computational electrophysiology, FEM &amp; telemetry:
+                        </p>
+                        <ul style="padding-left: 18px; margin-bottom: 14px; line-height: 1.6;">
+                            <li><a href="biomedical-projects/comsol-neuron/"><strong>COMSOL Action Potential</strong></a> (FitzHugh-Nagumo FEM)</li>
+                            <li><a href="research-projects/"><strong>Biomedical Research</strong></a> (Sleep &amp; physiological sensors)</li>
+                        </ul>
+                        <a href="biomedical-projects/" class="btn btn-sm btn-success btn-block" style="background: #16a34a; border-color: #16a34a; font-weight: 600;">
+                            Explore Biomedical Hub &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <div class="panel panel-default" style="margin-top: 20px; border-color: #bae6fd; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
                     <div class="panel-heading" style="background: #e0f2fe; color: #0369a1; font-weight: bold; border-bottom: 1px solid #bae6fd;">
-                        🔊 Audio Projects
+                        Audio Projects
                     </div>
                     <div class="panel-body" style="font-size: 0.9em; color: #475569; padding: 15px;">
                         <p style="margin-bottom: 10px;">
@@ -680,28 +701,49 @@
         </div>
     </section>
 
-    <section id="portfolio" class="container-fluid">
+    <!-- Dedicated Biomedical Engineering & Simulation Section -->
+    <section id="biomedical" class="container-fluid" style="margin-top: 30px; margin-bottom: 30px;">
         <div class="row">
-            <h2>Random &amp; Side Projects <small class="pull-right" style="margin-top: 6px;"><a href="other-projects/" class="btn btn-xs btn-default" style="font-weight: 600;">View Full Showcase &rarr;</a></small></h2>
-            <div class="col-md-3 col-sm-6 col-xs-12">
-                <h4 style="letter-spacing: -0.025em">Comsol Simulation of a Neuron</h4>
+            <h2>Biomedical Engineering &amp; Simulation Projects <small class="pull-right" style="margin-top: 6px;"><a href="biomedical-projects/" class="btn btn-xs btn-primary" style="font-weight: 600; background: #0284c7; border-color: #0284c7;">View Biomedical Hub &rarr;</a></small></h2>
+            
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <h4 style="letter-spacing: -0.025em"><a href="biomedical-projects/comsol-neuron/" style="color: inherit; text-decoration: none;">COMSOL Simulation of an Action Potential</a></h4>
                 <div class="thumbnail">
                     <div class="videoWrapper">
-                        <iframe title="Comsol Simulation of a Neuron" width="300" height="315"
+                        <iframe title="COMSOL Simulation of an Action Potential" width="300" height="315"
                             src="https://www.youtube-nocookie.com/embed/ssmZV2swrf4" style="border: none"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            allowfullscreen></iframe>
                     </div>
                     <div class="caption">
                         <p>
-                            This project was part of a course I took in TUT where I simulated a neuron using the
-                            FitzHugh-Naguno model. <br />
-                            <small><a href="https://www.youtube.com/watch?v=ssmZV2swrf4" target="_blank"
+                            Finite element computational modeling of nerve axon excitability using the <strong>FitzHugh-Nagumo (FHN)</strong> reaction-diffusion PDE system coupled with extracellular electrostatics at TUT. <br />
+                            <small><a href="biomedical-projects/comsol-neuron/"><strong>Read Educational Tutorial &rarr;</strong></a> &bull; <a href="https://www.youtube.com/watch?v=ssmZV2swrf4" target="_blank"
                                     rel="noopener">▶ Watch on YouTube</a></small>
                         </p>
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <h4 style="letter-spacing: -0.025em"><a href="biomedical-projects/" style="color: inherit; text-decoration: none;">Wireless Physiological Sensor Monitor</a></h4>
+                <div class="thumbnail">
+                    <img src="img/Tietotalo2_reduced.png" alt="Wireless Sensor Monitor Tietotalo TUT" style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;" />
+                    <div class="caption">
+                        <p>
+                            A multi-channel wireless sensor telemetry monitor deployed at Tampere University of Technology. Developed in C for real-time continuous sensor data acquisition and robust wireless streaming. <br />
+                            <small><a href="biomedical-projects/"><strong>View Details &rarr;</strong></a></small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="container-fluid">
+        <div class="row">
+            <h2>Random &amp; Side Projects <small class="pull-right" style="margin-top: 6px;"><a href="other-projects/" class="btn btn-xs btn-default" style="font-weight: 600;">View Full Showcase &rarr;</a></small></h2>
+
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <h4>TimeLapse with a Raspberry Pi</h4>
                 <div class="thumbnail">
@@ -799,17 +841,7 @@
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <h4>Wireless sensor monitor</h4>
-                <div class="thumbnail">
-                    <img src="img/Tietotalo2_reduced.png" alt="Realtime Control" />
-                    <div class="caption">
-                        <p>
-                            A colleague and I developed a wireless sensor monitor that is deployed in TUT, pretty
-                            cool honestly (soon to be uploaded, well maybe not so soon). Programmed in C. These were
-                            the same guys as
-                        </p>
-                    </div>
-                </div>
+
 
                 <h4>Real Time Control</h4>
                 <div class="thumbnail">
