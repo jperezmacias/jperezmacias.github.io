@@ -1,9 +1,424 @@
-<!doctype html><html lang=es-ES><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Proyecto docente sobre fenomenos acusticos, espacializacion sonora 3D y sistemas HRTF a traves de Csound (2004)."><meta name=author content="Ariana de La Cuesta de Diego y Jose Maria Perez-Macias"><meta name=theme-color content="#ffffff"><title>Sonido 3D - Introduccion · Ingenieria de Ondas</title><link rel=canonical href=https://jperezmacias.github.io/projects_audio/csound/es/docs/Audio-espacial/>
-<meta property="og:title" content="Sonido 3D - Introduccion · Ingenieria de Ondas"><meta property="og:url" content="https://jperezmacias.github.io/projects_audio/csound/es/docs/Audio-espacial/"><meta property="og:type" content="article"><link rel=stylesheet href=../../../assets/css/docs.min.163931c9a15d36bcf1bca33a253ae3ca2da221f1befeb7b7db13f8e63b7d6ef0.css integrity><link rel=manifest href=../../../manifest.json><link rel=icon type=image/svg+xml href=../../../favicon/favicon.svg><link rel=icon href=../../../favicon/favicon.ico><link rel=icon href=../../../favicon/favicon-16x16.png sizes=16x16 type=image/png><link rel=icon href=../../../favicon/favicon-32x32.png sizes=32x32 type=image/png><link rel=apple-touch-icon href=../../../favicon/apple-touch-icon.png sizes=180x180><script>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]}}</script><script type=text/javascript id=MathJax-script async src=../../../../theme/assets/mathjax/es5/tex-mml-chtml.js></script><script type=application/ld+json>{"@context":"https://schema.org","@type":"TechArticle","headline":"Sonido 3D - Introduccion","description":"Proyecto docente sobre fenomenos acusticos, espacializacion sonora 3D y sistemas HRTF a traves de Csound (2004).","url":"https:\/\/jperezmacias.github.io\/projects_audio\/csound\/es\/docs\/Audio-espacial\/","inLanguage":"es","author":[{"@type":"Person","name":"Jose Maria Perez-Macias","url":"https://jperezmacias.github.io/","sameAs":"https://orcid.org/0000-0003-3485-0874"},{"@type":"Person","name":"Ariana de la Cuesta de Diego"}],"publisher":{"@type":"Organization","name":"Universidad de Valladolid - Higher Technical School of Telecommunication Engineering"},"about":{"@type":"Thing","name":"3D Spatial Audio, Sound Synthesis, HRTF, and Csound Digital Signal Processing"}}</script></head><body><div id=outer-wrapper><div id=aside-wrapper><aside><div style=display:flex;justify-content:space-between;align-items:center;padding:var(--padding)><div class=lang-switcher style=display:inline-flex;align-items:center;gap:6px;font-size:.85em;font-weight:500><span style="font-weight:700;border-bottom:2px solid;padding-bottom:1px">ES</span>
-<span style=opacity:.4>|</span>
-<a href=../../../en/docs/spatial-audio/ style=color:inherit;opacity:.7;text-decoration:none>EN</a></div><button class=btn><i>❌</i>Cerrar</button></div><a href=../../../es/ class=site-logo>Ingenieria de Ondas</a><nav role=navigation><details open><summary>Overview</summary><ul><li><a href=../../../es/docs/inicio/>Inicio</a></li><li><a href=../../../es/docs/generalintroduccion/>GeneralIntroduccion</a></li></ul></details><details open><summary>Csound</summary><ul><li><a href=../../../es/docs/csound/>Csound</a></li><li><a href=../../../es/docs/funciones/>Funciones</a></li><li><a href=../../../es/docs/ejemplos/>Ejemplos</a></li></ul></details><details open><summary>Ecos y Reverberacion</summary><ul><li><a href=../../../es/docs/ecos-y-rev/>Ecos y Rev</a></li></ul></details><details open><summary>Sonido 3D</summary><ul><li><a href=../../../es/docs/sonido-3d-introduccion/>Sonido 3D Introduccion</a></li><li><a class=active href=../../../es/docs/audio-espacial/>Audio Espacial</a></li><li><a href=../../../es/docs/coordenadas/>Coordenadas</a></li><li><a href=../../../es/docs/sistemas-de-audio/>Sistemas de Audio</a></li><li><a href=../../../es/docs/hrtf/>HRTF</a></li><li><a href=../../../es/docs/sistemas-hrtf/>Sistemas HRTF</a></li><li><a href=../../../es/docs/implementacion/>Implementacion</a></li></ul></details><details open><summary>Ejemplos Csound</summary><ul><li><a href=../../../es/docs/ejemplos-csound/>Ejemplos Csound</a></li></ul></details><details open><summary>Bibliografia</summary><ul><li><a href=../../../es/docs/bibliografia/>Bibliografia</a></li></ul></details></nav></aside></div><div id=content-wrapper><header style=display:flex;align-items:center;justify-content:space-between;padding-right:var(--padding)><a href=../../../es/ class=site-logo>Ingenieria de Ondas</a><div style=display:flex;align-items:center;gap:16px><div class=lang-switcher style=display:inline-flex;align-items:center;gap:6px;font-size:.85em;font-weight:500><span style="font-weight:700;border-bottom:2px solid;padding-bottom:1px">ES</span>
-<span style=opacity:.4>|</span>
-<a href=../../../en/docs/spatial-audio/ style=color:inherit;opacity:.7;text-decoration:none>EN</a></div><a href=../../../../index.html style=font-size:.85em;text-decoration:none;color:inherit;opacity:.85>← Audio Projects</a> <span style=opacity:.4>|</span> <a href=../../../../../index.html style=font-size:.85em;text-decoration:none;color:inherit;opacity:.85>Home</a></div></header><main><article><nav><button class=btn><i>⬅️</i> En esta sección</button>
-<button class=btn>En esta página <i>➡️</i></button></nav><header><h1>Sonido 3D - Introduccion</h1><p></p></header><div id=article-body><h2 id=41-mecanismos-de-audición-espacial-2>4.1. Mecanismos de audición espacial <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></h2><p>A continuación, listamos una serie de parámetros que nuestro oído utiliza para localizar la fuente del sonido. Muchos de ellos dependen de cada individuo, así como de la forma de su cabeza y de sus distintos miembros. Veremos más adelante cómo algunos definen la situación vertical, otros la izquierda-derecha, y otros dependen de la frecuencia.</p><p>Según <em>Begault</em>, hay ocho características por las que localizamos el sonido. Estas son: diferencia de tiempos interaurales (ITD), el movimiento de la cabeza y la fuente, la respuesta del pabellón auditivo (características de ITD e IID, HRTF), características de la distancia (intensidad, volumen, influencia de la familiaridad, características espectrales y binaurales), y reverberación. A continuación, describimos los aspectos más importantes:</p><ol><li><p>El tiempo de llegada del frente de onda a los oídos, o mejor dicho, la diferencia de los tiempos de llegada entre los dos oídos, es uno de los mecanismos que usa nuestro sistema auditivo para localizar una fuente de sonido. Este tiempo se conoce como <strong>ITD (Interaural Time Difference)</strong>. Este efecto es útil hasta una frecuencia en la que la longitud de onda del sonido se aproxima al doble de la distancia entre los dos oídos, a partir de la cual no se diferencia un sonido de otro. Este tiempo de llegada del sonido nos permite localizarlo en un ángulo horizontal de 90º (derecha) a 270º (izquierda). Parece ser efectivo a frecuencias por debajo de los 900 Hz.</p></li><li><p>El sonido de una fuente que venga de la izquierda, por ejemplo, llegará primero al oído izquierdo, pero tendrá que viajar más hasta el otro lado. En realidad, el sonido se difracta alrededor de la cabeza para llegar al oído derecho y, por lo tanto, tendrá que viajar más. Este tiempo se llama <strong>ILD (Interaural Level Difference)</strong>, que abarca tanto el efecto pantalla de la cabeza como la distancia extra que recorre.</p></li><li><p>Cuando los ITD e ILD son prácticamente los mismos, entra en juego otro factor: <strong>HRTF (Head Related Transfer Functions)</strong>. Esto ocurre cuando el sonido está localizado en el plano medio, pareciendo que la localización se lleva a cabo con la convolución de la señal y la forma de nuestro torso superior, cabeza, cuello y orejas. Esta información es útil para determinar tanto la elevación como la localización trasera o delantera.</p></li><li><p><strong>Distancia</strong>:</p><ul><li><strong>El volumen</strong>: Aunque parezca sencillo, el volumen de un sonido es un parámetro poco fiable para la localización del sonido. La energía acústica cae inversamente al cuadrado de la distancia, pero cuando manejamos solo amplitudes, no es lo mismo que la impresión de volumen. Esto se debe a que el volumen no está linealmente relacionado con la amplitud y es muy dependiente de nuestro conocimiento adquirido del comportamiento de las fuentes sonoras que lo crean.</li><li><strong>Proporcionalidad entre reverberación y sonido seco</strong>: En habitaciones cerradas, la energía de una densa reverberación será más o menos constante, mientras que la energía de un sonido directo (seco) caerá con la distancia.</li><li><strong>Absorción de las altas frecuencias</strong>: Tiene que ver con los gases del aire. Este efecto es similar a un filtro paso bajo y se considera relevante a distancias mayores de 50 metros.</li><li><strong>Tiempo de reverberación</strong>: El mismo nombre lo indica.</li><li><strong>Balance espectral</strong>: Las habitaciones actúan como filtros, modificando el espectro de las señales acústicas.</li><li><strong>Difusión</strong>: Tiene que ver con la absorción de los materiales; normalmente, las frecuencias altas caen más rápidamente.</li></ul></li><li><p>Nuestra habilidad para <strong>mover la cabeza</strong> nos ayuda a integrar la información visual y auditiva. Además, nos sirve para minimizar el ITD, ILD y la diferencia entre las HRTF de los dos oídos.</p></li><li><p>El <strong>efecto Doppler</strong> es importante en la localización. Observamos cómo el tono de una fuente en movimiento aumenta o disminuye según se aleja o se acerca.</p></li><li><p><strong>The Precedence Effect o el Efecto Haas</strong>: Este efecto explica cómo somos capaces de localizar una fuente aunque seamos confundidos por las reflexiones y los ecos. La ley del primer frente de ondas (&ldquo;the law of the first wavefront&rdquo;).</p><p><img alt="The Precedence Effect" src=../../../Imagenes/image001.gif></p></li><li><p>La <strong>forma en que la fuente emite el sonido</strong>: Una fuente que irradia energía de igual manera en todas las direcciones se considera omnidireccional. Esto es una idealización, ya que normalmente no es así.</p></li></ol><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Spatial hearing mechanisms and sound reproduction. D.G. Malham, University of York, England 1998. <a href=http://web.archive.org/web/20180603185342/https://www.york.ac.uk/inst/mustech/3d_audio/ambis2.htm>http://web.archive.org/web/20180603185342/https://www.york.ac.uk/inst/mustech/3d_audio/ambis2.htm</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div><footer><time datetime=2004-05-24><i>🕒</i> Actualizado: 2004-05-24</time>
-<a href=../../../es/docs/sonido-3d-introduccion/><i>﹤</i> Anterior</a>
-<a href=../../../es/docs/coordenadas/>Siguiente <i>﹥</i></a></footer></article><aside><div><button class=btn><i>❌</i>Cerrar</button></div><strong>En esta página</strong><nav id=TableOfContents><ul><li><a href=#41-mecanismos-de-audición-espacial-2>4.1. Mecanismos de audición espacial</a></li></ul></nav></aside></main><footer><div><i>🧑‍💻</i>Creado por y copyright<a href=https://github.com/jperezmacias target=_blank>Ariana de La Cuesta de Diego y Jose Maria Perez-Macias</a><i>📅</i> 2004-2024<i>🚀</i> <a href=https://github.com/jperezmacias.github.io target=_blank>GitHub</a></div></footer></div></div><div id=body-model-outer></div><script type=text/javascript src=../../../assets/js/docs.min.b55220f931994168ec64fd76cf95230f3676d8e351388cc18eab8fa9a52dec05.js integrity></script></body></html>
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Proyecto docente sobre fenomenos acusticos, espacializacion sonora 3D y sistemas HRTF a traves de Csound (2004).">
+  <meta name="author" content="Ariana de La Cuesta de Diego y Jose Maria Perez-Macias">
+  <meta name="theme-color" content="#ffffff">
+  
+
+  <title>Sonido 3D - Introduccion · Ingenieria de Ondas</title><link rel="canonical" href="https://jperezmacias.github.io/projects_audio/csound/es/docs/Audio-espacial/">
+  <meta property="og:title" content="Sonido 3D - Introduccion · Ingenieria de Ondas">
+  <meta property="og:url" content="https://jperezmacias.github.io/projects_audio/csound/es/docs/Audio-espacial/">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../../../assets/css/docs.min.163931c9a15d36bcf1bca33a253ae3ca2da221f1befeb7b7db13f8e63b7d6ef0.css" integrity="">
+
+  <link rel="manifest" href="../../../manifest.json">
+<link rel="icon" type="image/svg+xml" href="../../../favicon/favicon.svg">
+<link rel="icon" href="../../../favicon/favicon.ico">
+<link rel="icon" href="../../../favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../../favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../../favicon/apple-touch-icon.png" sizes="180x180">
+
+  
+
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async src="../../../../../theme/assets/mathjax/es5/tex-mml-chtml.js"></script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Sonido 3D - Introduccion",
+    "description": "Proyecto docente sobre fenomenos acusticos, espacializacion sonora 3D y sistemas HRTF a traves de Csound (2004).",
+    "url": "https:\/\/jperezmacias.github.io\/projects_audio\/csound\/es\/docs\/Audio-espacial\/",
+    "inLanguage": "es",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Jose Maria Perez-Macias",
+        "url": "https://jperezmacias.github.io/",
+        "sameAs": "https://orcid.org/0000-0003-3485-0874"
+      },
+      {
+        "@type": "Person",
+        "name": "Ariana de la Cuesta de Diego"
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Universidad de Valladolid - Higher Technical School of Telecommunication Engineering"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "3D Spatial Audio, Sound Synthesis, HRTF, and Csound Digital Signal Processing"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--padding);">
+        <div class="lang-switcher" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85em; font-weight: 500;">
+          
+            
+            
+              <span style="font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 1px;">ES</span>
+            
+          
+            <span style="opacity: 0.4;">|</span>
+            
+              <a href="../../../en/docs/spatial-audio/" style="color: inherit; opacity: 0.7; text-decoration: none;">EN</a>
+            
+          
+        </div>
+        <button class="btn"><i>❌</i>Cerrar</button>
+      </div>
+      <a href="../../../es/" class="site-logo">Ingenieria de Ondas</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Overview</summary>
+          <ul><li>
+              
+              <a class="" href="../../../es/docs/inicio/">
+                
+                Inicio
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/generalintroduccion/">
+                
+                GeneralIntroduccion
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Csound</summary>
+          <ul><li>
+              
+              <a class="" href="../../../es/docs/csound/">
+                
+                Csound
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/funciones/">
+                
+                Funciones
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/ejemplos/">
+                
+                Ejemplos
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ecos y Reverberacion</summary>
+          <ul><li>
+              
+              <a class="" href="../../../es/docs/ecos-y-rev/">
+                
+                Ecos y Rev
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Sonido 3D</summary>
+          <ul><li>
+              
+              <a class="" href="../../../es/docs/sonido-3d-introduccion/">
+                
+                Sonido 3D Introduccion
+                
+              </a>
+            </li><li>
+              
+              <a class="active" href="../../../es/docs/audio-espacial/">
+                
+                Audio Espacial
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/coordenadas/">
+                
+                Coordenadas
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/sistemas-de-audio/">
+                
+                Sistemas de Audio
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/hrtf/">
+                
+                HRTF
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/sistemas-hrtf/">
+                
+                Sistemas HRTF
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../es/docs/implementacion/">
+                
+                Implementacion
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Ejemplos Csound</summary>
+          <ul><li>
+              
+              <a class="" href="../../../es/docs/ejemplos-csound/">
+                
+                Ejemplos Csound
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Bibliografia</summary>
+          <ul><li>
+              
+              <a class="" href="../../../es/docs/bibliografia/">
+                
+                Bibliografia
+                
+              </a>
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header style="display: flex; align-items: center; justify-content: space-between; padding-right: var(--padding);">
+      <a href="../../../es/" class="site-logo">Ingenieria de Ondas</a>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div class="lang-switcher" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85em; font-weight: 500;">
+          
+            
+            
+              <span style="font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 1px;">ES</span>
+            
+          
+            <span style="opacity: 0.4;">|</span>
+            
+              <a href="../../../en/docs/spatial-audio/" style="color: inherit; opacity: 0.7; text-decoration: none;">EN</a>
+            
+          
+        </div>
+        <a href="../../../../index.html" style="font-size: 0.85em; text-decoration: none; color: inherit; opacity: 0.85;">← Audio Projects</a> <span style="opacity: 0.4;">|</span> <a href="../../../../../index.html" style="font-size: 0.85em; text-decoration: none; color: inherit; opacity: 0.85;">Home</a>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> En esta sección</button>
+          <button class="btn">En esta página <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>Sonido 3D - Introduccion</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <h2 id="41-mecanismos-de-audición-espacial-2">4.1. Mecanismos de audición espacial <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></h2>
+<p>A continuación, listamos una serie de parámetros que nuestro oído utiliza para localizar la fuente del sonido. Muchos de ellos dependen de cada individuo, así como de la forma de su cabeza y de sus distintos miembros. Veremos más adelante cómo algunos definen la situación vertical, otros la izquierda-derecha, y otros dependen de la frecuencia.</p>
+<p>Según <em>Begault</em>, hay ocho características por las que localizamos el sonido. Estas son: diferencia de tiempos interaurales (ITD), el movimiento de la cabeza y la fuente, la respuesta del pabellón auditivo (características de ITD e IID, HRTF), características de la distancia (intensidad, volumen, influencia de la familiaridad, características espectrales y binaurales), y reverberación. A continuación, describimos los aspectos más importantes:</p>
+<ol>
+<li>
+<p>El tiempo de llegada del frente de onda a los oídos, o mejor dicho, la diferencia de los tiempos de llegada entre los dos oídos, es uno de los mecanismos que usa nuestro sistema auditivo para localizar una fuente de sonido. Este tiempo se conoce como <strong>ITD (Interaural Time Difference)</strong>. Este efecto es útil hasta una frecuencia en la que la longitud de onda del sonido se aproxima al doble de la distancia entre los dos oídos, a partir de la cual no se diferencia un sonido de otro. Este tiempo de llegada del sonido nos permite localizarlo en un ángulo horizontal de 90º (derecha) a 270º (izquierda). Parece ser efectivo a frecuencias por debajo de los 900 Hz.</p>
+</li>
+<li>
+<p>El sonido de una fuente que venga de la izquierda, por ejemplo, llegará primero al oído izquierdo, pero tendrá que viajar más hasta el otro lado. En realidad, el sonido se difracta alrededor de la cabeza para llegar al oído derecho y, por lo tanto, tendrá que viajar más. Este tiempo se llama <strong>ILD (Interaural Level Difference)</strong>, que abarca tanto el efecto pantalla de la cabeza como la distancia extra que recorre.</p>
+</li>
+<li>
+<p>Cuando los ITD e ILD son prácticamente los mismos, entra en juego otro factor: <strong>HRTF (Head Related Transfer Functions)</strong>. Esto ocurre cuando el sonido está localizado en el plano medio, pareciendo que la localización se lleva a cabo con la convolución de la señal y la forma de nuestro torso superior, cabeza, cuello y orejas. Esta información es útil para determinar tanto la elevación como la localización trasera o delantera.</p>
+</li>
+<li>
+<p><strong>Distancia</strong>:</p>
+<ul>
+<li><strong>El volumen</strong>: Aunque parezca sencillo, el volumen de un sonido es un parámetro poco fiable para la localización del sonido. La energía acústica cae inversamente al cuadrado de la distancia, pero cuando manejamos solo amplitudes, no es lo mismo que la impresión de volumen. Esto se debe a que el volumen no está linealmente relacionado con la amplitud y es muy dependiente de nuestro conocimiento adquirido del comportamiento de las fuentes sonoras que lo crean.</li>
+<li><strong>Proporcionalidad entre reverberación y sonido seco</strong>: En habitaciones cerradas, la energía de una densa reverberación será más o menos constante, mientras que la energía de un sonido directo (seco) caerá con la distancia.</li>
+<li><strong>Absorción de las altas frecuencias</strong>: Tiene que ver con los gases del aire. Este efecto es similar a un filtro paso bajo y se considera relevante a distancias mayores de 50 metros.</li>
+<li><strong>Tiempo de reverberación</strong>: El mismo nombre lo indica.</li>
+<li><strong>Balance espectral</strong>: Las habitaciones actúan como filtros, modificando el espectro de las señales acústicas.</li>
+<li><strong>Difusión</strong>: Tiene que ver con la absorción de los materiales; normalmente, las frecuencias altas caen más rápidamente.</li>
+</ul>
+</li>
+<li>
+<p>Nuestra habilidad para <strong>mover la cabeza</strong> nos ayuda a integrar la información visual y auditiva. Además, nos sirve para minimizar el ITD, ILD y la diferencia entre las HRTF de los dos oídos.</p>
+</li>
+<li>
+<p>El <strong>efecto Doppler</strong> es importante en la localización. Observamos cómo el tono de una fuente en movimiento aumenta o disminuye según se aleja o se acerca.</p>
+</li>
+<li>
+<p><strong>The Precedence Effect o el Efecto Haas</strong>: Este efecto explica cómo somos capaces de localizar una fuente aunque seamos confundidos por las reflexiones y los ecos. La ley del primer frente de ondas (&ldquo;the law of the first wavefront&rdquo;).</p>
+<p><img alt="The Precedence Effect" src="../../../Imagenes/image001.gif"></p>
+</li>
+<li>
+<p>La <strong>forma en que la fuente emite el sonido</strong>: Una fuente que irradia energía de igual manera en todas las direcciones se considera omnidireccional. Esto es una idealización, ya que normalmente no es así.</p>
+</li>
+</ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Spatial hearing mechanisms and sound reproduction. D.G. Malham, University of York, England 1998. <a href="http://web.archive.org/web/20180603185342/https://www.york.ac.uk/inst/mustech/3d_audio/ambis2.htm">http://web.archive.org/web/20180603185342/https://www.york.ac.uk/inst/mustech/3d_audio/ambis2.htm</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+          
+
+          <time datetime="2004-05-24"><i>🕒</i> Actualizado: 2004-05-24</time>
+          
+          <a href="../../../es/docs/sonido-3d-introduccion/"><i>﹤</i> Anterior</a>
+          
+
+          
+          <a href="../../../es/docs/coordenadas/">Siguiente <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Cerrar</button>
+        </div>
+        <strong>En esta página</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#41-mecanismos-de-audición-espacial-2">4.1. Mecanismos de audición espacial </a></li>
+  </ul>
+</nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Creado por y copyright<a href="https://github.com/jperezmacias" target="_blank">Ariana de La Cuesta de Diego y Jose Maria Perez-Macias</a><i>📅</i> 2004-2024<i>🚀</i> <a href="https://github.com/jperezmacias.github.io" target="_blank">GitHub</a></div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="../../../assets/js/docs.min.b55220f931994168ec64fd76cf95230f3676d8e351388cc18eab8fa9a52dec05.js" integrity=""></script>
+</body>
+</html>

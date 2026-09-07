@@ -1,9 +1,422 @@
-<!doctype html><html lang=en-US><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Educational project exploring acoustic wave phenomena, 3D audio spatialization, and HRTF systems through Csound (2004)."><meta name=author content="Ariana de La Cuesta de Diego y Jose Maria Perez-Macias"><meta name=theme-color content="#ffffff"><title>Score Statements & Functions · Wave Engineering</title><link rel=canonical href=https://jperezmacias.github.io/projects_audio/csound/en/docs/functions/>
-<meta property="og:title" content="Score Statements & Functions · Wave Engineering"><meta property="og:url" content="https://jperezmacias.github.io/projects_audio/csound/en/docs/functions/"><meta property="og:type" content="article"><link rel=stylesheet href=../../../assets/css/docs.min.163931c9a15d36bcf1bca33a253ae3ca2da221f1befeb7b7db13f8e63b7d6ef0.css integrity><link rel=manifest href=../../../manifest.json><link rel=icon type=image/svg+xml href=../../../favicon/favicon.svg><link rel=icon href=../../../favicon/favicon.ico><link rel=icon href=../../../favicon/favicon-16x16.png sizes=16x16 type=image/png><link rel=icon href=../../../favicon/favicon-32x32.png sizes=32x32 type=image/png><link rel=apple-touch-icon href=../../../favicon/apple-touch-icon.png sizes=180x180><script>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["\\[","\\]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]}}</script><script type=text/javascript id=MathJax-script async src=../../../../theme/assets/mathjax/es5/tex-mml-chtml.js></script><script type=application/ld+json>{"@context":"https://schema.org","@type":"TechArticle","headline":"Score Statements \u0026amp; Functions","description":"Educational project exploring acoustic wave phenomena, 3D audio spatialization, and HRTF systems through Csound (2004).","url":"https:\/\/jperezmacias.github.io\/projects_audio\/csound\/en\/docs\/functions\/","inLanguage":"en","author":[{"@type":"Person","name":"Jose Maria Perez-Macias","url":"https://jperezmacias.github.io/","sameAs":"https://orcid.org/0000-0003-3485-0874"},{"@type":"Person","name":"Ariana de la Cuesta de Diego"}],"publisher":{"@type":"Organization","name":"Universidad de Valladolid - Higher Technical School of Telecommunication Engineering"},"about":{"@type":"Thing","name":"3D Spatial Audio, Sound Synthesis, HRTF, and Csound Digital Signal Processing"}}</script></head><body><div id=outer-wrapper><div id=aside-wrapper><aside><div style=display:flex;justify-content:space-between;align-items:center;padding:var(--padding)><div class=lang-switcher style=display:inline-flex;align-items:center;gap:6px;font-size:.85em;font-weight:500><a href=../../../es/docs/funciones/ style=color:inherit;opacity:.7;text-decoration:none>ES</a>
-<span style=opacity:.4>|</span>
-<span style="font-weight:700;border-bottom:2px solid;padding-bottom:1px">EN</span></div><button class=btn><i>❌</i>Close</button></div><a href=../../../en/ class=site-logo>Wave Engineering</a><nav role=navigation><details open><summary>Overview</summary><ul><li><a href=../../../en/docs/home/>Home</a></li><li><a href=../../../en/docs/general-introduction/>General Introduction</a></li></ul></details><details open><summary>Csound</summary><ul><li><a href=../../../en/docs/csound/>Csound</a></li><li><a class=active href=../../../en/docs/functions/>Functions</a></li><li><a href=../../../en/docs/examples/>Examples</a></li></ul></details><details open><summary>Echoes & Reverberation</summary><ul><li><a href=../../../en/docs/echoes-and-reverb/>Echoes and Reverb</a></li></ul></details><details open><summary>3D Sound</summary><ul><li><a href=../../../en/docs/3d-sound-introduction/>3D Sound Introduction</a></li><li><a href=../../../en/docs/spatial-audio/>Spatial Audio</a></li><li><a href=../../../en/docs/coordinates/>Coordinates</a></li><li><a href=../../../en/docs/audio-systems/>Audio Systems</a></li><li><a href=../../../en/docs/hrtf/>HRTF</a></li><li><a href=../../../en/docs/hrtf-systems/>HRTF Systems</a></li><li><a href=../../../en/docs/implementation/>Implementation</a></li></ul></details><details open><summary>Csound Examples</summary><ul><li><a href=../../../en/docs/csound-examples/>Csound Examples</a></li></ul></details><details open><summary>Bibliography</summary><ul><li><a href=../../../en/docs/bibliography/>Bibliography</a></li></ul></details></nav></aside></div><div id=content-wrapper><header style=display:flex;align-items:center;justify-content:space-between;padding-right:var(--padding)><a href=../../../en/ class=site-logo>Wave Engineering</a><div style=display:flex;align-items:center;gap:16px><div class=lang-switcher style=display:inline-flex;align-items:center;gap:6px;font-size:.85em;font-weight:500><a href=../../../es/docs/funciones/ style=color:inherit;opacity:.7;text-decoration:none>ES</a>
-<span style=opacity:.4>|</span>
-<span style="font-weight:700;border-bottom:2px solid;padding-bottom:1px">EN</span></div><a href=../../../../index.html style=font-size:.85em;text-decoration:none;color:inherit;opacity:.85>← Audio Projects</a> <span style=opacity:.4>|</span> <a href=../../../../../index.html style=font-size:.85em;text-decoration:none;color:inherit;opacity:.85>Home</a></div></header><main><article><nav><button class=btn><i>⬅️</i> On this section</button>
-<button class=btn>On this page <i>➡️</i></button></nav><header><h1>Score Statements & Functions</h1><p></p></header><div id=article-body><h2 id=21-elementary-csound-functions>2.1. ELEMENTARY CSOUND FUNCTIONS</h2><blockquote><p><strong>ESSENTIAL SCORE STATEMENTS FOR THE SCORE FILE</strong></p></blockquote><h3 id=f-statement-function-table-generator>f Statement (Function Table Generator)</h3><p>The <code>f</code> statement generates wavetables and lookup arrays used by oscillators and envelopes:</p><ul><li><code>p1</code>: Table number (positive integer).</li><li><code>p2</code>: Time at which the table is generated (usually 0).</li><li><code>p3</code>: Table size (must be a power of two, or power of two plus one, e.g. 512, 1024, 4096).</li><li><code>p4</code>: GEN routine number (the algorithm used to fill the table).</li><li><code>p5...pn</code>: Arguments specific to the chosen GEN routine.</li></ul><p>Common GEN routines include:</p><ul><li><code>GEN10</code>: Sum of sinusoids for harmonic additive synthesis.</li><li><code>GEN07</code>: Piecewise linear breakpoint envelopes.</li><li><code>GEN05</code>: Exponential curve segments.</li><li><code>GEN01</code>: Reads an external audio file into memory.</li></ul><h3 id=i-statement-instrument-note-activation>i Statement (Instrument Note Activation)</h3><p>The <code>i</code> statement triggers note performance:</p><ul><li><code>p1</code>: Instrument number to invoke.</li><li><code>p2</code>: Action start time in beats or seconds.</li><li><code>p3</code>: Duration of note performance.</li><li><code>p4...pn</code>: User-defined parameters (amplitude, pitch, spatial angle, filters).</li></ul><h3 id=t-statement-tempo-control>t Statement (Tempo Control)</h3><p>Defines the performance tempo in beats per minute across specified time points.</p><h3 id=s-statement-section-separator>s Statement (Section Separator)</h3><p>Marks the end of a musical movement or section, sorting and resetting preceding events.</p><hr><blockquote><p><strong>ESSENTIAL ORCHESTRA OPCODES</strong></p></blockquote><h3 id=arithmetic--mathematical-operations>Arithmetic & Mathematical Operations</h3><ul><li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>: Basic arithmetic operators.</li><li><code>sqrt(x)</code>: Square root.</li><li><code>log(x)</code> / <code>log10(x)</code>: Natural and base-10 logarithms.</li><li><code>exp(x)</code>: Exponential function.</li><li><code>abs(x)</code>: Absolute value.</li><li><code>int(x)</code> / <code>frac(x)</code>: Integer and fractional parts.</li></ul><h3 id=trigonometric-functions>Trigonometric Functions</h3><ul><li><code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code>: Trigonometric ratios (angles in radians).</li><li><code>asin(x)</code>, <code>acos(x)</code>, <code>atan(x)</code>, <code>atan2(y, x)</code>: Inverse trigonometric functions.</li></ul><h3 id=signal-generators-and-oscillators>Signal Generators and Oscillators</h3><ul><li><code>oscil</code>: Classic wavetable oscillator reading from an <code>f</code> table.</li><li><code>poscil</code>: High-precision floating-point interpolated oscillator.</li><li><code>rand</code> / <code>pinkish</code>: Uniform and 1/f noise generators.</li><li><code>linen</code> / <code>linseg</code>: Linear envelope generators.</li><li><code>expseg</code>: Exponential envelope generator.</li></ul></div><footer><time datetime=2004-05-24><i>🕒</i> Updated: 2004-05-24</time>
-<a href=../../../en/docs/csound/><i>﹤</i> Previous</a>
-<a href=../../../en/docs/examples/>Next <i>﹥</i></a></footer></article><aside><div><button class=btn><i>❌</i>Close</button></div><strong>On this page</strong><nav id=TableOfContents><ul><li><ul><li><a href=#f-statement-function-table-generator>f Statement (Function Table Generator)</a></li><li><a href=#i-statement-instrument-note-activation>i Statement (Instrument Note Activation)</a></li><li><a href=#t-statement-tempo-control>t Statement (Tempo Control)</a></li><li><a href=#s-statement-section-separator>s Statement (Section Separator)</a></li><li><a href=#arithmetic--mathematical-operations>Arithmetic & Mathematical Operations</a></li><li><a href=#trigonometric-functions>Trigonometric Functions</a></li><li><a href=#signal-generators-and-oscillators>Signal Generators and Oscillators</a></li></ul></li></ul></nav></aside></main><footer><div><i>🧑‍💻</i>Built by and copyright<a href=https://github.com/jperezmacias target=_blank>Ariana de La Cuesta de Diego y Jose Maria Perez-Macias</a><i>📅</i> 2004-2024<i>🚀</i> <a href=https://github.com/jperezmacias.github.io target=_blank>GitHub</a></div></footer></div></div><div id=body-model-outer></div><script type=text/javascript src=../../../assets/js/docs.min.b55220f931994168ec64fd76cf95230f3676d8e351388cc18eab8fa9a52dec05.js integrity></script></body></html>
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Educational project exploring acoustic wave phenomena, 3D audio spatialization, and HRTF systems through Csound (2004).">
+  <meta name="author" content="Ariana de La Cuesta de Diego y Jose Maria Perez-Macias">
+  <meta name="theme-color" content="#ffffff">
+  
+
+  <title>Score Statements &amp; Functions · Wave Engineering</title><link rel="canonical" href="https://jperezmacias.github.io/projects_audio/csound/en/docs/functions/">
+  <meta property="og:title" content="Score Statements &amp; Functions · Wave Engineering">
+  <meta property="og:url" content="https://jperezmacias.github.io/projects_audio/csound/en/docs/functions/">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="../../../assets/css/docs.min.163931c9a15d36bcf1bca33a253ae3ca2da221f1befeb7b7db13f8e63b7d6ef0.css" integrity="">
+
+  <link rel="manifest" href="../../../manifest.json">
+<link rel="icon" type="image/svg+xml" href="../../../favicon/favicon.svg">
+<link rel="icon" href="../../../favicon/favicon.ico">
+<link rel="icon" href="../../../favicon/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="../../../favicon/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../../favicon/apple-touch-icon.png" sizes="180x180">
+
+  
+
+  
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+      }
+    };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async src="../../../../../theme/assets/mathjax/es5/tex-mml-chtml.js"></script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Score Statements \u0026amp; Functions",
+    "description": "Educational project exploring acoustic wave phenomena, 3D audio spatialization, and HRTF systems through Csound (2004).",
+    "url": "https:\/\/jperezmacias.github.io\/projects_audio\/csound\/en\/docs\/functions\/",
+    "inLanguage": "en",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Jose Maria Perez-Macias",
+        "url": "https://jperezmacias.github.io/",
+        "sameAs": "https://orcid.org/0000-0003-3485-0874"
+      },
+      {
+        "@type": "Person",
+        "name": "Ariana de la Cuesta de Diego"
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Universidad de Valladolid - Higher Technical School of Telecommunication Engineering"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "3D Spatial Audio, Sound Synthesis, HRTF, and Csound Digital Signal Processing"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<div id="outer-wrapper">
+
+  <div id="aside-wrapper">
+    <aside>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--padding);">
+        <div class="lang-switcher" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85em; font-weight: 500;">
+          
+            
+            
+              <a href="../../../es/docs/funciones/" style="color: inherit; opacity: 0.7; text-decoration: none;">ES</a>
+            
+          
+            <span style="opacity: 0.4;">|</span>
+            
+              <span style="font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 1px;">EN</span>
+            
+          
+        </div>
+        <button class="btn"><i>❌</i>Close</button>
+      </div>
+      <a href="../../../en/" class="site-logo">Wave Engineering</a>
+
+      <nav role="navigation">
+        <details open>
+          <summary>Overview</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/home/">
+                
+                Home
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/general-introduction/">
+                
+                General Introduction
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Csound</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/csound/">
+                
+                Csound
+                
+              </a>
+            </li><li>
+              
+              <a class="active" href="../../../en/docs/functions/">
+                
+                Functions
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/examples/">
+                
+                Examples
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Echoes &amp; Reverberation</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/echoes-and-reverb/">
+                
+                Echoes and Reverb
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>3D Sound</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/3d-sound-introduction/">
+                
+                3D Sound Introduction
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/spatial-audio/">
+                
+                Spatial Audio
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/coordinates/">
+                
+                Coordinates
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/audio-systems/">
+                
+                Audio Systems
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/hrtf/">
+                
+                HRTF
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/hrtf-systems/">
+                
+                HRTF Systems
+                
+              </a>
+            </li><li>
+              
+              <a class="" href="../../../en/docs/implementation/">
+                
+                Implementation
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Csound Examples</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/csound-examples/">
+                
+                Csound Examples
+                
+              </a>
+            </li>
+
+          </ul>
+        </details><details open>
+          <summary>Bibliography</summary>
+          <ul><li>
+              
+              <a class="" href="../../../en/docs/bibliography/">
+                
+                Bibliography
+                
+              </a>
+            </li>
+
+          </ul>
+        </details>
+      </nav>
+    </aside>
+  </div>
+
+  <div id="content-wrapper">
+    <header style="display: flex; align-items: center; justify-content: space-between; padding-right: var(--padding);">
+      <a href="../../../en/" class="site-logo">Wave Engineering</a>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div class="lang-switcher" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85em; font-weight: 500;">
+          
+            
+            
+              <a href="../../../es/docs/funciones/" style="color: inherit; opacity: 0.7; text-decoration: none;">ES</a>
+            
+          
+            <span style="opacity: 0.4;">|</span>
+            
+              <span style="font-weight: 700; border-bottom: 2px solid currentColor; padding-bottom: 1px;">EN</span>
+            
+          
+        </div>
+        <a href="../../../../index.html" style="font-size: 0.85em; text-decoration: none; color: inherit; opacity: 0.85;">← Audio Projects</a> <span style="opacity: 0.4;">|</span> <a href="../../../../../index.html" style="font-size: 0.85em; text-decoration: none; color: inherit; opacity: 0.85;">Home</a>
+      </div>
+    </header>
+
+    <main>
+      <article>
+        <nav>
+          <button class="btn"><i>⬅️</i> On this section</button>
+          <button class="btn">On this page <i>➡️</i></button>
+        </nav>
+        <header>
+          <h1>Score Statements &amp; Functions</h1>
+          <p></p>
+        </header>
+        <div id="article-body">
+          <h2 id="21-elementary-csound-functions">2.1. ELEMENTARY CSOUND FUNCTIONS</h2>
+<blockquote>
+<p><strong>ESSENTIAL SCORE STATEMENTS FOR THE SCORE FILE</strong></p>
+</blockquote>
+<h3 id="f-statement-function-table-generator">f Statement (Function Table Generator)</h3>
+<p>The <code>f</code> statement generates wavetables and lookup arrays used by oscillators and envelopes:</p>
+<ul>
+<li><code>p1</code>: Table number (positive integer).</li>
+<li><code>p2</code>: Time at which the table is generated (usually 0).</li>
+<li><code>p3</code>: Table size (must be a power of two, or power of two plus one, e.g. 512, 1024, 4096).</li>
+<li><code>p4</code>: GEN routine number (the algorithm used to fill the table).</li>
+<li><code>p5...pn</code>: Arguments specific to the chosen GEN routine.</li>
+</ul>
+<p>Common GEN routines include:</p>
+<ul>
+<li><code>GEN10</code>: Sum of sinusoids for harmonic additive synthesis.</li>
+<li><code>GEN07</code>: Piecewise linear breakpoint envelopes.</li>
+<li><code>GEN05</code>: Exponential curve segments.</li>
+<li><code>GEN01</code>: Reads an external audio file into memory.</li>
+</ul>
+<h3 id="i-statement-instrument-note-activation">i Statement (Instrument Note Activation)</h3>
+<p>The <code>i</code> statement triggers note performance:</p>
+<ul>
+<li><code>p1</code>: Instrument number to invoke.</li>
+<li><code>p2</code>: Action start time in beats or seconds.</li>
+<li><code>p3</code>: Duration of note performance.</li>
+<li><code>p4...pn</code>: User-defined parameters (amplitude, pitch, spatial angle, filters).</li>
+</ul>
+<h3 id="t-statement-tempo-control">t Statement (Tempo Control)</h3>
+<p>Defines the performance tempo in beats per minute across specified time points.</p>
+<h3 id="s-statement-section-separator">s Statement (Section Separator)</h3>
+<p>Marks the end of a musical movement or section, sorting and resetting preceding events.</p>
+<hr>
+<blockquote>
+<p><strong>ESSENTIAL ORCHESTRA OPCODES</strong></p>
+</blockquote>
+<h3 id="arithmetic--mathematical-operations">Arithmetic &amp; Mathematical Operations</h3>
+<ul>
+<li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>: Basic arithmetic operators.</li>
+<li><code>sqrt(x)</code>: Square root.</li>
+<li><code>log(x)</code> / <code>log10(x)</code>: Natural and base-10 logarithms.</li>
+<li><code>exp(x)</code>: Exponential function.</li>
+<li><code>abs(x)</code>: Absolute value.</li>
+<li><code>int(x)</code> / <code>frac(x)</code>: Integer and fractional parts.</li>
+</ul>
+<h3 id="trigonometric-functions">Trigonometric Functions</h3>
+<ul>
+<li><code>sin(x)</code>, <code>cos(x)</code>, <code>tan(x)</code>: Trigonometric ratios (angles in radians).</li>
+<li><code>asin(x)</code>, <code>acos(x)</code>, <code>atan(x)</code>, <code>atan2(y, x)</code>: Inverse trigonometric functions.</li>
+</ul>
+<h3 id="signal-generators-and-oscillators">Signal Generators and Oscillators</h3>
+<ul>
+<li><code>oscil</code>: Classic wavetable oscillator reading from an <code>f</code> table.</li>
+<li><code>poscil</code>: High-precision floating-point interpolated oscillator.</li>
+<li><code>rand</code> / <code>pinkish</code>: Uniform and 1/f noise generators.</li>
+<li><code>linen</code> / <code>linseg</code>: Linear envelope generators.</li>
+<li><code>expseg</code>: Exponential envelope generator.</li>
+</ul>
+
+        </div>
+
+        <footer>
+          
+
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+          
+
+          <time datetime="2004-05-24"><i>🕒</i> Updated: 2004-05-24</time>
+          
+          <a href="../../../en/docs/csound/"><i>﹤</i> Previous</a>
+          
+
+          
+          <a href="../../../en/docs/examples/">Next <i>﹥</i></a>
+          
+
+        </footer>
+      </article>
+
+      <aside>
+        <div>
+          <button class="btn"><i>❌</i>Close</button>
+        </div>
+        <strong>On this page</strong>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#f-statement-function-table-generator">f Statement (Function Table Generator)</a></li>
+        <li><a href="#i-statement-instrument-note-activation">i Statement (Instrument Note Activation)</a></li>
+        <li><a href="#t-statement-tempo-control">t Statement (Tempo Control)</a></li>
+        <li><a href="#s-statement-section-separator">s Statement (Section Separator)</a></li>
+        <li><a href="#arithmetic--mathematical-operations">Arithmetic &amp; Mathematical Operations</a></li>
+        <li><a href="#trigonometric-functions">Trigonometric Functions</a></li>
+        <li><a href="#signal-generators-and-oscillators">Signal Generators and Oscillators</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </aside>
+    </main>
+
+    <footer>
+      <div><i>🧑‍💻</i>Built by and copyright<a href="https://github.com/jperezmacias" target="_blank">Ariana de La Cuesta de Diego y Jose Maria Perez-Macias</a><i>📅</i> 2004-2024<i>🚀</i> <a href="https://github.com/jperezmacias.github.io" target="_blank">GitHub</a></div>
+    </footer>
+  </div>
+
+</div>
+
+<div id="body-model-outer"></div>
+<script type="text/javascript" src="../../../assets/js/docs.min.b55220f931994168ec64fd76cf95230f3676d8e351388cc18eab8fa9a52dec05.js" integrity=""></script>
+</body>
+</html>
