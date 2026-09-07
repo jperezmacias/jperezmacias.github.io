@@ -248,6 +248,55 @@
         .ref-list li {
             margin-bottom: 8px;
         }
+    
+        /* YouTube Lightweight Facade */
+        .yt-facade {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .yt-facade::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.22);
+            transition: background 0.2s ease;
+        }
+        .yt-facade:hover::before,
+        .yt-facade:focus::before {
+            background: rgba(0, 0, 0, 0.38);
+        }
+        .yt-play-btn {
+            width: 68px;
+            height: 48px;
+            background-color: rgba(33, 33, 33, 0.85);
+            border-radius: 12px;
+            position: relative;
+            z-index: 2;
+            transition: background-color 0.2s cubic-bezier(0, 0, 0.2, 1), transform 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .yt-facade:hover .yt-play-btn,
+        .yt-facade:focus .yt-play-btn {
+            background-color: #ff0000;
+            transform: scale(1.1);
+        }
     </style>
 
     <script>
@@ -282,6 +331,19 @@
       };
     </script>
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        function loadYt(el) {
+            var id = el.getAttribute('data-id');
+            var title = el.getAttribute('data-title') || 'YouTube video';
+            var iframe = document.createElement('iframe');
+            iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1');
+            iframe.setAttribute('title', title);
+            iframe.setAttribute('style', 'border: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%;');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            iframe.setAttribute('allowfullscreen', '1');
+            el.parentNode.replaceChild(iframe, el);
+        }
+    </script>
 </head>
 
 <body>
@@ -537,7 +599,15 @@
             <h4>1. Autonomous Action Potential Propagation</h4>
             <p>Animated time-evolution showing the initial condition wave traveling autonomously down the 3D axon cylinder.</p>
             <div class="video-container">
-                <iframe src="https://www.youtube-nocookie.com/embed/ssmZV2swrf4" title="Simulation of a neuron stimulus - COMSOL" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="yt-facade" role="button" tabindex="0" data-id="ssmZV2swrf4"
+                    data-title="Simulation of a neuron stimulus - COMSOL"
+                    aria-label="Play video: Simulation of a neuron stimulus - COMSOL"
+                    style="background-image: url('https://i.ytimg.com/vi/ssmZV2swrf4/hqdefault.jpg');"
+                    onclick="loadYt(this)" onkeydown="if(event.key==='Enter'||event.key===' ')loadYt(this);">
+                    <div class="yt-play-btn" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff" style="margin-left: 2px;"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                </div>
             </div>
             <p style="margin-top: 10px;"><a href="https://youtu.be/ssmZV2swrf4" target="_blank" rel="noopener" class="btn-link">Watch on YouTube &rarr;</a></p>
         </div>
@@ -546,7 +616,15 @@
             <h4>2. Pulse Train Re-stimulation</h4>
             <p>Animated response under periodic train stimulation, showing repetitive wavefront generation and refractory limits.</p>
             <div class="video-container">
-                <iframe src="https://www.youtube-nocookie.com/embed/UK_Ka_exzzQ" title="Video train of impulses - COMSOL" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="yt-facade" role="button" tabindex="0" data-id="UK_Ka_exzzQ"
+                    data-title="Video train of impulses - COMSOL"
+                    aria-label="Play video: Video train of impulses - COMSOL"
+                    style="background-image: url('https://i.ytimg.com/vi/UK_Ka_exzzQ/hqdefault.jpg');"
+                    onclick="loadYt(this)" onkeydown="if(event.key==='Enter'||event.key===' ')loadYt(this);">
+                    <div class="yt-play-btn" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="#ffffff" style="margin-left: 2px;"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                </div>
             </div>
             <p style="margin-top: 10px;"><a href="https://youtu.be/UK_Ka_exzzQ" target="_blank" rel="noopener" class="btn-link">Watch on YouTube &rarr;</a></p>
         </div>
