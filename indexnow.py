@@ -12,7 +12,7 @@ import urllib.request
 import urllib.error
 
 HOST = "jperezmacias.github.io"
-KEY = "2bc0a008462ca1da7180d1a718d2cdf5"
+KEY = "d3c24599a243434ba51da47bf21f60fb"
 KEY_LOCATION = f"https://{HOST}/{KEY}.txt"
 
 DEFAULT_URLS = [
