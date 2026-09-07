@@ -22,7 +22,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 header {
     position: relative;
-    background: url(../img/kayak_nasijarvi_cut_small.jpg) no-repeat center center;
+    background: url(../img/kayak_nasijarvi_cut_small.webp) no-repeat center center;
     background-size: cover;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -39,7 +39,7 @@ header {
     width: 120px;
     height: 120px;
     /*margin:0 auto;*/
-    background: url(../img/me.jpg) no-repeat center center;
+    background: url(../img/me.webp) no-repeat center center;
     border-radius: 60px;
     border: 3px solid #eee;
     margin-bottom: 20px;
