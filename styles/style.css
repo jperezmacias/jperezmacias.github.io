@@ -321,11 +321,11 @@ ul.social-buttons li a:active {
     background: #059669;
 }
 /* Accessibility & Typography Improvements */
-main p a, main li a:not(.btn):not(.brand-badge), main .caption a:not(.btn) {
+main p a, main li a:not(.btn):not(.brand-badge), main .caption a:not(.btn), main .col-md-4 a:not(.btn), .project-links a {
     text-decoration: underline;
     text-underline-offset: 2px;
 }
-main p a:hover, main li a:not(.btn):not(.brand-badge):hover, main .caption a:not(.btn):hover {
+main p a:hover, main li a:not(.btn):not(.brand-badge):hover, main .caption a:not(.btn):hover, main .col-md-4 a:not(.btn):hover, .project-links a:hover {
     text-decoration: underline;
     color: #0369a1;
 }
